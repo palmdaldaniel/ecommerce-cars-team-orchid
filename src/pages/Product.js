@@ -1,6 +1,10 @@
+import { useState } from "react";
+
+import styles from "./css/Product.module.css";
+
 function Product(props) {
 
-	testProduct = {
+	const [testProduct] = useState({
 		"make": "Chevrolet",
 		"model": "Camaro",
 		"year": 1973,
@@ -10,16 +14,21 @@ function Product(props) {
 		"descLong": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
 		"price": 554963,
 		"miles": 15432
-	};
+	});
 	
+	const [imgSrc] = useState(`/assets/car-pictures/${testProduct.make}-${testProduct.model}-${testProduct.year}.jpg`);
+
 	return (
 		<div className="container">
 			<div className="row">
-				<div className="col">
-					<h1>This is a product</h1>
+				<div className="col s12">
+					<img className={styles.productImg} src={imgSrc} />
 				</div>
+			</div>
+			<div className="row">
 				<div className="col">
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, ab, amet totam necessitatibus rerum sapiente itaque neque cum tempore quis veritatis doloribus illo cumque. At culpa natus molestias distinctio commodi?</p>
+					<h1 className={styles.productTitle}>{testProduct.descShort}</h1>
+					<p>{testProduct.descLong}</p>
 				</div>
 			</div>
 		</div>
