@@ -6,7 +6,9 @@ import Home from './pages/Home.js'
 function App() {
   return <div className="App">
     <BrowserRouter>
-      <Route exact path="/"/>
+      <Route exact path="/">
+        <Home/>
+      </Route>
     </BrowserRouter>
   </div>;
 }
