@@ -1,3 +1,5 @@
-h1 {
-    color: green;
+.checkoutContainer {
+    display: flex;
+    text-transform: uppercase;
+    justify-content: center;
 }
