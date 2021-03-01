@@ -1,53 +1,41 @@
 .navbarWrapper {
-	background-color: #FF9300;
-	padding: 5px;
+	background-color: #ff9500be;
+	display: block;
+	height: 60%;
+	font-size: 20px;
+}
+
+.navbar {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	text-align: center;
+	align-items: center;
+	padding: 0px 10px;
+}
+
+ul {
+	padding-bottom: 18px;
+}
+
+/* centering logo */
+.centerLogo {
+	display: flex;
+	justify-content: center;
+}
+
+img {
+	height: 50px;
+	width: 50px;
+}
+
+/* aligning cart-text to the left */
+.cartAlignment {
+	text-align: right;
 }
 
 a {
 	color: black;
 	padding: 5px;
+	text-transform: uppercase;
+	font-size: 15px !important;
 } 
-
-/* sidebar Nav */
-
-.navBar {
-  position: relative;
-}
-
-.navBar button {
-  position: fixed;
-  left: 40px;
-  top: 40px;
-  z-index: 10;
-  cursor: pointer;
-}
-
-.menuNav {
-  overflow-y: scroll;
-  list-style: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  height: 100vh;
-  width: 0;
-  overflow: hidden;
-  max-width: 290px;
-  z-index: 9;
-}
-
-.menuNav.showMenu {
-  width: 100%;
-}
-
-a {
-  display: block;
-  padding: 10px 40px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.menuNav li:first-child {
-  margin-top: 7rem;
-}
