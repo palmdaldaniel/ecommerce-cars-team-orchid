@@ -2,7 +2,7 @@
 
 function Checkout() {
     return(
-        <div>
+        <div className="checkout">
             <h1>Checkout</h1>
         </div>
     )
