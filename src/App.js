@@ -18,9 +18,7 @@ function App() {
       <Route exact path="/checkout">
         <Checkout/>
       </Route>
-      <Route exact path="/product">
-        <Product/>
-      </Route>
+      <Route exact path="/product/:id" component={Product} />
       <Route exact path="/about">
         <About/>
       </Route>

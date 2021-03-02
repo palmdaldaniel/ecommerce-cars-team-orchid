@@ -1,28 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 import styles from "./css/Product.module.css";
 
-function Product(props) {
+function Product() {
 
-	const [testProduct] = useState({
-		"make": "Chevrolet",
-		"model": "Camaro",
-		"year": 1973,
-		"vin": "1D4PT5GK0BW487259",
-		"city": "Santa Rosa",
-		"descShort": "in lectus pellentesque at nulla suspendisse potenti cras in purus eu",
-		"descLong": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
-		"price": 554963,
-		"miles": 15432
-	});
-	
-	const [imgSrc] = useState(
-		`/assets/car-pictures/${testProduct.make}-${testProduct.model}-${testProduct.year}.jpg`
-	);
+	const { id } = useParams();
 
-	const [price] = useState(
-		(testProduct.price).toLocaleString(navigator.language, {style: 'currency',currency: 'EUR'})
-	);
+	const [products, setProducts] = useState(null);
+	const [product, setProduct] = useState(null);
+	const [imgSrc, setImgSrc] = useState(null);
+	const [price, setPrice] = useState(null);
+
+	useEffect(() => {
+		// TODO: Replace this with data from context, when it exists
+		setProducts(require("../json/cars.json"));
+	}, []);
+
+	useEffect(() => {
+		if (products) {
+			const index = parseInt(id);
+			setProduct(products[index]);
+		}
+	}, [products]);
+
+	useEffect(() => {
+		if (product) {
+			setImgSrc(`/assets/car-pictures/${product.make}-${product.model}-${product.year}.jpg`);
+			setPrice((product.price).toLocaleString(navigator.language, {style: 'currency',currency: 'EUR'}));
+		}
+	}, [product]);
+
+	if (!product) return null;
 
 	return (
 		<div className="container">
@@ -36,27 +45,27 @@ function Product(props) {
 						<tbody>
 							<tr>
 								<td className={styles.tableHeader}>Make</td>
-								<td>{testProduct.make}</td>
+								<td>{product.make}</td>
 							</tr>
 							<tr>
 								<td className={styles.tableHeader}>Model</td>
-								<td>{testProduct.model}</td>
+								<td>{product.model}</td>
 							</tr>
 							<tr>
 								<td className={styles.tableHeader}>Year</td>
-								<td>{testProduct.year}</td>
+								<td>{product.year}</td>
 							</tr>
 							<tr>
 								<td className={styles.tableHeader}>VIN</td>
-								<td>{testProduct.vin}</td>
+								<td>{product.vin}</td>
 							</tr>
 							<tr>
 								<td className={styles.tableHeader}>City</td>
-								<td>{testProduct.city}</td>
+								<td>{product.city}</td>
 							</tr>
 							<tr>
 								<td className={styles.tableHeader}>Miles</td>
-								<td>{testProduct.miles}</td>
+								<td>{product.miles}</td>
 							</tr>
 						</tbody>
 					</table>
@@ -67,8 +76,8 @@ function Product(props) {
 
 			<div className="row">
 				<div className="col">
-					<h1 className={styles.productTitle}>{testProduct.descShort}</h1>
-					<p>{testProduct.descLong}</p>
+					<h1 className={styles.productTitle}>{product.descShort}</h1>
+					<p>{product.descLong}</p>
 				</div>
 			</div>
 		</div>
