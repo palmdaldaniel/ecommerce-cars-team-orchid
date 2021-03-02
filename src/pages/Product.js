@@ -16,10 +16,14 @@ function Product(props) {
 		"miles": 15432
 	});
 	
-	const [imgSrc] = useState(`/assets/car-pictures/${testProduct.make}-${testProduct.model}-${testProduct.year}.jpg`);
+	const [imgSrc] = useState(
+		`/assets/car-pictures/${testProduct.make}-${testProduct.model}-${testProduct.year}.jpg`
+	);
+
 	const [price] = useState(
-		(testProduct.price).toLocaleString('sv-SE', {style: 'currency',currency: 'EUR'})
-	)
+		(testProduct.price).toLocaleString(navigator.language, {style: 'currency',currency: 'EUR'})
+	);
+
 	return (
 		<div className="container">
 			<div className="row">
