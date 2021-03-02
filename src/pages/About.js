@@ -18,11 +18,13 @@ const About = () => {
             
          
                 <div className={styles.flexBoxn}>
-                <img src="https://images.pexels.com/photos/1644794/pexels-photo-1644794.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=400" alt="A road in front of mountains" />
-            
-            <div className={styles.content}>
+                <div className={styles.content}>
                 <p> Wiggle room diversify kpis. Fire up your browser create spaces to  explore what’s next but I have zero cycles for this make it a priority but market-facing, for i have a hard stop in an hour and half turd polishing. Feed the algorithm. Staff engagement ping me let's unpack that later. My grasp on reality right now is tenuous productize. I have a hard stop in an hour and half let's put a pin in that so tribal knowledge. Create spaces to explore what’s next what about scaling components to a global audience? wheelhouse, or open door policy, but going forward, nor groom the backlog. We need to build it so that it scales groom the backlog. Low-hanging fruit shotgun approach, yet imagineer.</p>
                  </div>
+
+                <img src="https://images.pexels.com/photos/1644794/pexels-photo-1644794.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=400" alt="A road in front of mountains" />
+            
+            
              </div>
           
             

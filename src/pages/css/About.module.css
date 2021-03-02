@@ -11,14 +11,8 @@ h1 {
 p {
     font-size: medium;
     align-content: center;
-  
     padding: 2rem;
 }
-
-
-
-
-
 
  .flexBox {
     display: flex;
@@ -43,13 +37,11 @@ p {
     .flexBox {
         display: flex;
         justify-content: space-around;
-        flex-wrap: wrap;
-        margin-top:40px;
+        margin-top: 40px;
     }
     .flexBoxn {
         display: flex;
         justify-content: space-around;
-        flex-wrap: wrap-reverse;
         margin-top:40px;
     }
 }
