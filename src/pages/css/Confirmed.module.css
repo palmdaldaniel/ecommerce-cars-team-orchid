@@ -2,3 +2,23 @@
   margin: 2rem;
   padding: 2rem;
 }
+
+.button {
+  border-radius: 10px;
+  border: #FF9300 3px solid;
+  background-color: white;
+  padding: 0.5rem;
+  margin-top: 8rem;
+  width: 150px;
+}
+
+.button:hover{
+  box-shadow: 3px 3px 8px #b9b9b9;
+}
+
+.button:active {
+  background-color: white;
+  box-shadow: 3px 3px 8px #959595;
+  /* Kanske onödig effekt att ta bort när vi valt utseende på buttons */
+
+}
