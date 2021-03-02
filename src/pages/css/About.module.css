@@ -15,16 +15,47 @@ p {
     padding: 2rem;
 }
 
-.about {
+ /* .about {
     display: flex;
     flex-direction: column;
-}
+}  */
 
 .imgContainer {
     max-width: 400px;
 }
 
-.contentContainer {
-    justify-content: center;
-    max-width: 400px;
+
+ .flexBox {
+    display: flex;
+    flex-wrap: wrap;
+} 
+
+
+.containerBox {
+    max-width: 90vw;
+    
+}
+
+@media only screen and (min-width: 500px) {
+    
+    .content {
+        align-self: center;
+        flex-basis: 50%;
+        max-width: 50vw;
+       
+    }
+    .containerBox {
+        justify-content: center;
+        max-width: 400px;
+    }
+    .flexBox {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .flexBoxn {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap-reverse;
+    }
 }
