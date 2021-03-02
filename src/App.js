@@ -13,21 +13,23 @@ function App() {
   return (
     <div className="App">
       <ProductsContextProvider>
-        <BrowserRouter>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/Confirmed">
-            <Confirmed />
-          </Route>
-          <Route exact path="/checkout">
-            <Checkout />
-          </Route>
-          <Route exact path="/product/:id" component={Product} />
-          <Route exact path="/about">
-            <About />
-          </Route>
-        </BrowserRouter>
+        <CartContextProvider>
+          <BrowserRouter>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/Confirmed">
+              <Confirmed />
+            </Route>
+            <Route exact path="/checkout">
+              <Checkout />
+            </Route>
+            <Route exact path="/product/:id" component={Product} />
+            <Route exact path="/about">
+              <About />
+            </Route>
+          </BrowserRouter>
+        </CartContextProvider>
       </ProductsContextProvider>
     </div>
   );
