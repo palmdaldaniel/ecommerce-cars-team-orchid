@@ -6,3 +6,8 @@
 .productTitle {
 	font-size: 1.5rem;
 }
+
+.productPrice {
+	font-size: 2rem;
+	font-weight: 600;
+}

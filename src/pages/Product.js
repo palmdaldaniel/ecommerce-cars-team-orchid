@@ -17,7 +17,9 @@ function Product(props) {
 	});
 	
 	const [imgSrc] = useState(`/assets/car-pictures/${testProduct.make}-${testProduct.model}-${testProduct.year}.jpg`);
-
+	const [price] = useState(
+		(testProduct.price).toLocaleString('sv-SE', {style: 'currency',currency: 'EUR'})
+	)
 	return (
 		<div className="container">
 			<div className="row">
@@ -53,6 +55,8 @@ function Product(props) {
 							</tr>
 						</tbody>
 					</table>
+
+					<p className={`${styles.productPrice} right-align`}>{price}</p>
 				</div>
 			</div>
 			<div className="row">
