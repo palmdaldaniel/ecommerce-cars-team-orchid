@@ -3,35 +3,28 @@
     padding: 0;
     box-sizing: border-box;
 }
-h1{
+
+h1 {
     padding-left:2rem;
 }
-p{
+
+p {
     font-size: medium;
     align-content: center;
   
     padding: 2rem;
 }
 
-.about{
+.about {
     display: flex;
     flex-direction: column;
-
- 
-
 }
 
-.imgContainer{
+.imgContainer {
     max-width: 400px;
-   
-   
-
 }
 
-.contentContainer{
- 
+.contentContainer {
     justify-content: center;
     max-width: 400px;
-   
-
 }

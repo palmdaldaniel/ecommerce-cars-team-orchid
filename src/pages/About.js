@@ -1,9 +1,6 @@
 import styles from "./css/About.module.css";
 
-
 const About = () => {
-
-
     return (
         <div className={styles.about}>
             <div className={styles.imgContainer}>
@@ -28,9 +25,7 @@ const About = () => {
             <div className={styles.contentContainer}>
                 <p>Increase the pipelines talk to the slides. Helicopter view we need to dialog around your choice of work attire, yet bake it in. Q1 knowledge is power that's not on the roadmap but get six alpha pups in here for a focus group shoot me an email low engagement. We have to leverage up the messaging cross sabers, nor going forward, for synergestic actionables but run it up the flag pole the horse is out of the barn. Imagineer punter cross pollination across our domains we don't need to boil the ocean here nor you better eat a reality sandwich before you walk back in that boardroom vertical integration. Organic growth. Goalposts. Run it up the flag pole value-added, but hit the ground running gain traction not the long pole in my tent, but moving the goalposts.</p>
             </div>
-
         </div>
-
     );
 }
 
