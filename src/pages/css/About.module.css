@@ -15,26 +15,21 @@ p {
     padding: 2rem;
 }
 
- /* .about {
-    display: flex;
-    flex-direction: column;
-}  */
 
-.imgContainer {
-    max-width: 400px;
-}
+
+
 
 
  .flexBox {
     display: flex;
     flex-wrap: wrap;
 } 
+.flexBoxn {
+    display: flex;
+    flex-wrap: wrap-reverse;
+} 
 
 
-.containerBox {
-    max-width: 90vw;
-    
-}
 
 @media only screen and (min-width: 500px) {
     
@@ -44,18 +39,17 @@ p {
         max-width: 50vw;
        
     }
-    .containerBox {
-        justify-content: center;
-        max-width: 400px;
-    }
+    
     .flexBox {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
+        margin-top:40px;
     }
     .flexBoxn {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap-reverse;
+        margin-top:40px;
     }
 }
