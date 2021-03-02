@@ -27,34 +27,35 @@ function Product(props) {
 	return (
 		<div className="container">
 			<div className="row">
-				<div className="col s12 m8">
+				<div className="col s12 m12 l8">
 					<img className={styles.productImg} src={imgSrc} />
 				</div>
-				<div className="col s12 m4">
+
+				<div className="col s12 m12 l4">
 					<table>
 						<tbody>
 							<tr>
-								<td>Make</td>
+								<td className={styles.tableHeader}>Make</td>
 								<td>{testProduct.make}</td>
 							</tr>
 							<tr>
-								<td>Model</td>
+								<td className={styles.tableHeader}>Model</td>
 								<td>{testProduct.model}</td>
 							</tr>
 							<tr>
-								<td>Year</td>
+								<td className={styles.tableHeader}>Year</td>
 								<td>{testProduct.year}</td>
 							</tr>
 							<tr>
-								<td>VIN</td>
+								<td className={styles.tableHeader}>VIN</td>
 								<td>{testProduct.vin}</td>
 							</tr>
 							<tr>
-								<td>City</td>
+								<td className={styles.tableHeader}>City</td>
 								<td>{testProduct.city}</td>
 							</tr>
 							<tr>
-								<td>Miles</td>
+								<td className={styles.tableHeader}>Miles</td>
 								<td>{testProduct.miles}</td>
 							</tr>
 						</tbody>
@@ -63,6 +64,7 @@ function Product(props) {
 					<p className={`${styles.productPrice} right-align`}>{price}</p>
 				</div>
 			</div>
+
 			<div className="row">
 				<div className="col">
 					<h1 className={styles.productTitle}>{testProduct.descShort}</h1>
