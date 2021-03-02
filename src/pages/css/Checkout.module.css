@@ -19,17 +19,42 @@ h1 {
     width: 80%;
 }
 
-.formTitle {
-    font-size: 1.7rem;
+h2 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: #9e9e9e;
 }
 
 label {
     
     font-size: 1.3rem;
-    margin-top: 1rem;
+    margin-top: 1.6rem;
 }
 
 input {
     color: black;
     border: 1px solid black;
+    background-color: green;
+}
+
+.monthYearWrapper{
+    display: flex;
+}
+
+@media only screen and (min-width: 529px) {
+    .contactForm {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .contactForm {
+        width: 40%;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .contactForm {
+        width: 35%;
+    }
 }

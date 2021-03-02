@@ -6,7 +6,7 @@ function Checkout() {
             <h1>Checkout</h1>
             {/* Shopping cart list */}
             <form className={style.contactForm}>
-                <h2 className={style.formTitle}>Personal info</h2>
+                <h2 className={style.formTitle}>Delivery info</h2>
                 <label>Name</label>
                 <input type="text"
                 placeholder="First name"
@@ -51,22 +51,23 @@ function Checkout() {
                 <input type="text" placeholder="Full name" />
 
                 <label>Card Number</label>
-                <input type="number" placeholder="Card-number" required/>
+                <input type="number" placeholder="Card number" required/>
                 
                 <label>CVV</label>
                 <input type="text" 
                 maxLength="3"
                 placeholder="CVV" 
                 required/>
-                
-                <label>Expiration Date</label>
-                <input type="number" 
-                placeholder="Month"
-                required/>
-                <input type="number"
-                placeholder="Year"
-                required />
 
+                    <label>Expiration Date</label>
+                    <div className={style.monthYearWrapper}>
+                        <input type="number" 
+                        placeholder="Month"
+                        required/>
+                        <input type="number"
+                        placeholder="Year"
+                        required />
+                    </div>
                 <input type="checkbox" />
 
             </form>
