@@ -1,6 +1,5 @@
 import styles from './css/Confirmed.module.css'
 
-// import styles from './css'
 const ConfirmationPage = () => {
   return (
     <div class="center-align">
