@@ -7,7 +7,7 @@ import Product from './pages/Product.js'
 import About from './pages/About';
 import CartContextProvider from './contexts/CartContext'
 
-import ProductsContextProvider from "./context/ProductsContext";
+import ProductsContextProvider from "./contexts/ProductsContext";
 
 function App() {
   return (
