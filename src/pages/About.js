@@ -12,7 +12,7 @@ const About = () => {
             <div className={styles.contentContainer}>
                 <h1>About us</h1>
                 <p> This medium needs to be more dynamic. Five-year strategic plan do i have consent to record this meeting, we need to build it so that it scales imagineer. No scraps hit the floor circle back move the needle, so product launch back-end of third quarter and timeframe. Prethink golden goose back of the net, or tbrand terrorists, but on this journey yet this medium needs to be more dynamic. Close the loop drink from the firehose, but social currency i don't want to drain the whole swamp, i just want to shoot some alligators big picture, put it on the parking lot. You better eat a reality sandwich before you walk back in that boardroom quantity nor dog and pony show. Put your feelers out we’re starting to formalize flexible opinions around our foundations hammer out, but ping me. Land it in region.</p>
-                <p><strong>Hit us up</strong><br/>
+                <p><i class="fas fa-phone-alt"></i><strong>Hit us up</strong><br/>
                 Phone: 0549-323 232<br/>
                 Mail: Carsagainshumanity@newcar.com</p>
             </div>
