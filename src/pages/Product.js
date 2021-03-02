@@ -21,8 +21,38 @@ function Product(props) {
 	return (
 		<div className="container">
 			<div className="row">
-				<div className="col s12">
+				<div className="col s12 m8">
 					<img className={styles.productImg} src={imgSrc} />
+				</div>
+				<div className="col s12 m4">
+					<table>
+						<tbody>
+							<tr>
+								<td>Make</td>
+								<td>{testProduct.make}</td>
+							</tr>
+							<tr>
+								<td>Model</td>
+								<td>{testProduct.model}</td>
+							</tr>
+							<tr>
+								<td>Year</td>
+								<td>{testProduct.year}</td>
+							</tr>
+							<tr>
+								<td>VIN</td>
+								<td>{testProduct.vin}</td>
+							</tr>
+							<tr>
+								<td>City</td>
+								<td>{testProduct.city}</td>
+							</tr>
+							<tr>
+								<td>Miles</td>
+								<td>{testProduct.miles}</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
 			<div className="row">
