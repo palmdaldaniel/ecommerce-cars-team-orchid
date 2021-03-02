@@ -1,14 +1,13 @@
 .checkoutContainer {
     display: flex;
     flex-direction: column;
-    text-transform: uppercase;
-    justify-content: center;
+    text-align: center;
 }
-
 
 
 h1 {
     font-size: 2rem;
+    text-transform: uppercase;
 }
 
 /*----- styles for input form -----*/
@@ -21,5 +20,16 @@ h1 {
 }
 
 .formTitle {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+}
+
+label {
+    
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+
+input {
+    color: black;
+    border: 1px solid black;
 }
