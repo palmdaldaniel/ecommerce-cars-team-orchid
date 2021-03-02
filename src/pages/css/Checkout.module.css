@@ -1,9 +1,25 @@
 .checkoutContainer {
     display: flex;
+    flex-direction: column;
     text-transform: uppercase;
     justify-content: center;
 }
 
+
+
 h1 {
     font-size: 2rem;
+}
+
+/*----- styles for input form -----*/
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.formTitle {
+    font-size: 1.5rem;
 }
