@@ -6,15 +6,40 @@ import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import styles from "./css/Navbar.module.css";
 
 function Navbar () {
-	const [showMenu, setShowMenu] = useState(false)
+	const [displayNavMenu, setDisplayNavMenu] = useState(false)
+	const [displayCart, setDisplayCart] = useState(false)
 
-	let dropdownMenu
-	if (showMenu) {
-		dropdownMenu = 
+	let dropdownMenuNav
+	if (displayNavMenu) {
+		dropdownMenuNav = 
 			<ul>
 			<NavLink to="/">Home</NavLink>
 			<NavLink to="/">About us</NavLink>
 			</ul>
+	}
+
+	let dropdownMenuCart 
+	if (displayCart) {
+		dropdownMenuCart = 
+		<div className={styles.cartContent}>
+			<p>Your cart</p>
+			<ul>
+
+				<div className={styles.carItem}>
+				{/* Will be a dynamic values later */}
+				<span>A car img</span>
+				<span>A car title</span>
+				<span>$$ car price</span>
+				</div>
+
+				<div class={styles.goToCheckout}>
+				{/* Will be a dynamic value later */}
+				<p>$$ 12345</p>
+				<button>Proceed</button>
+				</div>
+
+			</ul>
+		</div>
 	}
 
 	return (
@@ -22,7 +47,7 @@ function Navbar () {
 			<div className={styles.navbar}>
 				<FontAwesomeIcon 
 					icon={faBars}
-					onClick={() => setShowMenu(!showMenu)}
+					onClick={() => setDisplayNavMenu(!displayNavMenu)}
 				/>
 
 				<div className={styles.centerLogo}>
@@ -32,7 +57,7 @@ function Navbar () {
 				<div className="cart">
 					<FontAwesomeIcon 
 						icon={faShoppingCart}
-						className={styles.cartAlignment}
+						onClick={() => setDisplayCart(!displayCart)}
 					/>
 
 					{/* This will be a dynamic value once the methods are in place */}
@@ -40,7 +65,8 @@ function Navbar () {
 				</div>	
 			</div>
 
-			{ dropdownMenu }
+			{ dropdownMenuNav }
+			{ dropdownMenuCart }
 
 		</nav>
 	)
