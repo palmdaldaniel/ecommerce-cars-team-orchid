@@ -1,0 +1,18 @@
+.productImg {
+	width: 100%;
+	height: auto;
+}
+
+.productTitle {
+	font-size: 1.5rem;
+	margin-top: 0;
+}
+
+.tableHeader {
+	font-weight: 700;
+}
+
+.productPrice {
+	font-size: 2rem;
+	font-weight: 600;
+}
