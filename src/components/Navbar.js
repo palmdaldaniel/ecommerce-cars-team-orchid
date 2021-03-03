@@ -14,7 +14,7 @@ function Navbar () {
 	let dropdownMenuNav
 	if (displayNavMenu) {
 		dropdownMenuNav = 
-			<ul>
+			<ul className={styles.navUL}>
 			<NavLink to="/">Home</NavLink>
 			<NavLink to="/about">About us</NavLink>
 			</ul>
@@ -34,10 +34,11 @@ function Navbar () {
 				<span>$$ car price</span>
 				</div>
 
-				<div class={styles.goToCheckout}>
-				{/* Will be replaced by component later */}
-				<p>$$ 12345</p>
-				<button>Proceed</button>
+				<div className={styles.goToCheckout}>
+					{/* Will be replaced by component later */}
+					<p>$$ 12345</p>
+				
+					<button className={styles.proceedButton}>Proceed</button>
 				</div>
 
 			</ul>
@@ -53,7 +54,7 @@ function Navbar () {
 				/>
 
 				<div className={styles.centerLogo}>
-					<img src="https://play-lh.googleusercontent.com/vVBVzNF6g2ri-I0t8YSAdSkQY8_Vjra3HFBkkWkhgVo8IjmxOOeLgRAZWn8_7PrnYcs" onClick={() => history.push('/')}></img>
+					<img className={styles.navLogo}src="https://play-lh.googleusercontent.com/vVBVzNF6g2ri-I0t8YSAdSkQY8_Vjra3HFBkkWkhgVo8IjmxOOeLgRAZWn8_7PrnYcs" onClick={() => history.push('/')}></img>
 				</div>
 				
 				<div className="cart" onClick={() => setDisplayCart(!displayCart)}>
@@ -62,7 +63,7 @@ function Navbar () {
 					/>
 
 					{/* This will be a dynamic value once the methods are in place */}
-					<span>(0)</span>
+					<span className={styles.cartNumber}>(0)</span>
 				</div>	
 			</div>
 
