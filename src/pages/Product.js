@@ -13,7 +13,7 @@ function Product() {
 	const [price, setPrice] = useState(null);
 
 	// When products list is available in context,
-	// load the one we're interested in
+	// load the single product we're interested in
 	useEffect(() => {
 		if (products) {
 			const index = parseInt(id);
