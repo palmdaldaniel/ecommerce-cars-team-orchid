@@ -1,6 +1,8 @@
+import { container } from "./css/ProductItem.module.css";
+
 const ProductItem = (props) => {
   return (
-    <div>
+    <div className={container}>
       <img src={props.data.image} alt="" />
       <div>
         <h1>{props.data.make}</h1>
