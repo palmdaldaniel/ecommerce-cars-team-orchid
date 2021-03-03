@@ -5,6 +5,7 @@ import {
   price,
   description,
 } from "./css/ProductItem.module.css";
+import AddToCartButton from "../components/AddToCartButton.js";
 
 const ProductItem = (props) => {
   return (
@@ -18,7 +19,7 @@ const ProductItem = (props) => {
         <p className={description}>{props.data.descShort}</p>
         <div className={price}>
           <span>Price: {props.data.price} kr</span>
-          <button>Add to cart</button>
+          <AddToCartButton />
         </div>
       </div>
     </div>
