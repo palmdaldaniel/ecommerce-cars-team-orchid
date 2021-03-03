@@ -10,8 +10,8 @@ const About = () => {
         />
 
         <div className={styles.content}>
-          <h1>About us</h1>
-          <p>
+          <h1 className={styles.hOne}>About us</h1>
+          <p className={styles.p}>
             This medium needs to be more dynamic. Five-year strategic plan do i
             have consent to record this meeting, we need to build it so that it
             scales imagineer. No scraps hit the floor circle back move the
@@ -26,20 +26,19 @@ const About = () => {
             opinions around our foundations hammer out, but ping me. Land it in
             region.
           </p>
-          <p>
-            <i class="fas fa-phone-alt"></i>
-            <strong>Hit us up</strong>
+          <p className={styles.p}>
+           <strong>Hit us up</strong>
             <br />
             Phone: 0549-323 232
             <br />
-            Mail: Carsagainshumanity@newcar.com
+            Mail: Carsforhumanity@newcar.com
           </p>
         </div>
       </div>
 
       <div className={styles.flexBoxn}>
         <div className={styles.content}>
-          <p>
+          <p className={styles.p}>
             Wiggle room diversify kpis. Fire up your browser create spaces to
             explore what’s next but I have zero cycles for this make it a
             priority but market-facing, for i have a hard stop in an hour and
@@ -67,7 +66,7 @@ const About = () => {
         />
 
         <div className={styles.content}>
-          <p>
+          <p  className={styles.p}>
             Increase the pipelines talk to the slides. Helicopter view we need
             to dialog around your choice of work attire, yet bake it in. Q1
             knowledge is power that's not on the roadmap but get six alpha pups
