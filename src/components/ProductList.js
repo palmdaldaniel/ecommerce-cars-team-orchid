@@ -1,13 +1,16 @@
-import { productList } from "./css/ProductList.module.css";
+import {
+  productList,
+  productListContainer,
+} from "./css/ProductList.module.css";
 import { useContext } from "react";
-import { ProductsContext } from "../contexts/ProductsContext";
+import { ProductsContext } from "../context/ProductsContext";
 import ProductItem from "./ProductItem";
 
 const ProductList = () => {
   const { products } = useContext(ProductsContext);
   return (
     <div className={productList}>
-      <div>
+      <div className={productListContainer}>
         {products &&
           products.map((product, i) => <ProductItem key={i} data={product} />)}
       </div>
