@@ -131,7 +131,8 @@ function Checkout() {
 
             </form>
 
-            {/* purchase button */}
+            <button className={style.purchaseBtn}>Purchase</button>
+            
         </div>
     )
 }
