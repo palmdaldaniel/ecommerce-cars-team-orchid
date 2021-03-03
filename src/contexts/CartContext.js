@@ -6,7 +6,10 @@ function CartContextProvider(props) {
 	const [cart, setCart] = useState([
 	]);
 
-	const values = { cart };
+	//array for purchased cars to be rendered on confirmed page
+	const [ purchased, setPurchased] = useState([
+	]);
+	const values = { cart, purchased };
 
 	return (
 		<CartContext.Provider value={values}>
