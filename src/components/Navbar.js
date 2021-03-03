@@ -26,14 +26,14 @@ function Navbar () {
 			<ul>
 
 				<div className={styles.carItem}>
-				{/* Will be a dynamic values later */}
+				{/* Will be replaced by component later */}
 				<span>A car img</span>
 				<span>A car title</span>
 				<span>$$ car price</span>
 				</div>
 
 				<div class={styles.goToCheckout}>
-				{/* Will be a dynamic value later */}
+				{/* Will be replaced by component later */}
 				<p>$$ 12345</p>
 				<button>Proceed</button>
 				</div>
@@ -54,10 +54,9 @@ function Navbar () {
 					<img src="https://play-lh.googleusercontent.com/vVBVzNF6g2ri-I0t8YSAdSkQY8_Vjra3HFBkkWkhgVo8IjmxOOeLgRAZWn8_7PrnYcs"></img>
 				</div>
 				
-				<div className="cart">
+				<div className="cart" onClick={() => setDisplayCart(!displayCart)}>
 					<FontAwesomeIcon 
 						icon={faShoppingCart}
-						onClick={() => setDisplayCart(!displayCart)}
 					/>
 
 					{/* This will be a dynamic value once the methods are in place */}
