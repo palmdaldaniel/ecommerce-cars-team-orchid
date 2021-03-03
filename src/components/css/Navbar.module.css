@@ -13,7 +13,7 @@
 	padding: 0px 10px;
 }
 
-ul, .cartContent {
+.navUL, .cartContent {
 	padding-bottom: 18px;
 }
 
@@ -23,28 +23,26 @@ ul, .cartContent {
 	justify-content: center;
 }
 
-img {
+.navLogo {
 	height: 50px;
 	width: 50px;
 }
 
 /* padding between cart icon and number */
-span {
+.cartNumber {
 	padding-left: 5px;
 }
 
-a {
-	color: black;
-	padding: 5px;
-	text-transform: uppercase;
-	font-size: 15px !important;
-} 
-
 .cartContent {
 	padding-left: 15px;
-	text-transform: uppercase;
 	font-size: 15px;
 }
+
+.cartContent p {
+	padding: 0;
+	margin: 0;
+	text-transform: uppercase;
+} 
 
 .carItem {
 display: grid;
@@ -56,8 +54,4 @@ grid-template-columns: 1fr 1fr;
 	padding-right: 25px;
 }
 
-p {
-	padding: 0;
-	margin: 0;
-} 
 
