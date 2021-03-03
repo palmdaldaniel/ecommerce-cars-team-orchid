@@ -1,7 +1,9 @@
+import Herobanner from "../components/Herobanner.js"
+
 const Home = () => {
     return ( 
         <div className="Home">
-            <h1>This is the homepage</h1>
+             <Herobanner/>
         </div>
      );
 }
