@@ -10,9 +10,7 @@
     align-content: center;
     padding: 2rem;
 }
-.span {
-    font-weight: bold;
-}
+
 .flexBox {
     display: flex;
     flex-wrap: wrap;
