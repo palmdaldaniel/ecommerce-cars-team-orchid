@@ -35,7 +35,11 @@
     display: flex;
 }
 
+/*-----Styles for purchase button-----*/
 
+.purchaseBtn {
+    width: 30%;
+}
 
 @media only screen and (min-width: 529px) {
     .contactForm {
