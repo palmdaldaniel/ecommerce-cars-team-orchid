@@ -5,10 +5,13 @@ import style from './css/Checkout.module.css'
 
 function Checkout() {
 
-    const { cart } = useContext(CartContext);
+    const { cart, handlePurchase } = useContext(CartContext);
     const history = useHistory();
 
-    const handlePurchase = () => {
+    const onPurchase = () => {
+        console.log(cart)
+        handlePurchase();
+        
         history.push("/confirmed")
     }
 
@@ -131,7 +134,7 @@ function Checkout() {
 
             </form>
 
-            <button className={style.purchaseBtn} onClick={handlePurchase}>Purchase</button>
+            <button className={style.purchaseBtn} onClick={onPurchase}>Purchase</button>
             
         </div>
     )

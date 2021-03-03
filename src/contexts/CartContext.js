@@ -4,9 +4,21 @@ export const CartContext = createContext();
 
 function CartContextProvider(props) {
 	const [cart, setCart] = useState([
+		{
+			car: "old volvo",
+			age: "old"
+		},
+		{
+			car: "another old volvo",
+			age: "even older"
+		}
 	]);
 
-	const values = { cart };
+	const handlePurchase = () => {
+		console.log("a purchase has been made")
+	}
+
+	const values = { cart, handlePurchase };
 
 	return (
 		<CartContext.Provider value={values}>
