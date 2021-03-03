@@ -10,6 +10,7 @@ function CartContextProvider(props) {
 	//array for purchased cars to be rendered on confirmed page
 	const [ purchased, setPurchased] = useState([
 	]);
+
 	//triggers when user clicks on purchase button on checkout page
 	const handlePurchase = () => {
 		console.log("a purchase has been made")
@@ -20,7 +21,7 @@ function CartContextProvider(props) {
 
 	}
 
-	const values = { cart, handlePurchase };
+	const values = { cart, purchased, handlePurchase };
 
 	return (
 		<CartContext.Provider value={values}>
