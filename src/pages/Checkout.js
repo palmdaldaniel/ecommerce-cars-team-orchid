@@ -1,6 +1,20 @@
+import { useHistory } from 'react-router-dom';
+import { useContext } from 'react';
+import { CartContext } from '../contexts/CartContext';
 import style from './css/Checkout.module.css'
 
 function Checkout() {
+
+    const { cart, handlePurchase } = useContext(CartContext);
+    const history = useHistory();
+
+    const onPurchase = () => {
+        console.log(cart)
+        handlePurchase();
+        
+        history.push("/confirmed")
+    }
+
     return(
         <div className={style.checkoutContainer}>
             
@@ -120,7 +134,7 @@ function Checkout() {
 
             </form>
 
-            <button className={style.purchaseBtn}>Purchase</button>
+            <button className={style.purchaseBtn} onClick={onPurchase}>Purchase</button>
             
         </div>
     )
