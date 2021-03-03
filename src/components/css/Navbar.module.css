@@ -50,11 +50,14 @@ grid-template-columns: 1fr 1fr;
 }
 
 .goToCheckout {
-	text-align: right;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
 	padding-right: 25px;
 }
 
 .proceedButton {
+	width: 100px;
 	background: white;
 	padding: 5px 20px;
 	border: 2px solid #FF9300;
