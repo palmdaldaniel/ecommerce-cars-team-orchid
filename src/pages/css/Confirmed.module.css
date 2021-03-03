@@ -1,4 +1,27 @@
 .title {
   margin: 2rem;
   padding: 2rem;
+  text-shadow: 0px 4px 5px #ccc;
 }
+
+.button {
+  margin-top: 8rem;
+  background: white;
+  padding: 5px 20px;
+  border: 2px solid #FF9300;
+  border-radius: 5px;
+  transition: 0.1s;
+  box-shadow: 1px 1px 12px 1px #ccc;
+}
+
+.button:hover{
+  background:#FF9300;
+  color: white;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+button:focus {
+  background: #ffffff;
+  color: rgb(7, 7, 7);
+} 
