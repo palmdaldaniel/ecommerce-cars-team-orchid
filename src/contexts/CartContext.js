@@ -7,14 +7,10 @@ function CartContextProvider(props) {
 	]);
 
 	function addToCart(product) {
-		try {
-			if (typeof product !== "object")
-				throw new Error("Warning: 'product' was not an object. Cannot add to cart");
-		}
-		catch {
+		if (typeof product !== "object") {
+			console.error("Error adding to cart. 'product' was not an object");
 			return;
 		}
-
 		setCart([...cart, product]);
 	}
 
