@@ -7,8 +7,6 @@ import styles from "./css/Product.module.css";
 import AddToCartButton from "../components/AddToCartButton";
 
 function Product() {
-  const { id } = useParams();
-
 	const { id } = useParams();
 	const { products } = useContext(ProductsContext);
 
@@ -42,21 +40,52 @@ function Product() {
 					<img className={styles.productImg} src={product.image} />
 				</div>
 
-          <p className={`${styles.productPrice} right-align`}>{price}</p>
-          <div className={`right ${styles.buttonStyle}`}>
-            <AddToCartButton />
-          </div>
-        </div>
-      </div>
+				<div className="col s12 m12 l4">
+					<table>
+						<tbody>
+							<tr>
+								<td className={styles.tableHeader}>Make</td>
+								<td>{product.make}</td>
+							</tr>
+							<tr>
+								<td className={styles.tableHeader}>Model</td>
+								<td>{product.model}</td>
+							</tr>
+							<tr>
+								<td className={styles.tableHeader}>Year</td>
+								<td>{product.year}</td>
+							</tr>
+							<tr>
+								<td className={styles.tableHeader}>VIN</td>
+								<td>{product.vin}</td>
+							</tr>
+							<tr>
+								<td className={styles.tableHeader}>City</td>
+								<td>{product.city}</td>
+							</tr>
+							<tr>
+								<td className={styles.tableHeader}>Miles</td>
+								<td>{product.miles}</td>
+							</tr>
+						</tbody>
+					</table>
 
-      <div className="row">
-        <div className="col">
-          <h1 className={styles.productTitle}>{product.descShort}</h1>
-          <p>{product.descLong}</p>
-        </div>
-      </div>
-    </div>
-  );
+					<p className={`${styles.productPrice} right-align`}>{price}</p>
+			
+					<div className={`right ${styles.buttonStyle}`}>
+						<AddToCartButton />
+					</div>
+				</div>
+			</div>
+
+			<div className="row">
+				<div className="col">
+					<h1 className={styles.productTitle}>{product.descShort}</h1>
+					<p>{product.descLong}</p>
+				</div>
+			</div>
+		</div>
+	);
 }
 
 export default Product;
