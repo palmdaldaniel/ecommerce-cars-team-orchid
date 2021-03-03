@@ -6,7 +6,11 @@ function CartContextProvider(props) {
 	const [cart, setCart] = useState([
 	]);
 
-	const values = { cart };
+	const addToCart = () => {
+		// logic to push items to cart goes here
+	  }
+
+	const values = { cart, addToCart};
 
 	return (
 		<CartContext.Provider value={values}>
