@@ -9,16 +9,11 @@ function Product() {
 	const { id } = useParams();
 	const { products } = useContext(ProductsContext);
 
-	// const [products, setProducts] = useState(null);
 	const [product, setProduct] = useState(null);
-	// const [imgSrc, setImgSrc] = useState(null);
 	const [price, setPrice] = useState(null);
 
-	useEffect(() => {
-		// TODO: Replace this with data from context, when it exists
-		// setProducts(require("../json/cars.json"));
-	}, []);
-
+	// When products list is available in context,
+	// load the one we're interested in
 	useEffect(() => {
 		if (products) {
 			const index = parseInt(id);
@@ -26,20 +21,22 @@ function Product() {
 		}
 	}, [products]);
 
+	// When we have loaded our product,
+	// calculate the price string, based on current locale
 	useEffect(() => {
 		if (product) {
-			// setImgSrc(`/assets/car-pictures/${product.make}-${product.model}-${product.year}.jpg`);
 			setPrice((product.price).toLocaleString(navigator.language, {style: 'currency',currency: 'EUR'}));
 		}
 	}, [product]);
 
+	// If product is not available yet, render nothing
 	if (!product) return null;
 
 	return (
 		<div className="container">
 			<div className="row">
 				<div className="col s12 m12 l8">
-					<img className={styles.productImg} src={"/"+product.image} />
+					<img className={styles.productImg} src={product.image} />
 				</div>
 
 				<div className="col s12 m12 l4">
