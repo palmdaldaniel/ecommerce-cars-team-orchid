@@ -6,7 +6,7 @@ const ConfirmationPage = () => {
   const history = useHistory();
 
   return (
-    <div class="center-align">
+    <div className="center-align">
       <div className={styles.title}>
         <h4>Great! Enjoy your new-to-you car</h4>
       </div>
@@ -15,7 +15,7 @@ const ConfirmationPage = () => {
       <span>Purchase confirmed</span>
 
       <div>
-        <button className={styles.button} onClick={() => history.push('/')}> Brows more cars </button>
+        <button className={styles.button} onClick={() => history.push('/')}> Browse for more cars </button>
       </div>
     </div>
   );
