@@ -2,19 +2,21 @@ import { NavLink } from "react-router-dom";
 import React, { useState } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { useHistory } from 'react-router-dom';
 
 import styles from "./css/Navbar.module.css";
 
 function Navbar () {
 	const [displayNavMenu, setDisplayNavMenu] = useState(false)
 	const [displayCart, setDisplayCart] = useState(false)
+	const history = useHistory();
 
 	let dropdownMenuNav
 	if (displayNavMenu) {
 		dropdownMenuNav = 
 			<ul>
 			<NavLink to="/">Home</NavLink>
-			<NavLink to="/">About us</NavLink>
+			<NavLink to="/about">About us</NavLink>
 			</ul>
 	}
 
@@ -51,7 +53,7 @@ function Navbar () {
 				/>
 
 				<div className={styles.centerLogo}>
-					<img src="https://play-lh.googleusercontent.com/vVBVzNF6g2ri-I0t8YSAdSkQY8_Vjra3HFBkkWkhgVo8IjmxOOeLgRAZWn8_7PrnYcs"></img>
+					<img src="https://play-lh.googleusercontent.com/vVBVzNF6g2ri-I0t8YSAdSkQY8_Vjra3HFBkkWkhgVo8IjmxOOeLgRAZWn8_7PrnYcs" onClick={() => history.push('/')}></img>
 				</div>
 				
 				<div className="cart" onClick={() => setDisplayCart(!displayCart)}>
