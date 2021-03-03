@@ -15,4 +15,10 @@
 .productPrice {
 	font-size: 2rem;
 	font-weight: 600;
+	padding: 10px 0;
+}
+
+.buttonStyle {
+	margin-bottom: 3rem;
+	margin-top: 1rem;
 }
