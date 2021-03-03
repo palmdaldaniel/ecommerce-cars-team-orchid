@@ -3,7 +3,7 @@ import {
   productListContainer,
 } from "./css/ProductList.module.css";
 import { useContext } from "react";
-import { ProductsContext } from "../context/ProductsContext";
+import { ProductsContext } from "../contexts/ProductsContext";
 import ProductItem from "./ProductItem";
 
 const ProductList = () => {
