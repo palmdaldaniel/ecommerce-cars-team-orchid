@@ -1,0 +1,18 @@
+.heroContainer {
+	height: 30%;
+}
+
+img {
+	width: 100%;
+	position: relative;
+	opacity: 0.8;
+}
+
+h1 {
+	font-size: 20px;
+	position: absolute;
+	top: 6px;
+	left: 16px;
+	color: white;
+	text-shadow: 0px 4px 5px black;
+}

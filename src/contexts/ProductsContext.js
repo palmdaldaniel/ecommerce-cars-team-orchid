@@ -10,7 +10,7 @@ function ProductsContextProvider(props) {
     /* go through every object and add a key value pair for an image src */
     const carsWithImage = cars.map((car) => {
       const image = {
-        image: `assets/car-picture/${car.make}-${car.model}-${car.year}`,
+        image: `assets/car-picture/${car.make}-${car.model}-${car.year}.jpg`,
       };
       // prettier adds the parantheses
       return (car = { ...car, ...image });
