@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    padding-left:2rem;
+}
+
+p {
+    font-size: medium;
+    align-content: center;
+  
+    padding: 2rem;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+}
+
+.imgContainer {
+    max-width: 400px;
+}
+
+.contentContainer {
+    justify-content: center;
+    max-width: 400px;
+}

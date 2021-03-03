@@ -1,0 +1,9 @@
+.checkoutContainer {
+    display: flex;
+    text-transform: uppercase;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 2rem;
+}
