@@ -5,10 +5,12 @@ function Checkout() {
         <div className={style.checkoutContainer}>
             <h1 className={style.checkoutTitle}>Checkout</h1>
             {/* Shopping cart list component */}
-            <form className={style.contactForm}>
-                <h2 className={style.formTitle}>Delivery info</h2>
 
-                <label htmlFor="name"><span>Name</span>
+
+            <form className={style.contactForm}>
+                <h2 className={style.formTitle}>Personal info</h2>
+
+                <label className={style.label} htmlFor="name"><span className={style.titleInput}>Name</span>
                     <input 
                     className={style.inputField}
                     type="text"
@@ -24,7 +26,7 @@ function Checkout() {
                     />
                 </label>
                 
-                <label htmlFor="address"><span>Shipping Address</span>
+                <label className={style.label} htmlFor="address"><span className={style.titleInput}>Shipping Address</span>
                     <input 
                     type="text"
                     name="address"
@@ -38,7 +40,6 @@ function Checkout() {
                     required
                     />
                 
-
                     <input type="text"
                     name="address"
                     placeholder="City"
@@ -46,7 +47,7 @@ function Checkout() {
                     />
                 </label>
 
-                <label htmlFor="contact"><span>Contact details</span>
+                <label className={style.label} htmlFor="contact"><span className={style.titleInput}>Contact details</span>
                     <input 
                     type="text"
                     name="contact"
@@ -62,22 +63,29 @@ function Checkout() {
                     />
                 </label>
 
-                {/* <h2>Delivery options</h2>
-                <input type="radio" name="delivery" value="pickup"/>
-                <label>Pick up at store</label>
-                <input type="radio" name="delivery" value="delivered"/>
-                <label>Get car delivered to you</label> */}
-
-
-                <h2>Payment</h2>
-                <label htmlFor="cardname"><span>Name on card</span>
+               <h2 className={style.formTitle}>Delivery options</h2>
+               <p>
+                <label>
+                    <input name="group1" type="radio" checked />
+                    <span>Pick up at store</span>
+                </label>
+                </p>
+                <p>
+                <label>
+                    <input name="group1" type="radio" />
+                    <span>Get car delivered to home</span>
+                </label>
+                </p>
+       
+                <h2 className={style.formTitle}>Payment</h2>
+                <label className={style.label} htmlFor="cardname"><span className={style.titleInput}>Name on card</span>
                     <input 
                     type="text" 
                     name="cardname"
                     placeholder="Full name" />
                 </label>
 
-                <label htmlFor="cardnumber"><span>Card Number</span>
+                <label className={style.label} htmlFor="cardnumber"><span className={style.titleInput}>Card Number</span>
                     <input 
                     type="number" 
                     name="cardnumber"
@@ -85,7 +93,7 @@ function Checkout() {
                     required/>
                 </label>
                 
-                <label htmlFor="CVV"><span>CVV</span>
+                <label className={style.label} htmlFor="CVV"><span className={style.titleInput}>CVV</span>
                     <input 
                     type="text" 
                     name="CVV"
@@ -94,7 +102,7 @@ function Checkout() {
                     required/>
                 </label>
 
-                <label htmlFor="expdate"><span>Expiration Date</span>
+                <label className={style.label} htmlFor="expdate"><span className={style.titleInput}>Expiration Date</span>
                     <div className={style.monthYearWrapper}>
                         <input 
                         type="number" 
@@ -111,6 +119,7 @@ function Checkout() {
                 
 
             </form>
+
             {/* purchase button */}
         </div>
     )

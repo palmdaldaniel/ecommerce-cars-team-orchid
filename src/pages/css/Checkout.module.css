@@ -18,25 +18,23 @@
     flex-direction: column;
     margin: 0 auto;
     width: 80%;
+
 }
 
-h2 {
-    font-size: 1.8rem;
+.formTitle {
+    font-size: 1.6rem;
     text-transform: uppercase;
 }
 
-label {
+.titleInput {
     color: #000000;
     font-size: 1.3rem;
-    margin-top: 1.6rem;
-}
-
-input {
-    color: black;
-    border: 1px solid black;
     
 }
 
+.label {
+    margin-top: 1.4rem;
+}
 
 .monthYearWrapper{
     display: flex;
