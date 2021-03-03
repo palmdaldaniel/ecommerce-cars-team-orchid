@@ -34,10 +34,11 @@ function Navbar () {
 				<span>$$ car price</span>
 				</div>
 
-				<div class={styles.goToCheckout}>
-				{/* Will be replaced by component later */}
-				<p>$$ 12345</p>
-				<button>Proceed</button>
+				<div className={styles.goToCheckout}>
+					{/* Will be replaced by component later */}
+					<p>$$ 12345</p>
+				
+					<button className={styles.proceedButton}>Proceed</button>
 				</div>
 
 			</ul>

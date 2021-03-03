@@ -35,11 +35,33 @@
     display: flex;
 }
 
+/*-----Styles for purchase button-----*/
 
+.purchaseBtn {
+    background: #EFEFEF;
+    border: 2px solid #FF9300;
+    border-radius: 5px;
+    box-shadow: 1px 1px 12px 1px #ccc;
+    margin: 2rem auto;
+    padding: 5px 20px;
+    transition: 0.1s;
+    width: 50%;
+}
+
+.purchaseBtn:hover {
+    background:#FF9300;
+    color: white;
+    cursor: pointer;
+    transition: 0.1s;
+}
 
 @media only screen and (min-width: 529px) {
     .contactForm {
         width: 60%;
+    }
+
+    .purchaseBtn {
+        width: 15%;
     }
 }
 

@@ -54,4 +54,23 @@ grid-template-columns: 1fr 1fr;
 	padding-right: 25px;
 }
 
+.proceedButton {
+	background: white;
+	padding: 5px 20px;
+	border: 2px solid #FF9300;
+	border-radius: 5px;
+	transition: 0.1s;
+	box-shadow: 0px 2px 5px rgb(39, 39, 39);
+}
 
+.proceedButton:hover  {
+	background:#fca730;
+	color: white;
+	cursor: pointer;
+	transition: 0.1s;
+}
+
+.proceedButton:focus {
+	background: #ffffff;
+	color: rgb(7, 7, 7);
+} 
