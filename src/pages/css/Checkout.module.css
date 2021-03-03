@@ -1,15 +1,10 @@
 .checkoutContainer {
+    background-color: #EFEFEF;
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: #EFEFEF;
 }
 
-
-.checkoutTitle {
-    font-size: 2rem;
-    text-transform: uppercase;
-}
 
 /*----- styles for input form -----*/
 

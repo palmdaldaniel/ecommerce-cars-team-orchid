@@ -3,7 +3,7 @@ import style from './css/Checkout.module.css'
 function Checkout() {
     return(
         <div className={style.checkoutContainer}>
-            <h1 className={style.checkoutTitle}>Checkout</h1>
+            
             {/* Shopping cart list component */}
 
 
