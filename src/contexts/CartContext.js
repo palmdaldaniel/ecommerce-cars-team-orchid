@@ -6,7 +6,19 @@ function CartContextProvider(props) {
 	const [cart, setCart] = useState([
 	]);
 
-	const values = { cart };
+	function addToCart(product) {
+		try {
+			if (typeof product !== "object")
+				throw new Error("Warning: 'product' was not an object. Cannot add to cart");
+		}
+		catch {
+			return;
+		}
+
+		setCart([...cart, product]);
+	}
+
+	const values = { cart, addToCart };
 
 	return (
 		<CartContext.Provider value={values}>
