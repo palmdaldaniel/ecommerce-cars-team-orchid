@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    padding-left:2rem;
+}
+
+p {
+    font-size: medium;
+    align-content: center;
+    padding: 2rem;
+}
+
+ .flexBox {
+    display: flex;
+    flex-wrap: wrap;
+} 
+.flexBoxn {
+    display: flex;
+    flex-wrap: wrap-reverse;
+} 
+
+
+
+@media only screen and (min-width: 500px) {
+    
+    .content {
+        align-self: center;
+        flex-basis: 50%;
+        max-width: 50vw;
+       
+    }
+    
+    .flexBox {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 40px;
+    }
+    .flexBoxn {
+        display: flex;
+        justify-content: space-around;
+        margin-top:40px;
+    }
+}

@@ -1,0 +1,79 @@
+.navbarWrapper {
+	background-color: #ff9500;
+	display: block;
+	height: 60%;
+	font-size: 20px;
+}
+
+.navbar {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	align-items: center;
+	text-align: right;
+	padding: 0px 10px;
+}
+
+.navUL, .cartContent {
+	padding-bottom: 18px;
+}
+
+/* centering logo */
+.centerLogo {
+	display: flex;
+	justify-content: center;
+}
+
+.navLogo {
+	height: 50px;
+	width: 50px;
+}
+
+/* padding between cart icon and number */
+.cartNumber {
+	padding-left: 5px;
+}
+
+.cartContent {
+	padding-left: 15px;
+	font-size: 15px;
+}
+
+.cartContent p {
+	padding: 0;
+	margin: 0;
+	text-transform: uppercase;
+} 
+
+.carItem {
+display: grid;
+grid-template-columns: 1fr 1fr;
+}
+
+.goToCheckout {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	padding-right: 25px;
+}
+
+.proceedButton {
+	width: 100px;
+	background: white;
+	padding: 5px 20px;
+	border: 2px solid #FF9300;
+	border-radius: 5px;
+	transition: 0.1s;
+	box-shadow: 0px 2px 5px rgb(39, 39, 39);
+}
+
+.proceedButton:hover  {
+	background:#fca730;
+	color: white;
+	cursor: pointer;
+	transition: 0.1s;
+}
+
+.proceedButton:focus {
+	background: #ffffff;
+	color: rgb(7, 7, 7);
+} 
