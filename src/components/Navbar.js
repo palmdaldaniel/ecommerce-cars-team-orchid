@@ -14,7 +14,7 @@ function Navbar () {
 		dropdownMenuNav = 
 			<ul>
 			<NavLink to="/">Home</NavLink>
-			<NavLink to="/">About us</NavLink>
+			<NavLink to="/about">About us</NavLink>
 			</ul>
 	}
 
