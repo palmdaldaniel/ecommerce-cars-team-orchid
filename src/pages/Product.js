@@ -73,7 +73,7 @@ function Product() {
 					<p className={`${styles.productPrice} right-align`}>{price}</p>
 			
 					<div className={`right ${styles.buttonStyle}`}>
-						<AddToCartButton />
+						<AddToCartButton product={product}/>
 					</div>
 				</div>
 			</div>
