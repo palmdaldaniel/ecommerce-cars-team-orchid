@@ -11,20 +11,37 @@ h1 {
 p {
     font-size: medium;
     align-content: center;
-  
     padding: 2rem;
 }
 
-.about {
+ .flexBox {
     display: flex;
-    flex-direction: column;
-}
+    flex-wrap: wrap;
+} 
+.flexBoxn {
+    display: flex;
+    flex-wrap: wrap-reverse;
+} 
 
-.imgContainer {
-    max-width: 400px;
-}
 
-.contentContainer {
-    justify-content: center;
-    max-width: 400px;
+
+@media only screen and (min-width: 500px) {
+    
+    .content {
+        align-self: center;
+        flex-basis: 50%;
+        max-width: 50vw;
+       
+    }
+    
+    .flexBox {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 40px;
+    }
+    .flexBoxn {
+        display: flex;
+        justify-content: space-around;
+        margin-top:40px;
+    }
 }

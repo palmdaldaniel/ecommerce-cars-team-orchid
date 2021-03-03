@@ -1,9 +1,78 @@
 .checkoutContainer {
+    background-color: #EFEFEF;
     display: flex;
-    text-transform: uppercase;
-    justify-content: center;
+    flex-direction: column;
+    text-align: center;
 }
 
-h1 {
-    font-size: 2rem;
+
+/*----- styles for input form -----*/
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+
+}
+
+.formTitle {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+.titleInput {
+    color: #000000;
+    font-size: 1.3rem;
+    
+}
+
+.label {
+    margin-top: 1.4rem;
+}
+
+.monthYearWrapper{
+    display: flex;
+}
+
+/*-----Styles for purchase button-----*/
+
+.purchaseBtn {
+    background: #EFEFEF;
+    border: 2px solid #FF9300;
+    border-radius: 5px;
+    box-shadow: 1px 1px 12px 1px #ccc;
+    margin: 2rem auto;
+    padding: 5px 20px;
+    transition: 0.1s;
+    width: 50%;
+}
+
+.purchaseBtn:hover {
+    background:#FF9300;
+    color: white;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+@media only screen and (min-width: 529px) {
+    .contactForm {
+        width: 60%;
+    }
+
+    .purchaseBtn {
+        width: 15%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .contactForm {
+        width: 40%;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .contactForm {
+        width: 35%;
+    }
 }
