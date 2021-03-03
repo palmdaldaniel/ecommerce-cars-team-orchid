@@ -1,6 +1,7 @@
 import { BrowserRouter, Route } from "react-router-dom";
 
 import Home from './pages/Home.js'
+import Navbar from './components/Navbar.js'
 import Confirmed from './pages/ConfirmationPage'
 import Checkout from './pages/Checkout.js'
 import Product from './pages/Product.js'
@@ -15,6 +16,7 @@ function App() {
       <ProductsContextProvider>
         <CartContextProvider>
           <BrowserRouter>
+            <Navbar/>
             <Route exact path="/">
               <Home />
             </Route>
