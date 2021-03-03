@@ -1,20 +1,22 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { ProductsContext } from "../contexts/ProductsContext";
 
 import styles from "./css/Product.module.css";
 
 function Product() {
 
 	const { id } = useParams();
+	const { products } = useContext(ProductsContext);
 
-	const [products, setProducts] = useState(null);
+	// const [products, setProducts] = useState(null);
 	const [product, setProduct] = useState(null);
-	const [imgSrc, setImgSrc] = useState(null);
+	// const [imgSrc, setImgSrc] = useState(null);
 	const [price, setPrice] = useState(null);
 
 	useEffect(() => {
 		// TODO: Replace this with data from context, when it exists
-		setProducts(require("../json/cars.json"));
+		// setProducts(require("../json/cars.json"));
 	}, []);
 
 	useEffect(() => {
@@ -26,7 +28,7 @@ function Product() {
 
 	useEffect(() => {
 		if (product) {
-			setImgSrc(`/assets/car-pictures/${product.make}-${product.model}-${product.year}.jpg`);
+			// setImgSrc(`/assets/car-pictures/${product.make}-${product.model}-${product.year}.jpg`);
 			setPrice((product.price).toLocaleString(navigator.language, {style: 'currency',currency: 'EUR'}));
 		}
 	}, [product]);
@@ -37,7 +39,7 @@ function Product() {
 		<div className="container">
 			<div className="row">
 				<div className="col s12 m12 l8">
-					<img className={styles.productImg} src={imgSrc} />
+					<img className={styles.productImg} src={"/"+product.image} />
 				</div>
 
 				<div className="col s12 m12 l4">
