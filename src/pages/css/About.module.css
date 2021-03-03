@@ -4,8 +4,10 @@
     box-sizing: border-box;
 } 
 
-.hOne {
+.h {
+    font-weight: bold;
     padding-left:2rem;
+    font-size: x-large;
 }
 
 .p {

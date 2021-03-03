@@ -10,7 +10,7 @@ const About = () => {
         />
 
         <div className={styles.content}>
-          <h1 className={styles.hOne}>About us</h1>
+          <p className={styles.h}>About us</p>
           <p className={styles.p}>
             This medium needs to be more dynamic. Five-year strategic plan do i
             have consent to record this meeting, we need to build it so that it
