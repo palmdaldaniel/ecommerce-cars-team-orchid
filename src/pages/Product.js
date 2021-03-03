@@ -79,7 +79,7 @@ function Product() {
           </table>
 
           <p className={`${styles.productPrice} right-align`}>{price}</p>
-          <div className={`right`}>
+          <div className={`right ${styles.buttonStyle}`}>
             <AddToCartButton />
           </div>
         </div>
