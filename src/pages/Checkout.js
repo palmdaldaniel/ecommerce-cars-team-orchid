@@ -42,9 +42,12 @@ function Checkout() {
                 {cart.length > 0 && (
                     <div>
                         {cart.map((product, i) => (
-                            <div>
+                            <div className={style.productRow}>
                                 <CartItem key={i} product={product} />
-                                <hr/>
+                                <div class="valign-wrapper">
+                                    <button className={style.deleteBtn}>
+                                    </button>
+                                </div>
                             </div>
                         ))}
                         <p className={`${style.totalCost} right-align`}>{valueStr}</p>
