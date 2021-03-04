@@ -34,7 +34,7 @@ function CartContextProvider(props) {
 		setCart([])
 	}
 
-	const values = { cart, addToCart, purchased, cartValue, handlePurchase };
+	const values = { cart, addToCart, purchased, cartValue, purchasedValue, handlePurchase };
 
 	return (
 		<CartContext.Provider value={values}>
