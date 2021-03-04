@@ -1,0 +1,37 @@
+.cartContainer h1 {
+	font-size: 30px;
+}
+
+.itemContainer {
+	box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+	padding: 6px 0px;
+	margin-bottom: 40px;
+	margin-top: 40px;
+}
+
+.itemContainer h1 {
+	font-size: 25px;
+	padding-left: 0px !important; /* denna för att det ligger en global style någonstans och bråkar */
+}
+
+.itemContainer h2 {
+	font-size: 22px;
+	margin-bottom: 0;
+	margin-top: 25px;
+}
+
+.itemContainer p {
+	padding: 10px;
+	margin-bottom: 0;
+}
+
+.carImg {
+	height: 200px; 
+	width: 300px;
+	border-radius: 5px;
+}
+
+.price {
+	text-align: right;
+}
+
