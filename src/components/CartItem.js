@@ -1,20 +1,19 @@
-import { useContext, useState } from "react";
-import { CartContext } from "../contexts/CartContext";
-
 import styles from './css/CartItem.module.css'
 
-const CartItem = () => {
-	const { cart } = useContext(CartContext);
-
+const CartItem = (props) => {
 
 	return (
-		<div className={styles.itemContainer}>
+		<div className={styles.cartContainer}>
 			<h1>Your car(t)</h1>
-			<p>{cart.make}</p>
-			<img className={styles.carImg} src={cart.img}></img>
-			<p>{cart.make}</p>
-			<p>{cart.model}</p>
-			<p>{cart.price}</p>
+			
+			<div className={styles.itemContainer}>
+				<h2>{props.product.make}</h2>
+				<p>{props.product.year}</p>
+				<img className={styles.carImg} src={props.product.image}></img>
+				<p>Model: {props.product.model}</p>
+				<p>City: {props.product.city}</p>
+				<p className={styles.price}>{props.product.price}</p>
+			</div>
 		</div>
 	);
 }

@@ -4,7 +4,6 @@ export const CartContext = createContext();
 
 function CartContextProvider(props) {
 	const [cart, setCart] = useState([
-		
 	]);
 
 	//triggers when user clicks on purchase button on checkout page
