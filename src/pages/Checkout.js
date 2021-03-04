@@ -5,7 +5,7 @@ import style from './css/Checkout.module.css'
 
 function Checkout() {
 
-    const { cart, handlePurchase } = useContext(CartContext);
+    const { cart, cartValue, handlePurchase } = useContext(CartContext);
     const history = useHistory();
 
 
@@ -21,7 +21,7 @@ function Checkout() {
         <div className={style.checkoutContainer}>
             
             {/* Shopping cart list component */}
-
+            <p>{cartValue}</p>
 
             <form className={style.contactForm}>
                 <h2 className={style.formTitle}>Personal info</h2>

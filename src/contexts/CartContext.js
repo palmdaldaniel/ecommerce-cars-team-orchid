@@ -34,36 +34,41 @@ function CartContextProvider(props) {
 			city: "Dili",
 			descShort: "purus sit amet nulla quisque arcu libero rutrum ac lobortis",
 			descLong: "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
-			price: 486455,
+			price: 4865455,
 			miles: 15226
 		  },
+		  
+		  
 	]);
-
-	const [isCartChanged, setIsCartChanged] = useState(false);
-	const [cartValue, setCartValue] = useState(0)
-
-	useEffect(() => {
-		console.log("changed")
-		setCartValue(
-			cart.reduce((prev, cur) => prev + cur.price, 0)
-		)
-		console.log(cartValue)
-		setIsCartChanged(false)
-	}, [isCartChanged])
 
 	//array for purchased cars to be rendered on confirmation page
 	const [ purchased, setPurchased] = useState([
 	]);
 
+
+	//total value of cart
+	const [cartValue, setCartValue] = useState(0);
+
+	//calculates cartValue everytime cart updates
+	useEffect(() => {
+		setCartValue(
+			cart.reduce((prev, cur) => prev + cur.price, 0)
+		)
+		console.log(cartValue)
+		console.log("cart" + cart)
+		
+	}, [cart])
+
+
 	//triggers when user clicks on purchase button on checkout page
 	const handlePurchase = () => {
 		
-	//copies cart to purchased array and sets cart to an empty array 
-	setPurchased([...cart])
-	setCart([])
+		//copies cart to purchased array and sets cart to an empty array 
+		setPurchased([...cart])
+		setCart([])
 	}
 
-	const values = { cart, purchased, handlePurchase };
+	const values = { cart, purchased, cartValue, handlePurchase };
 
 	return (
 		<CartContext.Provider value={values}>
