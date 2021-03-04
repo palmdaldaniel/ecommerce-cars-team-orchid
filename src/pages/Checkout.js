@@ -9,7 +9,7 @@ function Checkout() {
     const history = useHistory();
 
     const onPurchase = () => {
-        console.log(cart)
+        
         handlePurchase();
         
         history.push("/confirmed")
