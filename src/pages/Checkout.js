@@ -6,20 +6,13 @@ import ProductItem from '../components/ProductItem';
 
 function Checkout() {
 
-    // const { cart, handlePurchase } = useContext(CartContext);
-    const { handlePurchase } = useContext(CartContext);
+    const { cart, cartValue, handlePurchase } = useContext(CartContext);
     const history = useHistory();
-
-    // Test variables
-    const [cart] = useState([{}, {}]);
-    const [totalCost] = useState(199000);
-
-    const [priceString, setPriceString] = useState("");
+    const [valueStr, setPriceString] = useState("");
 
     useEffect(() => {
-        setPriceString((totalCost).toLocaleString(navigator.language, {style: 'currency',currency: 'SEK'}));
-	}, [totalCost]);
-
+        setPriceString((cartValue).toLocaleString(navigator.language, {style: 'currency', currency: 'SEK'}));
+	}, [cartValue]);
 
     //handles onClick on button
     const onPurchase = () => {
@@ -52,7 +45,7 @@ function Checkout() {
                                 <hr/>
                             </div>
                         ))}
-                        <p className={`${style.totalCost} right-align`}>{priceString}</p>
+                        <p className={`${style.totalCost} right-align`}>{valueStr}</p>
                     </div>
                 )}
             </div>
