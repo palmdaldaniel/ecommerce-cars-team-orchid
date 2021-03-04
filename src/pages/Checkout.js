@@ -3,6 +3,8 @@ import { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../contexts/CartContext';
 import CartItem from "../components/CartItem.js"
 import style from './css/Checkout.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
 function Checkout() {
 
@@ -74,6 +76,7 @@ function Checkout() {
                                 <CartItem key={i} product={product} />
                                 <div class="valign-wrapper">
                                     <button className={style.deleteBtn}>
+                                        <FontAwesomeIcon icon={faTrashAlt} />
                                     </button>
                                 </div>
                             </div>
