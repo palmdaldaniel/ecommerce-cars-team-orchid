@@ -1,14 +1,20 @@
 import { useHistory } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../contexts/CartContext';
 import CartItem from "../components/CartItem.js"
 import style from './css/Checkout.module.css'
 
 function Checkout() {
 
-    const { cart, handlePurchase } = useContext(CartContext);
+    const { cart, cartValue, handlePurchase } = useContext(CartContext);
     const history = useHistory();
+    const [valueStr, setPriceString] = useState("");
 
+    useEffect(() => {
+        if (typeof cartValue === "number") {
+            setPriceString((cartValue).toLocaleString(navigator.language, {style: 'currency', currency: 'SEK'}));
+        }
+	}, [cartValue]);
 
     //handles onClick on button
     const onPurchase = () => {
@@ -22,6 +28,29 @@ function Checkout() {
         <div className={style.checkoutContainer}>
             
             {/* Shopping cart list component */}
+            <div className="container">
+                <h1 className={style.pageTitle}>Shopping Cart</h1>
+                <hr/>
+
+                {!cart.length && (
+                    <div>
+                        <p>Your cart is empty</p>
+                        <hr/>
+                    </div>
+                )}
+
+                {cart.length > 0 && (
+                    <div>
+                        {cart.map((product, i) => (
+                            <div>
+                                <CartItem key={i} product={product} />
+                                <hr/>
+                            </div>
+                        ))}
+                        <p className={`${style.totalCost} right-align`}>{valueStr}</p>
+                    </div>
+                )}
+            </div>
 
             <form className={style.contactForm}>
                 <h2 className={style.formTitle}>Personal info</h2>

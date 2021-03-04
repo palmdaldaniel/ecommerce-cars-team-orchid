@@ -5,9 +5,19 @@
     text-align: center;
 }
 
+.pageTitle {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+/*----- styles for cart list -----*/
+.totalCost {
+	font-size: 2rem;
+	font-weight: 600;
+	padding: 10px 0;
+}
 
 /*----- styles for input form -----*/
-
 .contactForm {
     display: flex;
     flex-direction: column;
