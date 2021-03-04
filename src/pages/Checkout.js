@@ -21,7 +21,6 @@ function Checkout() {
         <div className={style.checkoutContainer}>
             
             {/* Shopping cart list component */}
-            <p>{cartValue}</p>
 
             <form className={style.contactForm}>
                 <h2 className={style.formTitle}>Personal info</h2>
