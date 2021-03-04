@@ -18,6 +18,7 @@ function CartContextProvider(props) {
 
 	//total value of cart
 	const [cartValue, setCartValue] = useState(0);
+	const [purchasedValue, setPurchasedValue] = useState(0);
 
 	//calculates cartValue everytime cart updates
 	useEffect(() => {
