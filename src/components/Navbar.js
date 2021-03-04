@@ -38,7 +38,7 @@ function Navbar () {
 					{/* Will be replaced by component later */}
 					<p>$$ 12345</p>
 				
-					<button className={styles.proceedButton}>Proceed</button>
+					<button className={styles.proceedButton} onClick={() => history.push('/checkout')} >Proceed</button>
 				</div>
 
 			</ul>
