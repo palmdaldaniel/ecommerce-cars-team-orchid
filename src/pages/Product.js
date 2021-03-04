@@ -34,7 +34,7 @@ function Product() {
 	if (!product) return null;
 
 	return (
-		<div className="container">
+		<div className={`container ${styles.container}`}>
 			<div className="row">
 				<div className="col s12 m12 l8">
 					<img className={styles.productImg} src={product.image} />
@@ -73,7 +73,7 @@ function Product() {
 					<p className={`${styles.productPrice} right-align`}>{price}</p>
 			
 					<div className={`right ${styles.buttonStyle}`}>
-						<AddToCartButton />
+						<AddToCartButton product={product}/>
 					</div>
 				</div>
 			</div>
