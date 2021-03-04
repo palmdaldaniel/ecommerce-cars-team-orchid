@@ -10,7 +10,7 @@ import AddToCartButton from "../components/AddToCartButton.js";
 const ProductItem = (props) => {
   return (
     <div className={container}>
-      <img src={props.data.image} alt="" />
+      <img src={props.data.image} alt={props.data.make} />
       <div className={productInfo}>
         <div className={firstInfo}>
           <h1>{props.data.make}</h1>
