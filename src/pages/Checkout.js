@@ -1,6 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import { useContext } from 'react';
 import { CartContext } from '../contexts/CartContext';
+import CartItem from "../components/CartItem.js"
 import style from './css/Checkout.module.css'
 
 function Checkout() {
