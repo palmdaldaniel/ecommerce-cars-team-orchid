@@ -4,14 +4,15 @@
     box-sizing: border-box;
 }
 
-h1 {
+.h1 {
     padding-left:2rem;
 }
 
-p {
+.p {
     font-size: medium;
     align-content: center;
     padding: 2rem;
+    text-align: justify;
 }
 
  .flexBox {
