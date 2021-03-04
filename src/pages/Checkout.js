@@ -8,6 +8,8 @@ function Checkout() {
     const { cart, handlePurchase } = useContext(CartContext);
     const history = useHistory();
 
+
+    //handles onClick on button
     const onPurchase = () => {
         
         handlePurchase();
