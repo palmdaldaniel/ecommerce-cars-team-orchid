@@ -1,7 +1,7 @@
-* {
-    margin: 0;
-    padding: 0;
+.pageContainer {
     box-sizing: border-box;
+    margin-bottom: 3rem;
+    overflow: hidden;
 }
 
 .h1 {
@@ -15,15 +15,15 @@
     text-align: justify;
 }
 
- .flexBox {
+.flexBox {
     display: flex;
     flex-wrap: wrap;
 } 
+
 .flexBoxn {
     display: flex;
     flex-wrap: wrap-reverse;
 } 
-
 
 
 @media only screen and (min-width: 500px) {
@@ -31,8 +31,7 @@
     .content {
         align-self: center;
         flex-basis: 50%;
-        max-width: 50vw;
-       
+        max-width: 50vw;   
     }
     
     .flexBox {
@@ -40,6 +39,7 @@
         justify-content: space-around;
         margin-top: 40px;
     }
+
     .flexBoxn {
         display: flex;
         justify-content: space-around;

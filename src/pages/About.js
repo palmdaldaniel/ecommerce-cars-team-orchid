@@ -2,7 +2,7 @@ import styles from "./css/About.module.css";
 
 const About = () => {
   return (
-    <div className="about">
+    <div className={styles.pageContainer}>
       <div className={styles.flexBox}>
         <img
           src="https://images.pexels.com/photos/3876399/pexels-photo-3876399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=400"
