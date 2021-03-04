@@ -5,9 +5,36 @@
     text-align: center;
 }
 
+.pageTitle {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+/*----- styles for cart list -----*/
+.productRow {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+}
+
+.deleteBtn {
+    font-size: 4rem;
+    padding: 1rem;
+    border: none;
+    background: none;
+}
+.deleteBtn:hover {
+    color: #FF9300;
+    background: none;
+}
+
+.totalCost {
+	font-size: 2rem;
+	font-weight: 600;
+	padding: 10px 0;
+}
 
 /*----- styles for input form -----*/
-
 .contactForm {
     display: flex;
     flex-direction: column;
