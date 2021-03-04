@@ -29,7 +29,7 @@
   padding-left: 1rem;
 }
 
-.price {
+.priceContainer {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
