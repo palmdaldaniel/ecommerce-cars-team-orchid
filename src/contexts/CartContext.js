@@ -4,7 +4,18 @@ export const CartContext = createContext();
 
 function CartContextProvider(props) {
 	const [cart, setCart] = useState([
+		
 	]);
+
+	const [cart, setCart] = useState([]);
+
+	function addToCart(product) {
+		if (typeof product !== "object") {
+			console.error("Error adding to cart. 'product' was not an object");
+			return;
+		}
+		setCart([...cart, product]);
+	}
 
 	//array for purchased cars to be rendered on confirmation page
 	const [ purchased, setPurchased] = useState([
@@ -18,7 +29,7 @@ function CartContextProvider(props) {
 	setCart([])
 	}
 
-	const values = { cart, purchased, handlePurchase };
+	const values = { cart, addToCart, handlePurchase };
 
 	return (
 		<CartContext.Provider value={values}>
