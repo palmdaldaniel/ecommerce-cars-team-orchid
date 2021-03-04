@@ -18,9 +18,9 @@ function CartContextProvider(props) {
 	const handlePurchase = () => {
 		console.log("a purchase has been made")
 		
-		//empties the cart. will be changed once more logic is added
-		setCart(cart.length = 0)
-		console.log(cart)
+	//empties the cart. will be changed once more logic is added
+	setCart(cart.length = 0)
+	console.log(cart)
 	}
 
 	const values = { cart, addToCart, handlePurchase };
