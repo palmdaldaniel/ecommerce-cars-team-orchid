@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const CartContext = createContext();
 
@@ -33,7 +33,7 @@ function CartContextProvider(props) {
 		setCart([])
 	}
 
-	const values = { cart, addToCart, purchased, handlePurchase };
+	const values = { cart, addToCart, purchased, cartValue, handlePurchase };
 
 	return (
 		<CartContext.Provider value={values}>
