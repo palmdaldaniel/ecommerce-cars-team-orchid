@@ -12,7 +12,9 @@ function Checkout() {
     const [valueStr, setPriceString] = useState("");
 
     useEffect(() => {
-        setPriceString((cartValue).toLocaleString(navigator.language, {style: 'currency', currency: 'SEK'}));
+        if (typeof cartValue === "number") {
+            setPriceString((cartValue).toLocaleString(navigator.language, {style: 'currency', currency: 'SEK'}));
+        }
 	}, [cartValue]);
 
     //handles onClick on button
