@@ -42,7 +42,7 @@ function Checkout() {
                 )}
 
                 {cart.length > 0 && (
-                    <div>
+                    <div className={style.cartList}>
                         {cart.map((product, i) => (
                             <div className={style.productRow}>
                                 <CartItem key={i} product={product} />
