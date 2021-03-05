@@ -33,7 +33,7 @@ const ProductItem = (props) => {
         <p className={description}>{props.data.descShort}</p>
         <div className={priceContainer}>
           <span>Price: {price}</span>
-          <AddToCartButton />
+          <AddToCartButton product={props.data}/>
         </div>
       </div>
     </div>
