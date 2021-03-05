@@ -12,15 +12,19 @@
 }
 
 /*----- styles for cart list -----*/
+.cartList {
+    display: grid;
+    gap: 10px;
+}
+
 .productRow {
     display: grid;
     grid-template-columns: 1fr auto;
-    gap: 1rem;
+    gap: 10px;
 }
 
 .deleteBtn {
-    font-size: 4rem;
-    padding: 1rem;
+    font-size: 2rem;
     border: none;
     background: none;
 }
