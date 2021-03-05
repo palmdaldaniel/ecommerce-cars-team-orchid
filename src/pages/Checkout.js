@@ -117,13 +117,13 @@ function Checkout() {
                <h2 className={style.formTitle}>Delivery options</h2>
                <p>
                 <label>
-                    <input name="group1" type="radio" checked />
+                    <input name="group1" type="radio" defaultChecked/>
                     <span>Pick up at store</span>
                 </label>
                 </p>
                 <p>
                 <label>
-                    <input name="group1" type="radio" />
+                    <input name="group1" type="radio" defaultChecked/>
                     <span>Get car delivered to home</span>
                 </label>
                 </p>
