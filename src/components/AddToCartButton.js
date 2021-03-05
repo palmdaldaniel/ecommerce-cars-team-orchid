@@ -8,7 +8,7 @@ const AddToCartButton = (props) => {
 
   return (
     <div className="AddToCartButton" onClick={() => addToCart(product)}>
-      <button className={style}>Add To Cart</button>
+      <button className={style.addButton}>Add To Cart</button>
     </div>
   );
 };
