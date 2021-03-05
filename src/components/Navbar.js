@@ -11,6 +11,9 @@ function Navbar () {
 	const [displayCart, setDisplayCart] = useState(false)
 	const history = useHistory();
 
+
+	//om etarget är en navlink elr en knapp, set menues till false?
+
 	let dropdownMenuNav
 	if (displayNavMenu) {
 		dropdownMenuNav = 
@@ -18,7 +21,7 @@ function Navbar () {
 			<NavLink to="/">Home</NavLink>
 			<NavLink to="/about">About us</NavLink>
 			</ul>
-	}
+	} 
 
 	let dropdownMenuCart 
 	if (displayCart) {
@@ -38,7 +41,9 @@ function Navbar () {
 					{/* Will be replaced by component later */}
 					<p>$$ 12345</p>
 				
-					<button className={styles.proceedButton} onClick={() => history.push('/checkout')} >Proceed</button>
+					<button className={styles.proceedButton} 
+					onClick={() => history.push('/checkout')}>
+					Proceed</button>
 				</div>
 
 			</ul>
@@ -50,14 +55,24 @@ function Navbar () {
 			<div className={styles.navbar}>
 				<FontAwesomeIcon 
 					icon={faBars}
-					onClick={() => setDisplayNavMenu(!displayNavMenu)}
+					onClick={(e) => {
+						console.log(e.target)
+						setDisplayNavMenu(!displayNavMenu)
+						setDisplayCart(false)
+					}
+				}
 				/>
 
 				<div className={styles.centerLogo}>
 					<img className={styles.navLogo}src="https://play-lh.googleusercontent.com/vVBVzNF6g2ri-I0t8YSAdSkQY8_Vjra3HFBkkWkhgVo8IjmxOOeLgRAZWn8_7PrnYcs" onClick={() => history.push('/')}></img>
 				</div>
 				
-				<div className="cart" onClick={() => setDisplayCart(!displayCart)}>
+				<div className="cart" onClick={(e) => {
+							console.log(e.target)
+							setDisplayCart(!displayCart)
+							setDisplayNavMenu(false)
+						}
+					}>
 					<FontAwesomeIcon 
 						icon={faShoppingCart}
 					/>
