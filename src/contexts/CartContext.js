@@ -15,6 +15,17 @@ function CartContextProvider(props) {
 			price: 413322,
 			miles: 14266
 		  },
+		  {
+			make: "Mercury",
+			model: "Mountaineer",
+			year: 2009,
+			vin: "3GTU2YEJ4CG418654",
+			city: "Dili",
+			descShort: "purus sit amet nulla quisque arcu libero rutrum ac lobortis",
+			descLong: "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+			price: 486455,
+			miles: 15226
+		  },
 	]);
 
 	//array for purchased cars to be rendered on confirmation page
@@ -28,30 +39,24 @@ function CartContextProvider(props) {
 		setCart([...cart, product]);
 	}
 
-	//total value of cart
+	//total value of cart & purchased
 	const [cartValue, setCartValue] = useState(0);
 	const [purchasedValue, setPurchasedValue] = useState(0);
 
-	//calculates cartValue everytime cart updates
+	//calculates cartValue & purchasedValue everytime cart or purchased updates
 	useEffect(() => {
 		setCartValue(
 			cart.reduce((prev, cur) => prev + cur.price, 0)
 		)
-	}, [cart])
-
-	useEffect(() => {
-		console.log(purchased)
-		console.log(purchasedValue)
-		setPurchasedValue(purchased.reduce((prev, cur) => prev + cur.price, 0))
-	}, [purchased])
+		setPurchasedValue(
+			purchased.reduce((prev, cur) => prev + cur.price, 0))
+	}, [cart, purchased])
 
 	//triggers when user clicks on purchase button on checkout page
 	const handlePurchase = () => {
 		//copies cart to purchased array and sets cart to an empty array 
 		setPurchased([...cart])
 		setCart([])
-		
-		
 	}
 
 	const values = { cart, addToCart, purchased, cartValue, purchasedValue, handlePurchase };
