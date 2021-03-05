@@ -1,15 +1,21 @@
-import { NavLink } from "react-router-dom";
-import React, { useState } from "react"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import React, { useContext, useState } from "react";
+import { CartContext } from '../contexts/CartContext';
 import { useHistory } from 'react-router-dom';
+
+import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+
+import CartItem from './CartItem.js';
 
 import styles from "./css/Navbar.module.css";
 
-function Navbar () {
+function Navbar (props) {
 	const [displayNavMenu, setDisplayNavMenu] = useState(false)
 	const [displayCart, setDisplayCart] = useState(false)
+	const { cart } = useContext(CartContext);
 	const history = useHistory();
+
 
 	let dropdownMenuNav
 	if (displayNavMenu) {
@@ -24,24 +30,16 @@ function Navbar () {
 	if (displayCart) {
 		dropdownMenuCart = 
 		<div className={styles.cartContent}>
-			<p>Your cart</p>
-			<ul>
+				<p>Your cart</p>
 
-				<div className={styles.carItem}>
-				{/* Will be replaced by component later */}
-				<span>A car img</span>
-				<span>A car title</span>
-				<span>$$ car price</span>
-				</div>
+				{cart.length > 0 && (
+				<div className="container">
+					{cart.map((product) => 
+						<CartItem product={product}/>
+					)}
+				</div>)}
 
-				<div className={styles.goToCheckout}>
-					{/* Will be replaced by component later */}
-					<p>$$ 12345</p>
-				
-					<button className={styles.proceedButton} onClick={() => history.push('/checkout')} >Proceed</button>
-				</div>
-
-			</ul>
+				<button className={styles.proceedButton} onClick={() => history.push('/checkout')} >Proceed</button>
 		</div>
 	}
 
