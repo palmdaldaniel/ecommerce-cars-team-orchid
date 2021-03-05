@@ -1,12 +1,23 @@
 import styles from "./css/Confirmed.module.css";
-import { React, useContext } from "react";
+import { React, useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { CartContext } from "../contexts/CartContext";
 import CartItem from "../components/CartItem";
 
 const ConfirmationPage = () => {
-  const { purchased } = useContext(CartContext);
+  const { purchased, purchasedValue } = useContext(CartContext);
   const history = useHistory();
+  const [formattedTotalValue, setFormattedTotalValue] = useState(null);
+
+  // format to local value and display on screen
+  useEffect(() => {
+    if(purchasedValue) {
+      setFormattedTotalValue(purchasedValue.toLocaleString(
+        navigator.language, {
+          style: 'currency',
+          currency: 'SEK'}))
+    }
+  }, [purchasedValue])
 
   return (
     <div className="center-align">
@@ -16,6 +27,11 @@ const ConfirmationPage = () => {
 
       <input type="checkbox" checked="checked" />
       <span>Purchase confirmed</span>
+
+      <h2>Total cost:</h2>
+      <h3>{formattedTotalValue}</h3>
+         
+
       <div className="container">
         {/* map here but wait for purshased data to load first */}
         {purchased &&
