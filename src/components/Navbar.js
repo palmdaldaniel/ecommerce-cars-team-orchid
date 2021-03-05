@@ -12,14 +12,39 @@ function Navbar () {
 	const history = useHistory();
 
 
-	//om etarget är en navlink elr en knapp, set menues till false?
+	//toggle hamburger menu, could be refactored into one single function with the other toggle function?
+	function toggleNavMenu() {
+		setDisplayNavMenu(!displayNavMenu)
+		setDisplayCart(false)
+	}
+
+	//toggle cart menu, could be refactored into one single function with the other toggle function?
+	function toggleCartMenu() {
+		setDisplayCart(!displayCart)
+		setDisplayNavMenu(false)
+	}
+
+	//closing the menu when user clicks on link in hamburger menu
+	function closeMenu(e) {
+		if (e.target.tagName === "A") {
+			setDisplayNavMenu(false)
+		}
+	}
+
+	//closing the menu when user clicks on proceedbutton and redirects to checkout
+	function proceedToCheckOut(e) {
+		if (e.target.tagName === "BUTTON") {
+			setDisplayCart(false)
+			history.push('/checkout')
+		}
+	}
 
 	let dropdownMenuNav
 	if (displayNavMenu) {
 		dropdownMenuNav = 
 			<ul className={styles.navUL}>
-			<NavLink to="/">Home</NavLink>
-			<NavLink to="/about">About us</NavLink>
+			<NavLink onClick={(e) => closeMenu(e)} to="/">Home</NavLink>
+			<NavLink onClick={(e) => closeMenu(e)} to="/about">About us</NavLink>
 			</ul>
 	} 
 
@@ -42,8 +67,9 @@ function Navbar () {
 					<p>$$ 12345</p>
 				
 					<button className={styles.proceedButton} 
-					onClick={() => history.push('/checkout')}>
-					Proceed</button>
+					onClick={(e) => proceedToCheckOut(e)}>
+					Proceed
+					</button>
 				</div>
 
 			</ul>
@@ -53,33 +79,18 @@ function Navbar () {
 	return (
 		<nav className={styles.navbarWrapper}>
 			<div className={styles.navbar}>
-				<FontAwesomeIcon 
-					icon={faBars}
-					onClick={(e) => {
-						console.log(e.target)
-						setDisplayNavMenu(!displayNavMenu)
-						setDisplayCart(false)
-					}
-				}
-				/>
+				<FontAwesomeIcon icon={faBars} onClick={toggleNavMenu}/>
 
 				<div className={styles.centerLogo}>
 					<img className={styles.navLogo}src="https://play-lh.googleusercontent.com/vVBVzNF6g2ri-I0t8YSAdSkQY8_Vjra3HFBkkWkhgVo8IjmxOOeLgRAZWn8_7PrnYcs" onClick={() => history.push('/')}></img>
 				</div>
 				
-				<div className="cart" onClick={(e) => {
-							console.log(e.target)
-							setDisplayCart(!displayCart)
-							setDisplayNavMenu(false)
-						}
-					}>
-					<FontAwesomeIcon 
-						icon={faShoppingCart}
-					/>
+				<div className="cart" onClick={toggleCartMenu}>
+					<FontAwesomeIcon icon={faShoppingCart}/>
 
 					{/* This will be a dynamic value once the methods are in place */}
 					<span className={styles.cartNumber}>(0)</span>
-				</div>	
+				</div>
 			</div>
 
 			{ dropdownMenuNav }
