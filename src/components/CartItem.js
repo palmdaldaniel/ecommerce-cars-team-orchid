@@ -1,7 +1,7 @@
 import styles from './css/CartItem.module.css'
 
 const CartItem = (props) => {
-
+console.log(props.product.make);
 	return (
 		<div className={styles.cartContainer}>
 			<h1>Your car(t)</h1>

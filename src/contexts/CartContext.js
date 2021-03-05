@@ -7,6 +7,7 @@ function CartContextProvider(props) {
 
 	//array for purchased cars to be rendered on confirmation page
 	const [purchased, setPurchased] = useState([]);
+	
 
 	function addToCart(product) {
 		if (typeof product !== "object") {
