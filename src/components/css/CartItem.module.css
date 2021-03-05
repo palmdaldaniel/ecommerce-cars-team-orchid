@@ -1,34 +1,28 @@
-.cartContainer h1 {
-	font-size: 30px;
-}
-
 .itemContainer {
-	box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
-	padding: 6px 0px;
-	margin-bottom: 40px;
-	margin-top: 40px;
-}
-
-.itemContainer h1 {
-	font-size: 25px;
-	padding-left: 0px !important; /* denna för att det ligger en global style någonstans och bråkar */
-}
-
-.itemContainer h2 {
-	font-size: 22px;
-	margin-bottom: 0;
-	margin-top: 25px;
-}
-
-.itemContainer p {
-	padding: 10px;
-	margin-bottom: 0;
+	display: flex;
+	flex-direction: row;
 }
 
 .carImg {
-	height: 200px; 
-	width: 300px;
-	border-radius: 5px;
+	width: 40%;
+	border-radius: 3px;
+	margin-right: 15px;
+}
+
+.itemContainer p {
+	margin: 0;
+}
+
+.itemContent {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex-grow: 1;
+}
+
+.title {
+	font-weight: bold;
+	text-align: left;
 }
 
 .price {
