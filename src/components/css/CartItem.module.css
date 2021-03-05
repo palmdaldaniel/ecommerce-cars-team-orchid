@@ -1,15 +1,6 @@
-
 .itemContainer {
-	box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 	display: flex;
 	flex-direction: row;
-	align-items: flex-start;
-}
-
-.itemContainer p {
-	font-size: larger;
-	padding: 5px;
-	margin: 0;
 }
 
 .carImg {
@@ -18,8 +9,23 @@
 	margin-right: 15px;
 }
 
+.itemContainer p {
+	margin: 0;
+}
+
+.itemContent {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex-grow: 1;
+}
+
+.title {
+	font-weight: bold;
+	text-align: left;
+}
+
 .price {
-	align-self: flex-end;
 	text-align: right;
 }
 
