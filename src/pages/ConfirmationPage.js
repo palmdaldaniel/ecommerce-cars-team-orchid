@@ -28,10 +28,11 @@ const ConfirmationPage = () => {
       <input type="checkbox" checked="checked" />
       <span>Purchase confirmed</span>
 
-      <h2>Total cost:</h2>
-      <h3>{formattedTotalValue}</h3>
+      <div className={styles.showTotalContainer}>
+        <h2 className={styles.totalcost}>Total cost:</h2>
+        <p className={styles.showcost}>{formattedTotalValue}</p>
+      </div>
          
-
       <div className="container">
         {/* map here but wait for purshased data to load first */}
         {purchased &&
