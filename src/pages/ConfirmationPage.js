@@ -1,21 +1,13 @@
-import styles from './css/Confirmed.module.css'
-import React from 'react';
-import { useHistory } from 'react-router-dom';
-import { useContext, useEffect, useState } from 'react'
-import { CartContext } from '../contexts/CartContext'
+import styles from "./css/Confirmed.module.css";
+import { React, useContext } from "react";
+import { useHistory } from "react-router-dom";
+import { CartContext } from "../contexts/CartContext";
+import CartItem from "../components/CartItem";
 
 const ConfirmationPage = () => {
+  const { purchased } = useContext(CartContext);
   const history = useHistory();
-  const { purchasedValue } = useContext(CartContext)
-  const [formattedTotalValue, setFormattedTotalValue] = useState(null)
 
-  // format to local value and display on screen
-  useEffect(() => {
-    if(purchasedValue) {
-      setFormattedTotalValue(purchasedValue.toLocaleString(navigator.language, {style: 'currency',currency: 'SEK'}))
-    }
-
-  }, [purchasedValue])
   return (
     <div className="center-align">
       <div className={styles.title}>
@@ -24,22 +16,19 @@ const ConfirmationPage = () => {
 
       <input type="checkbox" checked="checked" />
       <span>Purchase confirmed</span>
-      <div className='totalValue container'>
-        <div className='row'>
-          <div className='col s12'>
-        <h5> Total value </h5>
-        </div>
-        <div className='col s12'>
-        <h6>{formattedTotalValue}</h6>
-          </div>
-        </div>
+      <div className="container">
+        {/* map here but wait for purshased data to load first */}
+        {purchased &&
+          purchased.map((car, i) => <CartItem key={i} product={car} />)}
       </div>
 
       <div className={styles.buttonContainer}>
-        <button className={styles.button} onClick={() => history.push('/')}> Browse for more cars </button>
+        <button className={styles.button} onClick={() => history.push("/")}>
+          Browse for more cars
+        </button>
       </div>
     </div>
   );
-}
+};
 
-export default ConfirmationPage
+export default ConfirmationPage;
