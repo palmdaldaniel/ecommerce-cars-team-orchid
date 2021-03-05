@@ -1,28 +1,29 @@
-* {
-    margin: 0;
-    padding: 0;
+.pageContainer {
     box-sizing: border-box;
+    margin-bottom: 3rem;
+    overflow: hidden;
 }
 
-h1 {
+.h1 {
     padding-left:2rem;
 }
 
-p {
+.p {
     font-size: medium;
     align-content: center;
     padding: 2rem;
+    text-align: justify;
 }
 
- .flexBox {
+.flexBox {
     display: flex;
     flex-wrap: wrap;
 } 
+
 .flexBoxn {
     display: flex;
     flex-wrap: wrap-reverse;
 } 
-
 
 
 @media only screen and (min-width: 500px) {
@@ -30,8 +31,7 @@ p {
     .content {
         align-self: center;
         flex-basis: 50%;
-        max-width: 50vw;
-       
+        max-width: 50vw;   
     }
     
     .flexBox {
@@ -39,6 +39,7 @@ p {
         justify-content: space-around;
         margin-top: 40px;
     }
+
     .flexBoxn {
         display: flex;
         justify-content: space-around;
