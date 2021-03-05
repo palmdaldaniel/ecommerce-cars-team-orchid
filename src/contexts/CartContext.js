@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const CartContext = createContext();
 
@@ -16,6 +16,16 @@ function CartContextProvider(props) {
 		setCart([...cart, product]);
 	}
 
+	//total value of cart
+	const [cartValue, setCartValue] = useState(0);
+
+	//calculates cartValue everytime cart updates
+	useEffect(() => {
+		setCartValue(
+			cart.reduce((prev, cur) => prev + cur.price, 0)
+		)
+	}, [cart])
+
 	//triggers when user clicks on purchase button on checkout page
 	const handlePurchase = () => {
 		//copies cart to purchased array and sets cart to an empty array 
@@ -23,7 +33,7 @@ function CartContextProvider(props) {
 		setCart([])
 	}
 
-	const values = { cart, addToCart, purchased, handlePurchase };
+	const values = { cart, addToCart, purchased, cartValue, handlePurchase };
 
 	return (
 		<CartContext.Provider value={values}>
