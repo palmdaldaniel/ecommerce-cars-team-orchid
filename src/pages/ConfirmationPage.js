@@ -14,7 +14,7 @@ const ConfirmationPage = () => {
       <input type="checkbox" checked="checked" />
       <span>Purchase confirmed</span>
 
-      <div>
+      <div className={styles.buttonContainer}>
         <button className={styles.button} onClick={() => history.push('/')}> Browse for more cars </button>
       </div>
     </div>

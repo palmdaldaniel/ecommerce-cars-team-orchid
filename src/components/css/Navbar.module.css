@@ -1,8 +1,10 @@
 .navbarWrapper {
 	background-color: #ff9500;
-	display: block;
-	height: 60%;
 	font-size: 20px;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	z-index: 1;
 }
 
 .navbar {
@@ -15,6 +17,8 @@
 
 .navUL, .cartContent {
 	padding-bottom: 18px;
+	background-color: #ff9500;
+	box-shadow: 0px 2px 5px rgb(39, 39, 39);
 }
 
 /* centering logo */

@@ -1,7 +1,11 @@
 .title {
-  margin: 2rem;
-  padding: 2rem;
+  padding: 5rem;
   text-shadow: 0px 4px 5px #ccc;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
 }
 
 .button {
