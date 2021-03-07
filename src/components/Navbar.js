@@ -1,13 +1,11 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from '../contexts/CartContext';
 import { useHistory } from 'react-router-dom';
-
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 import CartItem from './CartItem.js';
-
 import styles from "./css/Navbar.module.css";
 
 function Navbar (props) {
@@ -15,7 +13,6 @@ function Navbar (props) {
 	const [displayCart, setDisplayCart] = useState(false)
 	const { cart } = useContext(CartContext);
 	const history = useHistory();
-
 
 	let dropdownMenuNav
 	if (displayNavMenu) {
@@ -33,13 +30,15 @@ function Navbar (props) {
 				<p>Your cart</p>
 
 				{cart.length > 0 && (
-				<div className="container">
+				<div className={styles.cartContainer}>
 					{cart.map((product) => 
 						<CartItem product={product}/>
 					)}
 				</div>)}
 
-				<button className={styles.proceedButton} onClick={() => history.push('/checkout')} >Proceed</button>
+				<div className={styles.goToCheckout}>
+					<button className={styles.proceedButton} onClick={() => history.push('/checkout')} >Proceed</button>
+				</div>
 		</div>
 	}
 
