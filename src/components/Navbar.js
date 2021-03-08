@@ -1,14 +1,17 @@
-import { NavLink } from "react-router-dom";
-import React, { useState } from "react"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import React, { useContext, useState } from "react";
+import { CartContext } from '../contexts/CartContext';
 import { useHistory } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
+import CartItem from './CartItem.js';
 import styles from "./css/Navbar.module.css";
 
-function Navbar () {
+function Navbar (props) {
 	const [displayNavMenu, setDisplayNavMenu] = useState(false)
 	const [displayCart, setDisplayCart] = useState(false)
+	const { cart } = useContext(CartContext);
 	const history = useHistory();
 
 

@@ -1,4 +1,4 @@
-* {
+.productList * {
   box-sizing: border-box;
   margin: 0;
 }
@@ -9,6 +9,7 @@
   grid-gap: 40px;
   justify-content: center;
   place-items: center;
+  margin-top: 5rem;
 }
 
 @media only screen and (min-width: 768px) {
