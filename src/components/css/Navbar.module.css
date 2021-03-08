@@ -87,37 +87,31 @@
   display: none;
 }
 
-@media only screen and (min-width: 768px) {
-}
 
 @media screen and (min-width: 1200px) {
-  .navLogo {
+  .navLogo, .cart:hover {
     cursor: pointer;
   }
 
-  .cartContainer {
-    margin-right: 30px;
-  }
-
-  .cart :hover {
-    cursor: pointer;
-    color: black;
+  .desktopLinks :hover {
+    color: gray;
   }
 
   .hamburgerMenu {
     display: none;
   }
 
+  .cartContainer {
+    margin-right: 0.2em;
+  }
+
   .desktopLinks {
     display: flex;
-    margin-left: 20px;
+    margin-left: 0.8em;
+    font-size: 0.9em;
   }
 
   .about {
     padding-left: 20px;
-  }
-
-  .desktopLinks :hover {
-    color: black;
   }
 }
