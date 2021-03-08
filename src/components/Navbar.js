@@ -14,59 +14,87 @@ function Navbar (props) {
 	const { cart } = useContext(CartContext);
 	const history = useHistory();
 
+
+	//toggle hamburger menu, could be refactored into one single function with the other toggle function?
+	function toggleNavMenu() {
+		setDisplayNavMenu(!displayNavMenu)
+		setDisplayCart(false)
+	}
+
+	//toggle cart menu, could be refactored into one single function with the other toggle function?
+	function toggleCartMenu() {
+		setDisplayCart(!displayCart)
+		setDisplayNavMenu(false)
+	}
+
+	//closing the menu when user clicks on link in hamburger menu
+	function closeMenu() {
+		setDisplayNavMenu(false)
+	}
+
+	//closing the menu when user clicks on proceedbutton and redirects to checkout
+	function proceedToCheckOut() {
+		setDisplayCart(false)
+		history.push('/checkout')
+	}
+
 	let dropdownMenuNav
 	if (displayNavMenu) {
-		dropdownMenuNav = 
+		dropdownMenuNav = (
 			<ul className={styles.navUL}>
-			<NavLink to="/">Home</NavLink>
-			<NavLink to="/about">About us</NavLink>
+				<NavLink onClick={() => closeMenu()} to="/">Home</NavLink>
+				<NavLink onClick={() => closeMenu()} to="/about">About us</NavLink>
 			</ul>
-	}
+		);
+	} 
 
 	let dropdownMenuCart 
 	if (displayCart) {
-		dropdownMenuCart = 
-		<div className={styles.cartContent}>
+		dropdownMenuCart = (
+			<div className={styles.cartContent}>
 				<p>Your cart</p>
+				<ul>
+					<div className={styles.carItem}>
+						{/* Will be replaced by component later */}
+						<span>A car img</span>
+						<span>A car title</span>
+						<span>$$ car price</span>
+					</div>
 
-				{cart.length > 0 && (
-				<div className={styles.cartContainer}>
-					{cart.map((product) => 
-						<CartItem product={product}/>
-					)}
-				</div>)}
+					<div className={styles.goToCheckout}>
+						{/* Will be replaced by component later */}
+						<p>$$ 12345</p>
+					
+						<button className={styles.proceedButton} 
+						onClick={() => proceedToCheckOut()}>
+							Proceed
+						</button>
+					</div>
 
-				<div className={styles.goToCheckout}>
-					<button className={styles.proceedButton} onClick={() => history.push('/checkout')} >Proceed</button>
-				</div>
-		</div>
+				</ul>
+			</div>
+		);
 	}
 
 	return (
 		<nav className={styles.navbarWrapper}>
 			<div className={styles.navbar}>
-				<FontAwesomeIcon 
-					icon={faBars}
-					onClick={() => setDisplayNavMenu(!displayNavMenu)}
-				/>
+				<FontAwesomeIcon icon={faBars} onClick={toggleNavMenu}/>
 
 				<div className={styles.centerLogo}>
 					<img className={styles.navLogo}src="https://play-lh.googleusercontent.com/vVBVzNF6g2ri-I0t8YSAdSkQY8_Vjra3HFBkkWkhgVo8IjmxOOeLgRAZWn8_7PrnYcs" onClick={() => history.push('/')}></img>
 				</div>
 				
-				<div className="cart" onClick={() => setDisplayCart(!displayCart)}>
-					<FontAwesomeIcon 
-						icon={faShoppingCart}
-					/>
+				<div className="cart" onClick={toggleCartMenu}>
+					<FontAwesomeIcon icon={faShoppingCart}/>
 
 					{/* This will be a dynamic value once the methods are in place */}
 					<span className={styles.cartNumber}>(0)</span>
-				</div>	
+				</div>
 			</div>
 
 			{ dropdownMenuNav }
 			{ dropdownMenuCart }
-
 		</nav>
 	)
 }
