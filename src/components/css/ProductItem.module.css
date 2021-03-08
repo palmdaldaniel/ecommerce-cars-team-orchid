@@ -63,6 +63,18 @@
     width: 100%;
     margin-bottom: 3rem;
     height: 100%;
+  }
+
+  .firstInfo,
+  .description {
+    cursor: pointer;
+  }
+
+  .productItemContainer img {
+    cursor: pointer;
+  }
+
+  .priceContainer span {
     cursor: pointer;
   }
 }

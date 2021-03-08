@@ -30,16 +30,18 @@ const ProductItem = (props) => {
   };
 
   return (
-    <div className={productItemContainer} onClick={handleClick}>
-      <img src={props.data.image} alt={props.data.make} />
+    <div className={productItemContainer}>
+      <img src={props.data.image} alt={props.data.make} onClick={handleClick} />
       <div className={productInfo}>
-        <div className={firstInfo}>
+        <div className={firstInfo} onClick={handleClick}>
           <h1>{props.data.make}</h1>
           <h5>{props.data.model}</h5>
         </div>
-        <p className={description}>{props.data.descShort}</p>
+        <p className={description} onClick={handleClick}>
+          {props.data.descShort}
+        </p>
         <div className={priceContainer}>
-          <span>Price: {price}</span>
+          <span onClick={handleClick}>Price: {price}</span>
           <AddToCartButton />
         </div>
       </div>
