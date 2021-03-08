@@ -54,12 +54,14 @@ function Navbar (props) {
 	if (displayCart) {
 		dropdownMenuCart = (
 			<div className={styles.cartContent}>
-				<p>Your cart</p>
+				<p className={styles.cartHeadline}>Your cart</p>
 
 				{cart.length > 0 && (
 					<div className={styles.cartContainer}>
 						{cart.map((product) => 
-							<CartItem product={product}/>
+							<div className={styles.cartItem}>
+								<CartItem product={product}/>
+							</div>
 						)}
 					</div>
 				)}
