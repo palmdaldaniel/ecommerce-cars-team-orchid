@@ -7,13 +7,15 @@ const ProductList = () => {
   const { products } = useContext(ProductsContext);
 
   return (
-    <div className={styles.productList}>
+    <div className="productContainer">
       <h1 className={styles.headline}>Products</h1>
-        <div className={styles.productListContainer}>
-          {products &&
-            products.map((product, i) => (
-              <ProductItem key={i} id={i} data={product} />
-            ))}
+        <div className={styles.productList}>
+            <div className={styles.productListContainer}>
+              {products &&
+                products.map((product, i) => (
+                  <ProductItem key={i} id={i} data={product} />
+                ))}
+            </div>
         </div>
     </div>
   );
