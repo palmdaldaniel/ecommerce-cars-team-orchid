@@ -46,10 +46,6 @@
 	font-size: 15px;
 }
 
-.cartContent p {
-	text-transform: uppercase;
-} 
-
 .goToCheckout {
 	display: flex;
 	flex-direction: column;
