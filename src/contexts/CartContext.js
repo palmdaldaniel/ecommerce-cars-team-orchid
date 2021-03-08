@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+// import useFetch from "./useFetch"
 
 export const CartContext = createContext();
 
@@ -29,6 +30,12 @@ function CartContextProvider(props) {
 		setPurchasedValue(
 			purchased.reduce((prev, cur) => prev + cur.price, 0))
 	}, [cart, purchased])
+
+
+	// Function for deleting in cart, triggers when clicks on delete-button 
+function deleteCartItem(cartIndex) {
+	setCart(cart.filter((c) => c.index !== cartIndex));
+}
 
 	//triggers when user clicks on purchase button on checkout page
 	const handlePurchase = () => {
