@@ -1,5 +1,5 @@
 import {
-  container,
+  productItemContainer,
   productInfo,
   firstInfo,
   priceContainer,
@@ -7,6 +7,7 @@ import {
 } from "./css/ProductItem.module.css";
 import AddToCartButton from "../components/AddToCartButton.js";
 import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 const ProductItem = (props) => {
   const [price, setPrice] = useState(null);
@@ -22,8 +23,14 @@ const ProductItem = (props) => {
     }
   }, [props.data]);
 
+  const history = useHistory();
+  const handleClick = () => {
+    const index = parseInt(props.id);
+    history.push(`/product/${index}`);
+  };
+
   return (
-    <div className={container}>
+    <div className={productItemContainer} onClick={handleClick}>
       <img src={props.data.image} alt={props.data.make} />
       <div className={productInfo}>
         <div className={firstInfo}>
