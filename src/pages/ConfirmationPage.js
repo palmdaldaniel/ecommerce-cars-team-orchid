@@ -22,7 +22,7 @@ const ConfirmationPage = () => {
   return (
     <div className="center-align">
       <div className={styles.title}>
-        <h4>Great! Enjoy your new-to-you car</h4>
+        <h1>Great! Enjoy your new-to-you car</h1>
       </div>
 
       <input type="checkbox" checked="checked" />
