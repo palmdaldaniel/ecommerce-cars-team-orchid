@@ -29,3 +29,21 @@ button:focus {
   background: #ffffff;
   color: rgb(7, 7, 7);
 } 
+
+/*-----styles for total value-----*/
+.showTotalContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 1.8rem;
+}
+
+.totalcost {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.showcost{
+  font-size: 1.4rem;
+}
