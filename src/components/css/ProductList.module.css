@@ -3,13 +3,20 @@
   margin: 0;
 }
 
+.headline {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 3rem;
+}
+
 .productList .productListContainer {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 40px;
   justify-content: center;
   place-items: center;
-  margin-top: 5rem;
+  margin-top: 0.2em;
 }
 
 @media only screen and (min-width: 768px) {
