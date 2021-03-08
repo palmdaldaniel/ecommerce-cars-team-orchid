@@ -78,7 +78,15 @@ function Navbar (props) {
 	return (
 		<nav className={styles.navbarWrapper}>
 			<div className={styles.navbar}>
-				<FontAwesomeIcon icon={faBars} onClick={toggleNavMenu}/>
+        <FontAwesomeIcon 
+        className={styles.hamburgerMenu}
+        icon={faBars} 
+        onClick={toggleNavMenu}/>
+
+        <div className={styles.desktopLinks}>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/about">About us</NavLink>
+        </div>
 
 				<div className={styles.centerLogo}>
 					<img 
@@ -88,7 +96,7 @@ function Navbar (props) {
 					</img>
 				</div>
 				
-				<div className="cart" onClick={toggleCartMenu}>
+				<div className={styles.cartContainer} onClick={toggleCartMenu}>
 					<FontAwesomeIcon icon={faShoppingCart}/>
 					<span className={styles.cartNumber}>{cart.length}</span>
 				</div>
