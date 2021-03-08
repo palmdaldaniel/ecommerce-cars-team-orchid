@@ -42,7 +42,7 @@ const ProductItem = (props) => {
         </p>
         <div className={priceContainer}>
           <span onClick={handleClick}>Price: {price}</span>
-          <AddToCartButton />
+          <AddToCartButton product={props.data}/>
         </div>
       </div>
     </div>
