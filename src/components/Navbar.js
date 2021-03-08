@@ -26,50 +26,51 @@ function Navbar () {
 
 	//closing the menu when user clicks on link in hamburger menu
 	function closeMenu() {
-			setDisplayNavMenu(false)
+		setDisplayNavMenu(false)
 	}
 
 	//closing the menu when user clicks on proceedbutton and redirects to checkout
 	function proceedToCheckOut() {
-			setDisplayCart(false)
-			history.push('/checkout')
+		setDisplayCart(false)
+		history.push('/checkout')
 	}
 
 	let dropdownMenuNav
 	if (displayNavMenu) {
-		dropdownMenuNav = 
+		dropdownMenuNav = (
 			<ul className={styles.navUL}>
-			<NavLink onClick={() => closeMenu()} to="/">Home</NavLink>
-			<NavLink onClick={() => closeMenu()} to="/about">About us</NavLink>
+				<NavLink onClick={() => closeMenu()} to="/">Home</NavLink>
+				<NavLink onClick={() => closeMenu()} to="/about">About us</NavLink>
 			</ul>
+		);
 	} 
 
 	let dropdownMenuCart 
 	if (displayCart) {
-		dropdownMenuCart = 
-		<div className={styles.cartContent}>
-			<p>Your cart</p>
-			<ul>
+		dropdownMenuCart = (
+			<div className={styles.cartContent}>
+				<p>Your cart</p>
+				<ul>
+					<div className={styles.carItem}>
+						{/* Will be replaced by component later */}
+						<span>A car img</span>
+						<span>A car title</span>
+						<span>$$ car price</span>
+					</div>
 
-				<div className={styles.carItem}>
-				{/* Will be replaced by component later */}
-				<span>A car img</span>
-				<span>A car title</span>
-				<span>$$ car price</span>
-				</div>
+					<div className={styles.goToCheckout}>
+						{/* Will be replaced by component later */}
+						<p>$$ 12345</p>
+					
+						<button className={styles.proceedButton} 
+						onClick={() => proceedToCheckOut()}>
+							Proceed
+						</button>
+					</div>
 
-				<div className={styles.goToCheckout}>
-					{/* Will be replaced by component later */}
-					<p>$$ 12345</p>
-				
-					<button className={styles.proceedButton} 
-					onClick={() => proceedToCheckOut()}>
-					Proceed
-					</button>
-				</div>
-
-			</ul>
-		</div>
+				</ul>
+			</div>
+		);
 	}
 
 	return (
@@ -91,7 +92,6 @@ function Navbar () {
 
 			{ dropdownMenuNav }
 			{ dropdownMenuCart }
-
 		</nav>
 	)
 }
