@@ -33,9 +33,11 @@ function Navbar (props) {
 	}
 
 	//closing the menu when user clicks on proceedbutton and redirects to checkout
-	function proceedToCheckOut() {
-		setDisplayCart(false)
-		history.push('/checkout')
+	function proceedToCheckOut(e) {
+		if (e.target.tagName === "BUTTON") {
+			setDisplayCart(false)
+			history.push('/checkout')
+		}
 	}
 
 	let dropdownMenuNav
@@ -53,25 +55,21 @@ function Navbar (props) {
 		dropdownMenuCart = (
 			<div className={styles.cartContent}>
 				<p>Your cart</p>
-				<ul>
-					<div className={styles.carItem}>
-						{/* Will be replaced by component later */}
-						<span>A car img</span>
-						<span>A car title</span>
-						<span>$$ car price</span>
-					</div>
 
 				{cart.length > 0 && (
-				<div className={styles.cartContainer}>
-					{cart.map((product) => 
-						<CartItem product={product}/>
-					)}
-				</div>)}
+					<div className={styles.cartContainer}>
+						{cart.map((product) => 
+							<CartItem product={product}/>
+						)}
+					</div>
+				)}
+
 				{cart.length > 0 && (
-				<div className={styles.goToCheckout}>
-					<button className={styles.proceedButton} onClick={() => history.push('/checkout')} >Proceed</button>
-				</div>)}
-		</div>
+					<div className={styles.goToCheckout}>
+						<button className={styles.proceedButton} onClick={(e) => proceedToCheckOut(e)}>Proceed</button>
+					</div>
+				)}
+			</div>
 		);
 	}
 
