@@ -37,7 +37,7 @@ function Checkout() {
                 {!cart.length && (
                     <div>
                         <p>Your cart is empty</p>
-                        <hr/>
+                        {/* <hr/> */}
                     </div>
                 )}
 
@@ -56,6 +56,7 @@ function Checkout() {
                         <p className={`${style.totalCost} right-align`}>{valueStr}</p>
                     </div>
                 )}
+                <hr/>
             </div>
 
             <form className={style.contactForm}>
