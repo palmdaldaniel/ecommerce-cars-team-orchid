@@ -35,10 +35,10 @@ function Navbar (props) {
 						<CartItem product={product}/>
 					)}
 				</div>)}
-
+				{cart.length > 0 && (
 				<div className={styles.goToCheckout}>
 					<button className={styles.proceedButton} onClick={() => history.push('/checkout')} >Proceed</button>
-				</div>
+				</div>)}
 		</div>
 	}
 
