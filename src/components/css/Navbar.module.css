@@ -27,8 +27,7 @@
 }
 
 .navLogo {
-	height: 50px;
-	width: 50px;
+	height: 56px;
 }
 
 .cartNumber {
@@ -87,6 +86,13 @@
 	background: #ffffff;
 	color: rgb(7, 7, 7);
 } 
+
+/* Follow Materialize's breakpoints */
+@media only screen and (min-width: 601px) {
+	.navLogo {
+		height: 64px;
+	}
+}
 
 @media screen and (max-width: 1200px) {
 	.desktopLinks {
