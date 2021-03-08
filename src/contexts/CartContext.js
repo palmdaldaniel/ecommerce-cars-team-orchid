@@ -34,8 +34,11 @@ function CartContextProvider(props) {
 
 	// Function for deleting in cart, triggers when clicks on delete-button 
 function deleteCartItem(cartIndex) {
-	setCart(cart.filter((c) => c.index !== cartIndex));
+	// We only need the index thats why product is not read
+	setCart(cart.filter((product, i) => i !== cartIndex ));
 }
+
+
 
 	//triggers when user clicks on purchase button on checkout page
 	const handlePurchase = () => {
@@ -44,7 +47,7 @@ function deleteCartItem(cartIndex) {
 		setCart([])
 	}
 
-	const values = { cart, addToCart, purchased, cartValue, purchasedValue, handlePurchase };
+	const values = { cart, addToCart, purchased, cartValue, purchasedValue, handlePurchase, deleteCartItem };
 
 	return (
 		<CartContext.Provider value={values}>
