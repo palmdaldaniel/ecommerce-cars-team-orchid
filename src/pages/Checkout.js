@@ -8,10 +8,9 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
 function Checkout() {
 
-    const { cart, cartValue, handlePurchase } = useContext(CartContext);
+    const { cart, cartValue, handlePurchase, deleteCartItem } = useContext(CartContext);
     const history = useHistory();
     const [valueStr, setPriceString] = useState("");
-
     useEffect(() => {
         if (typeof cartValue === "number") {
             setPriceString((cartValue).toLocaleString(navigator.language, {style: 'currency', currency: 'SEK'}));
@@ -37,7 +36,7 @@ function Checkout() {
                 {!cart.length && (
                     <div>
                         <p>Your cart is empty</p>
-                        <hr/>
+                        {/* <hr/> */}
                     </div>
                 )}
 
@@ -45,10 +44,10 @@ function Checkout() {
                     <div className={style.cartList}>
                         {cart.map((product, i) => (
                             <div className={style.productRow}>
-                                <CartItem key={i} product={product} />
-                                <div class="valign-wrapper">
+                                <CartItem key={i} product={product}  />
+                                <div class="valign-wrapper" onClick={() => deleteCartItem(i)}>
                                     <button className={style.deleteBtn}>
-                                        <FontAwesomeIcon icon={faTrashAlt} />
+                                        <FontAwesomeIcon   icon={faTrashAlt} />
                                     </button>
                                 </div>
                             </div>
@@ -56,6 +55,7 @@ function Checkout() {
                         <p className={`${style.totalCost} right-align`}>{valueStr}</p>
                     </div>
                 )}
+                <hr/>
             </div>
 
             <form className={style.contactForm}>

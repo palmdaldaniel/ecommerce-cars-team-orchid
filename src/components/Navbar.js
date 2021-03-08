@@ -81,14 +81,16 @@ function Navbar (props) {
 				<FontAwesomeIcon icon={faBars} onClick={toggleNavMenu}/>
 
 				<div className={styles.centerLogo}>
-					<img className={styles.navLogo}src="https://play-lh.googleusercontent.com/vVBVzNF6g2ri-I0t8YSAdSkQY8_Vjra3HFBkkWkhgVo8IjmxOOeLgRAZWn8_7PrnYcs" onClick={() => history.push('/')}></img>
+					<img 
+						className={styles.navLogo} 
+						src="https://play-lh.googleusercontent.com/vVBVzNF6g2ri-I0t8YSAdSkQY8_Vjra3HFBkkWkhgVo8IjmxOOeLgRAZWn8_7PrnYcs" 
+						onClick={() => history.push('/')}>
+					</img>
 				</div>
 				
 				<div className="cart" onClick={toggleCartMenu}>
 					<FontAwesomeIcon icon={faShoppingCart}/>
-
-					{/* This will be a dynamic value once the methods are in place */}
-					<span className={styles.cartNumber}>(0)</span>
+					<span className={styles.cartNumber}>{cart.length}</span>
 				</div>
 			</div>
 
