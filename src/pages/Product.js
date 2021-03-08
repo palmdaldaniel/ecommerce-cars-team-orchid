@@ -26,7 +26,11 @@ function Product() {
 	// calculate the price string, based on current locale
 	useEffect(() => {
 		if (product) {
-			setPrice((product.price).toLocaleString(navigator.language, {style: 'currency',currency: 'EUR'}));
+			setPrice((product.price).toLocaleString(
+				navigator.language, {
+					style: 'currency',
+					currency: 'SEK'
+				}));
 		}
 	}, [product]);
 

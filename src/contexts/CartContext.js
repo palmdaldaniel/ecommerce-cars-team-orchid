@@ -7,6 +7,7 @@ function CartContextProvider(props) {
 
 	//array for purchased cars to be rendered on confirmation page
 	const [purchased, setPurchased] = useState([]);
+	
 
 	function addToCart(product) {
 		if (typeof product !== "object") {
@@ -16,15 +17,18 @@ function CartContextProvider(props) {
 		setCart([...cart, product]);
 	}
 
-	//total value of cart
+	//total value of cart & purchased
 	const [cartValue, setCartValue] = useState(0);
+	const [purchasedValue, setPurchasedValue] = useState(0);
 
-	//calculates cartValue everytime cart updates
+	//calculates cartValue & purchasedValue everytime cart or purchased updates
 	useEffect(() => {
 		setCartValue(
 			cart.reduce((prev, cur) => prev + cur.price, 0)
 		)
-	}, [cart])
+		setPurchasedValue(
+			purchased.reduce((prev, cur) => prev + cur.price, 0))
+	}, [cart, purchased])
 
 	//triggers when user clicks on purchase button on checkout page
 	const handlePurchase = () => {
@@ -33,7 +37,7 @@ function CartContextProvider(props) {
 		setCart([])
 	}
 
-	const values = { cart, addToCart, purchased, cartValue, handlePurchase };
+	const values = { cart, addToCart, purchased, cartValue, purchasedValue, handlePurchase };
 
 	return (
 		<CartContext.Provider value={values}>
