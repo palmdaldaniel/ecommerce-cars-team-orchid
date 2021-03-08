@@ -10,11 +10,7 @@
   margin-top: 3rem;
 }
 
-.productListContainer h1 {
-  font-size: 1.8em;
-}
-
-.productList, .productListContainer {
+.productList .productListContainer {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 40px;
@@ -24,7 +20,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .productList, .productListContainer {
+  .productList .productListContainer {
     grid-template-columns: 1fr 1fr;
     grid-row-gap: 50px;
     grid-column-gap: 0;
@@ -33,7 +29,7 @@
 }
 
 @media screen and (min-width: 1200px) {
-  .productList, .productListContainer {
+  .productList .productListContainer {
     grid-template-columns: 1fr 1fr 1fr;
     grid-row-gap: 50px;
     grid-column-gap: 10px;
