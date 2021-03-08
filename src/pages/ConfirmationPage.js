@@ -3,6 +3,8 @@ import { React, useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { CartContext } from "../contexts/CartContext";
 import CartItem from "../components/CartItem";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 const ConfirmationPage = () => {
   const { purchased, purchasedValue } = useContext(CartContext);
@@ -25,8 +27,8 @@ const ConfirmationPage = () => {
         <h1>Great! Enjoy your new-to-you car</h1>
       </div>
 
-      <input type="checkbox" checked="checked" />
-      <span>Purchase confirmed</span>
+      <FontAwesomeIcon icon={faCheck} className={styles.icon} />
+      <p>Purchase confirmed</p>
 
       <div className={styles.showTotalContainer}>
         <h2 className={styles.totalcost}>Total cost:</h2>
