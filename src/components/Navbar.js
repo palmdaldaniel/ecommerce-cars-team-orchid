@@ -25,26 +25,22 @@ function Navbar () {
 	}
 
 	//closing the menu when user clicks on link in hamburger menu
-	function closeMenu(e) {
-		if (e.target.tagName === "A") {
+	function closeMenu() {
 			setDisplayNavMenu(false)
-		}
 	}
 
 	//closing the menu when user clicks on proceedbutton and redirects to checkout
-	function proceedToCheckOut(e) {
-		if (e.target.tagName === "BUTTON") {
+	function proceedToCheckOut() {
 			setDisplayCart(false)
 			history.push('/checkout')
-		}
 	}
 
 	let dropdownMenuNav
 	if (displayNavMenu) {
 		dropdownMenuNav = 
 			<ul className={styles.navUL}>
-			<NavLink onClick={(e) => closeMenu(e)} to="/">Home</NavLink>
-			<NavLink onClick={(e) => closeMenu(e)} to="/about">About us</NavLink>
+			<NavLink onClick={() => closeMenu()} to="/">Home</NavLink>
+			<NavLink onClick={() => closeMenu()} to="/about">About us</NavLink>
 			</ul>
 	} 
 
@@ -67,7 +63,7 @@ function Navbar () {
 					<p>$$ 12345</p>
 				
 					<button className={styles.proceedButton} 
-					onClick={(e) => proceedToCheckOut(e)}>
+					onClick={() => proceedToCheckOut()}>
 					Proceed
 					</button>
 				</div>
