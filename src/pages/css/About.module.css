@@ -2,47 +2,81 @@
     box-sizing: border-box;
     margin-bottom: 3rem;
     overflow: hidden;
+    padding-top: 2rem;
+    max-width: 900px;
+    margin: auto;
+    justify-content: center;
 }
-
+.images{
+    min-width: 400px;
+    padding: 0%;
+    margin: 0%;
+}
 .h1 {
     padding-left:2rem;
+    font-size: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
-
 .p {
     font-size: medium;
     align-content: center;
     padding: 2rem;
     text-align: justify;
+    padding-top: 0rem;
 }
 
-.flexBox {
-    display: flex;
-    flex-wrap: wrap;
-} 
 
-.flexBoxn {
-    display: flex;
-    flex-wrap: wrap-reverse;
-} 
-
-
-@media only screen and (min-width: 500px) {
-    
+/* Large screen */
+@media only screen and (min-width: 768px) {
+    .pageContainer {
+        padding-top: 7rem;
+        padding-bottom: 7rem;
+    }
     .content {
         align-self: center;
         flex-basis: 50%;
         max-width: 50vw;   
     }
-    
     .flexBox {
         display: flex;
         justify-content: space-around;
         margin-top: 40px;
     }
-
     .flexBoxn {
         display: flex;
         justify-content: space-around;
         margin-top:40px;
+    }
+}
+
+/* Midsize screen */
+@media only screen and (max-width: 768px){
+    .flexBox {
+        display: flex;
+        margin-top: 5rem;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+    }
+    .flexBoxn {
+        display: flex;
+        margin-top:5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Small screen */
+@media only screen and (max-width: 500px){    
+    .flexBox {
+        display: flex;
+        flex-wrap: wrap-reverse;
+    } 
+    .flexBoxn {
+        display: flex;
+        flex-wrap: wrap;
+    } 
+    .h1 {
+        font-size: 3rem;
     }
 }
