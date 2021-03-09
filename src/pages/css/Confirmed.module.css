@@ -1,5 +1,10 @@
 .title {
-  padding: 5rem;
+  padding-top: 7rem;
+  padding-bottom: 2rem;
+}
+
+.title h1 {
+  font-size: 3rem;
 }
 
 .icon {
@@ -7,9 +12,12 @@
   color: limegreen;
 }
 
+/*-----styles for button-----*/
+
 .buttonContainer {
   display: flex;
   justify-content: center;
+  margin-bottom: 3rem;
 }
 
 .button {
@@ -50,4 +58,10 @@ button:focus {
 
 .showcost{
   font-size: 1.4rem;
+}
+
+
+/*-----styles for purchased list-----*/
+.purchasedList {
+  padding: 2rem;
 }

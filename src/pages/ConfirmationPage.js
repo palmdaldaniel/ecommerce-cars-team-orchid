@@ -28,17 +28,21 @@ const ConfirmationPage = () => {
       </div>
 
       <FontAwesomeIcon icon={faCheck} className={styles.icon} />
-      <p>Purchase confirmed</p>
+      <p>Your purchase is confirmed</p>
       <p>Print me! This is your receipt.</p>
       <div className={styles.showTotalContainer}>
         <h2 className={styles.totalcost}>Total cost:</h2>
         <p className={styles.showcost}>{formattedTotalValue}</p>
       </div>
-         
-      <div className="container">
+      
+      
+      <div className={`container`}>
+      <h3>The cars you bought:</h3>
+      <hr/>
         {/* map here but wait for purshased data to load first */}
         {purchased &&
           purchased.map((car, i) => <CartItem key={i} product={car} />)}
+      <hr />
       </div>
 
       <div className={styles.buttonContainer}>
