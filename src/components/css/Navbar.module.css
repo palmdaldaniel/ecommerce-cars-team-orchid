@@ -19,6 +19,9 @@
 	padding-bottom: 18px;
 	background-color: #ff9500;
 	box-shadow: 0px 2px 5px rgb(39, 39, 39);
+	position: absolute;
+	top: 100%;
+	width: 100%;
 }
 
 .centerLogo {
@@ -27,8 +30,7 @@
 }
 
 .navLogo {
-	height: 50px;
-	width: 50px;
+	height: 56px;
 }
 
 .cartNumber {
@@ -88,6 +90,13 @@
 	color: rgb(7, 7, 7);
 } 
 
+/* Follow Materialize's breakpoints */
+@media only screen and (min-width: 601px) {
+	.navLogo {
+		height: 64px;
+	}
+}
+
 @media screen and (max-width: 1200px) {
 	.desktopLinks {
 		display: none;
@@ -119,5 +128,17 @@
 
 	.cartContainer {
 		margin-right: 0.5em;
+	}
+
+	.navUL, .cartContent {
+		width: 400px;
+	}
+
+	.navUL {
+		left: 0;
+	}
+
+	.cartContent {
+		right: 0;
 	}
 }
