@@ -16,7 +16,6 @@ const CartItem = (props) => {
   }, [props.product]);
 
   return (
-    // <div className={styles.cartContainer}>
     <div className={styles.itemContainer}>
       <img className={styles.carImg} src={props.product.image}></img>
       <div className={styles.itemContent}>
@@ -26,7 +25,6 @@ const CartItem = (props) => {
         <p className={styles.price}>{price}</p>
       </div>
     </div>
-    // </div>
   );
 };
 
