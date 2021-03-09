@@ -2,14 +2,12 @@ import React from 'react';
 import { useContext, useState, useEffect } from "react";
 import { ProductsContext } from "../contexts/ProductsContext";
 import CarouselItem from './CarouselItem';
+import Slider from "react-slick";
+import styles from "./css/Carousel.module.css"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import styles from "./css/Carousel.module.css"
-import Slider from "react-slick";
 
-
-
-const ImageSlider = () => {
+const Carousel = () => {
 	const { products } = useContext(ProductsContext);
 	const [filtered, setFiltered] = useState([]);
 	
@@ -21,6 +19,7 @@ const ImageSlider = () => {
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		mobileFirst:true,
+		arrows: false,
 
 			responsive: [
 				{
@@ -37,23 +36,23 @@ const ImageSlider = () => {
 
 	useEffect(() => {
 		if (products) {
-			setFiltered(products.filter(product => product.price < 200000))
+			setFiltered(products.filter(product => product.price < 180000))
 		}
 	}, [products] ) 
 
 	return (
 		<div className={styles.slideshowContainer}>
 			<h1>Weekly offers</h1>
-			<Slider {...settings}>
-			{products &&
-        filtered.map((product, i) => (
-					<div key={i}>
-						<CarouselItem id={i} data={product} />
-					</div>
-      ))}
-			</Slider>
+				<Slider {...settings}>
+					{products &&
+						filtered.map((product, i) => (
+							<div key={i}>
+								<CarouselItem id={i} data={product} />
+							</div>
+					))}
+				</Slider>
 		</div>
 	)
 }
 
-export default ImageSlider;
+export default Carousel;

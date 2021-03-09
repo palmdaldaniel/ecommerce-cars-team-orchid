@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import styles from './css/CarouselItem.module.css'
 
-
 const CarouselItem = (props) => {
 	const [price, setPrice] = useState(null);
 
@@ -16,7 +15,6 @@ const CarouselItem = (props) => {
     }
 	}, [props.data]);
 	
-
 	return (
 			<div className={styles.slideContainer}>
 				<div className={styles.textContainer}>
