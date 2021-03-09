@@ -24,8 +24,10 @@ const CarouselItem = (props) => {
 							{price}
 						</div>
 					</div>
-
-				<img src={props.data.image} className={styles.image}/>
+					
+				<div className={styles.imageContainer}>
+					<img src={props.data.image} className={styles.image}/>
+				</div>
 			</div>
 	);
 }

@@ -25,8 +25,14 @@
 	font-weight: bold;
 }
 
-.image {
+/* måste bestämma en height eftersom att bilderna är olika höga */
+.imageContainer {
 	height: 300px;
+	width: 100%;
+}
+
+.image {
+	height: 100%;
 	width: 100%;
 	border-radius: 5px;
 }
@@ -40,5 +46,13 @@
 	
 	.slideContainer {
 		margin: 0em 0em 0.5em 0em;
+	}
+
+	.textContainer {
+		font-size: 1.2em;
+	}
+
+	.imageContainer {
+		height: 250px;
 	}
 }
