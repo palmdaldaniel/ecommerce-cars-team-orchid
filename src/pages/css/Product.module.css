@@ -1,5 +1,5 @@
 .container {
-	padding-top: 6em;
+	padding-top: 8em;
 }
 
 .productImg {
@@ -25,4 +25,10 @@
 .buttonStyle {
 	margin-bottom: 3rem;
 	margin-top: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+	.productPrice {
+		font-size: 1.5rem;
+	}
 }
