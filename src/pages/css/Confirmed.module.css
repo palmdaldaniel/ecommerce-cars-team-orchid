@@ -1,6 +1,16 @@
+.confirmationWrapper {
+  margin: auto;
+  padding-top: 6rem;
+  width: 90%;
+}
+
+.confirmationWrapper p {
+  font-size: 1.2rem;
+}
+
 .title {
-  padding: 5rem;
-  text-shadow: 0px 4px 5px #ccc;
+  font-size: 2.5rem;
+  text-transform: uppercase;
 }
 
 .icon {
@@ -8,13 +18,49 @@
   color: limegreen;
 }
 
-.buttonContainer {
-  display: flex;
-  justify-content: center;
+/*-----styles for total value-----*/
+.showTotalContainer {
+  margin-bottom: 2.2rem;
+  width: 90%;
+  margin: auto;
 }
 
+.totalcost {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.showcost{
+  font-size: 1.4rem;
+}
+
+/*-----styles for purchased list-----*/
+
+.purchasedList {
+  display: grid;
+  gap: 10px;
+}
+
+
+
+.purchasedList img {
+  max-width: 30%;
+}
+
+.purchasedList p {
+text-align: left;
+
+}
+.purchasedContainer h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+/*-----styles for button-----*/
+
 .button {
-  margin-top: 8rem;
+  margin: 3rem auto;
   background: white;
   padding: 5px 20px;
   border: 2px solid #FF9300;
@@ -35,20 +81,36 @@ button:focus {
   color: rgb(7, 7, 7);
 } 
 
-/*-----styles for total value-----*/
-.showTotalContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 1.8rem;
+@media only screen and (min-width: 375px) {
+
+  .showTotalContainer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .totalcost {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 0 0.8rem;
+  }
+
+  .showcost{
+    font-size: 1.4rem;
+    margin: 0;
+  }
+  .purchasedList div {
+    justify-content: start;
+  }
+
 }
 
-.totalcost {
-  font-size: 1.6rem;
-  font-weight: bold;
-}
+@media only screen and (min-width: 876px) {
+  .purchasedList img {
+    max-width: 25%;
+  }
 
-.showcost{
-  font-size: 1.4rem;
-}
+  .purchasedList div {
+    justify-content: space-between;
+    flex-direction: row;
+   }
+} 
