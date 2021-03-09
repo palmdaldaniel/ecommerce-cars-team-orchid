@@ -35,42 +35,49 @@
   padding: 1rem;
 }
 
-.description {
-  padding-left: 1rem;
-  margin: 1rem auto;
-}
-
 .firstInfo h5 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   margin-top: 0.5rem;
 }
 
-.price span {
+.priceContainer span {
   font-size: 1.2rem;
   font-weight: 500;
 }
 
+.secondInfo {
+  display: flex;
+  margin-left: 0.7rem;
+}
+
+.secondInfo p {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
 @media only screen and (min-width: 768px) {
   .productItemContainer {
-    width: 100%;
+    max-width: 90%;
     height: 100%;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .productItemContainer {
-    width: 100%;
-    margin-bottom: 3rem;
     height: 100%;
-  }
-
-  .firstInfo,
-  .description {
-    cursor: pointer;
+    max-width: 100%;
   }
 
   .productItemContainer img {
+    cursor: pointer;
+  }
+
+  .priceContainer {
+    font-size: 80%;
+  }
+
+  .firstInfo {
     cursor: pointer;
   }
 
