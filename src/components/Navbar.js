@@ -40,24 +40,51 @@ function Navbar (props) {
 		}
 	}
 
-	let dropdownMenuNav
-	if (displayNavMenu) {
-		dropdownMenuNav = (
+	return (
+		<nav className={styles.navbarWrapper}>
+			<div className={styles.navbar}>
+				<FontAwesomeIcon 
+					className={styles.hamburgerMenu}
+					icon={faBars} 
+					onClick={toggleNavMenu}
+				/>
+
+				<div className={styles.desktopLinks}>
+					<NavLink to="/">Home</NavLink>
+					<NavLink to="/about">About us</NavLink>
+				</div>
+
+				<div className={styles.centerLogo}>
+					<img 
+						className={styles.navLogo} 
+						src="https://play-lh.googleusercontent.com/vVBVzNF6g2ri-I0t8YSAdSkQY8_Vjra3HFBkkWkhgVo8IjmxOOeLgRAZWn8_7PrnYcs" 
+						onClick={() => history.push('/')}
+					/>
+				</div>
+				
+				<div className={styles.cartContainer} onClick={toggleCartMenu}>
+					<FontAwesomeIcon icon={faShoppingCart}/>
+					<span className={styles.cartNumber}>{cart.length}</span>
+				</div>
+			</div>
+
+			{ displayNavMenu &&
 			<ul className={styles.navUL}>
 				<NavLink onClick={() => closeMenu()} to="/">Home</NavLink>
 				<NavLink onClick={() => closeMenu()} to="/about">About us</NavLink>
-			</ul>
-		);
-	} 
+			</ul>}
 
-	let dropdownMenuCart 
-	if (displayCart) {
-		dropdownMenuCart = (
+			{ displayCart &&
 			<div className={styles.cartContent}>
-				<p className={styles.cartHeadline}>Your cart</p>
+				{!cart.length && (
+					<p className={styles.cartHeadline}>
+						Your cart is empty
+					</p>
+				)}
 
 				{cart.length > 0 && (
 					<div className={styles.cartContainer}>
+						<p className={styles.cartHeadline}>Your cart</p>
 						{cart.map((product) => 
 							<div className={styles.cartItem}>
 								<CartItem product={product}/>
@@ -71,39 +98,7 @@ function Navbar (props) {
 						<button className={styles.proceedButton} onClick={(e) => proceedToCheckOut(e)}>Proceed</button>
 					</div>
 				)}
-			</div>
-		);
-	}
-
-	return (
-		<nav className={styles.navbarWrapper}>
-			<div className={styles.navbar}>
-        <FontAwesomeIcon 
-        className={styles.hamburgerMenu}
-        icon={faBars} 
-        onClick={toggleNavMenu}/>
-
-        <div className={styles.desktopLinks}>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/about">About us</NavLink>
-        </div>
-
-				<div className={styles.centerLogo}>
-					<img 
-						className={styles.navLogo} 
-						src="https://play-lh.googleusercontent.com/vVBVzNF6g2ri-I0t8YSAdSkQY8_Vjra3HFBkkWkhgVo8IjmxOOeLgRAZWn8_7PrnYcs" 
-						onClick={() => history.push('/')}>
-					</img>
-				</div>
-				
-				<div className={styles.cartContainer} onClick={toggleCartMenu}>
-					<FontAwesomeIcon icon={faShoppingCart}/>
-					<span className={styles.cartNumber}>{cart.length}</span>
-				</div>
-			</div>
-
-			{ dropdownMenuNav }
-			{ dropdownMenuCart }
+			</div>}
 		</nav>
 	)
 }
