@@ -23,26 +23,26 @@ const ConfirmationPage = () => {
 
   return (
     <div className="center-align">
-      <div className={styles.title}>
-        <h1>Great! Enjoy your new-to-you car</h1>
+      <div className={styles.confirmationWrapper}>
+        <h1 className={styles.title}>Great! Enjoy your new-to-you car!</h1>
+
+        <FontAwesomeIcon icon={faCheck} className={styles.icon} />
+        <p>Your order is confirmed.</p>
+        <p>Thank your shopping sustainable! Please print this page, this is your receipt.</p>
       </div>
 
-      <FontAwesomeIcon icon={faCheck} className={styles.icon} />
-      <p>Your purchase is confirmed</p>
-      <p>Print me! This is your receipt.</p>
       <div className={styles.showTotalContainer}>
         <h2 className={styles.totalcost}>Total cost:</h2>
         <p className={styles.showcost}>{formattedTotalValue}</p>
       </div>
       
-      
       <div className={`container`}>
-      <h3>The cars you bought:</h3>
-      <hr/>
+        <h3>Your new car(s):</h3>
+        <hr/>
         {/* map here but wait for purshased data to load first */}
         {purchased &&
           purchased.map((car, i) => <CartItem key={i} product={car} />)}
-      <hr />
+        <hr />
       </div>
 
       <div className={styles.buttonContainer}>
