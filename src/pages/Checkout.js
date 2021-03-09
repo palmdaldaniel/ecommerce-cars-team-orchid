@@ -43,8 +43,8 @@ function Checkout() {
                 {cart.length > 0 && (
                     <div className={style.cartList}>
                         {cart.map((product, i) => (
-                            <div className={style.productRow}>
-                                <CartItem key={i} product={product}  />
+                            <div key={i} className={style.productRow}>
+                                <CartItem product={product}  />
                                 <div class="valign-wrapper" onClick={() => deleteCartItem(i)}>
                                     <button className={style.deleteBtn}>
                                         <FontAwesomeIcon   icon={faTrashAlt} />
