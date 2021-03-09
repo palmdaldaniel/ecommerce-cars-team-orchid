@@ -3,7 +3,7 @@
 	font-size: 20px;
 	display: flex;
 	flex-direction: column;
-	position: absolute;
+	position: fixed;
 	z-index: 1;
 }
 
@@ -89,43 +89,35 @@
 } 
 
 @media screen and (max-width: 1200px) {
-  .desktopLinks {
-    display: none;
-  }
-
-  .navbarWrapper {
-    justify-content: center;
-  }
+	.desktopLinks {
+		display: none;
+	}
 }
 
 @media screen and (min-width: 1200px) {
-  .navLogo, .cart:hover, .desktopLinks {
-    cursor: pointer;
-  }
-  
-  .hamburgerMenu {
-    display: none;
-  }
+	.navLogo, .cart:hover, .desktopLinks {
+		cursor: pointer;
+	}
 
-  .desktopLinks {
-    display: flex;
-  }
+	.hamburgerMenu {
+		display: none;
+	}
 
-  .desktopLinks a {
-    padding-right: 1em;
-    margin-left: 0.8em;
-    font-size: 0.9em;
-  }
+	.desktopLinks {
+		display: flex;
+	}
 
-  .desktopLinks a:hover {
-    color: gray;
-  }
-  
-  .cartContainer {
-    margin-right: 0.5em;
-  }
+	.desktopLinks a {
+		padding-right: 1em;
+		margin-left: 0.8em;
+		font-size: 0.9em;
+	}
+
+	.desktopLinks a:hover {
+		color: gray;
+	}
+
+	.cartContainer {
+		margin-right: 0.5em;
+	}
 }
- 
-
-
-
