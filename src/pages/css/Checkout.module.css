@@ -102,18 +102,27 @@
   transition: 0.1s;
 }
 
-@media only screen and (min-width: 375px) {
+@media only screen and (min-width: 376px) {
   .totalCost {
     font-size: 1.2rem;
   }
 
   .purchaseBtn {
-    width: 15%;
+    width: 30%;
+  } 
+}
+
+@media only screen and (min-width: 779px) {
+  .purchaseBtn {
+    width: 20%;
   }
 }
 
 @media only screen and (min-width: 1024px) {
   .totalCost {
     font-size: 1.5rem;
+  }
+  .purchaseBtn {
+    width: 15%;
   }
 }

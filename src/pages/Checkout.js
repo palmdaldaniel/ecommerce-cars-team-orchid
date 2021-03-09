@@ -29,7 +29,6 @@ function Checkout() {
                 {!cart.length && (
                     <div>
                         <p>Your cart is empty</p>
-                        {/* <hr/> */}
                     </div>
                 )}
                 {cart.length > 0 && (
@@ -149,7 +148,9 @@ function Checkout() {
                     </div>
                 </label>
             </form>
+            
             <button className={style.purchaseBtn} onClick={onPurchase}>Purchase</button>
+            
         </div>
     )
 }
