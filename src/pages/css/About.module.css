@@ -2,15 +2,9 @@
     box-sizing: border-box;
     margin-bottom: 3rem;
     overflow: hidden;
-    padding-top: 2rem;
     max-width: 900px;
     margin: auto;
     justify-content: center;
-}
-.images{
-    min-width: 400px;
-    padding: 0%;
-    margin: 0%;
 }
 .h1 {
     padding-left:2rem;
@@ -22,16 +16,16 @@
     font-size: medium;
     align-content: center;
     padding: 2rem;
-    text-align: justify;
+    text-align: left;
     padding-top: 0rem;
 }
 
 
-/* Large screen */
-@media only screen and (min-width: 768px) {
+/* Mid to Large screen */
+@media only screen and (min-width: 663px) {
     .pageContainer {
-        padding-top: 7rem;
-        padding-bottom: 7rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
     }
     .content {
         align-self: center;
@@ -50,33 +44,33 @@
     }
 }
 
-/* Midsize screen */
-@media only screen and (max-width: 768px){
-    .flexBox {
-        display: flex;
-        margin-top: 5rem;
-        flex-wrap: wrap-reverse;
-        justify-content: center;
-    }
-    .flexBoxn {
-        display: flex;
-        margin-top:5rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-}
-
 /* Small screen */
-@media only screen and (max-width: 500px){    
+@media only screen and (max-width: 662px){    
+    .pageContainer {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
     .flexBox {
         display: flex;
         flex-wrap: wrap-reverse;
+        margin-top: 1rem;
+
     } 
     .flexBoxn {
         display: flex;
         flex-wrap: wrap;
+        margin-top: 1rem;
     } 
     .h1 {
         font-size: 3rem;
+        text-align: center;
+        padding-top: 2rem;
+    }
+    /* .p {
+        padding-top: -3rem;
+    } */
+    .images{
+        width: 86%;
+        margin: auto;
     }
 }

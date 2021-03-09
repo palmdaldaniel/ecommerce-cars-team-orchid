@@ -4,7 +4,7 @@ const About = () => {
   return (
       <div className={styles.pageContainer}>
         <div className={styles.flexBox}>
-          <img
+          <img className={styles.images}
             src="/pic1.jpg"
             alt="A road in a valley"
           />
@@ -58,14 +58,14 @@ const About = () => {
             </div>
           </div>
 
-          <img
+          <img className={styles.images}
             src="/pic2.jpeg"
             alt="A road in front of mountains"
           />
         </div>
 
         <div className={styles.flexBox}>
-          <img
+          <img className={styles.images}
             src="/pic3.jpg"
             alt="Two people sitting on a car in the forrest"
           />
