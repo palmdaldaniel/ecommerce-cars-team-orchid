@@ -41,6 +41,18 @@
   gap: 10px;
 }
 
+.purchasedList div {
+ flex-direction: row;
+}
+
+.purchasedList img {
+  max-width: 30%;
+}
+
+.purchasedList p {
+text-align: left;
+
+}
 .purchasedContainer h3 {
   font-size: 1.4rem;
   font-weight: bold;
@@ -91,18 +103,8 @@ button:focus {
 
 }
 
-/*------controls the size of the car images, */ 
-/* can be deleted if this is getting adjusted in cartItem-----*/
-/*-----media queries for car img-----*/
-
-@media only screen and (min-width: 529px) {
-  .purchasedList img {
-    max-width: 30%;
-  }
-}
-
 @media only screen and (min-width: 876px) {
   .purchasedList img {
     max-width: 25%;
   }
-}
+} 
