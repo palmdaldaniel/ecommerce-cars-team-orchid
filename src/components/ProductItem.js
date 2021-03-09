@@ -3,7 +3,7 @@ import {
   productInfo,
   firstInfo,
   priceContainer,
-  description,
+  secondInfo,
 } from "./css/ProductItem.module.css";
 import AddToCartButton from "../components/AddToCartButton.js";
 import { useState, useEffect } from "react";
@@ -37,12 +37,13 @@ const ProductItem = (props) => {
           <h1>{props.data.make}</h1>
           <h5>{props.data.model}</h5>
         </div>
-        <p className={description} onClick={handleClick}>
-          {props.data.descShort}
-        </p>
+        <div className={secondInfo}>
+          <p>{props.data.year}</p>|<p> {props.data.miles} mil</p>|
+          <p> {props.data.city}</p>
+        </div>
         <div className={priceContainer}>
-          <span onClick={handleClick}>Price: {price}</span>
-          <AddToCartButton product={props.data}/>
+          <span onClick={handleClick}>{price}</span>
+          <AddToCartButton product={props.data} />
         </div>
       </div>
     </div>
