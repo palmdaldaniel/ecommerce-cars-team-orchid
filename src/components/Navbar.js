@@ -76,12 +76,17 @@ function Navbar (props) {
 
 			{ displayCart &&
 			<div className={styles.cartContent}>
-				<p className={styles.cartHeadline}>Your cart</p>
+				{!cart.length && (
+					<p className={styles.cartHeadline}>
+						Your cart is empty
+					</p>
+				)}
 
 				{cart.length > 0 && (
 					<div className={styles.cartContainer}>
-						{cart.map((product) => 
-							<div className={styles.cartItem}>
+						<p className={styles.cartHeadline}>Your cart</p>
+						{cart.map((product, i) => 
+							<div key={i} className={styles.cartItem}>
 								<CartItem product={product}/>
 							</div>
 						)}
