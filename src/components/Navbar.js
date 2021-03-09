@@ -40,46 +40,6 @@ function Navbar (props) {
 		}
 	}
 
-	let dropdownMenuNav
-	if (displayNavMenu) {
-		dropdownMenuNav = (
-			<ul className={styles.navUL}>
-				<NavLink onClick={() => closeMenu()} to="/">Home</NavLink>
-				<NavLink onClick={() => closeMenu()} to="/about">About us</NavLink>
-			</ul>
-		);
-	} 
-
-	let dropdownMenuCart 
-	if (displayCart) {
-		dropdownMenuCart = (
-			<div className={styles.cartContent}>
-				{!cart.length && (
-					<p className={styles.cartHeadline}>
-						Your cart is empty
-					</p>
-				)}
-
-				{cart.length > 0 && (
-					<div className={styles.cartContainer}>
-						<p className={styles.cartHeadline}>Your cart</p>
-						{cart.map((product) => 
-							<div className={styles.cartItem}>
-								<CartItem product={product}/>
-							</div>
-						)}
-					</div>
-				)}
-
-				{cart.length > 0 && (
-					<div className={styles.goToCheckout}>
-						<button className={styles.proceedButton} onClick={(e) => proceedToCheckOut(e)}>Proceed</button>
-					</div>
-				)}
-			</div>
-		);
-	}
-
 	return (
 		<nav className={styles.navbarWrapper}>
 			<div className={styles.navbar}>
@@ -108,8 +68,37 @@ function Navbar (props) {
 				</div>
 			</div>
 
-			{ dropdownMenuNav }
-			{ dropdownMenuCart }
+			{ displayNavMenu &&
+			<ul className={styles.navUL}>
+				<NavLink onClick={() => closeMenu()} to="/">Home</NavLink>
+				<NavLink onClick={() => closeMenu()} to="/about">About us</NavLink>
+			</ul>}
+
+			{ displayCart &&
+			<div className={styles.cartContent}>
+				{!cart.length && (
+					<p className={styles.cartHeadline}>
+						Your cart is empty
+					</p>
+				)}
+
+				{cart.length > 0 && (
+					<div className={styles.cartContainer}>
+						<p className={styles.cartHeadline}>Your cart</p>
+						{cart.map((product) => 
+							<div className={styles.cartItem}>
+								<CartItem product={product}/>
+							</div>
+						)}
+					</div>
+				)}
+
+				{cart.length > 0 && (
+					<div className={styles.goToCheckout}>
+						<button className={styles.proceedButton} onClick={(e) => proceedToCheckOut(e)}>Proceed</button>
+					</div>
+				)}
+			</div>}
 		</nav>
 	)
 }
