@@ -65,12 +65,21 @@
     max-width: 90%;
     height: 100%;
   }
+
+  .productItemContainer:hover {
+    max-width: 89%;
+  }
+
 }
 
 @media screen and (min-width: 1200px) {
   .productItemContainer {
     height: 100%;
-    max-width: 100%;
+    max-width: 100%; 
+  }
+
+  .productItemContainer:hover {
+    max-width: 99%;
   }
 
   .productItemContainer img {
