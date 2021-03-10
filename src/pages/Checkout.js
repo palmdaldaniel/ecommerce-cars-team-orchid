@@ -144,9 +144,6 @@ function Checkout() {
       </div>
     );
   };
-  const gotToHomePage = () => {
-    history.push("/");
-  };
   return (
     <>
       {cart && cart.length > 0 ? (
@@ -154,7 +151,7 @@ function Checkout() {
       ) : (
         <div className={style.emptyCart}>
           <h4>Your cart is empty</h4>
-          <button onClick={gotToHomePage} className={style.Btn}>
+          <button onClick={() => history.push('/')} className={style.Btn}>
             Browse for cars
           </button>
         </div>
