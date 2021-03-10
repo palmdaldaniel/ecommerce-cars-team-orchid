@@ -85,6 +85,10 @@
     cursor: pointer;
   }
 
+  .secondInfo {
+    cursor: pointer;
+  }
+
   .priceContainer span {
     cursor: pointer;
   }
