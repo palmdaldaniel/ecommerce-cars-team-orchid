@@ -79,8 +79,8 @@ function Navbar (props) {
 
 			{ displayNavMenu &&
 			<ul className={styles.navUL}>
-				<NavLink onClick={() => closeMenu()} to="/">Home</NavLink>
-				<NavLink onClick={() => closeMenu()} to="/about">About us</NavLink>
+				<NavLink className={styles.a} onClick={() => closeMenu()} to="/">Home</NavLink>
+				<NavLink className={styles.a}  onClick={() => closeMenu()} to="/about">About us</NavLink>
 			</ul>}
 
 			{ displayCart &&
