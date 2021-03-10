@@ -14,6 +14,7 @@ function Navbar (props) {
 	const { cart } = useContext(CartContext);
 	const history = useHistory();
 
+	const maxCartItems = 4;
 
 	//toggle hamburger menu, could be refactored into one single function with the other toggle function?
 	function toggleNavMenu() {
@@ -86,10 +87,13 @@ function Navbar (props) {
 				{cart.length > 0 && (
 					<div className={styles.cartContainer}>
 						<p className={styles.cartHeadline}>Your cart</p>
-						{cart.map((product, i) => 
+						{ cart.slice(0, maxCartItems).map((product, i) => 
 							<div key={i} className={styles.cartItem}>
 								<CartItem product={product}/>
 							</div>
+						)}
+						{ cart.length > maxCartItems && (
+							<p className="center-align">See all {cart.length} items in checkout</p>
 						)}
 					</div>
 				)}
