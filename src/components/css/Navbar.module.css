@@ -35,6 +35,11 @@
 
 .cartNumber {
 	padding-left: 5px;
+	cursor: pointer;
+}
+
+.shoppingCart {
+	cursor: pointer;
 }
 
 /* inside dropdown-menu */
