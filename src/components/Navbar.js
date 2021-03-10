@@ -105,7 +105,7 @@ function Navbar (props) {
 								<p>{cart.length - maxCartItems} more item(s) in checkout</p>
 							</div>
 						)}
-						<hr className={styles.cartHr}></hr>
+						<hr />
 						<p className={styles.cartTotal}><span className={styles.cartValue}>Total:</span> {valueStr}</p>
 					</div>
 				)}
