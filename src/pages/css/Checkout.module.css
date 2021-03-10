@@ -36,10 +36,12 @@
   font-size: 2rem;
   border: none;
   background: none;
+  transition: 0.3s;
 }
 .deleteBtn:hover {
   color: #ff9300;
   background: none;
+  cursor: pointer;
 }
 
 .totalCost {
@@ -84,45 +86,46 @@
 
 /*-----Styles for purchase button-----*/
 
-.purchaseBtn {
+.Btn {
   background: #efefef;
   border: 2px solid #ff9300;
   border-radius: 5px;
   box-shadow: 1px 1px 12px 1px #ccc;
   margin: 3rem auto;
-  padding: 5px 20px;
+  padding: 10px 20px;
   transition: 0.1s;
-  width: 50%;
+  width: 200px;
 }
 
-.purchaseBtn:hover {
+.Btn:hover {
   background: #ff9300;
   color: white;
   cursor: pointer;
   transition: 0.1s;
 }
 
+.emptyCart {
+  background: #efefef;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 @media only screen and (min-width: 375px) {
   .totalCost {
     font-size: 1.2rem;
   }
-
-  .purchaseBtn {
-    width: 30%;
-  } 
 }
 
 @media only screen and (min-width: 779px) {
-  .purchaseBtn {
-    width: 20%;
-  }
+ 
 }
 
 @media only screen and (min-width: 1024px) {
   .totalCost {
     font-size: 1.5rem;
   }
-  .purchaseBtn {
-    width: 15%;
-  }
+
 }
