@@ -1,5 +1,6 @@
 .slideContainer {
-	margin: 1em;
+	margin: 0 auto;
+	margin-bottom: 2em;
 }
 
 .textContainer {
@@ -8,7 +9,9 @@
 	border-radius: 5px;
 	font-size: 1.5em;
 	position: absolute;
+	top: 0;
 	padding: 10px;
+	margin: 0 auto;
 }
 
 .textContainer span {
@@ -27,8 +30,9 @@
 
 /* måste bestämma en height eftersom att bilderna är olika höga */
 .imageContainer {
-	height: 280px;
-	width: 100%;
+	height: 18em;
+	width: 24em;
+	margin: 0 auto;
 }
 
 .image {

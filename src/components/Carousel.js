@@ -16,13 +16,12 @@ const Carousel = () => {
 		infinite: true,
 		autoplay:true,
 		speed: 300,
-		slidesToShow: 4,
+		slidesToShow: 4, 
 		slidesToScroll: 1,
-		mobileFirst:true,
 		arrows: false,
 			responsive: [
 				{
-					breakpoint: 1282,
+					breakpoint: 1460,
 					settings: {
 						slidesToShow: 3,
 						slidesToScroll: 1,
@@ -40,7 +39,7 @@ const Carousel = () => {
 				}
 			},
 			{
-				breakpoint: 800,
+				breakpoint: 770,
 				settings: {
 					slidesToShow: 1,
 					slidesToScroll: 1,
