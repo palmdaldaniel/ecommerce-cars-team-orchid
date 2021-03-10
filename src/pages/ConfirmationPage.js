@@ -28,9 +28,9 @@ const ConfirmationPage = () => {
       <div className={styles.confirmationWrapper}>
 
         <FontAwesomeIcon icon={faCheck} className={styles.icon} />
-        <p>Your order is confirmed.</p>
+        <h1>Your order is confirmed.</h1>
         <p>
-          Thank your shopping with us! Please print this page, this is your
+          Thank your shopping with us! Please print this page, it's your
           receipt.
         </p>
       </div>
@@ -46,7 +46,7 @@ const ConfirmationPage = () => {
 
         <div className={styles.showTotalContainer}>
           <h2 className={styles.totalcost}>Total cost:</h2>
-          <h3 className={styles.showcost}>{formattedTotalValue}</h3>
+          <h2 className={styles.showcost}>{formattedTotalValue}</h2>
         </div>
         <hr />
       </div>
