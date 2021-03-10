@@ -1,12 +1,13 @@
 import { BrowserRouter, Route } from "react-router-dom";
 
-import Home from './pages/Home.js'
-import Navbar from './components/Navbar.js'
-import Confirmed from './pages/ConfirmationPage'
-import Checkout from './pages/Checkout.js'
-import Product from './pages/Product.js'
-import About from './pages/About';
-import CartContextProvider from './contexts/CartContext'
+import Home from "./pages/Home.js";
+import Navbar from "./components/Navbar.js";
+import Confirmed from "./pages/ConfirmationPage";
+import Checkout from "./pages/Checkout.js";
+import Product from "./pages/Product.js";
+import About from "./pages/About";
+import CartContextProvider from "./contexts/CartContext";
+import ScrollToTop from "./components/ScrollToTop.js";
 
 import ProductsContextProvider from "./contexts/ProductsContext";
 
@@ -16,7 +17,8 @@ function App() {
       <ProductsContextProvider>
         <CartContextProvider>
           <BrowserRouter>
-            <Navbar/>
+            <ScrollToTop />
+            <Navbar />
             <Route exact path="/">
               <Home />
             </Route>
