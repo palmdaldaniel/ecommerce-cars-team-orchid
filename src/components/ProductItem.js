@@ -37,7 +37,7 @@ const ProductItem = (props) => {
           <h1>{props.data.make}</h1>
           <h5>{props.data.model}</h5>
         </div>
-        <div className={secondInfo}>
+        <div className={secondInfo} onClick={handleClick}>
           <p>{props.data.year}</p>|<p> {props.data.miles} mil</p>|
           <p> {props.data.city}</p>
         </div>
