@@ -16,12 +16,20 @@ const Carousel = () => {
 		infinite: true,
 		autoplay:true,
 		speed: 300,
-		slidesToShow: 3,
+		slidesToShow: 4,
 		slidesToScroll: 1,
 		mobileFirst:true,
 		arrows: false,
-
 			responsive: [
+				{
+					breakpoint: 1282,
+					settings: {
+						slidesToShow: 3,
+						slidesToScroll: 1,
+						infinite: true,
+						dots: true,
+					}
+				},
 				{
 				breakpoint: 1200,
 				settings: {
@@ -56,7 +64,7 @@ const Carousel = () => {
 					{products &&
 						filtered.map((product, i) => (
 							<div key={i}>
-								<CarouselItem id={i} data={product} />
+								<CarouselItem id={products.indexOf(product)} data={product}/>
 							</div>
 					))}
 				</Slider>

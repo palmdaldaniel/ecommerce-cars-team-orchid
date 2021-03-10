@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
+import { useHistory } from "react-router-dom";
 import styles from './css/CarouselItem.module.css'
 
 const CarouselItem = (props) => {
 	const [price, setPrice] = useState(null);
+	const history = useHistory();
 
 	useEffect(() => {
     if (props.data) {
@@ -14,6 +16,10 @@ const CarouselItem = (props) => {
       );
     }
 	}, [props.data]);
+
+  const handleClick = () => {
+    history.push(`/product/${props.id}`);
+  };
 	
 	return (
 			<div className={styles.slideContainer}>
@@ -24,8 +30,8 @@ const CarouselItem = (props) => {
 							{price}
 						</div>
 					</div>
-					
-				<div className={styles.imageContainer}>
+
+				<div className={styles.imageContainer} onClick={handleClick}>
 					<img src={props.data.image} className={styles.image}/>
 				</div>
 			</div>
