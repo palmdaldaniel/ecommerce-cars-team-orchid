@@ -35,6 +35,11 @@
 
 .cartNumber {
 	padding-left: 5px;
+	cursor: pointer;
+}
+
+.shoppingCart {
+	cursor: pointer;
 }
 
 /* inside dropdown-menu */
@@ -59,6 +64,10 @@
 
 .cartHeadline {
 	font-weight: bold;	
+}
+
+.moreItems {
+	text-align: center;
 }
 
 .cartTotal {

@@ -1,0 +1,54 @@
+.slideContainer {
+	margin: 1em;
+}
+
+.textContainer {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.637);
+	border-radius: 5px;
+	font-size: 1.5em;
+	position: absolute;
+	padding: 10px;
+}
+
+.textContainer span {
+	display: inline-flex;
+	padding-right: 10px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.price {
+	color: orange;
+	font-weight: bold;
+}
+
+/* måste bestämma en height eftersom att bilderna är olika höga */
+.imageContainer {
+	height: 280px;
+	width: 100%;
+}
+
+.image {
+	height: 100%;
+	width: 100%;
+	border-radius: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+  .image {
+    width: 100%;
+		height: 250px;
+	}
+
+	.textContainer {
+		font-size: 1.2em;
+	}
+
+	.imageContainer {
+		height: 250px;
+		border-radius: none;
+	}
+}
