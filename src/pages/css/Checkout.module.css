@@ -1,110 +1,130 @@
 .checkoutContainer {
-    background-color: #EFEFEF;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding-top: 50px;
+  background-color: #efefef;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 20px;
 }
 
 .pageTitle {
-    font-size: 2rem;
-    text-transform: uppercase;
+  font-size: 2rem;
+  text-transform: uppercase;
 }
 
 /*----- styles for cart list -----*/
 .cartList {
-    display: grid;
-    gap: 10px;
+  display: grid;
+  gap: 10px;
 }
 
 .productRow {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: flex-start;
+}
+.productRow p {
+  text-align: left;
+}
+
+.productRow img {
+  width: 20%;
 }
 
 .deleteBtn {
-    font-size: 2rem;
-    border: none;
-    background: none;
+  font-size: 2rem;
+  border: none;
+  background: none;
+  transition: 0.3s;
 }
 .deleteBtn:hover {
-    color: #FF9300;
-    background: none;
+  color: #ff9300;
+  background: none;
+  cursor: pointer;
 }
 
 .totalCost {
-	font-size: 2rem;
-	font-weight: 600;
-	padding-top: 10px;
+  font-size: 2rem;
+  font-weight: 600;
+  padding-top: 10px;
 }
 
 /*----- styles for input form -----*/
 .contactForm {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    width: 80%;
-
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 600px;
 }
 
 .formTitle {
-    font-size: 1.6rem;
-    text-transform: uppercase;
+  font-size: 1.6rem;
+  text-transform: uppercase;
 }
 
 .titleInput {
-    color: #000000;
-    font-size: 1.3rem;
-    
+  color: #000000;
+  font-size: 1.3rem;
 }
 
 .label {
-    margin-top: 1.4rem;
+  margin-top: 1.4rem;
 }
 
-.monthYearWrapper{
-    display: flex;
+.monthYearWrapper {
+  display: flex;
+}
+
+.radioButtons {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  text-align: start;
 }
 
 /*-----Styles for purchase button-----*/
 
 .purchaseBtn {
-    background: #EFEFEF;
-    border: 2px solid #FF9300;
-    border-radius: 5px;
-    box-shadow: 1px 1px 12px 1px #ccc;
-    margin: 2rem auto;
-    padding: 5px 20px;
-    transition: 0.1s;
-    width: 50%;
+  background: #efefef;
+  border: 2px solid #ff9300;
+  border-radius: 5px;
+  box-shadow: 1px 1px 12px 1px #ccc;
+  margin: 3rem auto;
+  padding: 5px 20px;
+  transition: 0.1s;
+  width: 50%;
 }
 
 .purchaseBtn:hover {
-    background:#FF9300;
-    color: white;
-    cursor: pointer;
-    transition: 0.1s;
+  background: #ff9300;
+  color: white;
+  cursor: pointer;
+  transition: 0.1s;
 }
 
-@media only screen and (min-width: 529px) {
-    .contactForm {
-        width: 60%;
-    }
+@media only screen and (min-width: 375px) {
+  .totalCost {
+    font-size: 1.2rem;
+  }
 
-    .purchaseBtn {
-        width: 15%;
-    }
+  .purchaseBtn {
+    width: 30%;
+  } 
+}
+
+@media only screen and (min-width: 779px) {
+  .purchaseBtn {
+    width: 20%;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
-    .contactForm {
-        width: 40%;
-    }
-}
-
-@media only screen and (min-width: 1280px) {
-    .contactForm {
-        width: 35%;
-    }
+  .totalCost {
+    font-size: 1.5rem;
+  }
+  .purchaseBtn {
+    width: 15%;
+  }
 }
