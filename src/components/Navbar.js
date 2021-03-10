@@ -3,7 +3,7 @@ import { CartContext } from '../contexts/CartContext';
 import { useHistory } from 'react-router-dom';
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faShoppingCart, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 
 import CartItem from './CartItem.js';
 import styles from "./css/Navbar.module.css";
@@ -14,6 +14,7 @@ function Navbar (props) {
 	const { cart } = useContext(CartContext);
 	const history = useHistory();
 
+	const maxCartItems = 4;
 
 	//toggle hamburger menu, could be refactored into one single function with the other toggle function?
 	function toggleNavMenu() {
@@ -86,9 +87,15 @@ function Navbar (props) {
 				{cart.length > 0 && (
 					<div className={styles.cartContainer}>
 						<p className={styles.cartHeadline}>Your cart</p>
-						{cart.map((product, i) => 
+						{ cart.slice(0, maxCartItems).map((product, i) => 
 							<div key={i} className={styles.cartItem}>
 								<CartItem product={product}/>
+							</div>
+						)}
+						{ cart.length > maxCartItems && (
+							<div className={styles.moreItems}>
+								<FontAwesomeIcon icon={faEllipsisH} size="2x" />
+								<p>{cart.length - maxCartItems} more item(s) in checkout</p>
 							</div>
 						)}
 					</div>
