@@ -14,6 +14,7 @@ function Navbar (props) {
 	const { cart, cartValue } = useContext(CartContext);
 	const history = useHistory();const [valueStr, setPriceString] = useState("");
 
+	//Function for total cost in nav-cart 
     useEffect(() => {
         if (typeof cartValue === "number") {
             setPriceString((cartValue).toLocaleString(navigator.language, {style: 'currency', currency: 'SEK'}));
