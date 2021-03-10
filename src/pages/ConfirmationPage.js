@@ -45,10 +45,9 @@ const ConfirmationPage = () => {
         </div>
 
         <div className={styles.showTotalContainer}>
-        <h2 className={styles.totalcost}>Total cost:</h2>
-        <h3 className={styles.showcost}>{formattedTotalValue}</h3>
-      </div>
-
+          <h2 className={styles.totalcost}>Total cost:</h2>
+          <h3 className={styles.showcost}>{formattedTotalValue}</h3>
+        </div>
         <hr />
       </div>
 
