@@ -63,7 +63,8 @@ function Navbar (props) {
 				</div>
 				
 				<div className={styles.cartContainer} onClick={toggleCartMenu}>
-					<FontAwesomeIcon icon={faShoppingCart}/>
+					<FontAwesomeIcon icon={faShoppingCart} className
+					={styles.shoppingCart}/>
 					<span className={styles.cartNumber}>{cart.length}</span>
 				</div>
 			</div>
