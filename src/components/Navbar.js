@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { CartContext } from '../contexts/CartContext';
 import { useHistory } from 'react-router-dom';
 import { NavLink } from "react-router-dom";
@@ -11,10 +11,17 @@ import styles from "./css/Navbar.module.css";
 function Navbar (props) {
 	const [displayNavMenu, setDisplayNavMenu] = useState(false)
 	const [displayCart, setDisplayCart] = useState(false)
-	const { cart } = useContext(CartContext);
-	const history = useHistory();
+	const { cart, cartValue } = useContext(CartContext);
+	const history = useHistory();const [valueStr, setPriceString] = useState("");
 
+	//Function for total cost in nav-cart 
+    useEffect(() => {
+        if (typeof cartValue === "number") {
+            setPriceString((cartValue).toLocaleString(navigator.language, {style: 'currency', currency: 'SEK'}));
+        }
+	}, [cartValue]);
 	const maxCartItems = 4;
+
 
 	//toggle hamburger menu, could be refactored into one single function with the other toggle function?
 	function toggleNavMenu() {
@@ -98,6 +105,8 @@ function Navbar (props) {
 								<p>{cart.length - maxCartItems} more item(s) in checkout</p>
 							</div>
 						)}
+						<hr />
+						<p className={styles.cartTotal}><span className={styles.cartValue}>Total:</span> {valueStr}</p>
 					</div>
 				)}
 
