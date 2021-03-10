@@ -99,14 +99,14 @@ function Navbar (props) {
 								<CartItem product={product}/>
 							</div>
 						)}
-						<hr className={styles.cartHr}></hr>
-						<p className={styles.cartTotal}><span className={styles.cartValue}>Total:</span> {valueStr}</p>
 						{ cart.length > maxCartItems && (
 							<div className={styles.moreItems}>
 								<FontAwesomeIcon icon={faEllipsisH} size="2x" />
 								<p>{cart.length - maxCartItems} more item(s) in checkout</p>
 							</div>
 						)}
+						<hr className={styles.cartHr}></hr>
+						<p className={styles.cartTotal}><span className={styles.cartValue}>Total:</span> {valueStr}</p>
 					</div>
 				)}
 
