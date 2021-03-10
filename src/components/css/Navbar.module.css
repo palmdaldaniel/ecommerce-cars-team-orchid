@@ -61,6 +61,14 @@
 	font-weight: bold;	
 }
 
+.cartTotal {
+text-align: right;
+}
+
+.cartValue {
+	font-weight: bold;	
+}
+
 .goToCheckout {
 	display: flex;
 	flex-direction: column;

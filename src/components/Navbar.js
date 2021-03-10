@@ -97,7 +97,8 @@ function Navbar (props) {
 								<CartItem product={product}/>
 							</div>
 						)}
-						<p className={`right-align`}>Total cost: {valueStr}</p>
+						<hr className={styles.cartHr}></hr>
+						<p className={styles.cartTotal}><span className={styles.cartValue}>Total:</span> {valueStr}</p>
 					</div>
 				)}
 
