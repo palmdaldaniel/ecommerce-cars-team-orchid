@@ -66,6 +66,10 @@
 	font-weight: bold;	
 }
 
+.moreItems {
+	text-align: center;
+}
+
 .goToCheckout {
 	display: flex;
 	flex-direction: column;
