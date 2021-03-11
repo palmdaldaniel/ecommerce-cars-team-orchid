@@ -65,7 +65,7 @@ function Navbar (props) {
 				<div className={styles.centerLogo}>
 					<img 
 						className={styles.navLogo} 
-						src="https://play-lh.googleusercontent.com/vVBVzNF6g2ri-I0t8YSAdSkQY8_Vjra3HFBkkWkhgVo8IjmxOOeLgRAZWn8_7PrnYcs" 
+						src="/OC-logo.jpg" 
 						onClick={() => history.push('/')}
 					/>
 				</div>
