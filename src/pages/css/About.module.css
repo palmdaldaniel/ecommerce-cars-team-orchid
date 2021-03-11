@@ -73,7 +73,7 @@
     }
     .p {
         max-width: 400px;
-      
+        margin: 0 1.8rem;
     }
     .content {
         padding-bottom: 50px;
