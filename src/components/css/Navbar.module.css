@@ -121,9 +121,10 @@ text-align: right;
   .navLogo {
     height: 64px;
   }
+
   .navUL,
   .cartContent {
-    width: 400px;
+    width: 500px;
   }
 
   .navUL {
@@ -142,18 +143,21 @@ text-align: right;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1201px) {
   .navbarWrapper {
     height: 120px;
   }
+
   .navLogo {
     margin-top: 30px;
   }
+
   .navLogo,
   .cart:hover,
   .desktopLinks {
     cursor: pointer;
   }
+
   .cartContainer {
     font-size: 1.5em;
     margin-top: 20px;
@@ -181,5 +185,10 @@ text-align: right;
 
   .cartContainer {
     margin-right: 0.5em;
+  }
+
+  .navUL,
+  .cartContent {
+    width: 600px;
   }
 }
