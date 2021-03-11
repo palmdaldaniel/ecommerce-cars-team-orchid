@@ -1,9 +1,9 @@
 .navbarWrapper {
-	background: white;
 	font-size: 18px;
 	display: flex;
 	flex-direction: column;
 	position: fixed;
+  box-shadow: none;
 	z-index: 1;
 }
 
@@ -14,7 +14,10 @@
   text-align: right;
   padding: 0px 1rem;
   color: black;
+	background: white;
+  box-shadow: 0 2px 4px #0004;
   height: 56px;
+	z-index: 1;
 }
 
 .a {
@@ -24,7 +27,7 @@
 .navUL,
 .cartContent {
   background-color: white;
-  box-shadow: 0px 2px 5px rgb(39, 39, 39);
+  box-shadow: 0 2px 4px #0004;
   position: absolute;
   top: 100%;
   width: 100%;
