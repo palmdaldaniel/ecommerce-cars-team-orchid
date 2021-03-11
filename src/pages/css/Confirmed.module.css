@@ -1,7 +1,11 @@
 .confirmationWrapper {
   margin: auto;
-  padding-top: 6rem;
-  width: 90%;
+  padding-top: 7.5rem; /* to be removed when navbar is fixed*/
+  width: 75%;
+}
+
+.confirmationWrapper h1 {
+  font-size: 1.5rem;
 }
 
 .confirmationWrapper p {
@@ -18,30 +22,12 @@
   color: limegreen;
 }
 
-/*-----styles for total value-----*/
-.showTotalContainer {
-  margin-bottom: 2.2rem;
-  width: 90%;
-  margin: auto;
-}
-
-.totalcost {
-  font-size: 1.4rem;
-  font-weight: bold;
-}
-
-.showcost{
-  font-size: 1.4rem;
-}
-
 /*-----styles for purchased list-----*/
 
 .purchasedList {
   display: grid;
   gap: 10px;
 }
-
-
 
 .purchasedList img {
   max-width: 30%;
@@ -51,17 +37,36 @@
 text-align: left;
 
 }
-.purchasedContainer h3 {
-  font-size: 1.4rem;
+.purchasedContainer h2 {
+  font-size: 1.3rem;
   font-weight: bold;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+
+.purchasedContainer h3 {
+  font-size: 1.2rem;
+}
+
+/*-----styles for total value-----*/
+.showTotalContainer {
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.totalcost {
+  font-weight: bold;
+  margin: 0 0.8rem;
+}
+
+.showcost {
+  margin: 0 0.8rem;
 }
 
 /*-----styles for button-----*/
 
 .button {
   margin: 3rem auto;
-  background: white;
+  background: #efefef;
   padding: 5px 20px;
   border: 2px solid #FF9300;
   border-radius: 5px;
@@ -81,27 +86,34 @@ button:focus {
   color: rgb(7, 7, 7);
 } 
 
+@media only screen and (min-width: 329px) {
+  .confirmationWrapper {
+    width: 60%;
+  }
+}
+
 @media only screen and (min-width: 375px) {
 
-  .showTotalContainer {
-    display: flex;
-    justify-content: center;
-  }
 
   .totalcost {
-    font-size: 1.4rem;
     font-weight: bold;
     margin: 0 0.8rem;
   }
 
   .showcost{
-    font-size: 1.4rem;
     margin: 0;
   }
   .purchasedList div {
     justify-content: start;
   }
 
+}
+
+@media only screen and (min-width: 768px) {
+  .showTotalContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 
 @media only screen and (min-width: 876px) {
@@ -114,3 +126,10 @@ button:focus {
     flex-direction: row;
    }
 } 
+
+@media only screen and (min-width: 1199px) {
+  .confirmationWrapper {
+    padding-top: 10rem;
+    width: 60%;
+  }
+}
