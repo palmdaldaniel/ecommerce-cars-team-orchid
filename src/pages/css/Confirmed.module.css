@@ -51,6 +51,7 @@ text-align: left;
 .showTotalContainer {
   width: 90%;
   margin: 1rem auto;
+  padding-top: 1.2rem;
 }
 
 .totalcost {
@@ -86,12 +87,6 @@ button:focus {
   color: rgb(7, 7, 7);
 } 
 
-@media only screen and (min-width: 329px) {
-  .confirmationWrapper {
-    width: 60%;
-  }
-}
-
 @media only screen and (min-width: 375px) {
 
   .totalcost {
@@ -102,11 +97,6 @@ button:focus {
   .showcost{
     margin: 0;
   }
-
-  /* .purchasedList div {
-    justify-content: start;
-  } */
-
 }
 
 @media only screen and (min-width: 768px) {
@@ -117,17 +107,6 @@ button:focus {
     padding-top: 1.2rem;
   }
 }
-
-@media only screen and (min-width: 876px) {
-  /* .purchasedList img {
-    max-width: 25%;
-  } */
-/* 
-  .purchasedList div {
-    justify-content: space-between;
-    flex-direction: row;
-   } */
-} 
 
 @media only screen and (min-width: 1199px) {
   .confirmationWrapper {
