@@ -1,3 +1,4 @@
+
 .confirmationWrapper {
   margin: auto;
   padding-top: 7.5rem; /* to be removed when navbar is fixed*/
@@ -26,17 +27,9 @@
 
 .purchasedList {
   display: grid;
-  gap: 10px;
+  gap: 10px; /*to set margin between cars in list*/
 }
-/* 
-.purchasedList img {
-  max-width: 30%;
-} */
-/* 
-.purchasedList p {
-text-align: left;
 
-} */
 .purchasedContainer h2 {
   font-size: 1.3rem;
   font-weight: bold;
@@ -61,6 +54,7 @@ text-align: left;
 
 .showcost {
   margin: 0 0.8rem;
+  font-weight: bold;
 }
 
 /*-----styles for button-----*/
