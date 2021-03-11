@@ -33,7 +33,7 @@ const About = () => {
                 <br />
               Phone: 0549-323 232
               <br />
-              Mail: Carsagainshumanity@newcar.com
+              Mail: Carsforhumanity@newcar.com
             </p>
             </div>
           </div>

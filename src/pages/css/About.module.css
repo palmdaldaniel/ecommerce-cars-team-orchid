@@ -16,7 +16,8 @@
 }
 
 .images {
-border-radius: 10px;
+    max-width: 400px;
+    border-radius: 10px;
 }
 
 
@@ -71,7 +72,13 @@ border-radius: 10px;
         padding-top: 2rem;
     }
     .p {
-        padding: 39px;
+        max-width: 400px;
+      
+    }
+    .content {
+        padding-bottom: 50px;
+     
+        margin: auto;
     }
     .images{
         width: 86%;
