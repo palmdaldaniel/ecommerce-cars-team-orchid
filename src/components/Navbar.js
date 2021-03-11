@@ -104,7 +104,7 @@ function Navbar (props) {
 							</div>
 						)}
 						<hr />
-						<p className={styles.cartTotal}><span className={styles.cartValue}>Total:</span> {valueStr}</p>
+						<p className={styles.cartTotal}>{valueStr}</p>
 					</div>
 				)}
 
