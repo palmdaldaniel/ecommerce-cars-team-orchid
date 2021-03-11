@@ -1,3 +1,4 @@
+
 .confirmationWrapper {
   margin: auto;
   padding-top: 7.5rem; /* to be removed when navbar is fixed*/
@@ -26,17 +27,9 @@
 
 .purchasedList {
   display: grid;
-  gap: 10px;
+  gap: 10px; /*to set margin between cars in list*/
 }
 
-.purchasedList img {
-  max-width: 30%;
-}
-
-.purchasedList p {
-text-align: left;
-
-}
 .purchasedContainer h2 {
   font-size: 1.3rem;
   font-weight: bold;
@@ -51,6 +44,7 @@ text-align: left;
 .showTotalContainer {
   width: 90%;
   margin: 1rem auto;
+  padding-top: 1.2rem;
 }
 
 .totalcost {
@@ -60,6 +54,7 @@ text-align: left;
 
 .showcost {
   margin: 0 0.8rem;
+  font-weight: bold;
 }
 
 /*-----styles for button-----*/
@@ -86,14 +81,7 @@ button:focus {
   color: rgb(7, 7, 7);
 } 
 
-@media only screen and (min-width: 329px) {
-  .confirmationWrapper {
-    width: 60%;
-  }
-}
-
 @media only screen and (min-width: 375px) {
-
 
   .totalcost {
     font-weight: bold;
@@ -103,29 +91,16 @@ button:focus {
   .showcost{
     margin: 0;
   }
-  .purchasedList div {
-    justify-content: start;
-  }
-
 }
 
 @media only screen and (min-width: 768px) {
   .showTotalContainer {
     display: flex;
     justify-content: flex-end;
+    width: 100%;
+    padding-top: 1.2rem;
   }
 }
-
-@media only screen and (min-width: 876px) {
-  .purchasedList img {
-    max-width: 25%;
-  }
-
-  .purchasedList div {
-    justify-content: space-between;
-    flex-direction: row;
-   }
-} 
 
 @media only screen and (min-width: 1199px) {
   .confirmationWrapper {
