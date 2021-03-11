@@ -1,4 +1,5 @@
 .pageContainer {
+    text-align: center;
     box-sizing: border-box;
     margin-bottom: 3rem;
     overflow: hidden;
@@ -7,22 +8,21 @@
     justify-content: center;
 }
 .h1 {
-    padding-left:2rem;
     font-size: 3rem;
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: rem;
 }
 .p {
     font-size: medium;
-    align-content: center;
-    padding: 2rem;
-    text-align: left;
-    padding-top: 0rem;
+}
+
+.images {
+border-radius: 10px;
 }
 
 
 /* Mid to Large screen */
-@media only screen and (min-width: 663px) {
+@media only screen and (min-width: 804px) {
     .pageContainer {
         padding-top: 4rem;
         padding-bottom: 4rem;
@@ -30,22 +30,26 @@
     .content {
         align-self: center;
         flex-basis: 50%;
-        max-width: 50vw;   
+        max-width: 400px;
+          
     }
     .flexBox {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         margin-top: 40px;
+        max-width: 900px;
     }
     .flexBoxn {
         display: flex;
-        justify-content: space-around;
-        margin-top:40px;
+        justify-content: space-between;
+        margin-top: 40px;
+        max-width: 900px;
     }
+  
 }
 
 /* Small screen */
-@media only screen and (max-width: 662px){    
+@media only screen and (max-width: 803px){    
     .pageContainer {
         padding-top: 2rem;
         padding-bottom: 2rem;
@@ -54,7 +58,6 @@
         display: flex;
         flex-wrap: wrap-reverse;
         margin-top: 1rem;
-
     } 
     .flexBoxn {
         display: flex;
@@ -66,9 +69,9 @@
         text-align: center;
         padding-top: 2rem;
     }
-    /* .p {
-        padding-top: -3rem;
-    } */
+    .p {
+        padding: 39px;
+    }
     .images{
         width: 86%;
         margin: auto;
