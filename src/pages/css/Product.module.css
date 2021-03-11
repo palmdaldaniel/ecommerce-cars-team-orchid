@@ -1,15 +1,18 @@
 .container {
-	padding-top: 8em;
+	padding-top: 100px;
+	max-width: 600px;
+	margin: 0 auto;
 }
 
 .productImg {
 	width: 100%;
 	height: auto;
+	border-radius: 1rem;
 }
 
 .productTitle {
 	font-size: 1.5rem;
-	margin-top: 0;
+	margin: .5em 0;
 }
 
 .tableHeader {
@@ -17,18 +20,28 @@
 }
 
 .productPrice {
-	font-size: 2rem;
+	font-size: 1.5rem;
 	font-weight: 600;
-	padding: 10px 0;
+	margin: 1em 0 .5em;
 }
 
 .buttonStyle {
-	margin-bottom: 3rem;
-	margin-top: 1rem;
+	display: flex;
+	justify-content: flex-end;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 601px) {
 	.productPrice {
-		font-size: 1.5rem;
+		font-size: 1.75rem;
+	}
+}
+
+@media only screen and (min-width: 993px) {
+	.productPrice {
+		font-size: 2rem;
+	}
+
+	.container {
+		max-width: 1000px;
 	}
 }
