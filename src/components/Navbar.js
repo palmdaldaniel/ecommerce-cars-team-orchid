@@ -3,7 +3,7 @@ import { CartContext } from '../contexts/CartContext';
 import { useHistory } from 'react-router-dom';
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faShoppingCart, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faShoppingCart, faEllipsisH, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 
 import CartItem from './CartItem.js';
 import styles from "./css/Navbar.module.css";
@@ -71,8 +71,7 @@ function Navbar (props) {
 				</div>
 				
 				<div className={styles.cartContainer} onClick={toggleCartMenu}>
-					<FontAwesomeIcon icon={faShoppingCart} className
-					={styles.shoppingCart}/>
+					<FontAwesomeIcon icon={faShoppingCart} className={styles.shoppingCart}/>
 					<span className={styles.cartNumber}>{cart.length}</span>
 				</div>
 			</div>
@@ -85,15 +84,14 @@ function Navbar (props) {
 
 			{ displayCart &&
 			<div className={styles.cartContent}>
+				<p className={styles.cartHeadline}>Shopping cart</p>
+				
 				{!cart.length && (
-					<p className={styles.cartHeadline}>
-						Your cart is empty
-					</p>
+					<p>Nothing here right now</p>
 				)}
 
 				{cart.length > 0 && (
 					<div className={styles.cartContainer}>
-						<p className={styles.cartHeadline}>Your cart</p>
 						{ cart.slice(0, maxCartItems).map((product, i) => 
 							<div key={i} className={styles.cartItem}>
 								<CartItem product={product}/>
@@ -106,14 +104,15 @@ function Navbar (props) {
 							</div>
 						)}
 						<hr />
-						<p className={styles.cartTotal}><span className={styles.cartValue}>Total:</span> {valueStr}</p>
+						<p className={styles.cartTotal}>{valueStr}</p>
 					</div>
 				)}
 
 				{cart.length > 0 && (
-					<div className={styles.goToCheckout}>
-						<button className={styles.proceedButton} onClick={(e) => proceedToCheckOut(e)}>Proceed</button>
-					</div>
+					<button
+						className={styles.proceedButton}
+						onClick={(e) => proceedToCheckOut(e)}
+					>To checkout <FontAwesomeIcon icon={faAngleDoubleRight} /></button>
 				)}
 			</div>}
 		</nav>
