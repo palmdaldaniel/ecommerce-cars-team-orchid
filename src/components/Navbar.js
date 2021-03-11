@@ -111,9 +111,7 @@ function Navbar (props) {
 				)}
 
 				{cart.length > 0 && (
-					<div className={styles.goToCheckout}>
-						<button className={styles.proceedButton} onClick={(e) => proceedToCheckOut(e)}>Proceed</button>
-					</div>
+					<button className={styles.proceedButton} onClick={(e) => proceedToCheckOut(e)}>Proceed</button>
 				)}
 			</div>}
 		</nav>
