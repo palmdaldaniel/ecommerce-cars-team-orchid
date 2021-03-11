@@ -71,8 +71,7 @@ function Navbar (props) {
 				</div>
 				
 				<div className={styles.cartContainer} onClick={toggleCartMenu}>
-					<FontAwesomeIcon icon={faShoppingCart} className
-					={styles.shoppingCart}/>
+					<FontAwesomeIcon icon={faShoppingCart} className={styles.shoppingCart}/>
 					<span className={styles.cartNumber}>{cart.length}</span>
 				</div>
 			</div>
@@ -85,15 +84,14 @@ function Navbar (props) {
 
 			{ displayCart &&
 			<div className={styles.cartContent}>
+				<p className={styles.cartHeadline}>Shopping cart</p>
+				
 				{!cart.length && (
-					<p className={styles.cartHeadline}>
-						Your cart is empty
-					</p>
+					<p>Nothing here right now</p>
 				)}
 
 				{cart.length > 0 && (
 					<div className={styles.cartContainer}>
-						<p className={styles.cartHeadline}>Your cart</p>
 						{ cart.slice(0, maxCartItems).map((product, i) => 
 							<div key={i} className={styles.cartItem}>
 								<CartItem product={product}/>
