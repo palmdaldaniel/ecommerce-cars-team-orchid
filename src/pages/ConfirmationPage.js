@@ -36,7 +36,7 @@ const ConfirmationPage = () => {
       </div>
 
       <div className={`container ${styles.purchasedContainer}`}>
-        <h3>Your purchase:</h3>
+        <h2>Your purchase:</h2>
         <hr />
 
         <div className={styles.purchasedList}>
@@ -45,11 +45,13 @@ const ConfirmationPage = () => {
         </div>
 
         <div className={styles.showTotalContainer}>
-          <h2 className={styles.totalcost}>Total cost:</h2>
-          <h2 className={styles.showcost}>{formattedTotalValue}</h2>
-        </div>
-        <hr />
+          <h3 className={styles.totalcost}>Total cost:</h3>
+          <h3 className={styles.showcost}>{formattedTotalValue}</h3>
       </div>
+      <hr/>
+
+      </div>
+        
 
       <button className={styles.button} onClick={() => history.push("/")}>
         Browse for more cars

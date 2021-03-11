@@ -1,6 +1,6 @@
 .confirmationWrapper {
   margin: auto;
-  padding-top: 7.5rem;
+  padding-top: 7.5rem; /* to be removed when navbar is fixed*/
   width: 75%;
 }
 
@@ -22,22 +22,6 @@
   color: limegreen;
 }
 
-/*-----styles for total value-----*/
-.showTotalContainer {
-  margin-bottom: 2.2rem;
-  width: 90%;
-  margin: auto;
-}
-
-.totalcost {
-  font-size: 1.4rem;
-  font-weight: bold;
-}
-
-.showcost{
-  font-size: 1rem;
-}
-
 /*-----styles for purchased list-----*/
 
 .purchasedList {
@@ -53,17 +37,36 @@
 text-align: left;
 
 }
-.purchasedContainer h3 {
-  font-size: 1.2rem;
+.purchasedContainer h2 {
+  font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 1rem;
+}
+
+.purchasedContainer h3 {
+  font-size: 1.2rem;
+}
+
+/*-----styles for total value-----*/
+.showTotalContainer {
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.totalcost {
+  font-weight: bold;
+  margin: 0 0.8rem;
+}
+
+.showcost {
+  margin: 0 0.8rem;
 }
 
 /*-----styles for button-----*/
 
 .button {
   margin: 3rem auto;
-  background: white;
+  background: #efefef;
   padding: 5px 20px;
   border: 2px solid #FF9300;
   border-radius: 5px;
@@ -91,25 +94,26 @@ button:focus {
 
 @media only screen and (min-width: 375px) {
 
-  .showTotalContainer {
-    display: flex;
-    justify-content: center;
-  }
 
   .totalcost {
-    font-size: 1.4rem;
     font-weight: bold;
     margin: 0 0.8rem;
   }
 
   .showcost{
-    font-size: 1.4rem;
     margin: 0;
   }
   .purchasedList div {
     justify-content: start;
   }
 
+}
+
+@media only screen and (min-width: 768px) {
+  .showTotalContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 
 @media only screen and (min-width: 876px) {
