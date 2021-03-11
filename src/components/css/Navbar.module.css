@@ -12,7 +12,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   text-align: right;
-  padding: 0px 10px;
+  padding: 0px 1rem;
   color: black;
   height: 56px;
 }
@@ -137,10 +137,6 @@
     right: 0;
     color: black;
   }
-
-  .cartHeadline {
-    font-size: 1.75rem;
-  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -181,8 +177,7 @@
   }
 
   .desktopLinks a {
-    padding-right: 1em;
-    margin-left: 0.8em;
+    padding-right: 2em;
     font-size: 1em;
     color: black;
   }
@@ -193,14 +188,6 @@
 
   .navUL,
   .cartContent {
-    width: 700px;
-  }
-
-  .cartHeadline {
-    font-size: 2rem;
-  }
-
-  .proceedButton {
-    font-size: 1.5em;
+    width: 600px;
   }
 }
