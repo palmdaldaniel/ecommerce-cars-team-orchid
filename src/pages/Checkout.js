@@ -10,8 +10,10 @@ function Checkout() {
   const { cart, cartValue, handlePurchase, deleteCartItem } = useContext(
     CartContext
   );
+
   const history = useHistory();
   const [valueStr, setPriceString] = useState("");
+  
   useEffect(() => {
     if (typeof cartValue === "number") {
       setPriceString(
@@ -22,10 +24,12 @@ function Checkout() {
       );
     }
   }, [cartValue]);
+
   const onPurchase = () => {
     handlePurchase();
     history.push("/confirmed");
   };
+
   // returns jsx with form and purchasebutton when cart.length > 0
   const loadCart = () => {
     return (
@@ -144,6 +148,7 @@ function Checkout() {
       </div>
     );
   };
+  
   return (
     <>
       {cart && cart.length > 0 ? (
