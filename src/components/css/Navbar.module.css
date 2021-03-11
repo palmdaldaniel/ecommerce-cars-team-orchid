@@ -78,6 +78,14 @@
   text-align: center;
 }
 
+.cartTotal {
+text-align: right;
+}
+
+.cartValue {
+	font-weight: bold;	
+}
+
 .goToCheckout {
   display: flex;
   flex-direction: column;

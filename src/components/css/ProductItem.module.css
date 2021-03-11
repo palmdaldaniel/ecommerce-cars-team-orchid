@@ -8,7 +8,8 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  max-width: 80%; 
+  max-width: 80%;
+  overflow: hidden;
 }
 
 .productItemContainer:hover {
@@ -69,13 +70,12 @@
   .productItemContainer:hover {
     max-width: 89%;
   }
-
 }
 
 @media screen and (min-width: 1200px) {
   .productItemContainer {
     height: 100%;
-    max-width: 100%; 
+    max-width: 100%;
   }
 
   .productItemContainer:hover {
