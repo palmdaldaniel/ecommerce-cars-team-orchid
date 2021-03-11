@@ -9,7 +9,6 @@
 }
 .h1 {
     font-size: 3rem;
-    margin-top: 1rem;
     margin-bottom: rem;
 }
 .p {
@@ -45,7 +44,9 @@ border-radius: 10px;
         margin-top: 40px;
         max-width: 900px;
     }
-  
+    .h1{
+    margin-top: -2rem;
+    }
 }
 
 /* Small screen */
