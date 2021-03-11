@@ -39,19 +39,50 @@
 	border-radius: 5px;
 }
 
-@media only screen and (max-width: 768px) {
-
+@media only screen and (max-width: 770px) {
 	.imageContainer {
-		height: 230px;
-		border-radius: none;
-	}
-
-  .image {
-    width: 100%;
-		height: 240px;
-	}
-
-	.textContainer {
-		font-size: 1.2em;
+		height: 26em;
+		width: 38em;
 	}
 }
+
+@media only screen and (max-width: 590px) {
+	.imageContainer {
+		height: 22em;
+		width: 34em;
+	}
+}
+
+@media only screen and (max-width: 540px) {
+	.imageContainer {
+		height: 20em;
+		width: 30em;
+	}
+}
+
+@media only screen and (max-width: 478px) {
+	.imageContainer {
+		height: 16em;
+		width: 24em;
+	}
+}
+
+@media only screen and (max-width: 395px) {
+	.imageContainer {
+		height: 16em;
+		width: 25em;
+	}
+}
+
+/* @media only screen and (max-width: 590px) {
+	.image {
+		height: 100%;
+		width: 100%;
+	}
+} */
+
+/* @media only screen and (max-width: 370px) {
+	.slideContainer {
+		margin-right: 1em;
+	}
+} */
