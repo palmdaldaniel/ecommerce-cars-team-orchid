@@ -24,13 +24,6 @@
   gap: 10px;
   align-items: flex-start;
 }
-.productRow p {
-  text-align: left;
-}
-
-.productRow img {
-  width: 20%;
-}
 
 .deleteBtn {
   font-size: 2rem;
