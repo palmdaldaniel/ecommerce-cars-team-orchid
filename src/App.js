@@ -8,8 +8,10 @@ import Product from "./pages/Product.js";
 import About from "./pages/About";
 import ScrollToTop from "./components/ScrollToTop.js";
 
+
 import ProductsContextProvider from "./contexts/ProductsContext";
 import CartContextProvider from "./contexts/CartContext";
+import NavbarSpacer from "./components/NavbarSpacer.js";
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
           <BrowserRouter>
             <ScrollToTop />
             <Navbar />
+            <NavbarSpacer/>
             <Route exact path="/">
               <Home />
             </Route>
