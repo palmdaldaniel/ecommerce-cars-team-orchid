@@ -26,29 +26,33 @@ const ConfirmationPage = () => {
   return (
     <div className="center-align">
       <div className={styles.confirmationWrapper}>
-        <h1 className={styles.title}>Great! Enjoy your new-to-you car!</h1>
 
         <FontAwesomeIcon icon={faCheck} className={styles.icon} />
-        <p>Your order is confirmed.</p>
+        <h1>Your order is confirmed.</h1>
         <p>
-          Thank your shopping with us! Please print this page, this is your
+          Thank your shopping with us! Please print this page, it's your
           receipt.
         </p>
       </div>
-      <div className={styles.showTotalContainer}>
-        <h2 className={styles.totalcost}>Total cost:</h2>
-        <h3 className={styles.showcost}>{formattedTotalValue}</h3>
-      </div>
+
       <div className={`container ${styles.purchasedContainer}`}>
-        {purchased.length < 2 && <h3>Your new car:</h3>}
-        {purchased.length >= 2 && <h3>Your new cars:</h3>}
+        <h2>Your purchase:</h2>
         <hr />
+
         <div className={styles.purchasedList}>
           {purchased &&
             purchased.map((car, i) => <CartItem key={i} product={car} />)}
         </div>
-        <hr />
+
+        <div className={styles.showTotalContainer}>
+          <h3 className={styles.totalcost}>Total cost:</h3>
+          <h3 className={styles.showcost}>{formattedTotalValue}</h3>
       </div>
+      <hr/>
+
+      </div>
+        
+
       <button className={styles.button} onClick={() => history.push("/")}>
         Browse for more cars
       </button>
