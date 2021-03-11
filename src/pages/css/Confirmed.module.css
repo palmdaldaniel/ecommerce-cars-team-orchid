@@ -1,6 +1,6 @@
 .confirmationWrapper {
   margin: auto;
-  padding-top: 8rem;
+  padding-top: 7.5rem;
   width: 75%;
 }
 
@@ -35,7 +35,7 @@
 }
 
 .showcost{
-  font-size: 1.4rem;
+  font-size: 1rem;
 }
 
 /*-----styles for purchased list-----*/
@@ -83,6 +83,12 @@ button:focus {
   color: rgb(7, 7, 7);
 } 
 
+@media only screen and (min-width: 329px) {
+  .confirmationWrapper {
+    width: 60%;
+  }
+}
+
 @media only screen and (min-width: 375px) {
 
   .showTotalContainer {
@@ -116,3 +122,10 @@ button:focus {
     flex-direction: row;
    }
 } 
+
+@media only screen and (min-width: 1199px) {
+  .confirmationWrapper {
+    padding-top: 10rem;
+    width: 60%;
+  }
+}
