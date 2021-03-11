@@ -13,7 +13,7 @@ function Checkout() {
 
   const history = useHistory();
   const [valueStr, setPriceString] = useState("");
-  
+
   useEffect(() => {
     if (typeof cartValue === "number") {
       setPriceString(
@@ -51,7 +51,7 @@ function Checkout() {
                 </div>
               </div>
             ))}
-            <p className={`${style.totalCost} right-align`}>{valueStr}</p>
+            <p className={style.totalCost}>{valueStr}</p>
           </div>
           <hr />
         </div>
@@ -148,7 +148,7 @@ function Checkout() {
       </div>
     );
   };
-  
+
   return (
     <>
       {cart && cart.length > 0 ? (
@@ -156,7 +156,7 @@ function Checkout() {
       ) : (
         <div className={style.emptyCart}>
           <h4>Your cart is empty</h4>
-          <button onClick={() => history.push('/')} className={style.Btn}>
+          <button onClick={() => history.push("/")} className={style.Btn}>
             Browse for cars
           </button>
         </div>
