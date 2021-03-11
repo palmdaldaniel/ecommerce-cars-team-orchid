@@ -24,12 +24,9 @@
   gap: 10px;
   align-items: flex-start;
 }
+
 .productRow p {
   text-align: left;
-}
-
-.productRow img {
-  width: 20%;
 }
 
 .deleteBtn {
@@ -37,7 +34,9 @@
   border: none;
   background: none;
   transition: 0.3s;
+  margin-top: 50%;
 }
+
 .deleteBtn:hover {
   color: #ff9300;
   background: none;
@@ -45,9 +44,10 @@
 }
 
 .totalCost {
-  font-size: 2rem;
+  font-size: 1.3rem;
   font-weight: 600;
   padding-top: 10px;
+  align-items: center;
 }
 
 /*----- styles for input form -----*/
@@ -113,19 +113,17 @@
   flex-direction: column;
 }
 
-@media only screen and (min-width: 375px) {
+@media only screen and (min-width: 768px) {
   .totalCost {
-    font-size: 1.2rem;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.4rem;
   }
-}
-
-@media only screen and (min-width: 779px) {
- 
 }
 
 @media only screen and (min-width: 1024px) {
   .totalCost {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
   }
-
 }
