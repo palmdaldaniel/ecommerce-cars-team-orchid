@@ -24,12 +24,9 @@
   gap: 10px;
   align-items: flex-start;
 }
+
 .productRow p {
   text-align: left;
-}
-
-.productRow img {
-  width: 20%;
 }
 
 .deleteBtn {
@@ -37,7 +34,9 @@
   border: none;
   background: none;
   transition: 0.3s;
+  margin-top: 50%;
 }
+
 .deleteBtn:hover {
   color: #ff9300;
   background: none;
