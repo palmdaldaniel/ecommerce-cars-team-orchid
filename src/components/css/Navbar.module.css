@@ -1,6 +1,5 @@
 .navbarWrapper {
-	/* background-color: #ff9500; */
-	background-color: rgba(255, 255, 255, 0.932);
+	background: white;
 	font-size: 18px;
 	display: flex;
 	flex-direction: column;
@@ -15,6 +14,7 @@
   text-align: right;
   padding: 0px 10px;
   color: black;
+  height: 56px;
 }
 
 .a {
@@ -116,6 +116,10 @@
 
 /* Follow Materialize's breakpoints */
 @media only screen and (min-width: 601px) {
+  .navbar {
+    height: 64px;
+  }
+
   .navLogo {
     height: 64px;
   }
@@ -147,11 +151,15 @@
 
 @media screen and (min-width: 1201px) {
   .navbarWrapper {
-    height: 120px;
+    height: 80px;
+  }
+
+  .navbar {
+    height: 80px;
   }
 
   .navLogo {
-    margin-top: 30px;
+    height: 80px;
   }
 
   .navLogo,
@@ -161,8 +169,7 @@
   }
 
   .cartContainer {
-    font-size: 1.5em;
-    margin-top: 20px;
+    font-size: 1em;
   }
 
   .hamburgerMenu {
@@ -175,9 +182,8 @@
 
   .desktopLinks a {
     padding-right: 1em;
-    margin-top: 30px;
     margin-left: 0.8em;
-    font-size: 1.5em;
+    font-size: 1em;
     color: black;
   }
 
