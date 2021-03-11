@@ -28,15 +28,15 @@
   display: grid;
   gap: 10px;
 }
-
+/* 
 .purchasedList img {
   max-width: 30%;
-}
-
+} */
+/* 
 .purchasedList p {
 text-align: left;
 
-}
+} */
 .purchasedContainer h2 {
   font-size: 1.3rem;
   font-weight: bold;
@@ -94,7 +94,6 @@ button:focus {
 
 @media only screen and (min-width: 375px) {
 
-
   .totalcost {
     font-weight: bold;
     margin: 0 0.8rem;
@@ -103,9 +102,10 @@ button:focus {
   .showcost{
     margin: 0;
   }
-  .purchasedList div {
+
+  /* .purchasedList div {
     justify-content: start;
-  }
+  } */
 
 }
 
@@ -117,14 +117,14 @@ button:focus {
 }
 
 @media only screen and (min-width: 876px) {
-  .purchasedList img {
+  /* .purchasedList img {
     max-width: 25%;
-  }
-
+  } */
+/* 
   .purchasedList div {
     justify-content: space-between;
     flex-direction: row;
-   }
+   } */
 } 
 
 @media only screen and (min-width: 1199px) {
