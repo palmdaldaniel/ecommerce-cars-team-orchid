@@ -10,8 +10,10 @@ const Herobanner = () => {
         </video> 
 		</div>
 
-				<h1>A sustainable way to access freedom</h1>
+			<div className={styles.textContainer}>
+				<span>A way to access freedom</span>
 				<p>Find your car today</p>	
+				</div>
 		</div>
 	);
 }
