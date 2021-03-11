@@ -19,9 +19,10 @@ const CartItem = (props) => {
     <div className={styles.itemContainer}>
       <img className={styles.carImg} src={props.product.image}></img>
       <div className={styles.itemContent}>
-        <p className={styles.title}>
-          {props.product.make} {props.product.model}
-        </p>
+        <div className={styles.title}>
+          <p className={styles.make}>{props.product.make}</p>
+          <p className={styles.model}>{props.product.model}</p>
+        </div>
         <p className={styles.price}>{price}</p>
       </div>
     </div>
