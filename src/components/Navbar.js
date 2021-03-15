@@ -11,6 +11,7 @@ import styles from "./css/Navbar.module.css";
 function Navbar (props) {
 	const [displayNavMenu, setDisplayNavMenu] = useState(false)
 	const [displayCart, setDisplayCart] = useState(false)
+	const [displayUserMenu, setDisplayUserMenu] = useState(false)
 	const { cart, cartValue } = useContext(CartContext);
 	const history = useHistory();const [valueStr, setPriceString] = useState("");
 
@@ -23,7 +24,9 @@ function Navbar (props) {
 	const maxCartItems = 4;
 
 	function toggleUserMenu () {
-
+		setDisplayUserMenu(!displayUserMenu)
+		setDisplayCart(false)
+		setDisplayNavMenu(false)
 	}
 
 	//toggle hamburger menu, could be refactored into one single function with the other toggle function?
@@ -88,6 +91,10 @@ function Navbar (props) {
 				<NavLink className={styles.a} onClick={() => closeMenu()} to="/">Home</NavLink>
 				<NavLink className={styles.a}  onClick={() => closeMenu()} to="/about">About us</NavLink>
 			</ul>}
+
+			{ displayUserMenu && 
+			<div>hej</div>
+			}
 
 			{ displayCart &&
 			<div className={styles.cartContent}>
