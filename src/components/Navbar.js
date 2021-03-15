@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faBars, faShoppingCart, faEllipsisH, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 
 import CartItem from './CartItem.js';
+import UserMenu from './UserMenu.js';
 import styles from "./css/Navbar.module.css";
 
 function Navbar (props) {
@@ -96,7 +97,9 @@ function Navbar (props) {
 			</ul>}
 
 			{ displayUserMenu && 
-			<div>hej</div>
+			<div>
+				<UserMenu />
+			</div>
 			}
 
 			{ displayCart &&
