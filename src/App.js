@@ -10,29 +10,32 @@ import ScrollToTop from "./components/ScrollToTop.js";
 
 import ProductsContextProvider from "./contexts/ProductsContext";
 import CartContextProvider from "./contexts/CartContext";
+import UserContextProvider from "./contexts/UserContext.js";
 
 function App() {
   return (
     <div className="App">
       <ProductsContextProvider>
         <CartContextProvider>
-          <BrowserRouter>
-            <ScrollToTop />
-            <Navbar />
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route exact path="/confirmed">
-              <Confirmed />
-            </Route>
-            <Route exact path="/checkout">
-              <Checkout />
-            </Route>
-            <Route exact path="/product/:id" component={Product} />
-            <Route exact path="/about">
-              <About />
-            </Route>
-          </BrowserRouter>
+          <UserContextProvider>
+            <BrowserRouter>
+              <ScrollToTop />
+              <Navbar />
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route exact path="/confirmed">
+                <Confirmed />
+              </Route>
+              <Route exact path="/checkout">
+                <Checkout />
+              </Route>
+              <Route exact path="/product/:id" component={Product} />
+              <Route exact path="/about">
+                <About />
+              </Route>
+            </BrowserRouter>
+          </UserContextProvider>
         </CartContextProvider>
       </ProductsContextProvider>
     </div>
