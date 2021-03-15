@@ -23,6 +23,7 @@ function Navbar (props) {
 	}, [cartValue]);
 	const maxCartItems = 4;
 
+	//toggle user menu
 	function toggleUserMenu () {
 		setDisplayUserMenu(!displayUserMenu)
 		setDisplayCart(false)
@@ -33,12 +34,14 @@ function Navbar (props) {
 	function toggleNavMenu() {
 		setDisplayNavMenu(!displayNavMenu)
 		setDisplayCart(false)
+		setDisplayUserMenu(false)
 	}
 
 	//toggle cart menu, could be refactored into one single function with the other toggle function?
 	function toggleCartMenu() {
 		setDisplayCart(!displayCart)
 		setDisplayNavMenu(false)
+		setDisplayUserMenu(false)
 	}
 
 	//closing the menu when user clicks on link in hamburger menu
