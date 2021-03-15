@@ -3,7 +3,7 @@ import { CartContext } from '../contexts/CartContext';
 import { useHistory } from 'react-router-dom';
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faShoppingCart, faEllipsisH, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faBars, faShoppingCart, faEllipsisH, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 
 import CartItem from './CartItem.js';
 import styles from "./css/Navbar.module.css";
@@ -22,6 +22,9 @@ function Navbar (props) {
 	}, [cartValue]);
 	const maxCartItems = 4;
 
+	function toggleUserMenu () {
+
+	}
 
 	//toggle hamburger menu, could be refactored into one single function with the other toggle function?
 	function toggleNavMenu() {
@@ -68,6 +71,10 @@ function Navbar (props) {
 						src="/OC-logo.jpg" 
 						onClick={() => history.push('/')}
 					/>
+				</div>
+
+				<div className={styles.userContainer} onClick={toggleUserMenu}>
+					<FontAwesomeIcon icon={faUser}/>
 				</div>
 				
 				<div className={styles.cartContainer} onClick={toggleCartMenu}>
