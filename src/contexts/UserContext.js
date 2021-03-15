@@ -31,7 +31,11 @@ function UserContextProvider(props) {
 		return 2; // User logged in
 	}
 	
-	const values = { users, addUser, verifyUser };
+	function logoutUser() {
+		setCurrentUser(undefined);
+	}
+
+	const values = { users, addUser, verifyUser, logoutUser };
 
 	return (
 		<UserContext.Provider value={values}>{props.children}</UserContext.Provider>
