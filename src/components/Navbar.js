@@ -79,11 +79,11 @@ function Navbar (props) {
 						onClick={() => history.push('/')}
 					/>
 				</div>
-
-				<div className={styles.userContainer} onClick={toggleUserMenu}>
-					<FontAwesomeIcon icon={faUser}/>
-				</div>
 				
+				<div className={styles.userContainer} onClick={toggleUserMenu}>
+					<FontAwesomeIcon icon={faUser} className={styles.userIcon}/>
+				</div>
+
 				<div className={styles.cartContainer} onClick={toggleCartMenu}>
 					<FontAwesomeIcon icon={faShoppingCart} className={styles.shoppingCart}/>
 					<span className={styles.cartNumber}>{cart.length}</span>
@@ -97,7 +97,7 @@ function Navbar (props) {
 			</ul>}
 
 			{ displayUserMenu && 
-			<div>
+			<div className={styles.userContent}>
 				<UserMenu />
 			</div>
 			}

@@ -9,7 +9,7 @@
 
 .navbar {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   align-items: center;
   text-align: right;
   padding: 0px 1rem;
@@ -25,7 +25,8 @@
 }
 
 .navUL,
-.cartContent {
+.cartContent,
+.userContent {
   background-color: white;
   box-shadow: 0 2px 4px #0004;
   position: absolute;
@@ -52,6 +53,10 @@
   cursor: pointer;
 }
 
+.userIcon {
+  cursor: pointer;
+}
+
 /* inside dropdown-menu */
 
 /* overriding materialize rule for nav */
@@ -59,7 +64,8 @@
   line-height: 1;
 }
 
-.cartContent {
+.cartContent,
+.userContent {
   padding: 0 1rem;
   font-size: 1rem;
 }
@@ -128,7 +134,8 @@
   }
 
   .navUL,
-  .cartContent {
+  .cartContent,
+  .userContent {
     width: 500px;
   }
 
@@ -136,7 +143,8 @@
     left: 0;
   }
 
-  .cartContent {
+  .cartContent,
+  .userContent {
     right: 0;
     color: black;
   }
@@ -190,7 +198,8 @@
   }
 
   .navUL,
-  .cartContent {
+  .cartContent,
+  .userContent {
     width: 600px;
   }
 }
