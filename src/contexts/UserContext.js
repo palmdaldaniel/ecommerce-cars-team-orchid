@@ -4,38 +4,55 @@ export const UserContext = createContext();
 
 function UserContextProvider(props) {
 
+	/*	Array of all registered users
+	 */
 	const [users, setUsers] = useState([]);
+
+	/*	Holds currently logged in user.
+	 *	If 'undefined', no user is logged in
+	 */
 	const [currentUser, setCurrentUser] = useState(undefined);
 
+	/*	Creates a new user with the specified name and password,
+	 *	and adds it to 'database' of users.
+	 */
 	function addUser(username, password) {
 		const user = {
 			username,
 			password,
-			history: []
+			history: [],
 		}
 
 		setUsers(...users, user);
 	}
 
 	/*	Attempts to to log in user with provided credentials.
-	 *	Returns '0' if no user exists with the supplied username,
-	 *	'1' if username exists but password is wrong.
-	 *	Signs user in and returns '2' if credentials match.
+	 *	Returns 'undefined' if user with that name does not exist,
+	 *	'false' if user exists but password is wrong,
+	 *	logs in and returns 'true' if credentials match.
 	 */
 	function verifyUser(username, password) {
 		const user = users.find(u => u.username === username);
-		if (!user) return 0; // No such user
-		if (user.password !== password) return 1; // Wrong password
+		if (!user) return undefined; // No such user
+		if (user.password !== password) return false; // Wrong password
 
 		setCurrentUser(user);
-		return 2; // User logged in
+		return true; // User logged in
 	}
-	
+
+	/*	Logs out current user
+	 */
 	function logoutUser() {
 		setCurrentUser(undefined);
 	}
 
-	const values = { users, addUser, verifyUser, logoutUser };
+	const values = {
+		users,
+		currentUser,
+		addUser,
+		verifyUser,
+		logoutUser,
+	};
 
 	return (
 		<UserContext.Provider value={values}>{props.children}</UserContext.Provider>
