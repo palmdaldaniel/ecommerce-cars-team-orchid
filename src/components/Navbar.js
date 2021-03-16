@@ -79,14 +79,15 @@ function Navbar (props) {
 						onClick={() => history.push('/')}
 					/>
 				</div>
-				
-				<div className={styles.userContainer} onClick={toggleUserMenu}>
-					<FontAwesomeIcon icon={faUser} className={styles.userIcon}/>
-				</div>
+				<div className={styles.iconWrapper}>
+					<div className={styles.userContainer} onClick={toggleUserMenu}>
+						<FontAwesomeIcon icon={faUser} className={styles.userIcon}/>
+					</div>
 
-				<div className={styles.cartContainer} onClick={toggleCartMenu}>
-					<FontAwesomeIcon icon={faShoppingCart} className={styles.shoppingCart}/>
-					<span className={styles.cartNumber}>{cart.length}</span>
+					<div className={styles.cartContainer} onClick={toggleCartMenu}>
+						<FontAwesomeIcon icon={faShoppingCart} className={styles.shoppingCart}/>
+						<span className={styles.cartNumber}>{cart.length}</span>
+					</div>
 				</div>
 			</div>
 
