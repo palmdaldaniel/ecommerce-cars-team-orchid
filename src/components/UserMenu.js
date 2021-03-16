@@ -1,9 +1,12 @@
 import { useState } from "react";
 
+import styles from './css/UserMenu.module.css'
+
 const UserMenu = () => {
     // placeholder variabels, to be deleted once userContext is connected
     const [userLoggedIn, setUserLoggedin] = useState(false)
     const [userRegister, setUserRegister] = useState(false)
+
     function handleLogin(e) {
         e.preventDefault();
     }
@@ -12,13 +15,13 @@ const UserMenu = () => {
         <div>
             {!userLoggedIn &&
             <div>
-                <h2>Login</h2>
+                <h2 className={styles.h2}>Login</h2>
                 <form onSubmit={handleLogin}>
                     <label>
                         <input type="text" placeholder="Username" required/>
                     </label>
                     <label>
-                        <input type="text" placeholder="Password" required/>
+                        <input type="password" placeholder="Password" required/>
                     </label>
                     <button>Log in</button>
                 </form>
@@ -26,11 +29,20 @@ const UserMenu = () => {
             </div>
             }
 
-            {/* register user */}
+            <form>
+                <h2 className={styles.h2}>Register</h2>
+                <label>
+                    <input type="text" placeholder="Username" required />
+                </label>
+                <label>
+                    <input type="password" placeholder="Password" required />
+                </label>
+                <button>Register</button>
+            </form>
 
             {userLoggedIn &&
             <div>
-                {/* Logged in info*/}
+                {/* Purchase info*/}
                 <button>Log out</button>
             </div>
             }
