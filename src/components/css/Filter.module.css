@@ -1,0 +1,16 @@
+.filterContainer {
+	display: flex;
+	justify-content: center;
+}
+
+.filter {
+	width: 300px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* overwrites materialize rule of display none on select tags */
+select {
+	display: block;
+}
+
