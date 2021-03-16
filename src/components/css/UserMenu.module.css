@@ -1,18 +1,22 @@
 .userMenuContainer {
-    padding: 0 1rem;
+  padding: 0 1rem;
 }
 
 .h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.p {
-    cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .p:hover {
-    color: #ff9300;
+  color: #ff9300;
+  cursor: pointer;
+}
+
+
+.loginMsg,
+.logoutMsg {
+  font-size: 1.3rem;
+  color: #ff9300;
 }
 
 .userBtn {

@@ -6,8 +6,10 @@ import styles from './css/UserMenu.module.css'
 const UserMenu = () => {
     const { users, currentUser, addUser, verifyUser, logoutUser} = useContext(UserContext);
 
-    const [logoutMessage, setLogoutMessage] = useState(null);
-    const [loginFeedback, setLoginFeedback] = useState(null);
+    const [feedbackMessage, setFeedbackMessage] = useState(null)
+    // const [registerMessage, setRegisterMessage] = useState(null);
+    // const [logoutMessage, setLogoutMessage] = useState(null);
+    // const [loginFeedback, setLoginFeedback] = useState(null);
     const [displayRegister, setDisplayRegister] = useState(false);
     const [displayLogin, setDisplayLogin] = useState(true)
     //is used both for login and register
@@ -36,7 +38,7 @@ const UserMenu = () => {
         e.preventDefault();
         verifyUser(username, password)
         if(!currentUser){
-            setLoginFeedback("Your password or username is incorrect!")
+            setFeedbackMessage("Your password or username is incorrect!")
         }
     }
 
@@ -44,29 +46,27 @@ const UserMenu = () => {
         if(currentUser){
             setDisplayLogin(false)
             setDisplayRegister(false)
-            setLoginFeedback(null)
+            setFeedbackMessage(null)
         }    
     }, [currentUser])
 
     function handleRegister (e) {
         e.preventDefault();
         addUser(username, password)
+        setDisplayLogin(true)
+        setDisplayRegister(false)
+        setFeedbackMessage("Your registration was successful!")
     }
 
     function handleLogout () {
         logoutUser();
         setDisplayLogin(true)
 
-        setLogoutMessage('You have been logged out!')
+        setFeedbackMessage('You have been logged out!')
         setTimeout(() => {
-            setLogoutMessage(null)
+            setFeedbackMessage(null)
         }, 3000)
     }
-
-    useEffect(() => {
-        console.log(users)
-        console.log(currentUser)
-    }, [currentUser, users])
 
     return(
         <div className={styles.userMenuContainer}>
@@ -90,15 +90,17 @@ const UserMenu = () => {
                     </label>
                     <label>
                         <input 
-                        type="password" 
+                        type="text" //can be changed to password to make text hidden
                         placeholder="Password" 
                         onChange={handlePasswordChange}
                         required/>
                     </label>
                     <button className={styles.userBtn}>Log in</button>
                 </form>
-                {loginFeedback && <span>{loginFeedback}</span>}
-                {logoutMessage && <span>{logoutMessage}</span>}
+                {feedbackMessage && <span className={styles.loginMsg}>{feedbackMessage}</span>}
+                {/* {registerMessage && <span className={styles.loginMsg}>{registerMessage}</span>}
+                {loginFeedback && <span className={styles.loginMsg}>{loginFeedback}</span>}
+                {logoutMessage && <span className={styles.logoutMsg}>{logoutMessage}</span>} */}
                 <p className={styles.p} onClick={toggleRegister}>Not a user? Click here to register</p>
             </div>
             }
