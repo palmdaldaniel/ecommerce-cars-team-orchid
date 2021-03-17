@@ -2,10 +2,13 @@ import { useHistory } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
 import style from "../pages/css/Checkout.module.css";
+import UserMenu from "./UserMenu.js";
+import { UserContext } from "../contexts/UserContext";
 
 const Form = () => {
   const history = useHistory();
-  const { handlePurchase, cart } = useContext(CartContext);
+  const { handlePurchase } = useContext(CartContext);
+  const { currentUser } = useContext(UserContext);
 
   const onPurchase = () => {
     handlePurchase();
@@ -15,16 +18,14 @@ const Form = () => {
   const login = () => {
     return (
       <div>
-        <h1>You must log in first</h1>
+        <UserMenu />
       </div>
     );
   };
 
   return (
     <>
-      {cart && cart.length > 1 ? (
-        login()
-      ) : (
+      {currentUser ? (
         <div>
           <form className={style.contactForm}>
             <h2 className={style.formTitle}>Personal info</h2>
@@ -127,6 +128,8 @@ const Form = () => {
             Purchase
           </button>
         </div>
+      ) : (
+        login()
       )}
     </>
   );

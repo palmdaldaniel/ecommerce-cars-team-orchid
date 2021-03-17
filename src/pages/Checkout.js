@@ -49,7 +49,9 @@ function Checkout() {
           </div>
           <hr />
         </div>
-        <Form />
+        <div className={style.contactForm}>
+          <Form />
+        </div>
       </div>
     );
   };
