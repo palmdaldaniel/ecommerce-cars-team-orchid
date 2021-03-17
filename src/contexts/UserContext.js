@@ -46,6 +46,8 @@ function UserContextProvider(props) {
 		setCurrentUser(undefined);
 	}
 
+	/* Saves a purchase into current user's purchase history
+	 */
 	function savePurchase(products) {
 		currentUser.history.push({
 			products,
