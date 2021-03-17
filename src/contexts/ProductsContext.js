@@ -26,7 +26,7 @@ function ProductsContextProvider(props) {
   }, [products]); 
 
   const filterCars = (filters) => {
-      console.log(filters)
+      //console.log(filters)
       if(!products){
         return
       }
@@ -36,42 +36,48 @@ function ProductsContextProvider(props) {
             return car.make.includes(filters.make) && 
             car.model.includes(filters.model) && 
             car.year.toString().includes(filters.year) &&
-            car.miles < filters.miles
+            car.miles <= filters.miles
 
           } else if(filters.price === '1'){
             return car.price > 0 && car.price < 150000 && 
             car.make.includes(filters.make) &&
             car.model.includes(filters.model) && 
-            car.year.toString().includes(filters.year)
+            car.year.toString().includes(filters.year) &&
+            car.miles <= filters.miles
 
           } else if(filters.price === '2'){
             return car.price > 150000 && car.price < 300000 && 
             car.make.includes(filters.make) &&
             car.model.includes(filters.model) && 
-            car.year.toString().includes(filters.year)
+            car.year.toString().includes(filters.year) &&
+            car.miles <= filters.miles
 
           } else if(filters.price === '3'){
             return car.price > 300000 && car.price < 400000 && 
             car.make.includes(filters.make) &&
             car.model.includes(filters.model) && 
-            car.year.toString().includes(filters.year)
+            car.year.toString().includes(filters.year) &&
+            car.miles <= filters.miles
 
           } else if(filters.price === '4'){
             return car.price > 400000 && car.price < 500000 && 
             car.make.includes(filters.make) &&
             car.model.includes(filters.model) && 
-            car.year.toString().includes(filters.year)
+            car.year.toString().includes(filters.year) &&
+            car.miles <= filters.miles
 
           } else if(filters.price === '5'){
             return car.price > 500000 && car.price < 700000 && 
             car.make.includes(filters.make) &&
             car.model.includes(filters.model) && 
-            car.year.toString().includes(filters.year)
+            car.year.toString().includes(filters.year) &&
+            car.miles <= filters.miles
           } 
         })
       )   
   }  
 
+//            car.miles <= filters.miles
 
 
   /* const filterCars = (filters) => {
