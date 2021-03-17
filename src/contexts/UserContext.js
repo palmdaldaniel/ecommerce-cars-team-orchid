@@ -53,10 +53,7 @@ function UserContextProvider(props) {
 
 	// Set current user (logged in) 
 	useEffect(() => {
-		if (currentUser === undefined){
-			localStorage.setItem("currentUser", JSON.stringify(""))
-		}
-		else {
+		if (currentUser){
 			localStorage.setItem("currentUser", JSON.stringify(currentUser.username))
 		}
 	}, [currentUser])
@@ -79,6 +76,7 @@ function UserContextProvider(props) {
 	 */
 	function logoutUser() {
 		setCurrentUser(undefined);
+		localStorage.setItem("currentUser", JSON.stringify(""))
 	}
 
 	const values = {
