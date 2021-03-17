@@ -46,12 +46,20 @@ function UserContextProvider(props) {
 		setCurrentUser(undefined);
 	}
 
+	function savePurchase(products) {
+		currentUser.history.push({
+			products,
+			timestamp: Date.now(),
+		});
+	}
+
 	const values = {
 		users,
 		currentUser,
 		addUser,
 		verifyUser,
 		logoutUser,
+		savePurchase,
 	};
 
 	return (
