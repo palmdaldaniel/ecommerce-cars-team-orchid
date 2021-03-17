@@ -1,16 +1,24 @@
+.filterWrapper p {
+	text-align: center;
+	font-size: 2.3em;
+	font-weight: bold;
+}
+
 .filterContainer {
 	display: flex;
 	justify-content: center;
 }
 
 .filter {
-	width: 300px;
+	width: 800px;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-column-gap: 20px;
 }
 
 /* overwrites materialize rule of display none on select tags */
 select {
-	display: block;
+	display: flex;
+	border-radius: 5px;
 }
 
