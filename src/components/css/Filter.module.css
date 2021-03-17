@@ -16,6 +16,11 @@
 	grid-column-gap: 20px;
 }
 
+.rangeContainer p {
+	font-size: 15px;
+	padding: 0;
+}
+
 /* overwrites materialize rule of display none on select tags */
 select {
 	display: flex;

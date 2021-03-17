@@ -11,6 +11,7 @@ const Filter = () => {
 		model: "",
 		year: "",
 		price: "",
+		miles: "",
 	});
 
 	const handleChange = (e) => {
@@ -74,18 +75,12 @@ const Filter = () => {
 					<option value="5">500000 - 700000</option>
 				</select>
 
-				<select onChange={handleChange}>
-					<option value="">Miles</option>
-					<option>0 - 1000</option>
-					<option>1000 - 5000</option>
-					<option>5000 - 10000</option>
-					<option>10000 - 15000</option>
-					<option>15000 - 20000</option>
-					<option>20000 - 28000</option>
-					<option>28000 - 40000</option>
-				</select>
-
-
+				<div className={styles.rangeContainer}>
+					<input type="range" min="0" max="80000" step="1" onChange={handleChange} id="miles">
+					</input>
+					<p>Max miles: {filters.miles}</p>
+				</div>
+				
 			</div>	
 		</div>
 		</div>
