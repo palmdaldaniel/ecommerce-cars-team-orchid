@@ -16,8 +16,8 @@ function App() {
   return (
     <div className="App">
       <ProductsContextProvider>
-        <CartContextProvider>
-          <UserContextProvider>
+        <UserContextProvider>
+          <CartContextProvider>
             <BrowserRouter>
               <ScrollToTop />
               <Navbar />
@@ -35,8 +35,8 @@ function App() {
                 <About />
               </Route>
             </BrowserRouter>
-          </UserContextProvider>
-        </CartContextProvider>
+          </CartContextProvider>
+        </UserContextProvider>
       </ProductsContextProvider>
     </div>
   );
