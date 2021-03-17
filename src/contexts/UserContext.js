@@ -6,12 +6,7 @@ function UserContextProvider(props) {
 
 	/*	Array of all registered users
 	 */
-	const [users, setUsers] = useState([
-		{
-			username: "ulla",
-			password: "hej"
-		}
-	]);
+	const [users, setUsers] = useState([]);
 
 	/*	Holds currently logged in user.
 	 *	If 'undefined', no user is logged in
@@ -27,10 +22,10 @@ function UserContextProvider(props) {
 			password,
 			history: [],
 		}
-
 		setUsers([...users, user]);
+		setCurrentUser(user)
 	}
-
+	
 	/*	Attempts to to log in user with provided credentials.
 	 *	Returns 'undefined' if user with that name does not exist,
 	 *	'false' if user exists but password is wrong,

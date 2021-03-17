@@ -12,6 +12,9 @@
   cursor: pointer;
 }
 
+.username {
+  color: #ff9300;
+}
 
 .loginMsg,
 .logoutMsg {
