@@ -13,7 +13,7 @@ const ProductList = () => {
         <div className={styles.productListContainer}>
           {products &&
             products.map((product, i) => (
-              <ProductItem key={i} id={i} data={product} />
+              <ProductItem key={i} /* id={i} */ data={product} />
             ))}
         </div>
       </div>
