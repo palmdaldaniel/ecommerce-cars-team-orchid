@@ -23,8 +23,8 @@ function UserContextProvider(props) {
 			password,
 			history: [],
 		}
-
-		setUsers(...users, user);
+		setUsers([...users, user]);
+		setCurrentUser(user)
 	}
 
 	// Gets information from localStorage on render of page
