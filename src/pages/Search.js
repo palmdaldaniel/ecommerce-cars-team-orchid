@@ -8,7 +8,7 @@ const Search = () => {
   const { products } = useContext(ProductsContext);
   return (
     
-      <div className="Search" style={{paddingTop: '50px'}}>
+      <div className="Search" style={{paddingTop: '60px'}}>
         <h1 className={styles.headline}>Products</h1>
         <div className={styles.productList}>
           <div className={styles.productListContainer}>
