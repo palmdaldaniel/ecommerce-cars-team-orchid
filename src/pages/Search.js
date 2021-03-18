@@ -5,15 +5,14 @@ import ProductItem from "../components/ProductItem";
 import styles from "../components/css/ProductList.module.css";
 
 const Search = () => {
-  const { products } = useContext(ProductsContext);
+  const { filteredProducts } = useContext(ProductsContext);
   return (
-    
       <div className="Search" style={{paddingTop: '60px'}}>
         <h1 className={styles.headline}>Products</h1>
         <div className={styles.productList}>
           <div className={styles.productListContainer}>
-            {products &&
-              products.map((product, i) => (
+            {filteredProducts &&
+              filteredProducts.map((product, i) => (
                 <ProductItem key={i} data={product} />
               ))}
           </div>
