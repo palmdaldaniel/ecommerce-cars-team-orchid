@@ -1,4 +1,5 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
+
 
 export const UserContext = createContext();
 
@@ -30,7 +31,38 @@ function UserContextProvider(props) {
 		setUsers([...users, user]);
 		setCurrentUser(user)
 	}
-	
+
+	// Gets information from localStorage on render of page
+	useEffect(() =>{
+		const data = localStorage.getItem("users")
+		if (data !== null) {
+			setUsers(JSON.parse(data));
+		}
+	}, [])
+
+
+	// Save user info on localStorage and check for current user
+	useEffect(() => {
+		localStorage.setItem("users", JSON.stringify(users))
+		const data = localStorage.getItem("currentUser")
+		if (data !== null) {
+			const name = JSON.parse(data);
+			if (name !== "") {
+				setCurrentUser(users.find((u) => u.username === name))
+			}
+			else{
+				setCurrentUser(undefined)
+			}
+		}
+	}, [users])
+
+	// Set current user (logged in) 
+	useEffect(() => {
+		if (currentUser){
+			localStorage.setItem("currentUser", JSON.stringify(currentUser.username))
+		}
+	}, [currentUser])
+
 	/*	Attempts to to log in user with provided credentials.
 	 *	Returns 'undefined' if user with that name does not exist,
 	 *	'false' if user exists but password is wrong,
@@ -49,6 +81,7 @@ function UserContextProvider(props) {
 	 */
 	function logoutUser() {
 		setCurrentUser(undefined);
+		localStorage.setItem("currentUser", JSON.stringify(""))
 	}
 
 	/* Saves a purchase into current user's purchase history
