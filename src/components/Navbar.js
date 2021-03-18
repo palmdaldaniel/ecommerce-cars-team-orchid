@@ -84,8 +84,12 @@ function Navbar(props) {
         />
 
         <div className={styles.desktopLinks}>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/about">About us</NavLink>
+          <NavLink to="/" onClick={() => setDisplayCart(false)}>
+            Home
+          </NavLink>
+          <NavLink to="/about" onClick={() => setDisplayCart(false)}>
+            About us
+          </NavLink>
         </div>
 
         <div className={styles.centerLogo}>
