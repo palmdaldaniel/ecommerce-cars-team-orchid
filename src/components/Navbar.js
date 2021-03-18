@@ -222,9 +222,9 @@ function Navbar(props) {
           )}
         </div>
       )}
-</nav> 
-  )
-}   
+    </nav>
+  );
+}
 
 
 export default Navbar;
