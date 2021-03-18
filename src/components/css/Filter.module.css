@@ -10,30 +10,29 @@
 }
 
 .filter {
-	width: 75%;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	grid-column-gap: 20px;
+	display: flex;
+	flex-direction: row;
+	padding: 1em;
+}
+
+/* overwrites materialize rule of display none on select tags */
+.filter select {
+	margin: 0em 1em;
+	display: flex;
+	border-radius: 5px;
+}
+
+.rangeContainer {
+	display: contents;
 }
 
 .rangeContainer p {
 	font-size: 15px;
 	margin: 0;
-}
-
-.rangeContainer {
-	display: flex;
-}
-
-/* overwrites materialize rule of display none on select tags */
-select {
-	display: flex;
-	border-radius: 5px;
+	padding: 0em 1em;
 }
 
 .rangeContainer input {
 	border: none;
-	padding: 0px 20px;
-	margin: 0px;
 }
 
