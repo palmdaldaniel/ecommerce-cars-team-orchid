@@ -10,7 +10,11 @@ import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 const ProductItem = (props) => {
+  // destructuring for better readability
+  const { vin  } = props.data
   const [price, setPrice] = useState(null);
+
+
 
   useEffect(() => {
     if (props.data) {
@@ -25,8 +29,8 @@ const ProductItem = (props) => {
 
   const history = useHistory();
   const handleClick = () => {
-    const index = parseInt(props.id);
-    history.push(`/product/${index}`);
+    /* const index = parseInt(props.id); */
+    history.push(`/product/${vin}`);
   };
 
   return (
