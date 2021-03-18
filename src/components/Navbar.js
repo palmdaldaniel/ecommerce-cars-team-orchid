@@ -2,24 +2,20 @@ import React, { useContext, useState, useEffect, useRef } from "react";
 import { CartContext } from "../contexts/CartContext";
 import { useHistory } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBars,
-  faShoppingCart,
-  faEllipsisH,
-  faAngleDoubleRight,
-} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser, faBars, faShoppingCart, faEllipsisH, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 
 import OutsideClick from "./OutsideClick.js";
 import CartItem from "./CartItem.js";
+import UserMenu from './UserMenu.js';
 import styles from "./css/Navbar.module.css";
 
 function Navbar(props) {
   const [displayNavMenu, setDisplayNavMenu] = useState(false);
   const [displayCart, setDisplayCart] = useState(false);
-  const { cart, cartValue } = useContext(CartContext);
-  const history = useHistory();
-  const [valueStr, setPriceString] = useState("");
+	const [displayUserMenu, setDisplayUserMenu] = useState(false)
+	const { cart, cartValue } = useContext(CartContext);
+	const history = useHistory();const [valueStr, setPriceString] = useState("");
 
   //Dropdown menu is closing if you click outside component
   const outsideClick = useRef();
@@ -35,6 +31,12 @@ function Navbar(props) {
     setDisplayCart(false);
     setDisplayNavMenu(false);
   };
+	//toggle user menu
+	function toggleUserMenu () {
+		setDisplayUserMenu(!displayUserMenu)
+		setDisplayCart(false)
+		setDisplayNavMenu(false)
+	}
 
   //Function for total cost in nav-cart
   useEffect(() => {
@@ -48,12 +50,19 @@ function Navbar(props) {
     }
   }, [cartValue]);
   const maxCartItems = 4;
+	//toggle hamburger menu, could be refactored into one single function with the other toggle function?
+	function toggleNavMenu() {
+		setDisplayNavMenu(!displayNavMenu)
+		setDisplayCart(false)
+		setDisplayUserMenu(false)
+	}
 
-  //toggle hamburger menu, could be refactored into one single function with the other toggle function?
-  function toggleNavMenu() {
-    setDisplayNavMenu(!displayNavMenu);
-    setDisplayCart(false);
-  }
+	//toggle cart menu, could be refactored into one single function with the other toggle function?
+	function toggleCartMenu() {
+		setDisplayCart(!displayCart)
+		setDisplayNavMenu(false)
+		setDisplayUserMenu(false)
+	}
 
   //toggle cart menu, could be refactored into one single function with the other toggle function?
   function toggleCartMenu() {
@@ -91,24 +100,39 @@ function Navbar(props) {
             About us
           </NavLink>
         </div>
+				<div className={styles.centerLogo}>
+					<img 
+						className={styles.navLogo} 
+						src="/OC-logo.jpg" 
+						onClick={logoClick}
+					/>
+				</div>
+				<div className={styles.iconWrapper}>
+					<div className={styles.userContainer} onClick={toggleUserMenu}>
+						<FontAwesomeIcon icon={faUser} className={styles.userIcon}/>
+					</div>
 
-        <div className={styles.centerLogo}>
-          <img
-            className={styles.navLogo}
-            src="/OC-logo.jpg"
-            onClick={logoClick}
-          />
-        </div>
+					<div className={styles.cartContainer} onClick={toggleCartMenu}>
+						<FontAwesomeIcon icon={faShoppingCart} className={styles.shoppingCart}/>
+						<span className={styles.cartNumber}>{cart.length}</span>
+					</div>
+				</div>
+			</div>
 
-        <div className={styles.cartContainer} onClick={toggleCartMenu}>
-          <FontAwesomeIcon
-            icon={faShoppingCart}
-            className={styles.shoppingCart}
-          />
-          <span className={styles.cartNumber}>{cart.length}</span>
-        </div>
-      </div>
+			{ displayUserMenu && 
+			<div className={styles.userContent}>
+				<UserMenu />
+			</div>
+			}
 
+			{ displayCart &&
+			<div className={styles.cartContent}>
+				<p className={styles.cartHeadline}>Shopping cart</p>
+				
+				{!cart.length && (
+					<p>Nothing here right now</p>
+				)}
+      </div>}
       {displayNavMenu && (
         <ul className={styles.navUL}>
           <NavLink className={styles.a} onClick={() => closeMenu()} to="/">
@@ -154,8 +178,9 @@ function Navbar(props) {
           )}
         </div>
       )}
-    </nav>
-  );
-}
+</nav> 
+  )
+}   
+
 
 export default Navbar;

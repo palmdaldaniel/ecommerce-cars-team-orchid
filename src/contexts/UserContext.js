@@ -22,10 +22,10 @@ function UserContextProvider(props) {
 			password,
 			history: [],
 		}
-
-		setUsers(...users, user);
+		setUsers([...users, user]);
+		setCurrentUser(user)
 	}
-
+	
 	/*	Attempts to to log in user with provided credentials.
 	 *	Returns 'undefined' if user with that name does not exist,
 	 *	'false' if user exists but password is wrong,
