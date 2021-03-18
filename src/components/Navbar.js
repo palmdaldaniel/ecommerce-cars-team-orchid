@@ -4,36 +4,41 @@ import { useHistory } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faUser,
   faBars,
   faShoppingCart,
   faEllipsisH,
   faAngleDoubleRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-import OutsideClick from "./OutsideClick.js";
 import CartItem from "./CartItem.js";
+import UserMenu from "./UserMenu.js";
+import OutsideClick from "./OutsideClick.js";
 import styles from "./css/Navbar.module.css";
 
 function Navbar(props) {
   const [displayNavMenu, setDisplayNavMenu] = useState(false);
   const [displayCart, setDisplayCart] = useState(false);
+  const [displayUserMenu, setDisplayUserMenu] = useState(false);
   const { cart, cartValue } = useContext(CartContext);
   const history = useHistory();
   const [valueStr, setPriceString] = useState("");
 
-  //Dropdown menu is closing if you click outside component
+  //When you click outside component, dropdown menu should close
   const outsideClick = useRef();
   const handleClickOutside = () => {
     setDisplayCart(false);
     setDisplayNavMenu(false);
+    setDisplayUserMenu(false);
   };
   OutsideClick(outsideClick, handleClickOutside);
 
-  //If you click on the Logo, dropdown menu is closing and is redirecting to home page
+  //When you cllick on the Logo, dropdown menu is closing and is redirecting to home page
   const logoClick = () => {
     history.push("/");
     setDisplayCart(false);
     setDisplayNavMenu(false);
+    setDisplayUserMenu(false);
   };
 
   //Function for total cost in nav-cart
@@ -49,16 +54,25 @@ function Navbar(props) {
   }, [cartValue]);
   const maxCartItems = 4;
 
+  //toggle user menu
+  function toggleUserMenu() {
+    setDisplayUserMenu(!displayUserMenu);
+    setDisplayCart(false);
+    setDisplayNavMenu(false);
+  }
+
   //toggle hamburger menu, could be refactored into one single function with the other toggle function?
   function toggleNavMenu() {
     setDisplayNavMenu(!displayNavMenu);
     setDisplayCart(false);
+    setDisplayUserMenu(false);
   }
 
   //toggle cart menu, could be refactored into one single function with the other toggle function?
   function toggleCartMenu() {
     setDisplayCart(!displayCart);
     setDisplayNavMenu(false);
+    setDisplayUserMenu(false);
   }
 
   //closing the menu when user clicks on link in hamburger menu
@@ -84,10 +98,22 @@ function Navbar(props) {
         />
 
         <div className={styles.desktopLinks}>
-          <NavLink to="/" onClick={() => setDisplayCart(false)}>
+          <NavLink
+            to="/"
+            onClick={() => {
+              setDisplayCart(false);
+              setDisplayUserMenu(false);
+            }}
+          >
             Home
           </NavLink>
-          <NavLink to="/about" onClick={() => setDisplayCart(false)}>
+          <NavLink
+            to="/about"
+            onClick={() => {
+              setDisplayCart(false);
+              setDisplayUserMenu(false);
+            }}
+          >
             About us
           </NavLink>
         </div>
@@ -99,13 +125,18 @@ function Navbar(props) {
             onClick={logoClick}
           />
         </div>
+        <div className={styles.iconWrapper}>
+          <div className={styles.userContainer} onClick={toggleUserMenu}>
+            <FontAwesomeIcon icon={faUser} className={styles.userIcon} />
+          </div>
 
-        <div className={styles.cartContainer} onClick={toggleCartMenu}>
-          <FontAwesomeIcon
-            icon={faShoppingCart}
-            className={styles.shoppingCart}
-          />
-          <span className={styles.cartNumber}>{cart.length}</span>
+          <div className={styles.cartContainer} onClick={toggleCartMenu}>
+            <FontAwesomeIcon
+              icon={faShoppingCart}
+              className={styles.shoppingCart}
+            />
+            <span className={styles.cartNumber}>{cart.length}</span>
+          </div>
         </div>
       </div>
 
@@ -118,6 +149,12 @@ function Navbar(props) {
             About us
           </NavLink>
         </ul>
+      )}
+
+      {displayUserMenu && (
+        <div className={styles.userContent}>
+          <UserMenu />
+        </div>
       )}
 
       {displayCart && (
