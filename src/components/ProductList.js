@@ -3,6 +3,8 @@ import { useContext } from "react";
 import { ProductsContext } from "../contexts/ProductsContext";
 import ProductItem from "./ProductItem";
 
+import Lazyload from 'react-lazyload';
+
 const ProductList = () => {
   const { products } = useContext(ProductsContext);
 
@@ -13,7 +15,9 @@ const ProductList = () => {
         <div className={styles.productListContainer}>
           {products &&
             products.map((product, i) => (
-              <ProductItem key={i} /* id={i} */ data={product} />
+              <Lazyload key={i}>
+              <ProductItem key={i} id={i} data={product} />
+              </Lazyload>
             ))}
         </div>
       </div>
