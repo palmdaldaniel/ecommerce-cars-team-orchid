@@ -7,8 +7,8 @@ import styles from "../components/css/ProductList.module.css";
 const Search = () => {
   const { products } = useContext(ProductsContext);
   return (
-    <div className="Search">
-      <div>
+    
+      <div className="Search" style={{paddingTop: '50px'}}>
         <h1 className={styles.headline}>Products</h1>
         <div className={styles.productList}>
           <div className={styles.productListContainer}>
@@ -19,7 +19,7 @@ const Search = () => {
           </div>
         </div>
       </div>
-    </div>
+    
   );
 };
 
