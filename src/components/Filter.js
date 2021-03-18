@@ -12,7 +12,8 @@ const Filter = () => {
 		year: "",
 		min: "",
 		max: "",
-		miles: "80000",
+		minMiles: "",
+		maxMiles: "",
 	});
 
 	const handleChange = (e) => {
@@ -20,7 +21,7 @@ const Filter = () => {
 		filter[e.target.id] = e.target.value;
 		setFilters(filter)
 
-		if(e.target.value === '1'){
+		/* if (e.target.value === '1'){
 			setFilters(filters => ({
 				...filters,
 				min: "0",
@@ -50,8 +51,10 @@ const Filter = () => {
 				min: "500000",
 				max: "700000"
 			}))
-		}
+		}  */
+			
 	};	
+
 
 	useEffect(() => {
 		filterCars(filters)
