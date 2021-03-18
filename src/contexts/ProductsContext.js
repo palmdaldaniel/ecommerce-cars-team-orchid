@@ -19,7 +19,7 @@ function ProductsContextProvider(props) {
   }, []);
 
 
-  const [filteredProducts, setFilteredProducts] = useState(null);
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
     setFilteredProducts(products);
@@ -35,10 +35,10 @@ function ProductsContextProvider(props) {
             return car.make.includes(filters.make) && 
             car.model.includes(filters.model) && 
             car.year.toString().includes(filters.year) &&
-            car.miles <= filters.miles &&
-            car.price > filters.min && car.price < filters.max
+            car.price > filters.min && car.price < filters.max &&
+            car.miles > filters.minMiles && car.miles < filters.maxMiles
         })
-      )   
+      ) 
   }  
 
   // Insert you methods and values here

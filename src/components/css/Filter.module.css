@@ -15,24 +15,27 @@
 	padding: 1em;
 }
 
-/* overwrites materialize rule of display none on select tags */
 .filter select {
 	margin: 0em 1em;
 	display: flex;
 	border-radius: 5px;
+	border: 1px solid orange;
 }
 
-.rangeContainer {
-	display: contents;
-}
+@media only screen and (max-width: 765px) {
+	
+	.filterContainer {
+		margin: 20px;
+	}
 
-.rangeContainer p {
-	font-size: 15px;
-	margin: 0;
-	padding: 0em 1em;
-}
+	.filter {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 20px;
+		grid-row-gap: 20px;
+	}
 
-.rangeContainer input {
-	border: none;
+	.filter select {
+		margin: 0;
+	}
 }
-
