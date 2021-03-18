@@ -40,12 +40,6 @@ function Navbar(props) {
     setDisplayNavMenu(false);
     setDisplayUserMenu(false);
   };
-	//toggle user menu
-	function toggleUserMenu () {
-		setDisplayUserMenu(!displayUserMenu)
-		setDisplayCart(false)
-		setDisplayNavMenu(false)
-	}
 
   //Function for total cost in nav-cart
   useEffect(() => {
@@ -59,12 +53,6 @@ function Navbar(props) {
     }
   }, [cartValue]);
   const maxCartItems = 4;
-	//toggle hamburger menu, could be refactored into one single function with the other toggle function?
-	function toggleNavMenu() {
-		setDisplayNavMenu(!displayNavMenu)
-		setDisplayCart(false)
-		setDisplayUserMenu(false)
-	}
 
   //toggle user menu
   function toggleUserMenu() {
@@ -129,17 +117,6 @@ function Navbar(props) {
             About us
           </NavLink>
         </div>
-				<div className={styles.centerLogo}>
-					<img 
-						className={styles.navLogo} 
-						src="/OC-logo.jpg" 
-						onClick={logoClick}
-					/>
-				</div>
-				<div className={styles.iconWrapper}>
-					<div className={styles.userContainer} onClick={toggleUserMenu}>
-						<FontAwesomeIcon icon={faUser} className={styles.userIcon}/>
-					</div>
 
         <div className={styles.centerLogo}>
           <img
@@ -163,14 +140,6 @@ function Navbar(props) {
         </div>
       </div>
 
-			{ displayCart &&
-			<div className={styles.cartContent}>
-				<p className={styles.cartHeadline}>Shopping cart</p>
-				
-				{!cart.length && (
-					<p>Nothing here right now</p>
-				)}
-      </div>}
       {displayNavMenu && (
         <ul className={styles.navUL}>
           <NavLink className={styles.a} onClick={() => closeMenu()} to="/">
@@ -225,6 +194,5 @@ function Navbar(props) {
     </nav>
   );
 }
-
 
 export default Navbar;
