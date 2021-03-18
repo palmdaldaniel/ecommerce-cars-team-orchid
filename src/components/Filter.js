@@ -10,7 +10,8 @@ const Filter = () => {
 		make: "",
 		model: "",
 		year: "",
-		price: "",
+		min: "",
+		max: "",
 		miles: "80000",
 	});
 
@@ -18,6 +19,38 @@ const Filter = () => {
 		const filter = {...filters}
 		filter[e.target.id] = e.target.value;
 		setFilters(filter)
+
+		if(e.target.value === '1'){
+			setFilters(filters => ({
+				...filters,
+				min: "0",
+				max: "150000"
+			}))
+		} else if (e.target.value === '2'){
+			setFilters(filters => ({
+				...filters,
+				min: "150000",
+				max: "300000"
+			}))
+		} else if (e.target.value === '3'){
+			setFilters(filters => ({
+				...filters,
+				min: "300000",
+				max: "400000"
+			}))
+		} else if (e.target.value === '4'){
+			setFilters(filters => ({
+				...filters,
+				min: "400000",
+				max: "500000"
+			}))
+		} else if (e.target.value === '5'){
+			setFilters(filters => ({
+				...filters,
+				min: "500000",
+				max: "700000"
+			}))
+		}
 	};	
 
 	useEffect(() => {

@@ -32,80 +32,14 @@ function ProductsContextProvider(props) {
       }
       setFilteredProducts(
         products.filter((car) => {
-          if(filters.price === ''){
             return car.make.includes(filters.make) && 
             car.model.includes(filters.model) && 
             car.year.toString().includes(filters.year) &&
-            car.miles <= filters.miles
-
-          } else if(filters.price === '1'){
-            return car.price > 0 && car.price < 150000 && 
-            car.make.includes(filters.make) &&
-            car.model.includes(filters.model) && 
-            car.year.toString().includes(filters.year) &&
-            car.miles <= filters.miles
-
-          } else if(filters.price === '2'){
-            return car.price > 150000 && car.price < 300000 && 
-            car.make.includes(filters.make) &&
-            car.model.includes(filters.model) && 
-            car.year.toString().includes(filters.year) &&
-            car.miles <= filters.miles
-
-          } else if(filters.price === '3'){
-            return car.price > 300000 && car.price < 400000 && 
-            car.make.includes(filters.make) &&
-            car.model.includes(filters.model) && 
-            car.year.toString().includes(filters.year) &&
-            car.miles <= filters.miles
-
-          } else if(filters.price === '4'){
-            return car.price > 400000 && car.price < 500000 && 
-            car.make.includes(filters.make) &&
-            car.model.includes(filters.model) && 
-            car.year.toString().includes(filters.year) &&
-            car.miles <= filters.miles
-
-          } else if(filters.price === '5'){
-            return car.price > 500000 && car.price < 700000 && 
-            car.make.includes(filters.make) &&
-            car.model.includes(filters.model) && 
-            car.year.toString().includes(filters.year) &&
-            car.miles <= filters.miles
-          } 
+            car.miles <= filters.miles &&
+            car.price > filters.min && car.price < filters.max
         })
       )   
   }  
-
-//            car.miles <= filters.miles
-
-
-  /* const filterCars = (filters) => {
-    console.log(filters)
-    if(!products){
-      return
-    }
-    setFilteredProducts(
-      products.filter((car) =>
-        car.make.includes(filters.make) && 
-        car.model.includes(filters.model) && 
-        car.year.toString().includes(filters.year)
-      ).filter((car) => {
-        if(filters.price === '1'){
-          return car.price > 0 && car.price < 150000
-        } else if(filters.price === '2'){
-          return car.price > 150000 && car.price < 300000
-        } else if(filters.price === '3'){
-          return car.price > 300000 && car.price < 400000
-        } else if(filters.price === '4'){
-          return car.price > 400000 && car.price < 500000
-        } else if(filters.price === '5'){
-          return car.price > 500000 && car.price < 700000
-        }
-      })
-    )   
-  }   */
-
 
   // Insert you methods and values here
   const values = {
