@@ -1,0 +1,38 @@
+.searchWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.searchfield {
+  min-width: 300px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.searchfield input {
+  padding-left: 10px !important;
+  border-radius: 10px !important;
+  background-color: rgba(235, 235, 235, 0.708) !important;
+  
+}
+
+.searchfield input::placeholder {
+  padding-left: 10px;
+  color: rgba(0, 0, 0, 0.749);
+}
+
+.icon {
+  font-size: 25px;
+  position: absolute;
+  left: 90%;
+  padding-bottom: 6px;
+  transition: 0.1s;
+}
+
+.icon:hover {
+  cursor: pointer;
+  color: #ff9300;
+}
