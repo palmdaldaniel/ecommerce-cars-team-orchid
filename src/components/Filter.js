@@ -1,25 +1,18 @@
 import React from 'react';
-import { useContext, useState, useEffect } from 'react'
+import { useContext } from 'react'
 import { ProductsContext } from "../contexts/ProductsContext";
+import { useHistory } from 'react-router-dom'
 import styles from './css/Filter.module.css'
 
 const Filter = () => {
-	const { filterCars } = useContext(ProductsContext);
-	const { products } = useContext(ProductsContext);
-	const [filters, setFilters] = useState({
-		make: "",
-		model: "",
-		year: "",
-		min: "0",
-		max: Infinity,
-		minMiles: "0",
-		maxMiles: Infinity
-	});
+	const { filters, setFilters, products } = useContext(ProductsContext);
+	const history = useHistory()
 
 	const handleChange = (e) => {
 		const filter = {...filters}
 		filter[e.target.id] = e.target.value;
 		setFilters(filter)
+		history.push('/search')
 	};	
 
 	const handleChangePrice = (e) => {
@@ -36,6 +29,7 @@ const Filter = () => {
 		} else if (e.target.value === '5'){
 			setFilters({ ...filters, min: 500000, max: 700000})
 		} 
+		history.push('/search')
 	}
 
 	const handleChangeMiles = (e) => {
@@ -52,73 +46,69 @@ const Filter = () => {
 		} else if (e.target.value === '5'){
 			setFilters({ ...filters, minMiles: 70000, maxMiles: 90000})
 		} 
+		history.push('/search')
 	}
-
-	useEffect(() => {
-		filterCars(filters)
-	}, [filters]) 
 
   return (
 		<div className={styles.filterWrapper}>
-			<p>Filter</p>
-				<div className={styles.filterContainer}>
-					<div className={styles.filter}>
-						
-						<select onChange={handleChange} id="make">
-							<option value="">Brand</option>
-							{products &&
-								products
-									.filter((v, i, a) => a.findIndex(t => t.make === v.make) === i)
-									.map((product, i) => {
-										return (
-										<option value={product.make} key={i}>{product.make}</option>
-									)
-								})}
-						</select>
-
-						<select onChange={handleChange} id="model">
-						<option value="">Model</option>
+			<div className={styles.filterContainer}>
+				<div className={styles.filter}>
+					
+					<select onChange={handleChange} id="make">
+						<option value="">Brand</option>
 						{products &&
-								products
-									.filter((v, i, a) => a.findIndex(t => t.model === v.model) === i)
-									.map((product, i) => {
-										return (
-										<option value={product.model} key={i}>{product.model}</option>
-									)
-								})}
-						</select>
+							products
+								.filter((v, i, a) => a.findIndex(t => t.make === v.make) === i)
+								.map((product, i) => {
+									return (
+									<option value={product.make} key={i}>{product.make}</option>
+								)
+							})}
+					</select>
 
-						<select onChange={handleChange} id="year">
-						<option value="">Year</option>
-						{products &&
-								products
-									.filter((v, i, a) => a.findIndex(t => t.year === v.year) === i)
-									.map((product, i) => {
-										return (
-										<option value={product.year} key={i}>{product.year}</option>
-									)
-								})}
-						</select>
-						
-						<select onChange={handleChangePrice} id="price">
-							<option value="">Price</option>
-							<option value="1">0 - 150000</option>
-							<option value="2">150000 - 300000</option>
-							<option value="3">300000 - 400000</option>	
-							<option value="4">400000 - 500000</option>
-							<option value="5">500000 - 700000</option>
-						</select>
+					<select onChange={handleChange} id="model">
+					<option value="">Model</option>
+					{products &&
+							products
+								.filter((v, i, a) => a.findIndex(t => t.model === v.model) === i)
+								.map((product, i) => {
+									return (
+									<option value={product.model} key={i}>{product.model}</option>
+								)
+							})}
+					</select>
 
-						<select onChange={handleChangeMiles} id="miles">
-							<option value="">Miles</option>
-							<option value="1">0 - 15000</option>
-							<option value="2">15000 - 30000</option>
-							<option value="3">30000 - 50000</option>	
-							<option value="4">50000 - 70000</option>
-							<option value="5">70000 - 90000</option>
-						</select>
+					<select onChange={handleChange} id="year">
+					<option value="">Year</option>
+					{products &&
+							products
+								.filter((v, i, a) => a.findIndex(t => t.year === v.year) === i)
+								.map((product, i) => {
+									return (
+									<option value={product.year} key={i}>{product.year}</option>
+								)
+							})}
+					</select>
+					
+					<select onChange={handleChangePrice} id="price">
+						<option value="">Price</option>
+						<option value="1">0 - 150000</option>
+						<option value="2">150000 - 300000</option>
+						<option value="3">300000 - 400000</option>	
+						<option value="4">400000 - 500000</option>
+						<option value="5">500000 - 700000</option>
+					</select>
 
-					</div>	
+					<select onChange={handleChangeMiles} id="miles">
+						<option value="">Miles</option>
+						<option value="1">0 - 15000</option>
+						<option value="2">15000 - 30000</option>
+						<option value="3">30000 - 50000</option>	
+						<option value="4">50000 - 70000</option>
+						<option value="5">70000 - 90000</option>
+					</select>
+
+				</div>	
 			</div>
 		</div>
   );

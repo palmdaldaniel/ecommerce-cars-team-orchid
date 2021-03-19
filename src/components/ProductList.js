@@ -1,5 +1,4 @@
 import Lazyload from 'react-lazyload';
-
 import ProductItem from "./ProductItem";
 import styles from "./css/ProductList.module.css";
 
@@ -14,6 +13,7 @@ const ProductList = (props) => {
                 <ProductItem key={i} id={i} data={product} />
               </Lazyload>
             ))}
+            </div>
         </div>
     </div>
   );

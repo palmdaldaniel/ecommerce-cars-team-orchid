@@ -1,9 +1,3 @@
-.filterWrapper p {
-	text-align: center;
-	font-size: 2.3em;
-	font-weight: bold;
-}
-
 .filterContainer {
 	display: flex;
 	justify-content: center;
