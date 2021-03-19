@@ -3,12 +3,24 @@ import { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
 
 const AddToCartButton = (props) => {
-  const { product } = props
-  const { addToCart } = useContext(CartContext);
+  const { product } = props;
+  const { addToCart, cart } = useContext(CartContext);
+
+  const checkCart = (product) => {
+    return cart.find((getVin) => {
+      return getVin.vin === product.vin;
+    });
+  };
 
   return (
-    <div className="AddToCartButton" onClick={() => addToCart(product)}>
-      <button className={style.addButton}>Add To Cart</button>
+    <div>
+      {!checkCart(product) ? (
+        <div onClick={() => addToCart(product)}>
+          <button className={style.addButton}>Add To Cart</button>
+        </div>
+      ) : (
+        <button className={style.inCart}>In cart</button>
+      )}
     </div>
   );
 };

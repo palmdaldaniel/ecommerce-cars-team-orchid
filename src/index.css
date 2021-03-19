@@ -12,3 +12,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* this is the styling for carousel-buttons */
+.slick-prev:before,
+.slick-next:before
+{
+  color: rgb(224, 148, 5) !important; 
+  font-size: 28px !important;
+}
+
+.slick-next {
+  right: -16px !important;
+}
