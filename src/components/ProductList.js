@@ -6,7 +6,6 @@ import styles from "./css/ProductList.module.css";
 const ProductList = (props) => {
   return (
     <div>
-      <h1 className={styles.headline}>Products</h1>
       <div className={styles.productList}>
         <div className={styles.productListContainer}>
           {props.list &&
