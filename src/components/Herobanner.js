@@ -1,4 +1,5 @@
 import styles from './css/Herobanner.module.css'
+import SearchBar from './Searchbar.js';
 
 const Herobanner = () => {
 	return (
@@ -11,6 +12,7 @@ const Herobanner = () => {
 			<div className={styles.textContainer}>
 				<span>Our way to access freedom</span>
 				<p>Find your car today</p>	
+			<SearchBar/>
 			</div>
 		</div>
 	);
