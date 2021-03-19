@@ -16,8 +16,6 @@ const SearchBar = () => {
     if(search.length < 2) return
     searchForCars(search)
     history.push('/search')
-   
-    setSearch("");
   };
 
   const handleInput = (e) => {
