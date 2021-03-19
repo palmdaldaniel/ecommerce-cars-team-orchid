@@ -1,8 +1,8 @@
 
 .confirmationWrapper {
   margin: auto;
-  padding-top: 7.5rem; /* to be removed when navbar is fixed*/
   width: 75%;
+  margin-top: 1rem;
 }
 
 .confirmationWrapper h1 {
@@ -105,7 +105,6 @@ button:focus {
 
 @media only screen and (min-width: 1199px) {
   .confirmationWrapper {
-    padding-top: 10rem;
     width: 60%;
   }
 }
