@@ -46,7 +46,7 @@ const ConfirmationPage = () => {
 
         <div className={styles.showTotalContainer}>
           <h3 className={styles.showcost}>Total cost: {formattedTotalValue}</h3>
-      </div>
+        </div>
       <hr/>
 
       </div>
