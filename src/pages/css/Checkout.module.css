@@ -16,6 +16,7 @@
 .cartList {
   display: grid;
   gap: 10px;
+  text-align: right;
 }
 
 .productRow {
