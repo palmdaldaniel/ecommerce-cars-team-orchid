@@ -12,12 +12,12 @@ function UserContextProvider(props) {
 	/*	Holds currently logged in user.
 	 *	If 'undefined', no user is logged in
 	 */
-	// const [currentUser, setCurrentUser] = useState(undefined);
-	const [currentUser, setCurrentUser] = useState({
-		username: "Sebastian",
-		password: "1234",
-		history: [],
-	});
+	const [currentUser, setCurrentUser] = useState(undefined);
+	// const [currentUser, setCurrentUser] = useState({
+	// 	username: "Sebastian",
+	// 	password: "1234",
+	// 	history: [],
+	// });
 
 	/*	Creates a new user with the specified name and password,
 	 *	and adds it to 'database' of users.
