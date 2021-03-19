@@ -9,7 +9,7 @@
 }
 .h1 {
     font-size: 3rem;
-    margin-bottom: rem;
+    margin-top: 0;
 }
 .p {
     font-size: medium;
@@ -24,7 +24,6 @@
 /* Mid to Large screen */
 @media only screen and (min-width: 804px) {
     .pageContainer {
-        padding-top: 4rem;
         padding-bottom: 4rem;
     }
     .content {
@@ -53,7 +52,6 @@
 /* Small screen */
 @media only screen and (max-width: 803px){    
     .pageContainer {
-        padding-top: 2rem;
         padding-bottom: 2rem;
     }
     .flexBox {
@@ -69,7 +67,6 @@
     .h1 {
         font-size: 3rem;
         text-align: center;
-        padding-top: 2rem;
     }
     .p {
         max-width: 400px;
@@ -84,10 +81,4 @@
         width: 86%;
         margin: auto;
     }
-}
-/* super-large screen */
-@media only screen and (min-width: 1201px) {
-.pageContainer{
-    padding-top: 8rem;
-}
 }
