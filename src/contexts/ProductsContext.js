@@ -6,6 +6,8 @@ export const ProductsContext = createContext();
 
 function ProductsContextProvider(props) {
   const [products, setProducts] = useState(null);
+  const [filteredProducts, setFilteredProducts] = useState(null);
+
   useEffect(() => {
     /* go through every object and add a key value pair for an image src */
     const carsWithImage = cars.map((car) => {
@@ -18,12 +20,27 @@ function ProductsContextProvider(props) {
     setProducts(carsWithImage);
   }, []);
 
+  useEffect(() => {
+    setFilteredProducts(products);
+  }, [products]);
 
+  const searchForCars = (search, filter) => {
+    if (filteredProducts === undefined) return;
+    const filteredCars = products.filter(
+      (car) =>
+        car.make.toLowerCase().includes(search.toLowerCase()) ||
+        car.model.toLowerCase().includes(search.toLowerCase()) ||
+        car.city.toLowerCase().includes(search.toLowerCase())
+    );
 
+    setFilteredProducts(filteredCars);
+  };
 
   // Insert you methods and values here
   const values = {
+    filteredProducts,
     products,
+    searchForCars
   };
 
   return (

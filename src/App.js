@@ -8,6 +8,7 @@ import Product from "./pages/Product.js";
 import About from "./pages/About";
 import PurchaseHistory from "./pages/PurchaseHistory.js";
 import ScrollToTop from "./components/ScrollToTop.js";
+import Search from "./pages/Search.js";
 
 import ProductsContextProvider from "./contexts/ProductsContext";
 import CartContextProvider from "./contexts/CartContext";
@@ -35,6 +36,7 @@ function App() {
               <Route exact path="/about">
                 <About />
               </Route>
+              <Route exact path="/search" component={Search}/>
               <Route exact path="/history">
                 <PurchaseHistory />
               </Route>
