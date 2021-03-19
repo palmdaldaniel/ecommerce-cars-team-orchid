@@ -1,24 +1,16 @@
 import { useContext } from "react";
 import { ProductsContext } from "../contexts/ProductsContext";
 import ProductItem from "../components/ProductItem";
+import ProductList from "../components/ProductList";
 
 import styles from "../components/css/ProductList.module.css";
 
 const Search = () => {
   const { filteredProducts } = useContext(ProductsContext);
   return (
-      <div className="Search" style={{paddingTop: '60px'}}>
-        <h1 className={styles.headline}>Products</h1>
-        <div className={styles.productList}>
-          <div className={styles.productListContainer}>
-            {filteredProducts &&
-              filteredProducts.map((product, i) => (
-                <ProductItem key={i} data={product} />
-              ))}
-          </div>
-        </div>
-      </div>
-    
+    <div className="Search" style={{ paddingTop: "60px" }}>
+      <ProductList list={filteredProducts} />
+    </div>
   );
 };
 
