@@ -6,7 +6,7 @@ import ProductItem from "./ProductItem";
 import Lazyload from 'react-lazyload';
 
 const ProductList = () => {
-  const { products } = useContext(ProductsContext);
+  const { filteredProducts } = useContext(ProductsContext);
 
   return (
     <div>
@@ -20,7 +20,6 @@ const ProductList = () => {
               </Lazyload>
             ))}
         </div>
-      </div>
     </div>
   );
 };
