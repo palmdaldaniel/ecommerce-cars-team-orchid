@@ -1,14 +1,17 @@
 import { useContext } from "react";
 import { ProductsContext } from "../contexts/ProductsContext";
-import ProductItem from "../components/ProductItem";
 import ProductList from "../components/ProductList";
-
-import styles from "../components/css/ProductList.module.css";
+import SearchBar from "../components/Searchbar";
+import styles from './css/SearchPage.module.css'
 
 const Search = () => {
   const { filteredProducts } = useContext(ProductsContext);
   return (
-    <div className="Search" style={{ paddingTop: "60px" }}>
+    <div className="Search" style={{ paddingTop: "100px" }}>
+      <SearchBar />
+        <div className={styles.headline}>
+        <h5>Your search result</h5>
+        </div>
       <ProductList list={filteredProducts} />
     </div>
   );

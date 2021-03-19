@@ -14,7 +14,6 @@ const SearchBar = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if(search.length < 2) return
-    console.log(search);
     searchForCars(search)
     history.push('/search')
    
@@ -26,12 +25,12 @@ const SearchBar = () => {
   };
 
   return (
-    <div>
+    <div className={styles.searchWrapper}>
       <form onSubmit={handleSubmit}>
         <div className={styles.searchfield}>
           <input
             type="text"
-            placeholder="Search make, model or city"
+            placeholder="Search for make, model or city"
             value={search}
             onChange={handleInput}
           />
