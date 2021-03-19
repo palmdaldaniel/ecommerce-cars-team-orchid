@@ -44,14 +44,12 @@ function UserContextProvider(props) {
 	// Save user info on localStorage and check for current user
 	useEffect(() => {
 		localStorage.setItem("users", JSON.stringify(users))
+
 		const data = localStorage.getItem("currentUser")
 		if (data !== null) {
 			const name = JSON.parse(data);
-			if (name !== "") {
+			if (name) {
 				setCurrentUser(users.find((u) => u.username === name))
-			}
-			else{
-				setCurrentUser(undefined)
 			}
 		}
 	}, [users])
