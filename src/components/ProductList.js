@@ -1,19 +1,19 @@
-import styles from "./css/ProductList.module.css";
-import { useContext } from "react";
-import { ProductsContext } from "../contexts/ProductsContext";
+import Lazyload from 'react-lazyload';
+
 import ProductItem from "./ProductItem";
+import styles from "./css/ProductList.module.css";
 
-const ProductList = () => {
-  const { products } = useContext(ProductsContext);
-
+const ProductList = (props) => {
   return (
     <div>
       <h1 className={styles.headline}>Products</h1>
       <div className={styles.productList}>
         <div className={styles.productListContainer}>
-          {products &&
-            products.map((product, i) => (
-              <ProductItem key={i} /* id={i} */ data={product} />
+          {props.list &&
+            props.list.map((product, i) => (
+              <Lazyload key={i}>
+                <ProductItem key={i} id={i} data={product} />
+              </Lazyload>
             ))}
         </div>
       </div>

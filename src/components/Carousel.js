@@ -18,7 +18,8 @@ const Carousel = () => {
 		speed: 300,
 		slidesToShow: 4, 
 		slidesToScroll: 1,
-		arrows: false,
+		arrows: true,
+	
 			responsive: [
 				{
 					breakpoint: 1560,
