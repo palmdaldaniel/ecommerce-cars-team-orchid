@@ -6,6 +6,7 @@ import Confirmed from "./pages/ConfirmationPage";
 import Checkout from "./pages/Checkout.js";
 import Product from "./pages/Product.js";
 import About from "./pages/About";
+import PurchaseHistory from "./pages/PurchaseHistory.js";
 import ScrollToTop from "./components/ScrollToTop.js";
 
 import ProductsContextProvider from "./contexts/ProductsContext";
@@ -33,6 +34,9 @@ function App() {
               <Route exact path="/product/:id" component={Product} />
               <Route exact path="/about">
                 <About />
+              </Route>
+              <Route exact path="/history">
+                <PurchaseHistory />
               </Route>
             </BrowserRouter>
           </CartContextProvider>
