@@ -13,8 +13,14 @@ code {
     monospace;
 }
 
+/* this is the styling for carousel-buttons */
 .slick-prev:before,
 .slick-next:before
 {
-  color: black !important;
+  color: rgb(224, 148, 5) !important; 
+  font-size: 28px !important;
+}
+
+.slick-next {
+  right: -16px !important;
 }
