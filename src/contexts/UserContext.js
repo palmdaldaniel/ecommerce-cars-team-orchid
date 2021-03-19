@@ -85,9 +85,27 @@ function UserContextProvider(props) {
 	/* Saves a purchase into current user's purchase history
 	 */
 	function savePurchase(products) {
-		currentUser.history.push({
+		const purchase = {
 			products,
 			timestamp: Date.now(),
+			totalPrice: products.reduce((acc, val) => acc + val),
+		}
+
+		const index = users.findIndex(u => u.username === currentUser.username);
+
+		setUsers(prevUsers => {
+			return [
+				...prevUsers.slice(0, index),
+				{
+					...prevUsers[index],
+					history:
+					[
+						...prevUsers[index].history,
+						purchase,
+					],
+				},
+				...prevUsers.slice(index+1)
+			];
 		});
 	}
 
