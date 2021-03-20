@@ -26,7 +26,6 @@ const ConfirmationPage = () => {
   return (
     <div className="center-align">
       <div className={styles.confirmationWrapper}>
-
         <FontAwesomeIcon icon={faCheck} className={styles.icon} />
         <h1>Your order is confirmed.</h1>
         <p>
@@ -41,17 +40,17 @@ const ConfirmationPage = () => {
 
         <div className={styles.purchasedList}>
           {purchased &&
-            purchased.map((car, i) => <CartItem key={i} product={car} />)}
+            purchased.map((car, i) => (
+              <CartItem key={i} product={car} show={false} />
+            ))}
         </div>
 
         <div className={styles.showTotalContainer}>
           <h3 className={styles.totalcost}>Total cost:</h3>
           <h3 className={styles.showcost}>{formattedTotalValue}</h3>
+        </div>
+        <hr />
       </div>
-      <hr/>
-
-      </div>
-        
 
       <button className={styles.button} onClick={() => history.push("/")}>
         Browse for more cars
