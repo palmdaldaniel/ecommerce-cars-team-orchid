@@ -59,6 +59,7 @@ function UserContextProvider(props) {
 		if (currentUser){
 			localStorage.setItem("currentUser", JSON.stringify(currentUser.username))
 		}
+		
 	}, [currentUser])
 
 	/*	Attempts to to log in user with provided credentials.

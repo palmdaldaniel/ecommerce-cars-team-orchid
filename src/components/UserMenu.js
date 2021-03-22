@@ -28,9 +28,11 @@ const UserMenu = () => {
         if(!displayRegister){
             setDisplayRegister(true)
             setDisplayLogin(false)
+            setFeedbackMessage(null)
         } else {
             setDisplayRegister(false) 
             setDisplayLogin(true)
+            setFeedbackMessage(null)
         }
     }
 

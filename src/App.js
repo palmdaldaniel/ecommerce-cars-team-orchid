@@ -9,6 +9,7 @@ import About from "./pages/About";
 import PurchaseHistory from "./pages/PurchaseHistory.js";
 import ScrollToTop from "./components/ScrollToTop.js";
 import Search from "./pages/Search.js";
+import NavSpacer from "./components/NavSpacer.js";
 
 import ProductsContextProvider from "./contexts/ProductsContext";
 import CartContextProvider from "./contexts/CartContext";
@@ -23,6 +24,7 @@ function App() {
             <BrowserRouter>
               <ScrollToTop />
               <Navbar />
+              <NavSpacer />
               <Route exact path="/">
                 <Home />
               </Route>
