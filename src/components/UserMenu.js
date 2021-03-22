@@ -58,7 +58,7 @@ const UserMenu = () => {
 
     function handleRegister (e) {
         e.preventDefault();
-        const regex = new RegExp("^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])");
+        const regex = new RegExp("^(?=.{6,})(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*])");
          //checks if username already exists
 		const userExists = users.find(e => e.username === username)
 		if(userExists){
@@ -70,7 +70,7 @@ const UserMenu = () => {
                 setRegisterMessage(null)
             }, 3000)
         } else {
-            setFeedbackMessage("Your password must be at least 8 characters long, contain both upper- and lowercase and a number or a special character.")
+            setFeedbackMessage("Your password must be at least 6 characters long, contain upper- and lowercase and a special character.")
         }
     }
 
@@ -114,7 +114,7 @@ const UserMenu = () => {
                     </label>
                     <button className={styles.userBtn}>Log in</button>
                 </form>
-                {feedbackMessage && <span className={styles.loginMsg}>{feedbackMessage}</span>}
+                {feedbackMessage && <p className={styles.loginMsg}>{feedbackMessage}</p>}
                 <p className={styles.p} onClick={toggleRegister}>Not a user? Click here to register</p>
             </div>
             }
@@ -139,7 +139,7 @@ const UserMenu = () => {
             </label>
             <button className={styles.userBtn}>Register</button>
             </form>
-            {feedbackMessage && <span className={styles.loginMsg}>{feedbackMessage}</span>}
+            {feedbackMessage && <p className={styles.loginMsg}>{feedbackMessage}</p>}
             <p className={styles.p} onClick={toggleRegister}>Already a user? Click here to login</p>
             </div>
             }

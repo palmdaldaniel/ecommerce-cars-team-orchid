@@ -20,6 +20,7 @@
 .logoutMsg {
   font-size: 1.3rem;
   color: #ff9300;
+  line-height: 1.5;
 }
 
 .userBtn {
