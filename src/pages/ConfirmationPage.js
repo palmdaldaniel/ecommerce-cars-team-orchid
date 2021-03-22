@@ -40,7 +40,9 @@ const ConfirmationPage = () => {
 
         <div className={styles.purchasedList}>
           {purchased &&
-            purchased.map((car, i) => <CartItem key={i} product={car} />)}
+            purchased.map((car, i) => (
+              <CartItem key={i} product={car} render={false} />
+            ))}
         </div>
 
         <div className={styles.showTotalContainer}>
