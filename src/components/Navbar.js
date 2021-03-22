@@ -135,7 +135,7 @@ function Navbar(props) {
               icon={faShoppingCart}
               className={styles.shoppingCart}
             />
-            <span className={styles.cartNumber}>{cart.length}</span>
+            <span className={styles.cartNumber}><span className={styles.cartNumberText}>{cart.length}</span></span>
           </div>
         </div>
       </div>
