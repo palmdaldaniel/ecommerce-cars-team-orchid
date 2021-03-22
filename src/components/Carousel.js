@@ -8,8 +8,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
-import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import {faAngleRight} from "@fortawesome/free-solid-svg-icons";
+import {faAngleLeft} from "@fortawesome/free-solid-svg-icons";
 
 function NextArrow(props) {
 	const { nextArrow, style, onClick, } = props;
@@ -18,7 +18,7 @@ function NextArrow(props) {
 		className={nextArrow}
 		style={{ ...style, position: "absolute",  top: "150px", right: "-20px", maxWidth: "32px",cursor: "pointer", color: "rgb(224, 148, 5)"}}
 		onClick={onClick}
-		><FontAwesomeIcon icon={faArrowRight} size="2x" /></div>
+		><FontAwesomeIcon icon={faAngleRight} size="2x" /></div>
 	);
   }
   
@@ -29,7 +29,7 @@ function NextArrow(props) {
 		className={prevArrow}
 		style={{ ...style, position: "absolute", left: "-20px", zIndex: "1",top: "150px", maxWidth: "32px",cursor: "pointer",  color: "rgb(224, 148, 5)"}}
 		onClick={onClick}
-	  ><FontAwesomeIcon icon={faArrowLeft}  size="2x"/></div>
+	  ><FontAwesomeIcon icon={faAngleLeft}  size="2x"/></div>
 	);
   }
 
