@@ -48,9 +48,9 @@ const SearchBar = () => {
         </div>
 
         {displaySearchMessage && (
-          <div className="searchMessage">
+          <div className={styles.message}>
             <ul>
-            <li>{searchMessage}</li>
+              <li>{searchMessage}</li>
             </ul>
           </div>
         )}
