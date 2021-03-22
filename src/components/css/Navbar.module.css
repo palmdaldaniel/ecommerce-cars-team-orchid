@@ -20,6 +20,10 @@
 	z-index: 1;
 }
 
+.a {
+  color: black;
+}
+
 .iconWrapper {
   display: flex;
   justify-content: flex-end;
