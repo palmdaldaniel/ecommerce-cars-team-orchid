@@ -10,11 +10,21 @@ const SearchBar = () => {
   const { searchForCars } = useContext(ProductsContext);
   const [search, setSearch] = useState("");
   const history = useHistory()
+  const [searchMessage, setSearchMessage] = useState('Try searching for Chevrolet or Toyota')
+  const [displaSearchMessage, setDisplaySearchMessage] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(search.length < 2) return
+    
+    // send helpmessage to productscontext
+    /* searchForCars('', '', 'Try searching for Chevrolet or Toyota') */
+    if(search.length < 2)  {
+      setDisplaySearchMessage(true)
+      return
+    }
+    
     searchForCars(search)
+    setDisplaySearchMessage(false)
     history.push('/search')
   };
 
@@ -36,6 +46,11 @@ const SearchBar = () => {
             <FontAwesomeIcon icon={faSearch} />
           </div>
         </div>
+
+        {displaSearchMessage &&   <div className="searchMessage">
+        <p>{searchMessage}</p>
+        </div>  }
+  
       </form>
     </div>
   );
