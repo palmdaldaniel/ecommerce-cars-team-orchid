@@ -19,8 +19,12 @@
   margin-top: 0.2em;
 }
 
-.resultMessage {
-  grid-column-start: 3;
+.errorMessage {
+  display: flex;
+  justify-content: center;
+  font-size: 1.8em;
+  margin-top: 2em;
+  color: orange;
 }
 
 @media only screen and (max-width: 768px) {

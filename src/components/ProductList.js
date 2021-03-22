@@ -3,22 +3,20 @@ import ProductItem from "./ProductItem";
 import styles from "./css/ProductList.module.css";
 
 const ProductList = (props) => {
+  if(props.list && props.list.length === 0) {
+    return <div className={styles.errorMessage}>No matching results.</div>
+  }
+
   return (
-    <div>
-      <div className={styles.productList}>
-        <div className={styles.productListContainer}>
-          {props.list &&
-            props.list.length > 0 ? (
-              props.list.map((product, i) => (
-                <Lazyload key={i}>
-                  <ProductItem key={i} id={i} data={product} />
-                </Lazyload>
-              ))
-            ) : (
-              <div className={styles.resultMessage}>No matching results.</div>
-            )
-          }
-        </div>
+    <div className={styles.productList}>
+      <div className={styles.productListContainer}>
+        {props.list &&
+          props.list.map((product, i) => (
+            <Lazyload key={i}>
+              <ProductItem key={i} id={i} data={product} />
+            </Lazyload>
+          ))
+        }
       </div>
     </div>
   );
