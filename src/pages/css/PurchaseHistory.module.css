@@ -1,3 +1,62 @@
 .container {
-	
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.pageTitle {
+	font-size: 2rem;
+    text-transform: uppercase;
+	text-align: center;
+}
+
+.purchaseList {
+	display: grid;
+	grid-template-columns: auto;
+	gap: 10px;
+}
+
+.cartList {
+	display: grid;
+	grid-template-columns: auto;
+	gap: 10px;
+}
+
+.purchase {
+	background: white;
+	padding: 12px;
+}
+
+.purchaseTitle {
+	font-size: 1.25rem;
+	font-weight: 600;
+	margin: 0;
+	margin-bottom: .5em;
+}
+
+.totalCost {
+	font-size: 1.25rem;
+	font-weight: 600;
+	text-align: right;
+	margin: 0;
+	margin-top: .5em;
+}
+
+.label {
+	font-size: .8rem;
+	margin: 0;
+	opacity: .75;
+}
+
+@media only screen and (min-width: 993px) {
+	.purchaseTitle {
+		font-size: 1.5rem;
+	}
+
+	.totalCost {
+		font-size: 1.5rem;
+	}
+
+	.container {
+		max-width: 1000px;
+	}
 }
