@@ -64,7 +64,6 @@ const UserMenu = () => {
 		if(userExists){
             setFeedbackMessage("A user with this username already exists.")
         } else if(regex.test(password)) { 
-            console.log("NICE")
             addUser(username, password)
             setRegisterMessage("Registration complete!")
             setTimeout(() => {
