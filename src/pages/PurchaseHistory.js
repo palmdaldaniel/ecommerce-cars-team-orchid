@@ -10,28 +10,32 @@ function PurchaseHistory() {
 
 	function renderPurchase(purchase, key) {
 		return (
-			<div className={style.purchase} key={key}>
+			<div>
 				<h2 className={style.purchaseTitle}>
 					{new Date(purchase.timestamp).toLocaleString(
 						navigator.language,
 						{},
 					)}
 				</h2>
+				<div className={style.purchase} key={key}>
 
-				<div className={style.cartList}>
-					{purchase.products.map((product, i) => (
-						<div key={i} className={style.productRow}>
-							<CartItem product={product} />
-						</div>
-					))}
+					<div className={style.cartList}>
+						{purchase.products.map((product, i) => (
+							<div key={i} className={style.productRow}>
+								<CartItem product={product} />
+							</div>
+						))}
+					</div>
+
+					<hr />
+					
+					<p className={style.totalCost}>
+						{purchase.products.reduce((acc, val) => acc + val.price, 0).toLocaleString(
+							navigator.language,
+							{ style: "currency", currency: "SEK",}
+						)}
+					</p>
 				</div>
-
-				<p className={style.totalCost}>
-					{purchase.products.reduce((acc, val) => acc + val.price, 0).toLocaleString(
-						navigator.language,
-						{ style: "currency", currency: "SEK",}
-					)}
-				</p>
 			</div>
 		);
 	}
