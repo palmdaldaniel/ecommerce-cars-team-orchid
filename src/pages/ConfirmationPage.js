@@ -26,11 +26,10 @@ const ConfirmationPage = () => {
   return (
     <div className="center-align">
       <div className={styles.confirmationWrapper}>
-
         <FontAwesomeIcon icon={faCheck} className={styles.icon} />
         <h1>Your order is confirmed.</h1>
         <p>
-        Thank you for shopping with us! Please print this page, it's your
+          Thank you for shopping with us! Please print this page, it's your
           receipt.
         </p>
       </div>
@@ -47,11 +46,12 @@ const ConfirmationPage = () => {
         <div className={styles.showTotalContainer}>
           <h3 className={styles.showcost}>Total cost: {formattedTotalValue}</h3>
         </div>
-      <hr/>
-
+        <hr />
       </div>
-        
 
+      <button className={styles.button} onClick={() => window.print()}>
+        Print
+      </button>
       <button className={styles.button} onClick={() => history.push("/")}>
         Browse for more cars
       </button>
