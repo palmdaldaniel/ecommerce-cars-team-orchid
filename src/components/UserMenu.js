@@ -58,16 +58,20 @@ const UserMenu = () => {
 
     function handleRegister (e) {
         e.preventDefault();
+        const regex = new RegExp("^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])");
          //checks if username already exists
 		const userExists = users.find(e => e.username === username)
 		if(userExists){
             setFeedbackMessage("A user with this username already exists.")
-        } else { 
+        } else if(regex.test(password)) { 
+            console.log("NICE")
             addUser(username, password)
             setRegisterMessage("Registration complete!")
             setTimeout(() => {
                 setRegisterMessage(null)
             }, 3000)
+        } else {
+            setFeedbackMessage("Your password must be at least 8 characters long, contain both upper- and lowercase and a number or a special character.")
         }
     }
 
