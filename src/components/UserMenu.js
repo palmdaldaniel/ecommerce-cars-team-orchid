@@ -1,5 +1,7 @@
 import { useState, useContext, useEffect } from "react";
 import { UserContext } from "../contexts/UserContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 import styles from './css/UserMenu.module.css'
 
@@ -9,7 +11,8 @@ const UserMenu = () => {
     const [registerMessage, setRegisterMessage] = useState(null);
     const [feedbackMessage, setFeedbackMessage] = useState(null);
     const [displayRegister, setDisplayRegister] = useState(false);
-    const [displayLogin, setDisplayLogin] = useState(true)
+    const [displayLogin, setDisplayLogin] = useState(true);
+    const [showPassword, setShowPassword] = useState(false);
     
     //is used for both login and register
     const [username, setUsername] = useState("");
@@ -21,6 +24,11 @@ const UserMenu = () => {
 
     function handlePasswordChange (e) {
         setPassword(e.target.value)
+    }
+
+    function togglePassword (){
+        if(!showPassword) setShowPassword(true)
+        if(showPassword) setShowPassword(false)
     }
 
     function toggleRegister () {
@@ -59,7 +67,7 @@ const UserMenu = () => {
     function handleRegister (e) {
         e.preventDefault();
         const regex = new RegExp("^(?=.{6,})(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*])");
-         //checks if username already exists
+        //checks if username already exists
 		const userExists = users.find(e => e.username === username)
 		if(userExists){
             setFeedbackMessage("A user with this username already exists.")
@@ -107,10 +115,11 @@ const UserMenu = () => {
                     </label>
                     <label>
                         <input 
-                        type="text" //can be changed to password to make text hidden
+                        type={showPassword ? "text" : "password"} 
                         placeholder="Password" 
                         onChange={handlePasswordChange}
                         required/>
+                        <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} onClick={togglePassword}/>
                     </label>
                     <button className={styles.userBtn}>Log in</button>
                 </form>
@@ -132,7 +141,7 @@ const UserMenu = () => {
             </label>
             <label>
                 <input 
-                type="text" //can be changed to password to make text hidden
+                type="password" 
                 placeholder="Password"
                 onChange={handlePasswordChange} 
                 required />
