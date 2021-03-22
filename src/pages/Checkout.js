@@ -3,12 +3,10 @@ import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../contexts/CartContext";
 import CartItem from "../components/CartItem.js";
 import style from "./css/Checkout.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import Form from "../components/Form.js";
 
 function Checkout() {
-  const { cart, cartValue, deleteCartItem } = useContext(CartContext);
+  const { cart, cartValue, handlePurchase } = useContext(CartContext);
 
   const history = useHistory();
   const [valueStr, setPriceString] = useState("");
@@ -34,15 +32,7 @@ function Checkout() {
           <div className={style.cartList}>
             {cart.map((product, i) => (
               <div key={i} className={style.productRow}>
-                <CartItem product={product} />
-                <div
-                  className="valign-wrapper"
-                  onClick={() => deleteCartItem(i)}
-                >
-                  <button className={style.deleteBtn}>
-                    <FontAwesomeIcon icon={faTrashAlt} />
-                  </button>
-                </div>
+                <CartItem product={product} delete={i} show={true} />
               </div>
             ))}
             <p className={style.totalCost}>{valueStr}</p>
