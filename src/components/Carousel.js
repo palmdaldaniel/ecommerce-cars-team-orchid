@@ -19,7 +19,8 @@ const Carousel = () => {
 		slidesToShow: 4, 
 		slidesToScroll: 1,
 		arrows: true,
-	
+		draggable: false,
+
 			responsive: [
 				{
 					breakpoint: 1560,
@@ -37,6 +38,7 @@ const Carousel = () => {
 						slidesToScroll: 1,
 						infinite: true,
 						dots: true,
+						arrows: false,
 					}
 				},
 				{
@@ -46,6 +48,7 @@ const Carousel = () => {
 						slidesToScroll: 1,
 						infinite: true,
 						dots: true,
+						arrows: false,
 					}
 				},
 			]
