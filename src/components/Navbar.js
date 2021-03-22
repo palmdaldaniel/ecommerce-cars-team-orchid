@@ -167,7 +167,7 @@ function Navbar(props) {
             <div className={styles.cartContainer}>
               {cart.slice(0, maxCartItems).map((product, i) => (
                 <div key={i} className={styles.cartItem}>
-                  <CartItem product={product} />
+                  <CartItem product={product} delete={i} show={true} />
                 </div>
               ))}
               {cart.length > maxCartItems && (
