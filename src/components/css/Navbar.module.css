@@ -26,6 +26,10 @@
   align-items: center;
 }
 
+.a {
+    color: black !important;
+}
+
 .navUL,
 .cartContent,
 .userContent {
