@@ -23,6 +23,12 @@
   color: limegreen;
 }
 
+/*------ Styles for personal information ------ */
+
+.information{
+  max-width: 80px;
+  align-content: center;
+}
 /*-----styles for purchased list-----*/
 
 .purchasedList {

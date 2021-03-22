@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 const ConfirmationPage = () => {
-  const { purchased, purchasedValue } = useContext(CartContext);
+  const { purchased, purchasedValue, personalInformationSaved } = useContext(CartContext);
   const history = useHistory();
   const [formattedTotalValue, setFormattedTotalValue] = useState(null);
 
@@ -35,6 +35,25 @@ const ConfirmationPage = () => {
         </p>
       </div>
 
+      <div className={`container ${styles.purchasedContainer}`}>
+        <h2>Your Information: </h2>
+      </div>
+      <div className={`container`}>
+        <p className={styles.information}>
+          {personalInformationSaved.name}
+          {personalInformationSaved.lastname}
+        </p>
+        <p className={styles.information}>
+          {personalInformationSaved.address}
+          {personalInformationSaved.postalcode}
+          {personalInformationSaved.city}
+        </p>
+        <p className={styles.information}>
+          {personalInformationSaved.email}
+          {personalInformationSaved.number}
+          {personalInformationSaved.delivery}
+        </p>
+      </div>
       <div className={`container ${styles.purchasedContainer}`}>
         <h2>Your purchase:</h2>
         <hr />
