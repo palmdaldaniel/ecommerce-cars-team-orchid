@@ -1,12 +1,11 @@
 import { createContext, useEffect, useState } from "react";
-
 import cars from "../json/cars.json";
 
 export const ProductsContext = createContext();
 
-function ProductsContextProvider(props) {
+function ProductsContextProvider(props) { 
   const [products, setProducts] = useState(null);
-  const [filteredProducts, setFilteredProducts] = useState(null);
+  const [searchedProducts, setSearchedProducts] = useState(null);
 
   useEffect(() => {
     /* go through every object and add a key value pair for an image src */
@@ -20,27 +19,53 @@ function ProductsContextProvider(props) {
     setProducts(carsWithImage);
   }, []);
 
+  const [filters, setFilters] = useState({
+		make: "",
+		model: "",
+		year: "",
+		min: "0",
+		max: Infinity,
+		minMiles: "0",
+		maxMiles: Infinity
+	});
+
   useEffect(() => {
-    setFilteredProducts(products);
+    setSearchedProducts(products);
   }, [products]);
 
-  const searchForCars = (search, filter) => {
-    if (filteredProducts === undefined) return;
-    const filteredCars = products.filter(
+  useEffect(() => {
+		searchForCars("", filters)
+	}, [filters]) 
+
+  const searchForCars = (search, filters) => {
+    if(!products) return;
+
+    let searchedCars = products.filter(
       (car) =>
         car.make.toLowerCase().includes(search.toLowerCase()) ||
         car.model.toLowerCase().includes(search.toLowerCase()) ||
         car.city.toLowerCase().includes(search.toLowerCase())
     );
 
-    setFilteredProducts(filteredCars);
+    if(filters){
+      searchedCars = searchedCars.filter((car) => { 
+        return car.make.includes(filters.make) && 
+        car.model.includes(filters.model) && 
+        car.year.toString().includes(filters.year) &&
+        car.price > filters.min && car.price < filters.max &&
+        car.miles > filters.minMiles && car.miles < filters.maxMiles
+    })}
+
+    setSearchedProducts(searchedCars);
   };
 
   // Insert you methods and values here
   const values = {
-    filteredProducts,
+    filters,
     products,
-    searchForCars
+    searchedProducts,
+    setFilters,
+    searchForCars, 
   };
 
   return (
