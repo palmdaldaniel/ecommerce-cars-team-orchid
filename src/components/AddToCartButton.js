@@ -14,13 +14,17 @@ const AddToCartButton = (props) => {
   };
 
   if (!isInCart(product)) {
-    return <button className={`${style.addButton} ${style.inCart}`}>
-      <FontAwesomeIcon icon={faCheck} /> In cart
-    </button>
+    return (
+      <button className={style.addButton} onClick={() => addToCart(product)}>
+        <FontAwesomeIcon icon={faPlus} /> Add To Cart
+      </button>
+    );
   } else {
-    return <button className={style.addButton} onClick={() => addToCart(product)}>
-      <FontAwesomeIcon icon={faPlus} /> Add To Cart
-    </button>
+    return (
+      <button className={`${style.addButton} ${style.inCart}`}>
+        <FontAwesomeIcon icon={faCheck} /> In cart
+      </button>
+    );
   }
 };
 
