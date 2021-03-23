@@ -143,7 +143,6 @@ font-weight: bold;
 /* print css */
 
 @media print {
-  .noPrint,
   .btnContainer {
     display: none;
   }

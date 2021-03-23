@@ -84,7 +84,7 @@ const ConfirmationPage = () => {
         <hr />
       </div>
 
-      <div className={styles.noPrint, styles.btnContainer}>
+      <div className={styles.btnContainer}>
         <button className={styles.button} onClick={() => window.print()}>
           Print receipt
         </button>
