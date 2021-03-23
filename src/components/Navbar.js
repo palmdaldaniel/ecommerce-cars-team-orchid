@@ -121,7 +121,7 @@ function Navbar(props) {
         <div className={styles.centerLogo}>
           <img
             className={styles.navLogo}
-            src="/OC-logo.jpg"
+            src="/oc_transparent_logo.png"
             onClick={logoClick}
           />
         </div>
