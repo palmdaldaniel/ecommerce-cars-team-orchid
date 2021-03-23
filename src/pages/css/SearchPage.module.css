@@ -2,3 +2,8 @@
     text-align: center;
     margin-top: 2em;
 }
+
+.button {
+    padding: 0.8em 1.5em;
+    margin-bottom: 2em;
+}

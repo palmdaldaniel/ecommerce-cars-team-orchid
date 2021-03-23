@@ -8,8 +8,7 @@ import Filters from '../components/Filter.js';
 const Search = () => {
   const { searchedProducts, reset } = useContext(ProductsContext);
 
-  onclick = () => {
-    //console.log('click');
+  const resetButton = () => {
     reset()
   } 
 
@@ -18,8 +17,8 @@ const Search = () => {
       <SearchBar />
       <Filters/>
       <div className={styles.headline}>
+        <button onClick={resetButton} className={styles.button}>Reset filters</button>
         <h5>Your search result</h5>
-        <button onClick={onclick} className={styles.button}>Reset</button>
       </div>
 
       <ProductList list={searchedProducts} />

@@ -22,7 +22,7 @@ function ProductsContextProvider(props) {
   const reset = () => {
     //console.log(searchedProducts);
     setSearchedProducts(products);
-    console.log(searchedProducts);
+    //console.log(searchedProducts);
   }
 
   const [filters, setFilters] = useState({
