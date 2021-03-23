@@ -37,7 +37,9 @@
 
 .priceContainer {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-end;
+  /* justify-content: space-between; */
   padding: 1rem;
 }
 
@@ -50,6 +52,7 @@
 .priceContainer span {
   font-size: 1.2rem;
   font-weight: 500;
+  margin-bottom: .5em;
 }
 
 .secondInfo {
