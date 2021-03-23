@@ -19,6 +19,12 @@ function ProductsContextProvider(props) {
     setProducts(carsWithImage);
   }, []);
 
+  const reset = () => {
+    //console.log(searchedProducts);
+    setSearchedProducts(products);
+    console.log(searchedProducts);
+  }
+
   const [filters, setFilters] = useState({
 		make: "",
 		model: "",
@@ -65,7 +71,9 @@ function ProductsContextProvider(props) {
     products,
     searchedProducts,
     setFilters,
-    searchForCars, 
+    searchForCars,
+    setSearchedProducts, 
+    reset,
   };
 
   return (
