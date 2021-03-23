@@ -87,21 +87,7 @@
 /*-----Styles for purchase button-----*/
 
 .Btn {
-  background: #efefef;
-  border: 2px solid #ff9300;
-  border-radius: 5px;
-  box-shadow: 1px 1px 12px 1px #ccc;
   margin: 3rem auto;
-  padding: 10px 20px;
-  transition: 0.1s;
-  width: 200px;
-}
-
-.Btn:hover {
-  background: #ff9300;
-  color: white;
-  cursor: pointer;
-  transition: 0.1s;
 }
 
 .emptyCart {

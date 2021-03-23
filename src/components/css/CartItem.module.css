@@ -44,6 +44,12 @@
   background: none;
   margin-top: 50%;
   font-size: 1.2rem;
+  padding: 0;
+  box-shadow: none;
+  color: black;
+}
+.delete:hover {
+  background: none;
 }
 
 @media only screen and (min-width: 1200px) {
