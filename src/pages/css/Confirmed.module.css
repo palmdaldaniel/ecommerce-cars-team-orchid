@@ -134,4 +134,16 @@ font-weight: bold;
     justify-content: flex-end;
     margin-left: 1rem;
   }
+  .informationWrapper{
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .information{
+    text-align: start;
+  } 
+  .information2{
+    text-align: end;
+  }
 }
