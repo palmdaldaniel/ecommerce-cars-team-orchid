@@ -84,6 +84,7 @@ font-weight: bold;
 .btnContainer {
   display: flex;
   flex-direction: column;
+  margin-bottom: 1.9rem;
 }
 
 @media only screen and (min-width: 375px) {
@@ -108,13 +109,14 @@ font-weight: bold;
   .btnContainer {
     flex-direction: row;
     margin: 0 auto;
-    width: 70%;
+    width: 60%;
     justify-content: center;
   }
 
   .button {
-    margin: 1.2rem 3rem;
+    margin: 1.2rem 1rem;
   }
+
   .informationWrapper{
     grid-template-columns: 1fr 1fr;
     gap: 10px;
