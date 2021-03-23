@@ -43,3 +43,7 @@
   cursor: pointer;
   transition: 0.1s;
 }
+
+.eyeIcon {
+  cursor: pointer;
+}

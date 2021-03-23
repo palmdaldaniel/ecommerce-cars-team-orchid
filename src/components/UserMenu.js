@@ -140,11 +140,12 @@ const UserMenu = () => {
                 required />
             </label>
             <label>
-                <input 
-                type="password" 
-                placeholder="Password"
-                onChange={handlePasswordChange} 
-                required />
+            <input 
+                type={showPassword ? "text" : "password"} 
+                placeholder="Password" 
+                onChange={handlePasswordChange}
+                required/>
+                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} className={styles.eyeIcon} onClick={togglePassword}/>
             </label>
             <button className={styles.userBtn}>Register</button>
             </form>
