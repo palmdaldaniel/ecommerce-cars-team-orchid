@@ -114,12 +114,14 @@ const UserMenu = () => {
                         required/>
                     </label>
                     <label>
-                        <input 
-                        type={showPassword ? "text" : "password"} 
-                        placeholder="Password" 
-                        onChange={handlePasswordChange}
-                        required/>
-                        <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} onClick={togglePassword}/>
+                        <div className={styles.inputPasswordWrapper}>
+                            <input 
+                            type={showPassword ? "text" : "password"} 
+                            placeholder="Password" 
+                            onChange={handlePasswordChange}
+                            required/>
+                            <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} className={styles.eyeIcon} onClick={togglePassword}/>
+                        </div>
                     </label>
                     <button className={styles.userBtn}>Log in</button>
                 </form>
@@ -140,12 +142,14 @@ const UserMenu = () => {
                 required />
             </label>
             <label>
-            <input 
-                type={showPassword ? "text" : "password"} 
-                placeholder="Password" 
-                onChange={handlePasswordChange}
-                required/>
-                <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} className={styles.eyeIcon} onClick={togglePassword}/>
+            <div className={styles.inputPasswordWrapper}>
+                <input 
+                    type={showPassword ? "text" : "password"} 
+                    placeholder="Password" 
+                    onChange={handlePasswordChange}
+                    required/>
+                    <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} className={styles.eyeIcon} onClick={togglePassword}/>
+            </div>
             </label>
             <button className={styles.userBtn}>Register</button>
             </form>
