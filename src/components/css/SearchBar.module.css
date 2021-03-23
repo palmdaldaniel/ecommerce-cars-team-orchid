@@ -4,7 +4,7 @@
 }
 
 .searchfield {
-  min-width: 420px;
+  width: 420px;
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
@@ -16,7 +16,7 @@
   border: 3px solid orange !important;
   padding-left: 10px !important;
   border-radius: 15px !important;
-  background-color: rgba(255, 255, 255, 0.719) !important;
+  background-color: rgba(255, 255, 255, 0.753) !important;
 }
 
 .searchfield input::placeholder {
@@ -42,4 +42,19 @@
 .icon:hover {
   cursor: pointer;
   color: #ff9300;
+}
+
+@media only screen and (max-width: 820px) {
+
+  .searchfield {
+    max-width: 300px !important;
+  }
+
+  .searchfield input::placeholder {
+    font-size: 16px;
+  }
+
+  .icon {
+    font-size: 20px;
+  }
 }
