@@ -29,7 +29,7 @@ const ConfirmationPage = () => {
         <FontAwesomeIcon icon={faCheck} className={styles.icon} />
         <h1>Your order is confirmed.</h1>
         <p>
-          Thank your shopping with us! Please print this page, it's your
+          Thank you for shopping with us! Please print this page, it's your
           receipt.
         </p>
       </div>
@@ -51,9 +51,14 @@ const ConfirmationPage = () => {
         <hr />
       </div>
 
-      <button className={styles.button} onClick={() => history.push("/")}>
-        Browse for more cars
-      </button>
+      <div className={styles.noPrint}>
+        <button className={styles.button} onClick={() => window.print()}>
+          Print
+        </button>
+        <button className={styles.button} onClick={() => history.push("/")}>
+          Browse for more cars
+        </button>
+      </div>
     </div>
   );
 };
