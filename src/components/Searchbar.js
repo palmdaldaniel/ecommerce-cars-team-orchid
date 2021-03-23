@@ -3,20 +3,34 @@ import { useContext } from "react";
 import { ProductsContext } from "../contexts/ProductsContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import styles from './css/SearchBar.module.css'
-import { useHistory } from 'react-router-dom'
+import styles from "./css/SearchBar.module.css";
+import { useHistory } from "react-router-dom";
 
 const SearchBar = () => {
   const { searchForCars } = useContext(ProductsContext);
   const [search, setSearch] = useState("");
-  const history = useHistory()
+  const history = useHistory();
+  const [searchMessage] = useState("Try searching for Chevrolet or Toyota");
+  const [displaySearchMessage, setDisplaySearchMessage] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(search.length < 2) return
-    searchForCars(search)
-    history.push('/search')
+   
+    if (search.length < 2) {
+      setDisplaySearchMessage(true);
+      // hide helpmessage after 3 seconds
+      setTimeout(hideMessage, 3000)
+      return;
+    }
+    
+    searchForCars(search);
+    history.push("/search");
   };
+
+  const hideMessage = () => {
+    setDisplaySearchMessage(false);
+  } 
+
 
   const handleInput = (e) => {
     setSearch(e.target.value);
@@ -37,6 +51,14 @@ const SearchBar = () => {
             <FontAwesomeIcon icon={faSearch} />
           </div>
         </div>
+
+        {displaySearchMessage && (
+          <div className={styles.message}>
+            <ul>
+              <li>{searchMessage}</li>
+            </ul>
+          </div>
+        )}
       </form>
     </div>
   );
