@@ -1,8 +1,11 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { UserContext } from "../contexts/UserContext.js";
 
 export const CartContext = createContext();
 
 function CartContextProvider(props) {
+
+  const { savePurchase } = useContext(UserContext);
 
   const [cart, setCart] = useState([]);
   //array for purchased cars to be rendered on confirmation page
@@ -51,6 +54,7 @@ function CartContextProvider(props) {
 
   //triggers when user clicks on purchase button on checkout page
   const handlePurchase = () => {
+    savePurchase([...cart]);
     //copies cart to purchased array and sets cart to an empty array
     setPurchased([...cart]);
     setCart([]);
