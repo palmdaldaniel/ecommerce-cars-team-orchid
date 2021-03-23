@@ -22,6 +22,10 @@
   color: #ff9300;
 }
 
+.navLink {
+  color: black !important;
+}
+
 .userBtn {
   color: white;
   background: #ff9300;
