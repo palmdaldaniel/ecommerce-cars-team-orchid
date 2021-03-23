@@ -14,23 +14,25 @@ import {faAngleLeft} from "@fortawesome/free-solid-svg-icons";
 function NextArrow(props) {
 	const { nextArrow, style, onClick, } = props;
 	return (
-	  <div
-		className={nextArrow}
-		style={{ ...style, position: "absolute",  top: "150px", right: "-20px", maxWidth: "32px",cursor: "pointer", color: "rgb(224, 148, 5)"}}
-		onClick={onClick}
-		><FontAwesomeIcon icon={faAngleRight} size="2x" /></div>
-	);
+			<div
+				className={nextArrow}
+				style={{ ...style, position: "absolute",  top: "125px", right: "-20px", maxWidth: "32px",cursor: "pointer", color: "rgb(224, 148, 5)"}}
+				onClick={onClick}>
+				<FontAwesomeIcon icon={faAngleRight} size="2x" />
+			</div>
+		);
   }
   
   function PrevArrow(props) {
 	const { prevArrow, style, onClick,} = props;
 	return (
-	  <div
-		className={prevArrow}
-		style={{ ...style, position: "absolute", left: "-20px", zIndex: "1",top: "150px", maxWidth: "32px",cursor: "pointer",  color: "rgb(224, 148, 5)"}}
-		onClick={onClick}
-	  ><FontAwesomeIcon icon={faAngleLeft}  size="2x"/></div>
-	);
+			<div
+				className={prevArrow}
+				style={{ ...style, position: "absolute", left: "-20px", zIndex: "1",top: "125px", maxWidth: "32px",cursor: "pointer",  color: "rgb(224, 148, 5)"}}
+				onClick={onClick}>
+				<FontAwesomeIcon icon={faAngleLeft} size="2x"/>
+			</div>
+		);
   }
 
 const Carousel = () => {
