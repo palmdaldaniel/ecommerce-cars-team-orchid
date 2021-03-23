@@ -60,7 +60,12 @@
 /*-----styles for button-----*/
 
 .button {
-  margin: 3rem auto;
+  margin: 1.2rem auto;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: column;
 }
 
 @media only screen and (min-width: 375px) {
@@ -81,6 +86,17 @@
     width: 100%;
     padding-top: 1.2rem;
   }
+
+  .btnContainer {
+    flex-direction: row;
+    margin: 0 auto;
+    width: 70%;
+    justify-content: center;
+  }
+
+  .button {
+    margin: 1.2rem 3rem;
+  }
 }
 
 @media only screen and (min-width: 1199px) {
@@ -92,7 +108,8 @@
 /* print css */
 
 @media print {
-  .noPrint {
+  .noPrint,
+  .btnContainer {
     display: none;
   }
 
