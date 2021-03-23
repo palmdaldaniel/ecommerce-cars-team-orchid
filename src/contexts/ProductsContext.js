@@ -44,8 +44,10 @@ function ProductsContextProvider(props) {
   
 
   const searchForCars = (search, filters) => {
+   // check if products has loaded
     if (!products) return;
-
+    // check if search can be itterable 
+    if (!search) return;
     // copy the content and spread it out.
     setSearch(...search)
     
