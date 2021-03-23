@@ -51,12 +51,14 @@ const ConfirmationPage = () => {
         <hr />
       </div>
 
-      <button className={styles.button} onClick={() => window.print()}>
-        Print
-      </button>
-      <button className={styles.button} onClick={() => history.push("/")}>
-        Browse for more cars
-      </button>
+      <div className={styles.noPrint}>
+        <button className={styles.button} onClick={() => window.print()}>
+          Print
+        </button>
+        <button className={styles.button} onClick={() => history.push("/")}>
+          Browse for more cars
+        </button>
+      </div>
     </div>
   );
 };

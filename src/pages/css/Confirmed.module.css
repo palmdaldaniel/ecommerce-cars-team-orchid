@@ -108,3 +108,17 @@ button:focus {
     width: 60%;
   }
 }
+
+/* print css */
+
+@media print {
+  .noPrint {
+    display: none;
+  }
+
+  .showTotalContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 1rem;
+  }
+}

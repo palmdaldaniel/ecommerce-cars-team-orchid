@@ -1,10 +1,10 @@
 .navbarWrapper {
-	font-size: 18px;
-	display: flex;
-	flex-direction: column;
-	position: fixed;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
   box-shadow: none;
-	z-index: 1;
+  z-index: 1;
 }
 
 .navbar {
@@ -14,17 +14,16 @@
   text-align: right;
   padding: 0px 1rem;
   color: black;
-	background: white;
+  background: white;
   box-shadow: 0 2px 4px #0004;
   height: 56px;
-	z-index: 1;
+  z-index: 1;
 }
 
 .iconWrapper {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  
 }
 
 .a {
@@ -94,7 +93,7 @@
 
 .cartTotal {
   font-size: 1.2em;
-	font-weight: 700;	
+  font-weight: 700;
   text-align: right;
 }
 
@@ -114,7 +113,7 @@
   padding: 1em 2em;
   margin-bottom: 1rem;
   border: none;
-  border-radius: .25em;
+  border-radius: 0.25em;
   transition: 0.1s;
   box-shadow: 0px 2px 4px #0004;
 }
@@ -209,5 +208,13 @@
   .cartContent,
   .userContent {
     width: 600px;
+  }
+}
+
+/* print css */
+
+@media print {
+  .navbarWrapper {
+    display: none;
   }
 }
