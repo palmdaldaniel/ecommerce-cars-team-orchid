@@ -9,7 +9,7 @@ const Herobanner = () => {
 			</div>
 			<div className={styles.textContainer}>
 				<div className={styles.textBg}>
-					{/* <span>Our way to access freedom</span> */}
+					{/* {<span>Our way to access freedom</span>} */}
 					<p>Find your car today</p>	
 					<SearchBar/>
 				</div>
