@@ -1,28 +1,28 @@
 .addButton {
-  background: white;
-  padding: 5px 15px;
-  border: 2px solid #ff9300;
-  border-radius: 5px;
+  width: 100%;
+  padding: 1em 2em;
+  border: none;
+  border-radius: .25em;
+
+  text-transform: uppercase;
+  font-weight: 600;
+
+  color: white;
+  background: #ff9300;
+  box-shadow: 0px 2px 4px #0004;
   transition: 0.1s;
-  box-shadow: 1px 1px 12px 1px #ccc;
-  display: block;
 }
 
 .addButton:hover {
-  background: #ff9300;
-  color: white;
+  background: #fca730;
   cursor: pointer;
-  transition: 0.1s;
-}
-
-.addButton:focus {
-  background: #ffffff;
-  color: rgb(7, 7, 7);
 }
 
 .inCart {
-  background: #ff9300 !important;
-  padding: 5px 15px;
-  border: 2px solid #ff9300;
-  border-radius: 5px;
+  background: #aaa;
+}
+
+.inCart:hover {
+  background: #aaa;
+  cursor: initial;
 }
