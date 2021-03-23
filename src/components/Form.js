@@ -5,7 +5,6 @@ import style from "../pages/css/Checkout.module.css";
 import UserMenu from "./UserMenu.js";
 import { UserContext } from "../contexts/UserContext";
 
-
 const Form = () => {
   const history = useHistory();
   const { handlePurchase } = useContext(CartContext);
@@ -28,76 +27,48 @@ const Form = () => {
 
   const [name, setName] = useState();
   const handleNameChange = (e) => {
-    const personal = {...name}
+    const personal = {name}
     setName(e.target.value);
   };
   const [lastname, setLastname] = useState();
   const handleLastname = (e) => {
-    const personal = {...lastname}
+    const personal = {lastname}
     setLastname(e.target.value);
   };
   const [address, setAddress] = useState();
   const handleAddress = (e) => {
-    const personal = {...address}
+    const personal = {address}
     setAddress(e.target.value);
   };
   const [postalcode, setPostalcode] = useState();
   const handlePostalcode = (e) => {
-    const personal = {...postalcode}
+    const personal = {postalcode}
     setPostalcode(e.target.value);
   };
   const [city, setCity] = useState();
   const handleCity = (e) => {
-    const personal = {...city}
+    const personal = {city}
     setCity(e.target.value);
   };
   const [email, setEmail] = useState();
   const handleEmail = (e) => {
-    const personal = {...email}
+    const personal = {email}
     setEmail(e.target.value);
   };
   const [number, setNumber] = useState();
   const handleNumber = (e) => {
-    const personal = {...number}
+    const personal = {number}
     setNumber(e.target.value);
   };
-
-
-  // Dessa funkar inte för detta! Informationen borde finnas med men
-  // det måste vara antingen eller. Trycker man i båda två så kommer båda med.
-  const [pickup, setPickup] = useState();
-  const handlePickup = (e) => {
-    const personal = {...pickup}
-    setPickup("Delivery option: Pick up");
-  };
-  const [delivery, setDelivery] = useState();
+  const [delivery, setDelivery] = useState("Delivery: Pickup at store");
   const handleDelivery = (e) => {
-    const personal = {...delivery}
-    setDelivery("Delivery option: Delivered to home");
+    const personal = {delivery}
+    setDelivery("Delivery: Deliver to home");
   };
-
-
-
-
-  // const [delivery, setDelivery] = useState();
-  //   if (group1 === checked) {
-  //     const handlePickup = (e) => {
-  //       const personal = {...pickup}
-  //       setNumber("Pick up at store");
-  //     };
-  //   }
-  //   else{
-  //     const handleDelivery = (e) => {
-  //       const personal = {...delivery}
-  //       setDelivery("Deliver car to home");
-  //     };
-  //   }
-
 
   useEffect(() => {
-    getInformation(name, lastname, address,  postalcode, city, email, number, pickup, delivery) 
-  },[name, lastname, address, postalcode, city, email, number, pickup, delivery])
-
+    getInformation(name, lastname, address, postalcode, city, email, number, delivery) 
+  },[name, lastname, address, postalcode, city, email, number, delivery])
   
   return (
     <>
@@ -114,9 +85,8 @@ const Form = () => {
                 placeholder="First name"
                 required
                 onChange={handleNameChange}
-
               />
-              <input type="text" placeholder="Last name" required onChange={handleLastname}/>
+              <input type="text" placeholder="Last name" required onChange={handleLastname} />
             </label>
             <label className={style.label} htmlFor="address">
               <span className={style.titleInput}>Shipping Address</span>
@@ -126,7 +96,6 @@ const Form = () => {
                 placeholder="Address"
                 required
                 onChange={handleAddress}
-                
               />
               <input
                 type="text"
@@ -134,7 +103,6 @@ const Form = () => {
                 placeholder="Postal Code"
                 required
                 onChange={handlePostalcode}
-                id="postalcode"
               />
               <input type="text" name="address" placeholder="City" required onChange={handleCity} />
             </label>
@@ -152,14 +120,14 @@ const Form = () => {
             <h2 className={style.formTitle}>Delivery options</h2>
             <div className={style.radioButtons}>
               <p>
-                <label>
-                  <input name="group1" type="radio" onChange={handlePickup}/>
+                <label >
+                  <input name="group1" type="radio"/>
                   <span>Pick up at store</span>
                 </label>
               </p>
               <p>
-                <label>
-                  <input name="group1" type="radio" onChange={handleDelivery} />
+                <label >
+                  <input name="group1" type="radio" onChange={handleDelivery}/>
                   <span>Get car delivered to home</span>
                 </label>
               </p>

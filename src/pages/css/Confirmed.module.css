@@ -1,7 +1,7 @@
 
 .confirmationWrapper {
   margin: auto;
-  width: 75%;
+  /* width: 75%; */
   margin-top: 1rem;
 }
 
@@ -24,11 +24,23 @@
 }
 
 /*------ Styles for personal information ------ */
-
-.information{
-  max-width: 80px;
-  align-content: center;
+.informationWrapper{
+display: grid;
+grid-template-columns: 1fr;
+/* margin-left: 15%;
+text-align: start; */
 }
+
+.information h2{
+font-size: 1.3rem;
+font-weight: bold;
+}
+
+.information2 h2{
+font-size: 1.3rem;
+font-weight: bold;
+}
+
 /*-----styles for purchased list-----*/
 
 .purchasedList {
@@ -107,10 +119,25 @@ button:focus {
     width: 100%;
     padding-top: 1.2rem;
   }
+  .informationWrapper{
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .information{
+    text-align: start;
+  } 
+  .information2{
+    text-align: end;
+  }
 }
 
 @media only screen and (min-width: 1199px) {
   .confirmationWrapper {
     width: 60%;
+  }
+  .informationWrapper{
+    max-width: 550px;
   }
 }

@@ -58,11 +58,10 @@ function CartContextProvider(props) {
 
 // Saves personal information to render on ConfirmationPage (reciept) 
   const [personalInformationSaved, setPersonalInformationSaved] = useState([]);
-  const getInformation = (name, lastname, address, postalcode, city, email, number, pickup, delivery ) => {
-    const personal = {name, lastname, address, postalcode, city, email, number, pickup, delivery}
+  const getInformation = (name, lastname, address, postalcode, city, email, number, delivery ) => {
+    const personal = {name, lastname, address, postalcode, city, email, number, delivery}
     setPersonalInformationSaved(personal);
   };
-
 
   const values = {
     cart,

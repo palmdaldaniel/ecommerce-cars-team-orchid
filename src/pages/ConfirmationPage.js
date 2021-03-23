@@ -34,24 +34,38 @@ const ConfirmationPage = () => {
         </p>
       </div>
 
-      <div className={`container ${styles.purchasedContainer}`}>
-        <h2>Your Information: </h2>
-      </div>
-      <div className={`container`}>
-        <p className={styles.information}>
-          {personalInformationSaved.name}
-          {personalInformationSaved.lastname}
-        </p>
-        <p className={styles.information}>
-          {personalInformationSaved.address}
-          {personalInformationSaved.postalcode}
-          {personalInformationSaved.city}
-        </p>
-        <p className={styles.information}>
-          {personalInformationSaved.email}
-          {personalInformationSaved.number}
-          {personalInformationSaved.delivery}
-        </p>
+      <div className={styles.informationWrapper}>
+        <span className={styles.information} >
+          <div>
+            <h2>Your Information: </h2>
+          </div>
+          <div>
+            <p>
+              {`${personalInformationSaved.name} ${personalInformationSaved.lastname}`}
+            </p>
+            <p>
+              {personalInformationSaved.address} <br />
+              {`${personalInformationSaved.postalcode} `}
+              {personalInformationSaved.city}
+            </p>
+            <p >
+              {`${personalInformationSaved.email}`} <br />
+              {`${personalInformationSaved.number}`}
+            </p>
+            <p >
+              {/* Medvetet val om att inte koda on betalningsmetod då endast ett alternativ är tillgängligt i dagsläget */}
+              {personalInformationSaved.delivery} <br /> Payent method: Card
+          </p>
+          </div>
+        </span>
+        <span className={styles.information2}>
+          <div>
+            <h2>Our Information: </h2>
+            <p>the Orchid Cars Inc.</p>
+            <p>0549-323 232 <br/> Carsforhumanity@newcar.com </p>
+            <p>Nevereverland road 66 <br/> 299 66 Peter An</p>
+          </div>
+        </span>
       </div>
       <div className={`container ${styles.purchasedContainer}`}>
         <h2>Your purchase:</h2>
