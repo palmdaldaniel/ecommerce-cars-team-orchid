@@ -13,6 +13,11 @@ function UserContextProvider(props) {
 	 *	If 'undefined', no user is logged in
 	 */
 	const [currentUser, setCurrentUser] = useState(undefined);
+	// const [currentUser, setCurrentUser] = useState({
+	// 	username: "Sebastian",
+	// 	password: "1234",
+	// 	history: [],
+	// });
 
 	/*	Creates a new user with the specified name and password,
 	 *	and adds it to 'database' of users.
@@ -39,14 +44,12 @@ function UserContextProvider(props) {
 	// Save user info on localStorage and check for current user
 	useEffect(() => {
 		localStorage.setItem("users", JSON.stringify(users))
+
 		const data = localStorage.getItem("currentUser")
 		if (data !== null) {
 			const name = JSON.parse(data);
-			if (name !== "") {
+			if (name) {
 				setCurrentUser(users.find((u) => u.username === name))
-			}
-			else{
-				setCurrentUser(undefined)
 			}
 		}
 	}, [users])
@@ -56,6 +59,7 @@ function UserContextProvider(props) {
 		if (currentUser){
 			localStorage.setItem("currentUser", JSON.stringify(currentUser.username))
 		}
+		
 	}, [currentUser])
 
 	/*	Attempts to to log in user with provided credentials.
@@ -79,12 +83,40 @@ function UserContextProvider(props) {
 		localStorage.setItem("currentUser", JSON.stringify(""))
 	}
 
+	/* Saves a purchase into current user's purchase history
+	 */
+	function savePurchase(products) {
+		const purchase = {
+			products,
+			timestamp: Date.now(),
+			totalPrice: products.reduce((acc, val) => acc + val),
+		}
+
+		const index = users.findIndex(u => u.username === currentUser.username);
+
+		setUsers(prevUsers => {
+			return [
+				...prevUsers.slice(0, index),
+				{
+					...prevUsers[index],
+					history:
+					[
+						...prevUsers[index].history,
+						purchase,
+					],
+				},
+				...prevUsers.slice(index+1)
+			];
+		});
+	}
+
 	const values = {
 		users,
 		currentUser,
 		addUser,
 		verifyUser,
 		logoutUser,
+		savePurchase,
 	};
 
 	return (
