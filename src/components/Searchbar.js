@@ -27,8 +27,9 @@ const SearchBar = () => {
       <form onSubmit={handleSubmit}>
         <div className={styles.searchfield}>
           <input
+            id="input"
             type="text"
-            placeholder="Search for make, model or city"
+            placeholder="Search for brand, model or city"
             value={search}
             onChange={handleInput}
           />
