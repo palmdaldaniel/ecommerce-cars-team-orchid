@@ -9,15 +9,16 @@ function PurchaseHistory() {
 	const { currentUser } = useContext(UserContext);
 
 	function renderPurchase(purchase, key) {
+	
 		return (
-			<div>
+			<div key={key}>
 				<h2 className={style.purchaseTitle}>
 					{new Date(purchase.timestamp).toLocaleString(
 						navigator.language,
 						{},
 					)}
 				</h2>
-				<div className={style.purchase} key={key}>
+				<div className={style.purchase}>
 
 					<div className={style.cartList}>
 						{purchase.products.map((product, i) => (

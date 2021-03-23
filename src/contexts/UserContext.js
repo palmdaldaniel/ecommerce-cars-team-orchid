@@ -101,8 +101,7 @@ function UserContextProvider(props) {
 					...prevUsers[index],
 					history:
 					[
-						...prevUsers[index].history,
-						purchase,
+						purchase, ...prevUsers[index].history
 					],
 				},
 				...prevUsers.slice(index+1)
