@@ -13,41 +13,26 @@ const Filter = () => {
   useEffect(() => {
     if (!products) return;
 
-    // sort cars by make in alphabetical order and get rid of duplicates
     const sortByMake = products
       .sort((a, b) => {
-        if (a.make < b.make) {
-          return -1;
-        }
-        if (a.make > b.make) {
-          return 1;
-        }
+        if (a.make < b.make) return -1;
+        if (a.make > b.make) return 1;
         return 0;
       })
       .filter((p, i, a) => a.findIndex((c) => c.make === p.make) === i);
 
-    // sort cars by model in alphabetical order and get rid of duplicates
     const sortByModel = products
       .sort((a, b) => {
-        if (a.model < b.model) {
-          return -1;
-        }
-        if (a.model > b.model) {
-          return 1;
-        }
+        if (a.model < b.model) return -1;
+        if (a.model > b.model) return 1;
         return 0;
       })
       .filter((p, i, a) => a.findIndex((c) => c.model === p.model) === i);
 	  
-    // sort cars by year and get rid of duplicates
     const sortByYear = products
       .sort((a, b) => {
-        if (a.year < b.year) {
-          return -1;
-        }
-        if (a.year > b.year) {
-          return 1;
-        }
+        if (a.year < b.year) return -1;
+        if (a.year > b.year) return 1;
         return 0;
       })
       .filter((p, i, a) => a.findIndex((c) => c.year === p.year) === i);
