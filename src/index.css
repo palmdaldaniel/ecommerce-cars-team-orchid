@@ -21,8 +21,16 @@ code {
   font-size: 28px !important;
 }
 
+.slick-arrow {
+  box-shadow: none;
+}
+
 .slick-next {
   right: -16px !important;
+}
+
+.slick-dots li button {
+  box-shadow: none;
 }
 
 button {
