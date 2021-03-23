@@ -13,26 +13,6 @@ code {
     monospace;
 }
 
-/* this is the styling for carousel-buttons */
-.slick-prev:before,
-.slick-next:before
-{
-  color: rgb(224, 148, 5) !important; 
-  font-size: 28px !important;
-}
-
-.slick-arrow {
-  box-shadow: none;
-}
-
-.slick-next {
-  right: -16px !important;
-}
-
-.slick-dots li button {
-  box-shadow: none;
-}
-
 button {
   padding: 1em 2em;
   border: none;
