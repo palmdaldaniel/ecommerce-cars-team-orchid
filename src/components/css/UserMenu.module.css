@@ -23,6 +23,10 @@
   line-height: 1.5;
 }
 
+.navLink {
+  color: black !important;
+}
+
 .userBtn {
   color: white;
   background: #ff9300;
