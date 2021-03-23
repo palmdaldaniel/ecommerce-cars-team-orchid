@@ -15,18 +15,22 @@ const SearchBar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // send helpmessage to productscontext
-    /* searchForCars('', '', 'Try searching for Chevrolet or Toyota') */
+   
     if (search.length < 2) {
       setDisplaySearchMessage(true);
+      // hide helpmessage after 3 seconds
+      setTimeout(hideMessage, 3000)
       return;
     }
-
+    
     searchForCars(search);
-    setDisplaySearchMessage(false);
     history.push("/search");
   };
+
+  const hideMessage = () => {
+    setDisplaySearchMessage(false);
+  } 
+
 
   const handleInput = (e) => {
     setSearch(e.target.value);
