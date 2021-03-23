@@ -45,12 +45,12 @@
   }
 
   .textContainer {
-    top: 0px;
-    padding: 10px; 
+    top: 2px;
+    padding: 14px; 
   }
 
   .textBg {
-    height: 42vh;
+    height: 41vh;
     width: 100vw;
     padding: 6em 0em 0em 0em; 
     border-radius: unset;
