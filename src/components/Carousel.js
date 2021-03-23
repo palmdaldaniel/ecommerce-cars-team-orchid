@@ -28,7 +28,7 @@ function NextArrow(props) {
 	return (
 			<div
 				className={prevArrow}
-				style={{ ...style, position: "absolute", left: "-20px", zIndex: "1",top: "125px", maxWidth: "32px",cursor: "pointer",  color: "rgb(224, 148, 5)"}}
+				style={{ ...style, position: "absolute", left: "-20px",top: "125px", maxWidth: "32px",cursor: "pointer",  color: "rgb(224, 148, 5)"}}
 				onClick={onClick}>
 				<FontAwesomeIcon icon={faAngleLeft} size="2x"/>
 			</div>
