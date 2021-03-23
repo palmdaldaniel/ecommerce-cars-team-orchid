@@ -98,7 +98,6 @@ const UserMenu = () => {
                 <div>
                     <h2 className={styles.h2}>Logged in as: <span className={styles.username}> {currentUser.username}</span></h2>
                     {registerMessage && <p className={styles.loginMsg}>{registerMessage}</p>}
-                    {/* Purchase info*/}
                     <Link to="/history" className={styles.navLink}>Purchase history</Link>
                     <button className={styles.userBtn} onClick={() => handleLogout()}>Log out</button>
                 </div>
