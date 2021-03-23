@@ -7,6 +7,34 @@ import styles from "./css/Carousel.module.css"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faAngleRight} from "@fortawesome/free-solid-svg-icons";
+import {faAngleLeft} from "@fortawesome/free-solid-svg-icons";
+
+function NextArrow(props) {
+	const { nextArrow, style, onClick, } = props;
+	return (
+			<div
+				className={nextArrow}
+				style={{ ...style, position: "absolute",  top: "125px", right: "-20px", maxWidth: "32px",cursor: "pointer", color: "rgb(224, 148, 5)"}}
+				onClick={onClick}>
+				<FontAwesomeIcon icon={faAngleRight} size="2x" />
+			</div>
+		);
+  }
+  
+  function PrevArrow(props) {
+	const { prevArrow, style, onClick,} = props;
+	return (
+			<div
+				className={prevArrow}
+				style={{ ...style, position: "absolute", left: "-20px",top: "125px", maxWidth: "32px",cursor: "pointer",  color: "rgb(224, 148, 5)"}}
+				onClick={onClick}>
+				<FontAwesomeIcon icon={faAngleLeft} size="2x"/>
+			</div>
+		);
+  }
+
 const Carousel = () => {
 	const { products } = useContext(ProductsContext);
 	const [filtered, setFiltered] = useState([]);
@@ -18,8 +46,11 @@ const Carousel = () => {
 		speed: 300,
 		slidesToShow: 4, 
 		slidesToScroll: 1,
-		arrows: true,
-	
+		draggable: false,
+		nextArrow: <NextArrow />,
+		prevArrow: <PrevArrow />,
+
+		
 			responsive: [
 				{
 					breakpoint: 1560,
@@ -28,6 +59,7 @@ const Carousel = () => {
 						slidesToScroll: 1,
 						infinite: true,
 						dots: true,
+
 					}
 				},
 				{
@@ -37,6 +69,7 @@ const Carousel = () => {
 						slidesToScroll: 1,
 						infinite: true,
 						dots: true,
+						arrows: false,
 					}
 				},
 				{
@@ -46,6 +79,7 @@ const Carousel = () => {
 						slidesToScroll: 1,
 						infinite: true,
 						dots: true,
+						arrows: false,
 					}
 				},
 			]

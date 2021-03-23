@@ -8,7 +8,6 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  min-width: 95%;
   margin-left: 1em;
   margin-right: 1em;
   overflow: hidden;
@@ -38,7 +37,9 @@
 
 .priceContainer {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-end;
+  /* justify-content: space-between; */
   padding: 1rem;
 }
 
@@ -51,6 +52,7 @@
 .priceContainer span {
   font-size: 1.2rem;
   font-weight: 500;
+  margin-bottom: .5em;
 }
 
 .secondInfo {

@@ -1,10 +1,10 @@
 .navbarWrapper {
-	font-size: 18px;
-	display: flex;
-	flex-direction: column;
-	position: fixed;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
   box-shadow: none;
-	z-index: 1;
+  z-index: 1;
 }
 
 .navbar {
@@ -14,10 +14,10 @@
   text-align: right;
   padding: 0em 1em;
   color: black;
-	background: white;
+  background: white;
   box-shadow: 0 2px 4px #0004;
   height: 56px;
-	z-index: 1;
+  z-index: 1;
 }
 
 .a {
@@ -28,6 +28,10 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+
+.a {
+    color: black !important;
 }
 
 .navUL,
@@ -102,7 +106,7 @@
 
 .cartTotal {
   font-size: 1.2em;
-	font-weight: 700;	
+  font-weight: 700;
   text-align: right;
 }
 
@@ -122,7 +126,7 @@
   padding: 1em 2em;
   margin-bottom: 1rem;
   border: none;
-  border-radius: .25em;
+  border-radius: 0.25em;
   transition: 0.1s;
   box-shadow: 0px 2px 4px #0004;
 }
@@ -233,4 +237,10 @@
   }
 }
 
+/* print css */
 
+@media print {
+  .navbarWrapper {
+    display: none;
+  }
+}
