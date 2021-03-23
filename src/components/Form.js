@@ -9,7 +9,8 @@ const Form = () => {
   const history = useHistory();
   const { handlePurchase } = useContext(CartContext);
   const { currentUser } = useContext(UserContext);
-
+// const isEnabled = name.length > 0 && adress.length > 0;
+  
   const onPurchase = () => {
     handlePurchase();
     history.push("/confirmed");
@@ -123,8 +124,8 @@ const Form = () => {
               </div>
             </label>
           </form>
-
-          <button className={style.Btn} onClick={onPurchase}>
+{/* disabled={!isEnabled} */}
+          <button className={style.Btn} onClick={onPurchase}  >
             Purchase
           </button>
         </div>
