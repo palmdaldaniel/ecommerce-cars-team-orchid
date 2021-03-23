@@ -1,39 +1,58 @@
 .itemContainer {
-	display: flex;
-	flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .carImg {
-	height: 5em;
-	border-radius: 3px;
-	margin-right: 15px;
+  height: 5em;
+  border-radius: 3px;
+  margin-right: 15px;
 }
 
 .itemContainer p {
-	margin: 0;
+  margin: 0;
 }
 
 .itemContent {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
 }
 
 .title {
-	text-align: left;
+  display: flex;
+  justify-content: space-between;
 }
 
 .title p {
-	margin-bottom: .25em;
+  margin-bottom: 0.25em;
 }
 
 .make {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 .price {
-	font-weight: 600;
-	text-align: right;
+  font-weight: 600;
+  display: flex;
+  justify-content: flex-end;
 }
 
+.delete {
+  border: none;
+  background: none;
+  margin-top: 50%;
+  font-size: 1.2rem;
+}
+
+@media only screen and (min-width: 1200px) {
+  .delete :hover {
+    color: #ff9300;
+    background: none;
+    cursor: pointer;
+  }
+  .delete {
+    font-size: 1.4rem;
+  }
+}
