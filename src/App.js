@@ -6,6 +6,7 @@ import Confirmed from "./pages/ConfirmationPage";
 import Checkout from "./pages/Checkout.js";
 import Product from "./pages/Product.js";
 import About from "./pages/About";
+import PurchaseHistory from "./pages/PurchaseHistory.js";
 import ScrollToTop from "./components/ScrollToTop.js";
 import Search from "./pages/Search.js";
 import NavSpacer from "./components/NavSpacer.js";
@@ -18,8 +19,8 @@ function App() {
   return (
     <div className="App">
       <ProductsContextProvider>
-        <CartContextProvider>
-          <UserContextProvider>
+        <UserContextProvider>
+          <CartContextProvider>
             <BrowserRouter>
               <ScrollToTop />
               <Navbar />
@@ -38,9 +39,12 @@ function App() {
                 <About />
               </Route>
               <Route exact path="/search" component={Search}/>
+              <Route exact path="/history">
+                <PurchaseHistory />
+              </Route>
             </BrowserRouter>
-          </UserContextProvider>
-        </CartContextProvider>
+          </CartContextProvider>
+        </UserContextProvider>
       </ProductsContextProvider>
     </div>
   );

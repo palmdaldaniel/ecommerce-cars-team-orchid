@@ -1,0 +1,70 @@
+.container {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+.pageTitle {
+	font-size: 2rem;
+    text-transform: uppercase;
+	text-align: center;
+}
+
+.purchaseList {
+	display: grid;
+	grid-template-columns: auto;
+	gap: 20px;
+}
+
+.cartList {
+	display: grid;
+	grid-template-columns: auto;
+	gap: 10px;
+}
+
+.purchase {
+	background: #fffb;
+	padding: 12px;
+	border-radius: 6px;
+	box-shadow: 0 1px 2px #0004;
+}
+
+.purchaseTitle {
+	font-size: 1.25rem;
+	font-weight: 600;
+	margin: 0;
+	margin-bottom: .5em;
+}
+
+.totalCost {
+	font-size: 1.25rem;
+	font-weight: 600;
+	text-align: right;
+	margin: 0;
+}
+
+.label {
+	font-size: .8rem;
+	margin: 0;
+	opacity: .75;
+}
+
+@media only screen and (min-width: 601px) {
+	.container {
+		padding: 0;
+	}
+}
+
+@media only screen and (min-width: 993px) {
+	.purchaseTitle {
+		font-size: 1.5rem;
+	}
+
+	.totalCost {
+		font-size: 1.5rem;
+	}
+
+	.container {
+		max-width: 800px;
+	}
+}
