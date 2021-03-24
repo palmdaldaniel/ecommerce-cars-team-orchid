@@ -9,17 +9,12 @@ const Form = () => {
   const history = useHistory();
   const { handlePurchase } = useContext(CartContext);
   const { currentUser } = useContext(UserContext);
-  const [feedbackMsg, setFeedbackMsg] = useState(null);
-  const [isDisable, setIsDisable] = useState(false);
+
 
   const onPurchase = () => {
-    validForm();
-    if(isDisable === true){
      handlePurchase();
      history.push("/confirmed");
-    } else{
-      setFeedbackMsg("Please complete all fields");
-    }
+   
   };
 
   const login = () => {
@@ -31,37 +26,37 @@ const Form = () => {
   };
   const { getInformation } = useContext(CartContext);
 
-  const [name, setName] = useState(null);
+  const [name, setName] = useState();
   const handleNameChange = (e) => {
     const personal = {name}
     setName(e.target.value);
   };
-  const [lastname, setLastname] = useState(null);
+  const [lastname, setLastname] = useState();
   const handleLastname = (e) => {
     const personal = {lastname}
     setLastname(e.target.value);
   };
-  const [address, setAddress] = useState(null);
+  const [address, setAddress] = useState();
   const handleAddress = (e) => {
     const personal = {address}
     setAddress(e.target.value);
   };
-  const [postalcode, setPostalcode] = useState(null);
+  const [postalcode, setPostalcode] = useState();
   const handlePostalcode = (e) => {
     const personal = {postalcode}
     setPostalcode(e.target.value);
   };
-  const [city, setCity] = useState(null);
+  const [city, setCity] = useState();
   const handleCity = (e) => {
     const personal = {city}
     setCity(e.target.value);
   };
-  const [email, setEmail] = useState(null);
+  const [email, setEmail] = useState();
   const handleEmail = (e) => {
     const personal = {email}
     setEmail(e.target.value);
   };
-  const [number, setNumber] = useState(null);
+  const [number, setNumber] = useState();
   const handleNumber = (e) => {
     const personal = {number}
     setNumber(e.target.value);
@@ -76,18 +71,11 @@ const Form = () => {
     getInformation(name, lastname, address, postalcode, city, email, number, delivery) 
   },[name, lastname, address, postalcode, city, email, number, delivery])
   
- const validForm = () => {
-   if(name !== null && lastname !== null && address !== null && postalcode !== null && city !== null && email !== null && number !== null && delivery !== null){
-    setIsDisable(true);
-   }
- };
-
-
   return (
     <>
       {currentUser ? (
-        <div>
-          <form className={style.contactForm}>
+        <div className={`input-field`}>
+          <form className={style.contactForm}  onSubmit={onPurchase}>
             <h2 className={style.formTitle}>Personal info</h2>
             <label className={style.label} htmlFor="name">
               <span className={style.titleInput}>Name</span>
@@ -99,7 +87,7 @@ const Form = () => {
                 required
                 onChange={handleNameChange}
               />
-              <input type="text" placeholder="Last name" required onChange={handleLastname}/>
+              <input type="text" placeholder="Last name" required onChange={handleLastname} />
             </label>
             <label className={style.label} htmlFor="address">
               <span className={style.titleInput}>Shipping Address</span>
@@ -117,11 +105,11 @@ const Form = () => {
                 required
                 onChange={handlePostalcode}
               />
-              <input type="text" name="address" placeholder="City" required onChange={handleCity} />
+              <input type="text" name="address" placeholder="City" required onChange={handleCity}/>
             </label>
             <label className={style.label} htmlFor="contact">
               <span className={style.titleInput}>Contact details</span>
-              <input type="text" name="contact" placeholder="Email" required onChange={handleEmail} />
+              <input type="text" name="contact" placeholder="Email" required onChange={handleEmail}/>
               <input
                 type="number"
                 name="contact"
@@ -148,7 +136,7 @@ const Form = () => {
             <h2 className={style.formTitle}>Payment</h2>
             <label className={style.label} htmlFor="cardname">
               <span className={style.titleInput}>Name on card</span>
-              <input type="text" name="cardname" placeholder="Full name" />
+              <input type="text" name="cardname" placeholder="Full name"/>
             </label>
             <label className={style.label} htmlFor="cardnumber">
               <span className={style.titleInput}>Card Number</span>
@@ -166,7 +154,7 @@ const Form = () => {
                 name="CVV"
                 maxLength="3"
                 placeholder="CVV"
-                required
+                required={true}
               />
             </label>
             <label className={style.label} htmlFor="expdate">
@@ -186,11 +174,10 @@ const Form = () => {
                 />
               </div>
             </label>
-            {feedbackMsg && <p className={style.feedbackMsg}>{feedbackMsg}</p>}
-          </form>
-          <button className={style.Btn} onClick={onPurchase}>
-            Purchase
-          </button>
+            <button type="submit" className={style.Btn}>
+             Purchase
+            </button> 
+           </form>
         </div>
       ) : (
         login()
