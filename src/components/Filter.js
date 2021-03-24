@@ -5,6 +5,7 @@ import styles from "./css/Filter.module.css";
  
 const Filter = () => {
  const { filters, setFilters, products } = useContext(ProductsContext);
+ const [tempProducts, setTempProducts] = useState(null)
  const history = useHistory();
  const [makes, setMakes] = useState(null);
  const [models, setModels] = useState(null);
@@ -30,11 +31,17 @@ const Filter = () => {
      setFilterColorYear(false);
    }
  }
+
+useEffect(() => {
+  // load products
+  setTempProducts(products)
+
+}, [products])
  
  useEffect(() => {
-   if (!products) return;
+   if (!tempProducts) return;
  
-   const sortByMake = products
+   const sortByMake = tempProducts
      .sort((a, b) => {
        if (a.make < b.make) return -1;
        if (a.make > b.make) return 1;
@@ -42,7 +49,7 @@ const Filter = () => {
      })
      .filter((p, i, a) => a.findIndex((c) => c.make === p.make) === i);
  
-   const sortByModel = products
+   const sortByModel = tempProducts
      .sort((a, b) => {
        if (a.model < b.model) return -1;
        if (a.model > b.model) return 1;
@@ -50,7 +57,7 @@ const Filter = () => {
      })
      .filter((p, i, a) => a.findIndex((c) => c.model === p.model) === i);
   
-   const sortByYear = products
+   const sortByYear = tempProducts
      .sort((a, b) => {
        if (a.year < b.year) return -1;
        if (a.year > b.year) return 1;
@@ -61,7 +68,7 @@ const Filter = () => {
    setMakes(sortByMake);
    setModels(sortByModel);
    setYears(sortByYear);
- }, [products]);
+ }, [tempProducts]);
  
  const handleChange = (e) => {
    const filter = { ...filters };
