@@ -5,15 +5,21 @@ import style from "../pages/css/Checkout.module.css";
 import UserMenu from "./UserMenu.js";
 import { UserContext } from "../contexts/UserContext";
 
-const Form = () => {
+const Form = () => {  
   const history = useHistory();
   const { handlePurchase } = useContext(CartContext);
   const { currentUser } = useContext(UserContext);
-// const isEnabled = name.length > 0 && adress.length > 0;
-  
+  const [feedbackMsg, setFeedbackMsg] = useState(null);
+  const [isDisable, setIsDisable] = useState(false);
+
   const onPurchase = () => {
-    handlePurchase();
-    history.push("/confirmed");
+    validForm();
+    if(isDisable === true){
+     handlePurchase();
+     history.push("/confirmed");
+    } else{
+      setFeedbackMsg("Please complete all fields");
+    }
   };
 
   const login = () => {
@@ -23,40 +29,39 @@ const Form = () => {
       </div>
     );
   };
-  
   const { getInformation } = useContext(CartContext);
 
-  const [name, setName] = useState();
+  const [name, setName] = useState(null);
   const handleNameChange = (e) => {
     const personal = {name}
     setName(e.target.value);
   };
-  const [lastname, setLastname] = useState();
+  const [lastname, setLastname] = useState(null);
   const handleLastname = (e) => {
     const personal = {lastname}
     setLastname(e.target.value);
   };
-  const [address, setAddress] = useState();
+  const [address, setAddress] = useState(null);
   const handleAddress = (e) => {
     const personal = {address}
     setAddress(e.target.value);
   };
-  const [postalcode, setPostalcode] = useState();
+  const [postalcode, setPostalcode] = useState(null);
   const handlePostalcode = (e) => {
     const personal = {postalcode}
     setPostalcode(e.target.value);
   };
-  const [city, setCity] = useState();
+  const [city, setCity] = useState(null);
   const handleCity = (e) => {
     const personal = {city}
     setCity(e.target.value);
   };
-  const [email, setEmail] = useState();
+  const [email, setEmail] = useState(null);
   const handleEmail = (e) => {
     const personal = {email}
     setEmail(e.target.value);
   };
-  const [number, setNumber] = useState();
+  const [number, setNumber] = useState(null);
   const handleNumber = (e) => {
     const personal = {number}
     setNumber(e.target.value);
@@ -71,6 +76,13 @@ const Form = () => {
     getInformation(name, lastname, address, postalcode, city, email, number, delivery) 
   },[name, lastname, address, postalcode, city, email, number, delivery])
   
+ const validForm = () => {
+   if(name !== null && lastname !== null && address !== null && postalcode !== null && city !== null && email !== null && number !== null && delivery !== null){
+    setIsDisable(true);
+   }
+ };
+
+
   return (
     <>
       {currentUser ? (
@@ -87,7 +99,7 @@ const Form = () => {
                 required
                 onChange={handleNameChange}
               />
-              <input type="text" placeholder="Last name" required onChange={handleLastname} />
+              <input type="text" placeholder="Last name" required onChange={handleLastname}/>
             </label>
             <label className={style.label} htmlFor="address">
               <span className={style.titleInput}>Shipping Address</span>
@@ -174,9 +186,9 @@ const Form = () => {
                 />
               </div>
             </label>
+            {feedbackMsg && <p className={style.feedbackMsg}>{feedbackMsg}</p>}
           </form>
-{/* disabled={!isEnabled} */}
-          <button className={style.Btn} onClick={onPurchase}  >
+          <button className={style.Btn} onClick={onPurchase}>
             Purchase
           </button>
         </div>
@@ -184,7 +196,7 @@ const Form = () => {
         login()
       )}
     </>
-  );
+  )
 };
-
+    
 export default Form;
