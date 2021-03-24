@@ -6,7 +6,6 @@ export const ProductsContext = createContext();
 function ProductsContextProvider(props) {
   const [products, setProducts] = useState(null);
   const [searchedProducts, setSearchedProducts] = useState(null);
-  const [tempSearch, setTempSearch] = useState("");
   const [search, setSearch] = useState('')
 
   useEffect(() => {
@@ -20,8 +19,6 @@ function ProductsContextProvider(props) {
     });
     setProducts(carsWithImage);
   }, []);
-
-
 
   const [filters, setFilters] = useState({
     make: "",
@@ -39,31 +36,21 @@ function ProductsContextProvider(props) {
 
   useEffect(() => {
     searchForCars(search, filters);
-  }, [filters]);
+  }, [search, filters]);
 
-  
-
-  const searchForCars = (search, filters) => {
+  const searchForCars = () => {
    // check if products has loaded
     if (!products) return;
-    // check if search can be itterable 
-    if (!search) return;
-    // copy the content and spread it out.
-    setSearch(...search)
     
-
    let searchedCars = products.filter(
       (car) =>
         car.make.toLowerCase().includes(search.toLowerCase()) ||
         car.model.toLowerCase().includes(search.toLowerCase()) ||
         car.city.toLowerCase().includes(search.toLowerCase())
     );
-
-  
-    setTempSearch(searchedCars);
     
-    if (filters && tempSearch) {
-      searchedCars = tempSearch.filter((car) => {
+    if (filters) {
+      searchedCars = searchedCars.filter((car) => {
         return (
           car.make.includes(filters.make) &&
           car.model.includes(filters.model) &&
@@ -75,17 +62,16 @@ function ProductsContextProvider(props) {
         );
       });
     }
-
     setSearchedProducts(searchedCars);
-
-
   };
 
   // Insert you methods and values here
   const values = {
+    search,
     filters,
     products,
     searchedProducts,
+    setSearch,
     setFilters,
     searchForCars,
   };
