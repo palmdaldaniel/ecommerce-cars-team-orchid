@@ -84,9 +84,9 @@ const ConfirmationPage = () => {
         <hr />
       </div>
 
-      <div className={styles.noPrint}>
+      <div className={styles.btnContainer}>
         <button className={styles.button} onClick={() => window.print()}>
-          Print
+          Print receipt
         </button>
         <button className={styles.button} onClick={() => history.push("/")}>
           Browse for more cars
