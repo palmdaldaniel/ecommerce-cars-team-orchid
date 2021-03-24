@@ -4,88 +4,88 @@ import { useHistory } from "react-router-dom";
 import styles from "./css/Filter.module.css";
  
 const Filter = () => {
- const { filters, setFilters, products } = useContext(ProductsContext);
- const history = useHistory();
- const [makes, setMakes] = useState(null);
- const [models, setModels] = useState(null);
- const [years, setYears] = useState(null);
+  const { filters, setFilters, products } = useContext(ProductsContext);
+  const history = useHistory();
+  const [makes, setMakes] = useState(null);
+  const [models, setModels] = useState(null);
+  const [years, setYears] = useState(null);
  
- useEffect(() => {
-   if (!products) return;
- 
-   const sortByMake = products
-     .sort((a, b) => {
-       if (a.make < b.make) return -1;
-       if (a.make > b.make) return 1;
-       return 0;
-     })
-     .filter((p, i, a) => a.findIndex((c) => c.make === p.make) === i);
- 
-   const sortByModel = products
-     .sort((a, b) => {
-       if (a.model < b.model) return -1;
-       if (a.model > b.model) return 1;
-       return 0;
-     })
-     .filter((p, i, a) => a.findIndex((c) => c.model === p.model) === i);
+  useEffect(() => {
+    if (!products) return;
   
-   const sortByYear = products
-     .sort((a, b) => {
-       if (a.year < b.year) return -1;
-       if (a.year > b.year) return 1;
-       return 0;
-     })
-     .filter((p, i, a) => a.findIndex((c) => c.year === p.year) === i);
- 
-   setMakes(sortByMake);
-   setModels(sortByModel);
-   setYears(sortByYear);
- }, [products]);
- 
- const handleChange = (e) => {
-   const filter = { ...filters };
-   filter[e.target.id] = e.target.value;
-   setFilters(filter);
-   history.push("/search");
- };
- 
- const handleChangePrice = (e) => {
-  let tempFilters;
-    if (e.target.value === "") {
-      tempFilters = { min: 0, max: Infinity }
-    } else if (e.target.value === "1") {
-      tempFilters = { min: 0, max: 150000 }
-    } else if (e.target.value === "2") {
-      tempFilters = { min: 150000, max: 300000 }
-    } else if (e.target.value === "3") {
-      tempFilters = { min: 300000, max: 400000 }
-    } else if (e.target.value === "4") {
-      tempFilters = { min: 400000, max: 500000 }
-    } else if (e.target.value === "5") {
-      tempFilters = { min: 500000, max: 700000 }
-    }
-    setFilters({ ...filters, priceVal: e.target.value, ...tempFilters });
+    const sortByMake = products
+      .sort((a, b) => {
+        if (a.make < b.make) return -1;
+        if (a.make > b.make) return 1;
+        return 0;
+      })
+      .filter((p, i, a) => a.findIndex((c) => c.make === p.make) === i);
+  
+    const sortByModel = products
+      .sort((a, b) => {
+        if (a.model < b.model) return -1;
+        if (a.model > b.model) return 1;
+        return 0;
+      })
+      .filter((p, i, a) => a.findIndex((c) => c.model === p.model) === i);
+    
+    const sortByYear = products
+      .sort((a, b) => {
+        if (a.year < b.year) return -1;
+        if (a.year > b.year) return 1;
+        return 0;
+      })
+      .filter((p, i, a) => a.findIndex((c) => c.year === p.year) === i);
+  
+    setMakes(sortByMake);
+    setModels(sortByModel);
+    setYears(sortByYear);
+  }, [products]);
+  
+  const handleChange = (e) => {
+    const filter = { ...filters };
+    filter[e.target.id] = e.target.value;
+    setFilters(filter);
     history.push("/search");
- };
- 
- const handleChangeMiles = (e) => {
-  let tempFilters;
-    if (e.target.value === "") {
-      tempFilters = { minMiles: 0, maxMiles: Infinity }
-    } else if (e.target.value === "1") {
-      tempFilters = { minMiles: 0, maxMiles: 15000 }
-    } else if (e.target.value === "2") {
-      tempFilters = { minMiles: 15000, maxMiles: 30000 }
-    } else if (e.target.value === "3") {
-      tempFilters = { minMiles: 30000, maxMiles: 50000 }
-    } else if (e.target.value === "4") {
-      tempFilters = { minMiles: 50000, maxMiles: 70000 }
-    } else if (e.target.value === "5") {
-      tempFilters = { minMiles: 70000, maxMiles: 90000 }
-    }
-   setFilters({ ...filters, milesVal: e.target.value, ...tempFilters });
-   history.push("/search");
- };
+  };
+  
+  const handleChangePrice = (e) => {
+    let tempFilters;
+      if (e.target.value === "") {
+        tempFilters = { min: 0, max: Infinity }
+      } else if (e.target.value === "1") {
+        tempFilters = { min: 0, max: 150000 }
+      } else if (e.target.value === "2") {
+        tempFilters = { min: 150000, max: 300000 }
+      } else if (e.target.value === "3") {
+        tempFilters = { min: 300000, max: 400000 }
+      } else if (e.target.value === "4") {
+        tempFilters = { min: 400000, max: 500000 }
+      } else if (e.target.value === "5") {
+        tempFilters = { min: 500000, max: 700000 }
+      }
+      setFilters({ ...filters, priceVal: e.target.value, ...tempFilters });
+      history.push("/search");
+  };
+  
+  const handleChangeMiles = (e) => {
+    let tempFilters;
+      if (e.target.value === "") {
+        tempFilters = { minMiles: 0, maxMiles: Infinity }
+      } else if (e.target.value === "1") {
+        tempFilters = { minMiles: 0, maxMiles: 15000 }
+      } else if (e.target.value === "2") {
+        tempFilters = { minMiles: 15000, maxMiles: 30000 }
+      } else if (e.target.value === "3") {
+        tempFilters = { minMiles: 30000, maxMiles: 50000 }
+      } else if (e.target.value === "4") {
+        tempFilters = { minMiles: 50000, maxMiles: 70000 }
+      } else if (e.target.value === "5") {
+        tempFilters = { minMiles: 70000, maxMiles: 90000 }
+      }
+    setFilters({ ...filters, milesVal: e.target.value, ...tempFilters });
+    history.push("/search");
+  };
  
  return (
    <div className={styles.filterWrapper}>
