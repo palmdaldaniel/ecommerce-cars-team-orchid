@@ -95,7 +95,7 @@ const UserMenu = (props) => {
   }
 
   //if user is not logged in:
-  // checks if to toggle register or login page
+  // checks if it should toggle register or login page
   function loadLogin () {
     if(displayLogin){
       return (
@@ -175,7 +175,7 @@ const UserMenu = (props) => {
       )
     }
   }
-
+  
   return (
     <div className={styles.userMenuContainer}>
       {currentUser ? (
