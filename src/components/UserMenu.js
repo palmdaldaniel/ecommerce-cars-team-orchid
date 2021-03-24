@@ -13,7 +13,6 @@ const UserMenu = (props) => {
 
   const [registerMessage, setRegisterMessage] = useState(null);
   const [feedbackMessage, setFeedbackMessage] = useState(null);
-  const [displayRegister, setDisplayRegister] = useState(false);
   const [displayLogin, setDisplayLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -35,13 +34,11 @@ const UserMenu = (props) => {
   }
 
   function toggleRegister() {
-    if (!displayRegister) {
-      setDisplayRegister(true);
+    if (displayLogin) {
       setDisplayLogin(false);
       setFeedbackMessage(null);
       loadLogin();
     } else {
-      setDisplayRegister(false);
       setDisplayLogin(true);
       setFeedbackMessage(null);
       loadLogin();
@@ -55,7 +52,6 @@ const UserMenu = (props) => {
       setFeedbackMessage("Your password or username is incorrect!");
     } else {
       setDisplayLogin(false);
-      setDisplayRegister(false);
     }
   }
 
@@ -63,7 +59,6 @@ const UserMenu = (props) => {
   useEffect(() => {
     if (typeof currentUser === "object") {
       setDisplayLogin(false);
-      setDisplayRegister(false);
       setFeedbackMessage(null);
     }
   }, [currentUser]);
@@ -99,6 +94,8 @@ const UserMenu = (props) => {
     }, 4000);
   }
 
+  //if user is not logged in:
+  // checks if to toggle register or login page
   function loadLogin () {
     if(displayLogin){
       return (
