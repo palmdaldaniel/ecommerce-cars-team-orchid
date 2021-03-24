@@ -17,7 +17,9 @@ const Home = () => {
       min: "0",
       max: Infinity,
       minMiles: "0",
-      maxMiles: Infinity
+      maxMiles: Infinity,
+      priceVal: "",
+      milesVal: "",
       }
     );
     setSearch('')
