@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../contexts/CartContext";
 import style from "../pages/css/Checkout.module.css";
 import UserMenu from "./UserMenu.js";
@@ -22,7 +22,54 @@ const Form = () => {
       </div>
     );
   };
+  
+  const { getInformation } = useContext(CartContext);
 
+  const [name, setName] = useState();
+  const handleNameChange = (e) => {
+    const personal = {name}
+    setName(e.target.value);
+  };
+  const [lastname, setLastname] = useState();
+  const handleLastname = (e) => {
+    const personal = {lastname}
+    setLastname(e.target.value);
+  };
+  const [address, setAddress] = useState();
+  const handleAddress = (e) => {
+    const personal = {address}
+    setAddress(e.target.value);
+  };
+  const [postalcode, setPostalcode] = useState();
+  const handlePostalcode = (e) => {
+    const personal = {postalcode}
+    setPostalcode(e.target.value);
+  };
+  const [city, setCity] = useState();
+  const handleCity = (e) => {
+    const personal = {city}
+    setCity(e.target.value);
+  };
+  const [email, setEmail] = useState();
+  const handleEmail = (e) => {
+    const personal = {email}
+    setEmail(e.target.value);
+  };
+  const [number, setNumber] = useState();
+  const handleNumber = (e) => {
+    const personal = {number}
+    setNumber(e.target.value);
+  };
+  const [delivery, setDelivery] = useState("Delivery: Pickup at store");
+  const handleDelivery = (e) => {
+    const personal = {delivery}
+    setDelivery("Delivery: Deliver to home");
+  };
+
+  useEffect(() => {
+    getInformation(name, lastname, address, postalcode, city, email, number, delivery) 
+  },[name, lastname, address, postalcode, city, email, number, delivery])
+  
   return (
     <>
       {currentUser ? (
@@ -37,8 +84,9 @@ const Form = () => {
                 name="name"
                 placeholder="First name"
                 required
+                onChange={handleNameChange}
               />
-              <input type="text" placeholder="Last name" required />
+              <input type="text" placeholder="Last name" required onChange={handleLastname} />
             </label>
             <label className={style.label} htmlFor="address">
               <span className={style.titleInput}>Shipping Address</span>
@@ -47,36 +95,39 @@ const Form = () => {
                 name="address"
                 placeholder="Address"
                 required
+                onChange={handleAddress}
               />
               <input
                 type="text"
                 name="address"
                 placeholder="Postal Code"
                 required
+                onChange={handlePostalcode}
               />
-              <input type="text" name="address" placeholder="City" required />
+              <input type="text" name="address" placeholder="City" required onChange={handleCity} />
             </label>
             <label className={style.label} htmlFor="contact">
               <span className={style.titleInput}>Contact details</span>
-              <input type="text" name="contact" placeholder="Email" required />
+              <input type="text" name="contact" placeholder="Email" required onChange={handleEmail} />
               <input
                 type="number"
                 name="contact"
                 placeholder="Phone Number"
                 required
+                onChange={handleNumber}
               />
             </label>
             <h2 className={style.formTitle}>Delivery options</h2>
             <div className={style.radioButtons}>
               <p>
-                <label>
-                  <input name="group1" type="radio" defaultChecked />
+                <label >
+                  <input name="group1" type="radio"/>
                   <span>Pick up at store</span>
                 </label>
               </p>
               <p>
-                <label>
-                  <input name="group1" type="radio" />
+                <label >
+                  <input name="group1" type="radio" onChange={handleDelivery}/>
                   <span>Get car delivered to home</span>
                 </label>
               </p>

@@ -6,7 +6,7 @@ import Filter from "../components/Filter.js";
 import { ProductsContext } from "../contexts/ProductsContext";
 
 const Home = () => {
-  const { products, setFilters } = useContext(ProductsContext);
+  const { products, setFilters, setSearch } = useContext(ProductsContext);
 
   useEffect(() => {
     setFilters(
@@ -20,6 +20,7 @@ const Home = () => {
       maxMiles: Infinity
       }
     );
+    setSearch('')
   }, [])
 
   return (

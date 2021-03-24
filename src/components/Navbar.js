@@ -121,7 +121,7 @@ function Navbar(props) {
         <div className={styles.centerLogo}>
           <img
             className={styles.navLogo}
-            src="/OC-logo.jpg"
+            src="/oc_transparent_logo.png"
             onClick={logoClick}
           />
         </div>
@@ -135,7 +135,9 @@ function Navbar(props) {
               icon={faShoppingCart}
               className={styles.shoppingCart}
             />
-            <span className={styles.cartNumber}><span className={styles.cartNumberText}>{cart.length}</span></span>
+            <span className={styles.cartNumber}>
+              <span className={styles.cartNumberText}>{cart.length}</span>
+            </span>
           </div>
         </div>
       </div>
@@ -153,7 +155,7 @@ function Navbar(props) {
 
       {displayUserMenu && (
         <div className={styles.userContent}>
-          <UserMenu />
+          <UserMenu purchase={setDisplayUserMenu} />
         </div>
       )}
 
