@@ -10,44 +10,44 @@ const Filter = () => {
   const [models, setModels] = useState(null);
   const [years, setYears] = useState(null);
  
-  useEffect(() => {
-    if (!products) return;
-  
-    const sortByMake = products
-      .sort((a, b) => {
-        if (a.make < b.make) return -1;
-        if (a.make > b.make) return 1;
-        return 0;
-      })
-      .filter((p, i, a) => a.findIndex((c) => c.make === p.make) === i);
-  
-    const sortByModel = products
-      .sort((a, b) => {
-        if (a.model < b.model) return -1;
-        if (a.model > b.model) return 1;
-        return 0;
-      })
-      .filter((p, i, a) => a.findIndex((c) => c.model === p.model) === i);
-    
-    const sortByYear = products
-      .sort((a, b) => {
-        if (a.year < b.year) return -1;
-        if (a.year > b.year) return 1;
-        return 0;
-      })
-      .filter((p, i, a) => a.findIndex((c) => c.year === p.year) === i);
-  
-    setMakes(sortByMake);
-    setModels(sortByModel);
-    setYears(sortByYear);
-  }, [products]);
-  
-  const handleChange = (e) => {
-    const filter = { ...filters };
-    filter[e.target.id] = e.target.value;
-    setFilters(filter);
-    history.push("/search");
-  };
+ useEffect(() => {
+   if (!products) return;
+ 
+   const sortByMake = products
+     .filter((p, i, a) => a.findIndex((c) => c.make === p.make) === i)
+     .sort((a, b) => {
+       if (a.make < b.make) return -1;
+       if (a.make > b.make) return 1;
+       return 0;
+     })
+ 
+   const sortByModel = products
+     .filter((p, i, a) => a.findIndex((c) => c.model === p.model) === i)
+     .sort((a, b) => {
+       if (a.model < b.model) return -1;
+       if (a.model > b.model) return 1;
+       return 0;
+     })
+     
+   const sortByYear = products
+     .filter((p, i, a) => a.findIndex((c) => c.year === p.year) === i)
+     .sort((a, b) => {
+       if (a.year < b.year) return -1;
+       if (a.year > b.year) return 1;
+       return 0;
+     })
+     
+   setMakes(sortByMake);
+   setModels(sortByModel);
+   setYears(sortByYear);
+ }, [products]);
+ 
+ const handleChange = (e) => {
+   const filter = { ...filters };
+   filter[e.target.id] = e.target.value;
+   setFilters(filter);
+   history.push("/search");
+ };
   
   const handleChangePrice = (e) => {
     let tempFilters;
