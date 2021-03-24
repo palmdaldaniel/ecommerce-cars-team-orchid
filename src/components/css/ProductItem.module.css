@@ -21,6 +21,10 @@
   margin-top: 1rem;
 }
 
+.productItemImage {
+  min-width: 94vw;
+}
+
 .productItemContainer img {
   width: 100%;
 }
@@ -39,7 +43,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  /* justify-content: space-between; */
   padding: 1rem;
 }
 
@@ -74,12 +77,20 @@
   .productItemContainer:hover {
     max-width: 89%;
   }
+
+  .productItemImage {
+    min-width: 40vw;
+  }
 }
 
 @media screen and (min-width: 1200px) {
   .productItemContainer {
     height: 100%;
     max-width: 100%;
+  }
+
+  .productItemImage {
+    min-width: auto;
   }
 
   .productItemContainer:hover {
