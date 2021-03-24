@@ -16,6 +16,18 @@
 	border: 3px solid orange;
 }
 
+.filter select:invalid {
+	color: gray;
+}
+
+.filter select option:first-child {
+	color: gray;
+}
+
+.filter select option:not(:first-child) {
+	color: black;
+}
+
 @media only screen and (max-width: 765px) {
 	
 	.filterContainer {

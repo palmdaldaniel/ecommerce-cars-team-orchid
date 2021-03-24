@@ -78,7 +78,13 @@ font-weight: bold;
 /*-----styles for button-----*/
 
 .button {
-  margin: 3rem auto;
+  margin: 1.2rem auto;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.9rem;
 }
 
 @media only screen and (min-width: 375px) {
@@ -99,6 +105,18 @@ font-weight: bold;
     width: 100%;
     padding-top: 1.2rem;
   }
+
+  .btnContainer {
+    flex-direction: row;
+    margin: 0 auto;
+    width: 60%;
+    justify-content: center;
+  }
+
+  .button {
+    margin: 1.2rem 1rem;
+  }
+
   .informationWrapper{
     grid-template-columns: 1fr 1fr;
     gap: 10px;
@@ -125,7 +143,7 @@ font-weight: bold;
 /* print css */
 
 @media print {
-  .noPrint {
+  .btnContainer {
     display: none;
   }
 

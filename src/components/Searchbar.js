@@ -7,8 +7,7 @@ import styles from "./css/SearchBar.module.css";
 import { useHistory } from "react-router-dom";
 
 const SearchBar = () => {
-  const { searchForCars } = useContext(ProductsContext);
-  const [search, setSearch] = useState("");
+  const { search, setSearch } = useContext(ProductsContext);
   const history = useHistory();
   const [searchMessage] = useState("Try searching for Chevrolet or Toyota");
   const [displaySearchMessage, setDisplaySearchMessage] = useState(false);
@@ -22,15 +21,12 @@ const SearchBar = () => {
       setTimeout(hideMessage, 3000)
       return;
     }
-    
-    searchForCars(search);
     history.push("/search");
   };
 
   const hideMessage = () => {
     setDisplaySearchMessage(false);
   } 
-
 
   const handleInput = (e) => {
     setSearch(e.target.value);
