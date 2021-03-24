@@ -28,6 +28,8 @@ function ProductsContextProvider(props) {
     max: Infinity,
     minMiles: "0",
     maxMiles: Infinity,
+    priceVal: "",
+    milesVal: "",
   });
 
   useEffect(() => {
