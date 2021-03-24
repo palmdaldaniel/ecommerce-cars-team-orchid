@@ -1,75 +1,75 @@
 .slideContainer {
-	margin-bottom: 2em;
+  margin-bottom: 2em;
 }
 
 .textContainer {
-	color: white;
-	background-color: rgba(0, 0, 0, 0.637);
-	border-radius: 5px;
-	font-size: 1.5em;
-	position: absolute;
-	top: 0;
-	padding: 10px;
-	margin: 0 auto;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.637);
+  border-radius: 5px;
+  font-size: 1.5em;
+  position: absolute;
+  top: 0;
+  padding: 10px;
+  margin: 0 auto;
 }
 
 .textContainer span {
-	display: inline-flex;
-	padding-right: 10px;
+  display: inline-flex;
+  padding-right: 10px;
 }
 
 .bold {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 .price {
-	color: orange;
-	font-weight: bold;
+  color: orange;
+  font-weight: bold;
 }
 
 .imageContainer {
-	height: 18em;
-	width: 24em;
-	margin: 0 auto;
+  height: 18em;
+  width: 95%;
+  margin: 0 auto;
 }
 
 .image {
-	height: 100%;
-	width: 100%;
-	border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
 }
 
 @media only screen and (max-width: 770px) {
-	.imageContainer {
-		height: 26em;
-		width: 38em;
-	}
+  .imageContainer {
+    height: 26em;
+    width: 38em;
+  }
 }
 
 @media only screen and (max-width: 590px) {
-	.imageContainer {
-		height: 22em;
-		width: 34em;
-	}
+  .imageContainer {
+    height: 22em;
+    width: 34em;
+  }
 }
 
 @media only screen and (max-width: 540px) {
-	.imageContainer {
-		height: 20em;
-		width: 30em;
-	}
+  .imageContainer {
+    height: 20em;
+    width: 30em;
+  }
 }
 
 @media only screen and (max-width: 478px) {
-	.imageContainer {
-		height: 16em;
-		width: 24em;
-	}
+  .imageContainer {
+    height: 16em;
+    width: 24em;
+  }
 }
 
 @media only screen and (max-width: 395px) {
-	.imageContainer {
-		height: 18em;
-		width: 25em;
-	}
+  .imageContainer {
+    height: 18em;
+    width: 25em;
+  }
 }
