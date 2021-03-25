@@ -2,21 +2,15 @@ import { useState, useContext, useEffect } from "react";
 import { UserContext } from "../contexts/UserContext";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-
+import { faEye, faEyeSlash, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 import styles from "./css/UserMenu.module.css";
 
 const UserMenu = (props) => {
-  const { users, currentUser, addUser, verifyUser, logoutUser } = useContext(
-    UserContext
-  );
-
+  const { users, currentUser, addUser, verifyUser, logoutUser } = useContext(UserContext);
   const [registerMessage, setRegisterMessage] = useState(null);
   const [feedbackMessage, setFeedbackMessage] = useState(null);
   const [displayLogin, setDisplayLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
-
-  //is used for both login and register
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -69,7 +63,7 @@ const UserMenu = (props) => {
       "^(?=.{6,})(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])"
     );
     //checks if username already exists
-    const userExists = users.find((e) => e.username === username);
+    const userExists = users.find((user) => user.username === username);
     if (userExists) {
       setFeedbackMessage("A user with this username already exists.");
     } else if (regex.test(password)) {
@@ -110,6 +104,7 @@ const UserMenu = (props) => {
                 required
               />
             </label>
+
             <label>
               <div className={styles.inputPasswordWrapper}>
                 <input
@@ -125,6 +120,7 @@ const UserMenu = (props) => {
                 />
               </div>
             </label>
+            
             <button className={styles.userBtn}>Log in</button>
           </form>
           {feedbackMessage && (
@@ -148,6 +144,7 @@ const UserMenu = (props) => {
                 required
               />
             </label>
+
             <label>
               <div className={styles.inputPasswordWrapper}>
                 <input
@@ -163,6 +160,7 @@ const UserMenu = (props) => {
                 />
               </div>
             </label>
+
             <button className={styles.userBtn}>Register</button>
           </form>
           {feedbackMessage && (
@@ -192,11 +190,10 @@ const UserMenu = (props) => {
             className={styles.navLink}
             onClick={() => props.purchase()}
           >
-            Purchase history
+            Purchase history <FontAwesomeIcon icon={faAngleDoubleRight} className={styles.purchaseArrow} />
           </Link>
-          <button className={styles.userBtn} onClick={() => handleLogout()}>
-            Log out
-          </button>
+          <hr/>
+          <button className={styles.userBtn} onClick={() => handleLogout()}>Log out</button>
         </div>
       ) : (
         loadLogin()
