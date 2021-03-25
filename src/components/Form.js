@@ -27,42 +27,34 @@ const Form = () => {
 
   const [name, setName] = useState();
   const handleNameChange = (e) => {
-    const personal = {name}
     setName(e.target.value);
   };
   const [lastname, setLastname] = useState();
   const handleLastname = (e) => {
-    const personal = {lastname}
     setLastname(e.target.value);
   };
   const [address, setAddress] = useState();
   const handleAddress = (e) => {
-    const personal = {address}
     setAddress(e.target.value);
   };
   const [postalcode, setPostalcode] = useState();
   const handlePostalcode = (e) => {
-    const personal = {postalcode}
     setPostalcode(e.target.value);
   };
   const [city, setCity] = useState();
   const handleCity = (e) => {
-    const personal = {city}
     setCity(e.target.value);
   };
   const [email, setEmail] = useState();
   const handleEmail = (e) => {
-    const personal = {email}
     setEmail(e.target.value);
   };
   const [number, setNumber] = useState();
   const handleNumber = (e) => {
-    const personal = {number}
     setNumber(e.target.value);
   };
   const [delivery, setDelivery] = useState("Delivery: Pickup at store");
   const handleDelivery = (e) => {
-    const personal = {delivery}
     setDelivery("Delivery: Deliver to home");
   };
 
