@@ -104,6 +104,7 @@ const UserMenu = (props) => {
                 required
               />
             </label>
+
             <label>
               <div className={styles.inputPasswordWrapper}>
                 <input
@@ -119,6 +120,7 @@ const UserMenu = (props) => {
                 />
               </div>
             </label>
+            
             <button className={styles.userBtn}>Log in</button>
           </form>
           {feedbackMessage && (
