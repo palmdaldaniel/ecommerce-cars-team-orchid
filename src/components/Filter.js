@@ -137,7 +137,7 @@ const Filter = () => {
          </select>
  
          <select onChange={handleChangeMiles} id="miles" value={filters.milesVal} required>
-           <option value="">Any miles</option>
+           <option value="">Any mileage</option>
            <option value="1">0 - 15000</option>
            <option value="2">15000 - 30000</option>
            <option value="3">30000 - 50000</option>
