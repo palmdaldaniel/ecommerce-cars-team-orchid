@@ -5,14 +5,16 @@ import style from "../pages/css/Checkout.module.css";
 import UserMenu from "./UserMenu.js";
 import { UserContext } from "../contexts/UserContext";
 
-const Form = () => {
+const Form = () => {  
   const history = useHistory();
   const { handlePurchase } = useContext(CartContext);
   const { currentUser } = useContext(UserContext);
 
+
   const onPurchase = () => {
-    handlePurchase();
-    history.push("/confirmed");
+     handlePurchase();
+     history.push("/confirmed");
+   
   };
 
   const login = () => {
@@ -22,47 +24,38 @@ const Form = () => {
       </div>
     );
   };
-  
   const { getInformation } = useContext(CartContext);
 
   const [name, setName] = useState();
   const handleNameChange = (e) => {
-    const personal = {name}
     setName(e.target.value);
   };
   const [lastname, setLastname] = useState();
   const handleLastname = (e) => {
-    const personal = {lastname}
     setLastname(e.target.value);
   };
   const [address, setAddress] = useState();
   const handleAddress = (e) => {
-    const personal = {address}
     setAddress(e.target.value);
   };
   const [postalcode, setPostalcode] = useState();
   const handlePostalcode = (e) => {
-    const personal = {postalcode}
     setPostalcode(e.target.value);
   };
   const [city, setCity] = useState();
   const handleCity = (e) => {
-    const personal = {city}
     setCity(e.target.value);
   };
   const [email, setEmail] = useState();
   const handleEmail = (e) => {
-    const personal = {email}
     setEmail(e.target.value);
   };
   const [number, setNumber] = useState();
   const handleNumber = (e) => {
-    const personal = {number}
     setNumber(e.target.value);
   };
   const [delivery, setDelivery] = useState("Delivery: Pickup at store");
   const handleDelivery = (e) => {
-    const personal = {delivery}
     setDelivery("Delivery: Deliver to home");
   };
 
@@ -73,8 +66,8 @@ const Form = () => {
   return (
     <>
       {currentUser ? (
-        <div>
-          <form className={style.contactForm}>
+        <div className={`input-field`}>
+          <form className={style.contactForm}  onSubmit={onPurchase}>
             <h2 className={style.formTitle}>Personal info</h2>
             <label className={style.label} htmlFor="name">
               <span className={style.titleInput}>Name</span>
@@ -104,11 +97,11 @@ const Form = () => {
                 required
                 onChange={handlePostalcode}
               />
-              <input type="text" name="address" placeholder="City" required onChange={handleCity} />
+              <input type="text" name="address" placeholder="City" required onChange={handleCity}/>
             </label>
             <label className={style.label} htmlFor="contact">
               <span className={style.titleInput}>Contact details</span>
-              <input type="text" name="contact" placeholder="Email" required onChange={handleEmail} />
+              <input type="text" name="contact" placeholder="Email" required onChange={handleEmail}/>
               <input
                 type="number"
                 name="contact"
@@ -135,7 +128,7 @@ const Form = () => {
             <h2 className={style.formTitle}>Payment</h2>
             <label className={style.label} htmlFor="cardname">
               <span className={style.titleInput}>Name on card</span>
-              <input type="text" name="cardname" placeholder="Full name" />
+              <input type="text" name="cardname" placeholder="Full name"/>
             </label>
             <label className={style.label} htmlFor="cardnumber">
               <span className={style.titleInput}>Card Number</span>
@@ -153,7 +146,7 @@ const Form = () => {
                 name="CVV"
                 maxLength="3"
                 placeholder="CVV"
-                required
+                required={true}
               />
             </label>
             <label className={style.label} htmlFor="expdate">
@@ -173,17 +166,16 @@ const Form = () => {
                 />
               </div>
             </label>
-          </form>
-
-          <button className={style.Btn} onClick={onPurchase}>
-            Purchase
-          </button>
+            <button type="submit" className={style.Btn}>
+             Purchase
+            </button> 
+           </form>
         </div>
       ) : (
         login()
       )}
     </>
-  );
+  )
 };
-
+    
 export default Form;
