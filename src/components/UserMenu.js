@@ -13,7 +13,6 @@ const UserMenu = (props) => {
 
   const [registerMessage, setRegisterMessage] = useState(null);
   const [feedbackMessage, setFeedbackMessage] = useState(null);
-  const [displayRegister, setDisplayRegister] = useState(false);
   const [displayLogin, setDisplayLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -35,14 +34,14 @@ const UserMenu = (props) => {
   }
 
   function toggleRegister() {
-    if (!displayRegister) {
-      setDisplayRegister(true);
+    if (displayLogin) {
       setDisplayLogin(false);
       setFeedbackMessage(null);
+      loadLogin();
     } else {
-      setDisplayRegister(false);
       setDisplayLogin(true);
       setFeedbackMessage(null);
+      loadLogin();
     }
   }
 
@@ -53,7 +52,6 @@ const UserMenu = (props) => {
       setFeedbackMessage("Your password or username is incorrect!");
     } else {
       setDisplayLogin(false);
-      setDisplayRegister(false);
     }
   }
 
@@ -61,7 +59,6 @@ const UserMenu = (props) => {
   useEffect(() => {
     if (typeof currentUser === "object") {
       setDisplayLogin(false);
-      setDisplayRegister(false);
       setFeedbackMessage(null);
     }
   }, [currentUser]);
@@ -97,31 +94,11 @@ const UserMenu = (props) => {
     }, 4000);
   }
 
-  return (
-    <div className={styles.userMenuContainer}>
-      {currentUser && (
-        <div>
-          <h2 className={styles.h2}>
-            Logged in as:{" "}
-            <span className={styles.username}> {currentUser.username}</span>
-          </h2>
-          {registerMessage && (
-            <p className={styles.loginMsg}>{registerMessage}</p>
-          )}
-          <Link
-            to="/history"
-            className={styles.navLink}
-            onClick={() => props.purchase()}
-          >
-            Purchase history
-          </Link>
-          <button className={styles.userBtn} onClick={() => handleLogout()}>
-            Log out
-          </button>
-        </div>
-      )}
-
-      {displayLogin && (
+  //if user is not logged in:
+  // checks if it should toggle register or login page
+  function loadLogin () {
+    if(displayLogin){
+      return (
         <div>
           <h2 className={styles.h2}>Login</h2>
           <form onSubmit={handleLogin}>
@@ -157,9 +134,9 @@ const UserMenu = (props) => {
             Not a user? Click here to register
           </p>
         </div>
-      )}
-
-      {displayRegister && (
+      )
+    } else {
+      return(
         <div>
           <form onSubmit={handleRegister}>
             <h2 className={styles.h2}>Register</h2>
@@ -195,7 +172,36 @@ const UserMenu = (props) => {
             Already a user? Click here to login
           </p>
         </div>
+      )
+    }
+  }
+  
+  return (
+    <div className={styles.userMenuContainer}>
+      {currentUser ? (
+        <div>
+          <h2 className={styles.h2}>
+            Logged in as:{" "}
+            <span className={styles.username}> {currentUser.username}</span>
+          </h2>
+          {registerMessage && (
+            <p className={styles.loginMsg}>{registerMessage}</p>
+          )}
+          <Link
+            to="/history"
+            className={styles.navLink}
+            onClick={() => props.purchase()}
+          >
+            Purchase history
+          </Link>
+          <button className={styles.userBtn} onClick={() => handleLogout()}>
+            Log out
+          </button>
+        </div>
+      ) : (
+        loadLogin()
       )}
+    
     </div>
   );
 };
