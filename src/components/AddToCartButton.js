@@ -1,7 +1,6 @@
 import style from "./css/AddToCartButton.module.css";
 import { useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faCheck } from "@fortawesome/free-solid-svg-icons";
 

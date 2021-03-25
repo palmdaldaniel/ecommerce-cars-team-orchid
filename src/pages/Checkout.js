@@ -6,8 +6,7 @@ import style from "./css/Checkout.module.css";
 import Form from "../components/Form.js";
 
 function Checkout() {
-  const { cart, cartValue, handlePurchase } = useContext(CartContext);
-
+  const { cart, cartValue } = useContext(CartContext);
   const history = useHistory();
   const [valueStr, setPriceString] = useState("");
 
@@ -22,7 +21,6 @@ function Checkout() {
     }
   }, [cartValue]);
 
-  // returns jsx with form and purchasebutton when cart.length > 0
   const loadCart = () => {
     return (
       <div className={style.checkoutContainer}>
@@ -39,6 +37,7 @@ function Checkout() {
           </div>
           <hr />
         </div>
+        
         <div className={style.contactForm}>
           <Form />
         </div>

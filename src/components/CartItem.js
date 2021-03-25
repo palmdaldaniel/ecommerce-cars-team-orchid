@@ -22,27 +22,27 @@ const CartItem = (props) => {
   return (
     <div className={styles.itemContainer}>
       <img className={styles.carImg} src={props.product.image}></img>
-      <div className={styles.itemContent}>
-        <div className={styles.title}>
-          <div>
-            <p className={styles.make}>{props.product.make}</p>
-            <p className={styles.model}>{props.product.model}</p>
-          </div>
-          {props.show ? (
+        <div className={styles.itemContent}>
+          <div className={styles.title}>
             <div>
-              <button
-                className={styles.delete}
-                onClick={() => deleteCartItem(props.delete)}
-              >
-                <FontAwesomeIcon icon={faTrashAlt} />
-              </button>
+              <p className={styles.make}>{props.product.make}</p>
+              <p className={styles.model}>{props.product.model}</p>
             </div>
-          ) : (
-            <div></div>
-          )}
+            {props.show ? (
+              <div>
+                <button
+                  className={styles.delete}
+                  onClick={() => deleteCartItem(props.delete)}
+                >
+                  <FontAwesomeIcon icon={faTrashAlt} />
+                </button>
+              </div>
+            ) : (
+              <div></div>
+            )}
+          </div>
+          <p className={styles.price}>{price}</p>
         </div>
-        <p className={styles.price}>{price}</p>
-      </div>
     </div>
   );
 };

@@ -1,15 +1,12 @@
 import { useContext } from "react";
-
 import { UserContext } from "../contexts/UserContext";
 import CartItem from "../components/CartItem";
 import style from "./css/PurchaseHistory.module.css";
 
 function PurchaseHistory() {
-
 	const { currentUser } = useContext(UserContext);
 
 	function renderPurchase(purchase, key) {
-	
 		return (
 			<div key={key}>
 				<h2 className={style.purchaseTitle}>
@@ -27,8 +24,7 @@ function PurchaseHistory() {
 							</div>
 						))}
 					</div>
-
-					<hr />
+					<hr/>
 					
 					<p className={style.totalCost}>
 						{purchase.products.reduce((acc, val) => acc + val.price, 0).toLocaleString(
