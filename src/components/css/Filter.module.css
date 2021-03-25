@@ -1,0 +1,47 @@
+.filterContainer {
+	display: flex;
+	justify-content: center;
+}
+
+.filter {
+	display: flex;
+	flex-direction: row;
+	padding: 1em;
+}
+
+.filter select {
+	margin: 0em 1em;
+	display: flex;
+	border-radius: 10px;
+	border: 3px solid orange;
+}
+
+.filter select:invalid {
+	color: gray;
+}
+
+.filter select option:first-child {
+	color: gray;
+}
+
+.filter select option:not(:first-child) {
+	color: black;
+}
+
+@media only screen and (max-width: 765px) {
+	
+	.filterContainer {
+		margin: 20px;
+	}
+
+	.filter {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 20px;
+		grid-row-gap: 20px;
+	}
+
+	.filter select {
+		margin: 0;
+	}
+}

@@ -1,0 +1,16 @@
+.addButton {
+  width: 100%;
+}
+
+.inCart {
+  background: #aaa;
+}
+
+.inCart:hover {
+  background: #aaa;
+  cursor: initial;
+}
+
+.inCart:focus {
+  background: #ddd;
+}

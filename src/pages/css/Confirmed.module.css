@@ -1,0 +1,164 @@
+.confirmationWrapper {
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.confirmationWrapper h1 {
+  font-size: 1.5rem;
+}
+
+.confirmationWrapper p {
+  font-size: 1.2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+.icon {
+  font-size: 4rem;
+  color: limegreen;
+}
+
+.informationWrapper{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.information h2{
+font-size: 1.3rem;
+font-weight: bold;
+}
+
+.information2 h2{
+font-size: 1.3rem;
+font-weight: bold;
+}
+
+.purchasedList {
+  display: grid;
+  gap: 10px;
+}
+
+.purchasedContainer h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.purchasedContainer h3 {
+  font-size: 1.2rem;
+}
+
+.showTotalContainer {
+  width: 100%;
+  margin: 1rem auto;
+  padding-top: 1.2rem;
+  text-align: right;
+}
+
+.totalcost {
+  font-weight: bold;
+  margin: 0 0.8rem;
+}
+
+.showcost {
+  margin: 0 0.8rem;
+  font-weight: bold;
+}
+
+.button {
+  margin: 1.2rem auto;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.9rem;
+}
+
+@media only screen and (min-width: 375px) {
+
+  .totalcost {
+    font-weight: bold;
+    margin: 0 0.8rem;
+  }
+
+  .showcost {
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+
+  .showTotalContainer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding-top: 1.2rem;
+  }
+
+  .btnContainer {
+    flex-direction: row;
+    margin: 0 auto;
+    width: 60%;
+    justify-content: center;
+  }
+
+  .button {
+    margin: 1.2rem 1rem;
+  }
+
+  .informationWrapper{
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .information{
+    text-align: start;
+  } 
+  .information2{
+    text-align: end;
+  }
+}
+
+@media only screen and (min-width: 1199px) {
+
+  .confirmationWrapper {
+    width: 60%;
+  }
+  .informationWrapper{
+    max-width: 550px;
+  }
+}
+
+/* print css */
+
+@media print {
+  .btnContainer {
+    display: none;
+  }
+
+  .showTotalContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 1rem;
+  }
+
+  .informationWrapper {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .information {
+    text-align: start;
+  } 
+
+  .information2 {
+    text-align: end;
+  }
+}

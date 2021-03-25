@@ -1,0 +1,117 @@
+.checkoutContainer {
+  background-color: #efefef;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.pageTitle {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.cartList {
+  display: grid;
+  gap: 10px;
+  text-align: right;
+}
+
+.productRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.productRow p {
+  text-align: left;
+}
+
+.deleteBtn {
+  font-size: 2rem;
+  border: none;
+  background: none;
+  transition: 0.3s;
+  margin-top: 50%;
+}
+
+.deleteBtn:hover {
+  color: #ff9300;
+  background: none;
+  cursor: pointer;
+}
+
+.totalCost {
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding-top: 10px;
+  align-items: center;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 600px;
+}
+
+.formTitle {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.titleInput {
+  color: #000000;
+  font-size: 1.3rem;
+}
+
+.label {
+  margin-top: 1.4rem;
+}
+
+.monthYearWrapper {
+  display: flex;
+}
+
+.radioButtons {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  text-align: start;
+}
+
+.feedbackMsg {
+  color:red;
+}
+
+.Btn {
+  margin: 3rem auto;
+}
+
+.emptyCart {
+  background: #efefef;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .totalCost {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+
+  .totalCost {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+}
