@@ -1,20 +1,16 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ProductsContext } from "../contexts/ProductsContext";
-
-import styles from "./css/Product.module.css";
-
 import AddToCartButton from "../components/AddToCartButton";
+import styles from "./css/Product.module.css";
 
 function Product() {
   const { id } = useParams();
   const { products } = useContext(ProductsContext);
-
   const [product, setProduct] = useState(null);
   const [price, setPrice] = useState(null);
 
-  // When products list is available in context,
-  // load the single product we're interested in
+  // When products list is available in context load the single product we're interested in
   useEffect(() => {
     if (products) {
       const product = products.find((p) => p.vin === id);
@@ -22,8 +18,7 @@ function Product() {
     }
   }, [products]);
 
-  // When we have loaded our product,
-  // calculate the price string, based on current locale
+  // Calculate the price string, based on current locale
   useEffect(() => {
     if (product) {
       setPrice(

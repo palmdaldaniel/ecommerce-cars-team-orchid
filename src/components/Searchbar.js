@@ -1,10 +1,9 @@
-import { useState } from "react";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { ProductsContext } from "../contexts/ProductsContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import styles from "./css/SearchBar.module.css";
 import { useHistory } from "react-router-dom";
+import styles from "./css/SearchBar.module.css";
 
 const SearchBar = () => {
   const { search, setSearch } = useContext(ProductsContext);
@@ -17,7 +16,6 @@ const SearchBar = () => {
    
     if (search.length < 2) {
       setDisplaySearchMessage(true);
-      // hide helpmessage after 3 seconds
       setTimeout(hideMessage, 3000)
       return;
     }
@@ -44,7 +42,7 @@ const SearchBar = () => {
             onChange={handleInput}
           />
           <div className={styles.icon} onClick={handleSubmit}>
-            <FontAwesomeIcon icon={faSearch} />
+            <FontAwesomeIcon icon={faSearch}/>
           </div>
         </div>
 

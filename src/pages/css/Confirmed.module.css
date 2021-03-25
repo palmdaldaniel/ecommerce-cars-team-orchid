@@ -1,6 +1,5 @@
 .confirmationWrapper {
   margin: auto;
-  /* width: 75%; */
   margin-top: 1rem;
 }
 
@@ -22,12 +21,9 @@
   color: limegreen;
 }
 
-/*------ Styles for personal information ------ */
 .informationWrapper{
-display: grid;
-grid-template-columns: 1fr;
-/* margin-left: 15%;
-text-align: start; */
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .information h2{
@@ -40,11 +36,9 @@ font-size: 1.3rem;
 font-weight: bold;
 }
 
-/*-----styles for purchased list-----*/
-
 .purchasedList {
   display: grid;
-  gap: 10px; /*to set margin between cars in list*/
+  gap: 10px;
 }
 
 .purchasedContainer h2 {
@@ -57,7 +51,6 @@ font-weight: bold;
   font-size: 1.2rem;
 }
 
-/*-----styles for total value-----*/
 .showTotalContainer {
   width: 100%;
   margin: 1rem auto;
@@ -75,8 +68,6 @@ font-weight: bold;
   font-weight: bold;
 }
 
-/*-----styles for button-----*/
-
 .button {
   margin: 1.2rem auto;
 }
@@ -88,6 +79,7 @@ font-weight: bold;
 }
 
 @media only screen and (min-width: 375px) {
+
   .totalcost {
     font-weight: bold;
     margin: 0 0.8rem;
@@ -99,6 +91,7 @@ font-weight: bold;
 }
 
 @media only screen and (min-width: 768px) {
+
   .showTotalContainer {
     display: flex;
     justify-content: flex-end;
@@ -132,6 +125,7 @@ font-weight: bold;
 }
 
 @media only screen and (min-width: 1199px) {
+
   .confirmationWrapper {
     width: 60%;
   }
@@ -152,16 +146,19 @@ font-weight: bold;
     justify-content: flex-end;
     margin-left: 1rem;
   }
-  .informationWrapper{
+
+  .informationWrapper {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     max-width: 500px;
     margin: 0 auto;
   }
-  .information{
+
+  .information {
     text-align: start;
   } 
-  .information2{
+
+  .information2 {
     text-align: end;
   }
 }

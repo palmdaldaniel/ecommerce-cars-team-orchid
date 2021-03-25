@@ -1,22 +1,14 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { CartContext } from "../contexts/CartContext";
-import { useHistory } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUser,
-  faBars,
-  faShoppingCart,
-  faEllipsisH,
-  faAngleDoubleRight,
-} from "@fortawesome/free-solid-svg-icons";
-
+import { faUser, faBars, faShoppingCart, faEllipsisH, faAngleDoubleRight} from "@fortawesome/free-solid-svg-icons";
 import CartItem from "./CartItem.js";
 import UserMenu from "./UserMenu.js";
 import OutsideClick from "./OutsideClick.js";
 import styles from "./css/Navbar.module.css";
 
-function Navbar(props) {
+function Navbar() {
   const [displayNavMenu, setDisplayNavMenu] = useState(false);
   const [displayCart, setDisplayCart] = useState(false);
   const [displayUserMenu, setDisplayUserMenu] = useState(false);
@@ -24,7 +16,7 @@ function Navbar(props) {
   const history = useHistory();
   const [valueStr, setPriceString] = useState("");
 
-  //When you click outside component, dropdown menu should close
+  //when you click outside component, dropdown menu closes
   const outsideClick = useRef();
   const handleClickOutside = () => {
     setDisplayCart(false);
@@ -33,7 +25,6 @@ function Navbar(props) {
   };
   OutsideClick(outsideClick, handleClickOutside);
 
-  //When you cllick on the Logo, dropdown menu is closing and is redirecting to home page
   const logoClick = () => {
     history.push("/");
     setDisplayCart(false);
@@ -41,7 +32,7 @@ function Navbar(props) {
     setDisplayUserMenu(false);
   };
 
-  //Function for total cost in nav-cart
+  //function for total cost in nav-cart
   useEffect(() => {
     if (typeof cartValue === "number") {
       setPriceString(
@@ -61,14 +52,14 @@ function Navbar(props) {
     setDisplayNavMenu(false);
   }
 
-  //toggle hamburger menu, could be refactored into one single function with the other toggle function?
+  //toggle hamburger menu
   function toggleNavMenu() {
     setDisplayNavMenu(!displayNavMenu);
     setDisplayCart(false);
     setDisplayUserMenu(false);
   }
 
-  //toggle cart menu, could be refactored into one single function with the other toggle function?
+  //toggle cart menu
   function toggleCartMenu() {
     setDisplayCart(!displayCart);
     setDisplayNavMenu(false);
@@ -131,10 +122,7 @@ function Navbar(props) {
           </div>
 
           <div className={styles.cartContainer} onClick={toggleCartMenu}>
-            <FontAwesomeIcon
-              icon={faShoppingCart}
-              className={styles.shoppingCart}
-            />
+            <FontAwesomeIcon icon={faShoppingCart} className={styles.shoppingCart} />
             <span className={styles.cartNumber}>
               <span className={styles.cartNumberText}>{cart.length}</span>
             </span>

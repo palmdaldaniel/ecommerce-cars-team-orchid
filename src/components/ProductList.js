@@ -13,7 +13,7 @@ const ProductList = (props) => {
         {props.list &&
           props.list.map((product, i) => (
             <Lazyload key={i}>
-              <ProductItem key={i} id={i} data={product} />
+              <ProductItem data={product}/>
             </Lazyload>
           ))
         }

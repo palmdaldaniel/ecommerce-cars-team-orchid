@@ -30,12 +30,14 @@
 }
 
 @media only screen and (min-width: 601px) {
+
   .productPrice {
     font-size: 1.75rem;
   }
 }
 
 @media only screen and (min-width: 993px) {
+  
   .productPrice {
     font-size: 2rem;
   }
