@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from "react";
 import { UserContext } from "../contexts/UserContext";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { faEye, faEyeSlash, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./css/UserMenu.module.css";
 
@@ -69,7 +69,7 @@ const UserMenu = (props) => {
       "^(?=.{6,})(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])"
     );
     //checks if username already exists
-    const userExists = users.find((e) => e.username === username);
+    const userExists = users.find((user) => user.username === username);
     if (userExists) {
       setFeedbackMessage("A user with this username already exists.");
     } else if (regex.test(password)) {
@@ -192,8 +192,9 @@ const UserMenu = (props) => {
             className={styles.navLink}
             onClick={() => props.purchase()}
           >
-            Purchase history
+            Purchase history <FontAwesomeIcon icon={faAngleDoubleRight} className={styles.purchaseArrow} />
           </Link>
+          <hr/>
           <button className={styles.userBtn} onClick={() => handleLogout()}>
             Log out
           </button>
