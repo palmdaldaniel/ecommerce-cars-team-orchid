@@ -19,15 +19,11 @@ function ProductsContextProvider(props) {
     milesVal: "",
   });
 
+  // Go through every object and add a key value pair for an image src
   useEffect(() => {
-    // go through every object and add a key value pair for an image src
-    const carsWithImage = cars.map((car) => {
-      const image = {
-        image: `/assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`,
-      };
-      return (car = { ...car, ...image });
-    });
-    setProducts(carsWithImage);
+    setProducts(cars.map((car) => { 
+      return {...car, image: `/assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`}
+    }));
   }, []);
 
   useEffect(() => {
