@@ -4,6 +4,7 @@ import {
   firstInfo,
   priceContainer,
   secondInfo,
+  productItemImage,
 } from "./css/ProductItem.module.css";
 import AddToCartButton from "../components/AddToCartButton.js";
 import { useState, useEffect } from "react";
@@ -35,7 +36,9 @@ const ProductItem = (props) => {
 
   return (
     <div className={productItemContainer}>
-      <img src={props.data.image} alt={props.data.make} onClick={handleClick} />
+      <div className={productItemImage}>
+        <img src={props.data.image} alt={props.data.make} onClick={handleClick} />
+      </div>
       <div className={productInfo}>
         <div className={firstInfo} onClick={handleClick}>
           <h1>{props.data.make}</h1>
