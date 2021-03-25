@@ -26,7 +26,7 @@
   height: 50px !important;
 }
 
-.searchfield input:focus{
+.searchfield input:focus {
   outline: none;
   background-color: white !important;
 }
