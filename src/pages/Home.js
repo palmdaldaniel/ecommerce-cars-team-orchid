@@ -1,9 +1,9 @@
+import { ProductsContext } from "../contexts/ProductsContext";
 import { useContext, useEffect } from "react";
 import Herobanner from "../components/Herobanner.js";
 import Carousel from "../components/Carousel.js";
 import ProductList from "../components/ProductList.js";
 import Filter from "../components/Filter.js";
-import { ProductsContext } from "../contexts/ProductsContext";
 
 const Home = () => {
   const { products, setFilters, setSearch } = useContext(ProductsContext);

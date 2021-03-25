@@ -1,17 +1,17 @@
-import styles from "./css/Confirmed.module.css";
 import { React, useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { CartContext } from "../contexts/CartContext";
 import CartItem from "../components/CartItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import styles from "./css/Confirmed.module.css";
 
 const ConfirmationPage = () => {
   const { purchased, purchasedValue, personalInformationSaved } = useContext(CartContext);
   const history = useHistory();
   const [formattedTotalValue, setFormattedTotalValue] = useState(null);
 
-  // format to local value and display on screen
+  // format price to local value
   useEffect(() => {
     if (purchasedValue) {
       setFormattedTotalValue(
@@ -39,6 +39,7 @@ const ConfirmationPage = () => {
           <div>
             <h2>Your Information: </h2>
           </div>
+
           <div>
             <p>
               {`${personalInformationSaved.name} ${personalInformationSaved.lastname}`}
@@ -52,12 +53,12 @@ const ConfirmationPage = () => {
               {`${personalInformationSaved.email}`} <br />
               {`${personalInformationSaved.number}`}
             </p>
-            <p >
-              {/* Medvetet val om att inte koda on betalningsmetod då endast ett alternativ är tillgängligt i dagsläget */}
+            <p>
               {personalInformationSaved.delivery} <br /> Payent method: Card
-          </p>
+            </p>
           </div>
         </span>
+
         <span className={styles.information2}>
           <div>
             <h2>Our Information: </h2>
@@ -67,21 +68,22 @@ const ConfirmationPage = () => {
           </div>
         </span>
       </div>
+
       <div className={`container ${styles.purchasedContainer}`}>
         <h2>Your purchase:</h2>
-        <hr />
+        <hr/>
 
         <div className={styles.purchasedList}>
           {purchased &&
             purchased.map((car, i) => (
-              <CartItem key={i} product={car} render={false} />
+              <CartItem key={i} product={car} render={false}/>
             ))}
         </div>
 
         <div className={styles.showTotalContainer}>
           <h3 className={styles.showcost}>Total cost: {formattedTotalValue}</h3>
         </div>
-        <hr />
+        <hr/>
       </div>
 
       <div className={styles.btnContainer}>

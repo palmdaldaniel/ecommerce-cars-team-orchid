@@ -11,7 +11,6 @@
   text-transform: uppercase;
 }
 
-/*----- styles for cart list -----*/
 .cartList {
   display: grid;
   gap: 10px;
@@ -50,7 +49,6 @@
   align-items: center;
 }
 
-/*----- styles for input form -----*/
 .contactForm {
   display: flex;
   flex-direction: column;
@@ -88,8 +86,6 @@
   color:red;
 }
 
-/*-----Styles for purchase button-----*/
-
 .Btn {
   margin: 3rem auto;
 }
@@ -104,6 +100,7 @@
 }
 
 @media only screen and (min-width: 768px) {
+
   .totalCost {
     display: flex;
     justify-content: flex-end;
@@ -112,6 +109,7 @@
 }
 
 @media only screen and (min-width: 1024px) {
+
   .totalCost {
     font-size: 1.6rem;
     font-weight: 700;

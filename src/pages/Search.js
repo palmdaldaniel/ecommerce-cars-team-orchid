@@ -2,8 +2,8 @@ import { useContext } from "react";
 import { ProductsContext } from "../contexts/ProductsContext";
 import ProductList from "../components/ProductList";
 import SearchBar from "../components/Searchbar";
-import styles from './css/SearchPage.module.css'
 import Filters from '../components/Filter.js';
+import styles from './css/SearchPage.module.css'
 
 const Search = () => {
   const { searchedProducts, setSearch, setFilters } = useContext(ProductsContext);

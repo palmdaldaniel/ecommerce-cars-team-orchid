@@ -20,10 +20,6 @@
   z-index: 1;
 }
 
-.a {
-  color: black;
-}
-
 .iconWrapper {
   display: flex;
   justify-content: flex-end;
@@ -31,7 +27,7 @@
 }
 
 .a {
-    color: black !important;
+  color: black !important;
 }
 
 .navUL,
@@ -76,7 +72,6 @@
 
 /* inside dropdown-menu */
 
-/* overriding materialize rule for nav */
 .cartContainer {
   line-height: 1;
   padding-left: 1.2rem;
@@ -237,7 +232,7 @@
   }
 }
 
-/* print css */
+/* hide navbar on print */
 
 @media print {
   .navbarWrapper {

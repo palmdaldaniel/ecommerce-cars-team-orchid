@@ -3,14 +3,14 @@
   flex-direction: row;
 }
 
+.itemContainer p {
+  margin: 0;
+}
+
 .carImg {
   height: 5em;
   border-radius: 3px;
   margin-right: 15px;
-}
-
-.itemContainer p {
-  margin: 0;
 }
 
 .itemContent {
@@ -48,16 +48,19 @@
   box-shadow: none;
   color: black;
 }
+
 .delete:hover {
   background: none;
 }
 
 @media only screen and (min-width: 1200px) {
+
   .delete :hover {
     color: #ff9300;
     background: none;
     cursor: pointer;
   }
+
   .delete {
     font-size: 1.4rem;
   }

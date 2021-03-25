@@ -1,6 +1,6 @@
 .productItemContainer * {
   box-sizing: border-box;
-  margin: 0;
+  margin: 0; 
 }
 
 .productItemContainer {
@@ -59,16 +59,11 @@
 }
 
 .secondInfo {
-  display: flex;
-  margin-left: 0.7rem;
-}
-
-.secondInfo p {
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 1rem;
 }
 
 @media only screen and (min-width: 768px) {
+
   .productItemContainer {
     max-width: 90%;
     height: 100%;
@@ -84,6 +79,7 @@
 }
 
 @media screen and (min-width: 1200px) {
+  
   .productItemContainer {
     height: 100%;
     max-width: 100%;

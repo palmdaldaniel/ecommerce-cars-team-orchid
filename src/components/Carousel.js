@@ -1,14 +1,13 @@
 import React from "react";
 import { useContext, useState, useEffect } from "react";
 import { ProductsContext } from "../contexts/ProductsContext";
-import CarouselItem from "./CarouselItem";
-import Slider from "react-slick";
-import styles from "./css/Carousel.module.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import CarouselItem from "./CarouselItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import styles from "./css/Carousel.module.css";
 
 function NextArrow(props) {
   const { nextArrow, style, onClick } = props;

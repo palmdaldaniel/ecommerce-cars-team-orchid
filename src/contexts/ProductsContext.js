@@ -7,19 +7,6 @@ function ProductsContextProvider(props) {
   const [products, setProducts] = useState(null);
   const [searchedProducts, setSearchedProducts] = useState(null);
   const [search, setSearch] = useState('')
-
-  useEffect(() => {
-    /* go through every object and add a key value pair for an image src */
-    const carsWithImage = cars.map((car) => {
-      const image = {
-        image: `/assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`,
-      };
-      // prettier adds the parantheses
-      return (car = { ...car, ...image });
-    });
-    setProducts(carsWithImage);
-  }, []);
-
   const [filters, setFilters] = useState({
     make: "",
     model: "",
@@ -31,6 +18,13 @@ function ProductsContextProvider(props) {
     priceVal: "",
     milesVal: "",
   });
+
+  // Go through every object and add a key value pair for an image src
+  useEffect(() => {
+    setProducts(cars.map((car) => { 
+      return {...car, image: `/assets/car-pictures/${car.make}-${car.model}-${car.year}.jpg`}
+    }));
+  }, []);
 
   useEffect(() => {
     setSearchedProducts(products);
@@ -67,7 +61,6 @@ function ProductsContextProvider(props) {
     setSearchedProducts(searchedCars);
   };
 
-  // Insert you methods and values here
   const values = {
     search,
     filters,
