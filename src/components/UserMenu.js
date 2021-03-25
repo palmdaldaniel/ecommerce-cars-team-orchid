@@ -3,20 +3,14 @@ import { UserContext } from "../contexts/UserContext";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
-
 import styles from "./css/UserMenu.module.css";
 
 const UserMenu = (props) => {
-  const { users, currentUser, addUser, verifyUser, logoutUser } = useContext(
-    UserContext
-  );
-
+  const { users, currentUser, addUser, verifyUser, logoutUser } = useContext(UserContext);
   const [registerMessage, setRegisterMessage] = useState(null);
   const [feedbackMessage, setFeedbackMessage] = useState(null);
   const [displayLogin, setDisplayLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
-
-  //is used for both login and register
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -148,6 +142,7 @@ const UserMenu = (props) => {
                 required
               />
             </label>
+
             <label>
               <div className={styles.inputPasswordWrapper}>
                 <input
@@ -163,6 +158,7 @@ const UserMenu = (props) => {
                 />
               </div>
             </label>
+
             <button className={styles.userBtn}>Register</button>
           </form>
           {feedbackMessage && (
@@ -195,9 +191,7 @@ const UserMenu = (props) => {
             Purchase history <FontAwesomeIcon icon={faAngleDoubleRight} className={styles.purchaseArrow} />
           </Link>
           <hr/>
-          <button className={styles.userBtn} onClick={() => handleLogout()}>
-            Log out
-          </button>
+          <button className={styles.userBtn} onClick={() => handleLogout()}>Log out</button>
         </div>
       ) : (
         loadLogin()
